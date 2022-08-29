@@ -2195,7 +2195,7 @@ position: relative;
     border: 3px solid #3021bd;
 }
 .backbanner {
-    background-image: url(images/skill-back.jpg);
+    background-image: url(/MvcFramework/images/skill-back.jpg);
     background-repeat: no-repeat;
     background-size: 100% 120%;
     background-position: bottom right;
