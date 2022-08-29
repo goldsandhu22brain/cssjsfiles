@@ -165,7 +165,7 @@ header .navbar .navbar-nav .nav-item {
 	border: 0px;
 }
 .main-banner {
-  /*  background-image: url(images/back.png); */
+  /*  background-image: url(../images/back.png); */
  background: #dc3545;
     height: 100vh;
     background-position: bottom right;
