@@ -1,0 +1,42 @@
+﻿
+
+
+.ImageView {
+    margin-top: 20px;
+    width: 95%;    
+    margin-left: 2.5%;
+    /*box-shadow: 5px 5px 5px black;*/
+
+}
+.ImageViewContent {
+    margin-top: 20px;
+     width: 100%;
+    
+    border-top: solid 5px firebrick;
+
+}
+
+.imgView {
+    border-radius: 5px;
+    width: 100%;
+    border: solid 3px lightgrey;
+
+}
+
+.ViewCommnet {
+    background-color: rgba(250, 250, 250, 0.3);
+    border-top: solid 2px gray;
+
+}
+
+.TextBoxComment {
+    margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+    height: 30px;
+    color: gray;
+    font-weight: bold;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+
+}

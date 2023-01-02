@@ -1,0 +1,30 @@
+﻿welbtn1
+{
+	background: #25e300;
+	padding: 10px 30px;
+	font-size: 19px;
+	color: #fff;
+	margin: 20px 10px;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+welbtn1:hover
+{
+	background: #2A3941;
+	transition: 0.5s;
+}
+welbtn2
+{
+	background: #a0a0a0;
+	padding: 10px 30px;
+	font-size: 19px;
+	color: #fff;
+	margin: 20px 10px;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+welbtn2:hover
+{
+	background: #2A3941;
+	transition: 0.5s;
+}
