@@ -5,17 +5,17 @@
 
 @font-face {
     font-family: AileronSemiBold;
-    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/fonts/Aileron-SemiBold.otf);
+    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/Aileron-SemiBold.otf);
 }
 
 @font-face {
     font-family: AileronThin;
-    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/fonts/Aileron-Thin.otf);
+    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/Aileron-Thin.otf);
 }
 
 @font-face {
     font-family: AileronBlack;
-    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/fonts/Aileron-Black.otf);
+    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/Aileron-Black.otf);
 }
 
 html {
@@ -1302,7 +1302,7 @@ p.fix-bottom {
 
 .how5 {
     padding: 70px 0px;
-    background: url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowDown.png)no-repeat left 10% top, url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowDown.png)no-repeat right 10% top, url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowUp.png)no-repeat left 10% bottom, url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowUp.png)no-repeat right 10% bottom #fff;
+    background: url(https://mediacdn.brainmeasures.com/images/Pages/Global/How/arrowDown.png)no-repeat left 10% top, url(https://mediacdn.brainmeasures.com/images/Pages/Global/How/arrowDown.png)no-repeat right 10% top, url(https://mediacdn.brainmeasures.com/images/Pages/Global/How/arrowUp.png)no-repeat left 10% bottom, url(https://mediacdn.brainmeasures.com/images/Pages/Global/How/arrowUp.png)no-repeat right 10% bottom #fff;
     background-size: 80px, 40px, 40px, 80px;
 }
 
