@@ -1,21 +1,21 @@
 @font-face {
     font-family: AileronLight;
-    src: url(../fonts/Aileron-Light.otf);
+    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/Aileron-Light.otf);
 }
 
 @font-face {
     font-family: AileronSemiBold;
-    src: url(../fonts/Aileron-SemiBold.otf);
+    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/fonts/Aileron-SemiBold.otf);
 }
 
 @font-face {
     font-family: AileronThin;
-    src: url(../fonts/Aileron-Thin.otf);
+    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/fonts/Aileron-Thin.otf);
 }
 
 @font-face {
     font-family: AileronBlack;
-    src: url(../fonts/Aileron-Black.otf);
+    src: url(https://mediacdn.brainmeasures.com/MvcFramework/fonts/fonts/Aileron-Black.otf);
 }
 
 html {
@@ -96,7 +96,7 @@ a.menuicon {
 
 
 .section-h-1 {
-    background: url(../images/headerSlow2.png) no-repeat right center;
+    background: url(https://mediacdn.brainmeasures.com/MvcFramework/images/headerSlow2.png) no-repeat right center;
     background-attachment: fixed;
     background-size: 50%;
     min-height: 100vh;
@@ -523,7 +523,7 @@ h1.s-title {
 }
 
 .section-3 {
-    background: url(../images/Atpbg.png) no-repeat center center #353535;
+    background: url(https://mediacdn.brainmeasures.com/MvcFramework/images/Atpbg.png) no-repeat center center #353535;
     background-attachment: fixed;
     padding: 70px 0px !important;
 }
@@ -534,7 +534,7 @@ h1.s-title {
 }
 
 .section-5 {
-    background: url(../images/ctestbg.jpg) no-repeat center center;
+    background: url(https://mediacdn.brainmeasures.com/MvcFramework/images/ctestbg.jpg) no-repeat center center;
     background-size: 100%;
     background-attachment: fixed;
     padding: 70px 0px;
@@ -825,7 +825,7 @@ h1.s-title {
 
 
 .section-h-4 {
-    background: url(../images/videohiw.png) no-repeat center center #151515;
+    background: url(https://mediacdn.brainmeasures.com/MvcFramework/images/videohiw.png) no-repeat center center #151515;
     background-attachment: fixed;
     background-size: 100%;
     padding: 70px 0px;
@@ -1302,7 +1302,7 @@ p.fix-bottom {
 
 .how5 {
     padding: 70px 0px;
-    background: url(../images/How/arrowDown.png)no-repeat left 10% top, url(../images/How/arrowDown.png)no-repeat right 10% top, url(../images/How/arrowUp.png)no-repeat left 10% bottom, url(../images/How/arrowUp.png)no-repeat right 10% bottom #fff;
+    background: url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowDown.png)no-repeat left 10% top, url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowDown.png)no-repeat right 10% top, url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowUp.png)no-repeat left 10% bottom, url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/arrowUp.png)no-repeat right 10% bottom #fff;
     background-size: 80px, 40px, 40px, 80px;
 }
 
@@ -1407,7 +1407,7 @@ p.fix-bottom {
     }
 
 .how8 {
-    background: url(../images/How/formbg.png) no-repeat center center #171617;
+    background: url(https://mediacdn.brainmeasures.com/MvcFramework/images/How/formbg.png) no-repeat center center #171617;
     background-size: 100%;
     background-attachment: fixed;
     padding: 40px 0px;
