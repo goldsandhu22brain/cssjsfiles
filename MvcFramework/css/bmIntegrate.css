@@ -1,0 +1,288 @@
+﻿/*   Integration 11-03-17   */
+.IBanner {
+    background: #121416;
+    margin-top: -20px;
+    padding-top: 0px;
+    padding-bottom: 0px
+}
+.IBanner img{
+    width: 100%;
+}
+.Ipoints {
+    padding: 40px 0px;
+    text-align: center;
+    background: #03A9F4;
+}
+.Ipoints h2{
+    font-family: Dbold;
+    color: #000000;
+    font-size: 45px
+}
+.Ipoints p{
+    font-family: DGotham;
+    color: #000000;
+    margin: 0px 0px 20px 0px;
+    font-size: 15px
+}
+    .Ipoints .IPbox {
+        padding: 30px 10px
+    }
+    .Ipoints .IPbox img{
+        width: 80%;
+        border: 10px solid #009ce2;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        transition: 0.4s;
+    }
+    .Ipoints .IPbox img:hover{
+        width: 70%;
+        transition: 0.4s;
+    }
+    .Ipoints .IPbox h3{
+        font-family: DGotham;
+        color: #000000;
+        margin: 0px;
+        font-size: 19px
+    }
+.Ipart1 {
+    background: url(../images/Integration/bg01.png) no-repeat center center;
+    background-size: 100%;
+    background-attachment: fixed;
+    padding: 60px 0px
+}
+.Ipart1 img{
+    width: 90%
+}
+.Ipart1 h2{
+    font-family: DGothamBold;
+    color: #000000;
+    margin-top: 0px;
+}
+.Ipart1 p{
+    font-family: DGothamBold;
+    color: #000000;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: justify
+}
+.Ipart2 {
+    background: url(../images/Integration/bg01.png) no-repeat center center, #1a263c;
+    background-size: 100%;
+    background-attachment: fixed;
+    padding: 60px 0px
+}
+.Ipart2 img{
+    width: 90%
+}
+.Ipart2 h2{
+    font-family: DGothamBold;
+    color: #fff;
+    margin-top: 0px;
+}
+.Ipart2 p{
+    font-family: DGothamBold;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: justify
+}
+.Ipart3 {
+    text-align: center;
+    padding: 40px;
+    background: url(../images/Integration/arrow.png) no-repeat left center, #03a9f4;
+    background-attachment: fixed
+}
+.Ipart3 h2{
+    color: #fff;
+    font-family: Dbold;
+    text-transform: uppercase;
+    margin-bottom: 20px
+}
+.Ipart3 p{
+    color: #000000;
+    font-family: DGothamBold;
+    font-size: 18px
+}
+.Ipart3 a.iquote{
+    display: inline-block;
+    background: #1a263c;
+    margin: 25px 10px 10px;
+    color: #fff;
+    font-family: DGothamBold;
+    padding: 10px 30px;
+    font-size: 22px;
+    border: 2px solid #1a263c;
+    transition: 0.4s;
+}
+.Ipart3 a.iquote:hover{
+    background: none;
+    color: #1a263c;
+    text-decoration: none;
+    transition: 0.4s;
+}
+.Ipart3 a.idemo{
+    display: inline-block;
+    background: none;
+    margin: 25px 10px 10px;
+    color: #1a263c;
+    font-family: DGothamBold;
+    padding: 10px 30px;
+    font-size: 22px;
+    border: 2px solid #1a263c;
+    transition: 0.4s
+}
+.Ipart3 a.idemo:hover{
+    background: #1a263c;
+    color: #fff;
+    border: 2px solid #1a263c;
+    text-decoration: none;
+    transition: 0.4s
+}
+.Ipart4 {
+    text-align: center;
+    padding-top: 40px;
+    background: url(../images/Integration/successbg.png) no-repeat left center, #cae6ef;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+.Ipart4 img{
+    width: 100%;
+}
+.Ipart5 {
+    background: url(../images/Integration/part05.png) no-repeat left center, #fff;
+    padding: 60px 0px
+}
+.Ipart5 img{
+    width: 90%
+}
+.Ipart5 h2{
+    font-family: DGothamBold;
+    color: #1a3a48;
+    margin-top: 0px;
+}
+.Ipart5 p{
+    font-family: DGothamBold;
+    color: #000000;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: justify
+}
+.Ipart5 h3{
+    font-family: DGothamBold;
+    color: #1a3a48;
+    margin-top: 0px;
+    font-size: 30px;
+    margin-bottom: 50px
+}
+.Ipart5 ul{
+    list-style: none;
+    font-family: DGothamBold;
+    font-size: 18px;
+}
+.Ipart5 ul li{
+    margin-bottom: 19px;
+}
+.Ipart5 ul li img{
+    margin-right: 15px;
+    width: auto !important
+}
+.Ipart6 {
+    background: url(../images/Integration/rightbg.png) no-repeat right center, #03a9f4;
+    padding: 60px 0px
+}
+.Ipart6 h2{
+    font-family: DGothamBold;
+    color: #000000;
+    margin-top: 0px;
+    font-size: 30px;
+    margin-bottom: 50px
+}
+.Ipart6 p{
+    font-family: DGotham;
+    color: #000000;
+    margin-top: 0px;
+    font-size: 12px;
+    text-align: justify
+}
+.Ipart6 p span{
+    font-family: DGothamBold;
+    color: #000000;
+    font-size: 16px;
+    text-align: justify
+}
+.Ipart7 {
+    background: url(../images/Integration/bottombg.png) no-repeat center center, #121416;
+    background-size: 100%;
+    background-attachment: fixed;
+    padding: 30px 0px
+}
+.Ipart7 h2{
+    margin: 0px;
+    font-family: Dbold;
+    color: #fff;
+    text-transform: uppercase
+}
+.Ipart7 a{
+    display: inline-block;
+    color: #fff;
+    background: #fcff04;
+    padding: 4px;
+    width: 100%;
+    text-align: center;
+    color: #121416;
+    font-family: DGothamBold;
+    font-size: 19px;
+    transition: 0.4s;
+}
+.Ipart7 a:hover{
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+.IPopupbtn{
+    background: url(../images/Integration/bottombg.png) no-repeat center center, #121416;
+    background-size: 100%;
+    background-attachment: fixed;
+    padding: 30px 0px;
+    text-align: center
+}
+.IPopupbtn img{
+    width: 40%
+}
+.IPopupbtn h2{
+    color: #fff;
+    font-family: DGothamBold;
+    font-size: 26px
+}
+.iip{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px !important;
+    border-radius: 15px;
+    transition: 0.4s
+}
+.iip:hover{
+    background: rgba(0, 0, 0, 0.9);
+    transition: 0.4s
+}
+.api1pop{
+    background: url(../images/Integration/IapioverviewO.png) no-repeat left center, #fff;
+}
+.api1pop h2{
+    text-align: center;
+    color: #000000;
+    font-family: DGothamBold;
+    margin: 0 0 20px 0;
+}
+.api1pop img{
+    width: 200px;
+    margin-bottom: 15px
+}
+.api1pop p, .api1pop ul, .api1pop h3{
+    text-align: justify;
+    color: #000000;
+    font-family: DGothamBold;
+}
+.api1pop span{
+    color: #ce412d
+}
