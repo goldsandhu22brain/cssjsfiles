@@ -396,3 +396,67 @@
             background: url('https://mediacdn.brainmeasures.com/images/loading.gif') no-repeat center center;
             display: none;
         }
+		
+		
+				.mt-30 {
+			margin-top: 30px
+		}
+
+		.mr-30 {
+			margin-right: 30px
+		}
+
+		a.sefixed {
+			position: fixed;
+			right: -10px;
+			top: 30%;
+			z-index: 1000;
+			transition: 0.4s;
+		}
+
+			a.sefixed:hover, a.sefixed2:hover {
+				right: 0px;
+				transition: 0.4s;
+			}
+
+		a.sefixed2 {
+			position: fixed;
+			right: -10px;
+			top: 40%;
+			z-index: 1000;
+			transition: 0.4s;
+		}
+
+		.seshow {
+			position: fixed;
+			right: 0px;
+			top: 18%;
+			z-index: 1002;
+			display: none;
+			background: #fff;
+			padding: 0 0 0 30px;
+		}
+
+		.seshow2 {
+			position: fixed;
+			right: 0px;
+			top: 39%;
+			z-index: 1001;
+			display: none;
+			background: #fff;
+			padding: 30px 5px 30px 30px;
+		}
+
+		.popover {
+			position: relative;
+			width: 34rem !important;
+			background-color: #fff;
+			border: 1px solid #d1d7dc;
+			/* border-radius: 4px; */
+			/* box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%); */
+			color: #1c1d1f;
+		}
+
+		.popover {
+			z-index: 999999 !important
+		}
