@@ -163,7 +163,7 @@
             width: 100%;
             height: 90vh;
             position: relative;
-            background: #024b76 url("../img/intro-bg.jpg") center top no-repeat;
+            /* background: #024b76 url("../img/intro-bg.jpg") center top no-repeat; */
             background-size: cover;
             margin-top: 100px;
         }
@@ -393,6 +393,6 @@
             width: 100%;
             height: 100%;
             z-index: 1000;
-            background: url('images/loading.gif') no-repeat center center;
+            background: url('https://mediacdn.brainmeasures.com/images/loading.gif') no-repeat center center;
             display: none;
         }
