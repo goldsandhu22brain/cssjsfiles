@@ -1,0 +1,206 @@
+.login-page {
+    background: #EFF3FB;
+    padding: 40px 0 110px;
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-page .login-section {
+    position: relative;
+    max-width: 930px;
+    margin: 0px auto;
+}
+
+.login-bg {
+    position: absolute;
+    top: 0;
+    right: 30px;
+}
+
+.login-page .login-section .left-wrap {
+    background: linear-gradient(285.43deg, #4E11C2 39.33%, #7122AE 144.39%);
+    border-radius: 20px 0px 0px 20px;
+    min-height: 780px;
+    color: #FFFFFF;
+    position: relative;
+    text-align: center;
+}
+
+    .login-page .login-section .left-wrap .sign-in {
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+    }
+
+    .login-page .login-section .left-wrap .wrap {
+        padding: 198px 50px 0;
+    }
+
+        .login-page .login-section .left-wrap .wrap h5 {
+            font-weight: 700;
+            line-height: 50px;
+        }
+
+        .login-page .login-section .left-wrap .wrap p {
+            font-size: 15px;
+            line-height: 27px;
+        }
+
+.login-page .login-section .right-wrap {
+    background: #FFFFFF;
+    border-radius: 0 20px 20px 0;
+    min-height: 780px;
+    padding: 45px 58px 0;
+    position: relative;
+    z-index: 9;
+}
+
+    .login-page .login-section .right-wrap h3 {
+        font-weight: 700;
+        line-height: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+        .login-page .login-section .right-wrap h3 img {
+            margin-right: 10px;
+        }
+
+    .login-page .login-section .right-wrap h6 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        padding: 10px 0;
+    }
+
+/*Login Form */
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form .form-control {
+    font-size: 15px;
+    line-height: 27px;
+    color: #132730;
+    height: 54px;
+    border-radius: 10px;
+    border: 1px solid #6967FF;
+    box-shadow: 0px 5px 20px rgba(194, 172, 255, 0.4);
+}
+
+    .login-form .form-control::placeholder {
+        color: #132730;
+    }
+
+.login-form .form-check-label {
+    font-size: 15px;
+    line-height: 27px;
+    color: #132730;
+}
+
+.login-form h6 {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    position: relative;
+    display: flex;
+    padding: 24px 0;
+}
+
+    .login-form h6 span {
+        background: #FFFFFF;
+        position: relative;
+        z-index: 1;
+        padding: 0 20px;
+        margin: 0px auto;
+    }
+
+    .login-form h6::before {
+        height: 1px;
+        width: 180px;
+        background: #C2ACFF;
+        display: block;
+        content: '';
+        position: absolute;
+        left: 80px;
+        top: 50%;
+    }
+
+.login-form .forgot {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+    .login-form .forgot a {
+        font-weight: 600;
+        text-decoration: underline;
+        padding: 0 8px;
+    }
+
+        .login-form .forgot a:hover {
+            text-decoration: none;
+        }
+
+.login-form .btn {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .login-form .btn.btn-outline {
+        margin: 29px 0 10px;
+    }
+
+    .login-form .btn img {
+        margin-right: 10px;
+    }
+
+@media screen and (max-width:991px) {
+    .login-page {
+        padding: 20px 0;
+    }
+
+    .login-page .login-section .right-wrap,
+    .login-page .login-section .left-wrap {
+        min-height: 650px;
+    }
+
+        .login-page .login-section .left-wrap .wrap {
+            padding: 120px 30px 0;
+        }
+
+    .login-page .login-section .right-wrap {
+        padding: 16px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .login-page .login-section .left-wrap {
+        min-height: 520px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+        .login-page .login-section .left-wrap .wrap {
+            padding: 90px 35px 0;
+        }
+
+    .login-page .login-section .right-wrap {
+        min-height: 520px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 440px) {
+    .login-page .login-section .right-wrap {
+        padding: 15px;
+    }
+}
