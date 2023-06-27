@@ -1,3 +1,4 @@
+var $jq = jQuery.noConflict();
 /* Start: Fix Header */
 	$(window).scroll(function() {     
 		var scroll = $(window).scrollTop();
