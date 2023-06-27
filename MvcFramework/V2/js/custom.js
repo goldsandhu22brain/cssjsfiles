@@ -1,5 +1,6 @@
 var $jq = jQuery.noConflict();
-/* Start: Fix Header */
+$(document).ready(function () {
+	/* Start: Fix Header */
 	$(window).scroll(function() {     
 		var scroll = $(window).scrollTop();
 		if (scroll > 600) {
@@ -34,7 +35,6 @@ var $jq = jQuery.noConflict();
 /*End: Tab as select option */
 
 
-$(document).ready(function () {
 	$(".testimonials-slider").slick({
 		centerMode: true,
 		centerPadding: '0px',
@@ -46,10 +46,8 @@ $(document).ready(function () {
 		pauseOnHover: false,
 		arrows: true,
 	});
-});
 
 
-$(document).ready(function () {
 	$(".trusted-slider").slick({
 		centerMode: true,
 		centerPadding: '0px',
@@ -89,9 +87,6 @@ $(document).ready(function () {
 	  ]
 		
 	});
-});
-
-$(document).ready(function () {
 	$(".global-brands-slider").slick({
 		slidesToShow: 2,
 		slidesToScroll: 1,
@@ -103,9 +98,6 @@ $(document).ready(function () {
 		infinite: false,
 		loop: false,
 	});
-});
-
-$(document).ready(function () {
 	$(".cs-testimonials").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -117,9 +109,6 @@ $(document).ready(function () {
 		infinite: false,
 		loop: false,
 	});
-});
-
-$(document).ready(function () {
 	$(".experts-talk-slider").slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -150,9 +139,6 @@ $(document).ready(function () {
 	  ]
 		
 	});
-});
-
-$(document).ready(function () {
 	$(".acc-global-brands-slider").slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -178,9 +164,6 @@ $(document).ready(function () {
 		},
 	  ]
 	});
-});
-
-$(document).ready(function () {
 	$(".acc-experts-talk-slider").slick({
 		slidesToShow: 2,
 		slidesToScroll: 1,
