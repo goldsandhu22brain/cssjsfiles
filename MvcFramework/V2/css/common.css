@@ -285,7 +285,7 @@ h6{
     text-align: left;
 }
 .custom-warning li::before {
-    content: url(../images/icons/check.png);
+    content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check.png);
     width: 30px;
     height: 30px;
     position: absolute;
@@ -302,7 +302,7 @@ h6{
     padding-left: 50px;
 }
 .custom-primary li::before {
-    content: url(../images/icons/check-blue.png);
+    content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check-blue.png);
     width: 40px;
     height: 40px;
     position: absolute;

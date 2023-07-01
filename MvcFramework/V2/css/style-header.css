@@ -68,7 +68,7 @@ header .navbar .dropdown:hover .dropdown-menu{
 }
 
 header .navbar .dropdown .dropdown-toggle::after{
-	content: url('../images/icons/dropdown-toggle-white.png');
+	content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-white.png');
 	width: 7px;
 	height: 11px;
 	border: 0;
@@ -78,7 +78,7 @@ header .navbar .dropdown .dropdown-toggle::after{
 header .navbar .dropdown .dropdown-toggle:hover::after,
 header .navbar .active.dropdown .dropdown-toggle::after,
 header .navbar .dropdown .dropdown-toggle.active::after{
-	content: url('../images/icons/dropdown-toggle-active.png');
+	content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-active.png');
 }
 header .navbar .dropdown .dropdown-toggle.dropdown-toggle-none::after{
 	content: '';
@@ -123,19 +123,19 @@ header .navbar .dropdown .dropdown-toggle.dropdown-toggle-none::after{
 	color: #F33558;
 }
 #header.fixed-top.active .dropdown .dropdown-toggle::after{
-	content: url('../images/icons/dropdown-toggle-mb.png');
+	content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-mb.png');
 }
 #header.fixed-top.active .dropdown .dropdown-toggle:hover::after,
 #header.fixed-top.active .active.dropdown .dropdown-toggle::after,
 #header.fixed-top.active .dropdown .dropdown-toggle.active::after{
-	content: url('../images/icons/dropdown-toggle-active.png');
+	content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-active.png');
 }
 /*--------------------------------------*/
 
 /* Header Responsive
 /*--------------------------------------*/
 header .navbar-toggler-icon {
-	background-image: url("../images/icons/burger-menu.png");
+	background-image: url("https://mediacdn.brainmeasures.com/images/Pages/Global/icons/burger-menu.png");
 	width: 18px;
 }
 header .navbar-toggler:focus{
@@ -211,10 +211,10 @@ header .navbar-toggler:focus{
 		padding-left: 0;
 	}
 	header .navbar .dropdown .dropdown-toggle::after{
-		content: url('../images/icons/dropdown-toggle-mb.png');
+		content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-mb.png');
 	}
 	header .navbar .dropdown a[aria-expanded="true"]:hover::after{
-		content: url('../images/icons/dropdown-toggle-active.png');
+		content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-active.png');
 	}
 	
 	header .navbar .navbar-nav .nav-item{
@@ -284,11 +284,11 @@ header .navbar-toggler:focus{
 	color: #F33558;
 }
 .white-nav#header.fixed-top .dropdown .dropdown-toggle::after {
-    content: url(../images/icons/dropdown-toggle-mb.png);
+    content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-mb.png);
 }
 .white-nav#header.fixed-top .dropdown .dropdown-toggle:hover::after,
 .white-nav#header.fixed-top .active.dropdown .dropdown-toggle::after,
 .white-nav#header.fixed-top .dropdown .dropdown-toggle.active::after{
-	    content: url(../images/icons/dropdown-toggle-active.png);
+	    content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-active.png);
 }
 /*--------------------------------------*/
