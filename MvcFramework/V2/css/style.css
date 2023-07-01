@@ -29,7 +29,7 @@
 /* 2. Hero Section
 /*--------------------------------------*/
 .hero-section .wrap{
-	background-image: url('../images/bg/hero-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/hero-bg.png');
 	background-repeat: no-repeat;
 }
 .hero-section .text-wrap{
@@ -206,7 +206,7 @@
     position: absolute;
 	width: 785px;
     height: 729px;
-    background-image: url(../images/bg/mask-1.png);
+    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-1.png);
     top: -430px;
     right: 0;
 	z-index: -1;
@@ -309,7 +309,7 @@
 /* 9. Corporates Section
 /*--------------------------------------*/
 .corporates-section{
-	background-image: url('../images/bg/hero-bg-2.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/hero-bg-2.png');
 	background-repeat: no-repeat;
 	background-position: top center;
 }
@@ -559,7 +559,7 @@
 	margin-right: 20px;
 }
 .brainmeasures-psychometric .test-after-job-section .block{
-	background-image: url('../images/bg/test-after-job-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/test-after-job-bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 460px;
@@ -588,7 +588,7 @@
     position: absolute;
     width: 100%;
     height: 736px;
-    background-image: url(../images/bg/mask-2.png);
+    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-2.png);
 	background-repeat: no-repeat;
     background-position: center;
     top: -190px;
@@ -692,7 +692,7 @@
 	left: 30px;
 }
 .brainmeasures-psychometric .enjoy-test-section{
-	background-image: url('../images/bg/enjoy-test-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/enjoy-test-bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
@@ -724,7 +724,7 @@
 	margin-top: 30px;
 }
 .brainmeasures-psychometric .why-choose-section .wrap{
-	background-image: url('../images/bg/hero-bg-3.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/hero-bg-3.png');
 	background-repeat: no-repeat;
 }
 .brainmeasures-psychometric .why-choose-section .text-wrap{
@@ -773,7 +773,7 @@
 }
 
 .brainmeasures-psychometric .psy-testing-section{
-	background-image: url('../images/bg/psy-testing-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/psy-testing-bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 1150px;
@@ -905,7 +905,7 @@
 
 .brainmeasures-psychometric .psy-section{
 	background-color: #3395E8;
-	background-image: url('../images/bg/psy-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/psy-bg.png');
 	color: #FFFFFF;
 	text-align: center;
 }
@@ -919,7 +919,7 @@
 }
 
 .brainmeasures-psychometric .testimonials-section{
-	background-image: url('../images/bg/testimonials-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/testimonials-bg.png');
 	background-repeat: no-repeat;
 	background-position: bottom;
 	padding-bottom: 160px;
@@ -1075,7 +1075,7 @@
 
 
 .brainmeasures-psychometric .faq-section{
-	background-image: url('../images/bg/faq-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/faq-bg.png');
 	background-repeat: no-repeat;
 	background-position: bottom;
 }
@@ -1786,7 +1786,7 @@
 	margin-top: -216px;
 }
 .brainmeasures-certification .your-goal-section .block{
-	background-image: url('../images/bg/goal-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/goal-bg.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -1815,7 +1815,7 @@
 	margin: 0px auto;
 }
 .brainmeasures-certification .imp-click{
-	background-image: url('../images/bg/imp-click-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/imp-click-bg.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -1877,7 +1877,7 @@
     position: absolute;
     width: 100%;
     height: 329px;
-    background-image: url(../images/bg/mask-3.png);
+    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-3.png);
 	background-repeat: no-repeat;
     top: -140px;
     left: 0;
@@ -1927,7 +1927,7 @@
     position: absolute;
     width: 100%;
     height: 341px;
-    background-image: url(../images/bg/prof-cert-bg.png);
+    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/prof-cert-bg.png);
     top: 0;
     left: 0;
     z-index: -1;
@@ -2078,7 +2078,7 @@
     left: 0px;
 }
 .brainmeasures-certification .brain-cert-section{
-	background-image: url('../images/bg/cert-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/cert-bg.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -2180,7 +2180,7 @@
 }
 .case-studies-listing .listing-section .wrap.wrap-12{
 	/*background-image: url(../images/listing-12.png);*/
-	background-image: url(../images/bg/cs-bg.png), linear-gradient(285.43deg, #4E11C2 39.33%, #7122AE 144.39%);
+	background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/cs-bg.png), linear-gradient(285.43deg, #4E11C2 39.33%, #7122AE 144.39%);
 }
 .case-studies-listing .listing-section .wrap.wrap-12 .img-wrap img{
 	height: 98px;
@@ -2252,7 +2252,7 @@
 }
 */
 .case-studies-listing .get-started-section{
-	background-image: url('../images/bg/get-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/get-bg.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -2288,7 +2288,7 @@
 /* 18. Case Studies Page
 /*--------------------------------------*/
 .case-studies-page .banner-section{
-	background-image: url('../images/bg/cs-bg.png'), linear-gradient(285.43deg, #4E11C2 39.33%, #7122AE 144.39%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/cs-bg.png'), linear-gradient(285.43deg, #4E11C2 39.33%, #7122AE 144.39%);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: right;
@@ -2570,7 +2570,7 @@
     position: absolute;
     width: 785px;
     height: 729px;
-    background-image: url(../images/bg/mask-1.png);
+    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-1.png);
     top: 260px;
     right: 0;
     z-index: -1;
@@ -2619,7 +2619,7 @@
 }
 .case-studies-page .global-brands-section{
 	background-color: #6967FF;
-	background-image: url(../images/bg/global-brands-mask.png);
+	background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/global-brands-mask.png);
 	background-position: center bottom;
 	background-repeat: no-repeat;
 }
@@ -2677,7 +2677,7 @@
 
 .case-studies-page .students-testimonials{
 	background: #6967FF;
-	background-image: url('../images/bg/students-test-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/students-test-bg.png');
 	background-repeat: no-repeat;
 	background-position: 100% 0;
 	padding: 150px 0;
@@ -2945,7 +2945,7 @@
     position: absolute;
     width: 859px;
     height: 329px;
-    background-image: url(../images/bg/mask-5.png);
+    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-5.png);
     top: -230px;
     left: 0;
     z-index: -1;
@@ -2981,7 +2981,7 @@
 /* 19. Accenture Case Studies Page
 /*--------------------------------------*/
 .accenture-case-studies-page .banner-section{
-	background-image: url('../images/bg/accenture-bg.png'), radial-gradient(34.4% 79.39% at 59.2% 100%, #3B0066 0%, #7122AE 100%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/accenture-bg.png'), radial-gradient(34.4% 79.39% at 59.2% 100%, #3B0066 0%, #7122AE 100%);
 }
 .accenture-case-studies-page .hero-section{
 	padding: 50px 0 145px;
@@ -3133,7 +3133,7 @@
     position: absolute;
     width: 555px;
     height: 106px;
-    background-image: url(../images/bg/mask-4.png);
+    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-4.png);
     bottom: 0;
     left: 0;
 }
@@ -3178,52 +3178,52 @@
 /* 20. Capgemini Case Studies Page
 /*--------------------------------------*/
 .capgemini-case-studies-page .banner-section{
-	background-image: url('../images/bg/capgemini-bg.png'), radial-gradient(22.53% 40.96% at 59.2% 100%, #2B0B3D 0%, #2B0B3D 100%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/capgemini-bg.png'), radial-gradient(22.53% 40.96% at 59.2% 100%, #2B0B3D 0%, #2B0B3D 100%);
 }
 .acer-case-studies-page .banner-section{
-	background-image: url('../images/bg/acer-bg.png'), radial-gradient(50.13% 91.14% at 59.2% 75.76%, #0D1438 0%, #0B3D3D 100%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/acer-bg.png'), radial-gradient(50.13% 91.14% at 59.2% 75.76%, #0D1438 0%, #0B3D3D 100%);
 }
 .acer-case-studies-page .banner-section .wrap{
     max-width: 495px;
 }
 .cocacola-case-studies-page .banner-section{
-	background-image: url('../images/bg/cocacola-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/cocacola-bg.png');
 	background-color: #120F10;
 }
 .cocacola-case-studies-page .banner-section .wrap{
     max-width: 430px;
 }
 .genpact-case-studies-page .banner-section{
-	background-image: url('../images/bg/genpact-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/genpact-bg.png');
 	background-color: #1E2C4C;
 }
 .mphasis-case-studies-page .banner-section{
-	background-image: url('../images/bg/mphasis-bg.png'), linear-gradient(125.52deg, #E2F7BE 0%, #B9EFDE 100%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/mphasis-bg.png'), linear-gradient(125.52deg, #E2F7BE 0%, #B9EFDE 100%);
 	color: #000000;
 }
 .mphasis-case-studies-page .banner-section .wrap{
     max-width: 498px;
 }
 .aegis-case-studies-page .banner-section{
-	background-image: url('../images/bg/aegis-bg.png'), linear-gradient(150.37deg, #EE2D24 0%, #F47B20 81.87%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/aegis-bg.png'), linear-gradient(150.37deg, #EE2D24 0%, #F47B20 81.87%);
 }
 .amex-case-studies-page .banner-section{
-	background-image: url('../images/bg/amex-bg.png'), linear-gradient(286.82deg, #004D91 23.8%, #0069B5 97.95%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/amex-bg.png'), linear-gradient(286.82deg, #004D91 23.8%, #0069B5 97.95%);
 }
 .amex-case-studies-page .banner-section .wrap{
     max-width: 500px;
 }
 .toyota-case-studies-page .banner-section{
-	background-image: url('../images/bg/toyota-bg.png'), linear-gradient(102.17deg, #1C0853 0%, #1E1A36 96.03%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/toyota-bg.png'), linear-gradient(102.17deg, #1C0853 0%, #1E1A36 96.03%);
 }
 .toyota-case-studies-page .banner-section .wrap{
     max-width: 500px;
 }
 .hcl-case-studies-page .banner-section{
-	background-image: url('../images/bg/hcl-bg.png'), linear-gradient(102.17deg, #1C0853 0%, #1E1A36 96.03%);
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/hcl-bg.png'), linear-gradient(102.17deg, #1C0853 0%, #1E1A36 96.03%);
 }
 .tcs-case-studies-page .banner-section{
-	background-image: url('../images/bg/tcs-bg.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/tcs-bg.png');
 	background-color: #000000;
 }
 /*--------------------------------------*/
