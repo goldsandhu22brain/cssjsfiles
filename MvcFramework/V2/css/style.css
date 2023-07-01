@@ -606,7 +606,7 @@
 	text-align: left;
 }
 .brainmeasures-psychometric .what-learn-section li::before {
-    content: url('../images/icons/check.png');
+    content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check.png');
 	width: 30px;
     height: 30px;
 	position: absolute;
@@ -685,7 +685,7 @@
 	padding-left: 80px;
 }
 .brainmeasures-psychometric .personality-test-section li::before {
-    content: url('../images/icons/check-blue.png');
+    content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check-blue.png');
 	width: 40px;
     height: 40px;
 	position: absolute;
@@ -808,11 +808,11 @@
 	border-radius: 10px;
 }
 .brainmeasures-psychometric .psy-testing-section .accordion-button::after{
-	background-image: url('../images/icons/plus.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/plus.png');
 	background-size: 12px;
 }
 .brainmeasures-psychometric .psy-testing-section .accordion-button:not(.collapsed)::after{
-	background-image: url('../images/icons/minus.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/minus.png');
 }
 
 .brainmeasures-psychometric .what-get-section{
@@ -959,10 +959,10 @@
 }
 
 .brainmeasures-psychometric .testimonials-section .slick-slider .slick-next:before{
-	content: url('../images/icons/next.png');
+	content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/next.png');
 }
 .brainmeasures-psychometric .testimonials-section .slick-slider .slick-prev:before{
-	content: url('../images/icons/prev.png');
+	content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/prev.png');
 }
 
 .brainmeasures-psychometric .practice-tests-section{
@@ -1103,11 +1103,11 @@
 	border-radius: 20px;
 }
 .brainmeasures-psychometric .faq-section .accordion-button::after{
-	background-image: url('../images/icons/plus.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/plus.png');
 	background-size: 12px;
 }
 .brainmeasures-psychometric .faq-section .accordion-button:not(.collapsed)::after{
-	background-image: url('../images/icons/minus.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/minus.png');
 }
 
 .brainmeasures-psychometric .build-team-section{
@@ -2070,7 +2070,7 @@
     text-align: left;
 }
 .brainmeasures-certification .work-level li::before {
-    content: url(../images/icons/check.png);
+    content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check.png);
     width: 30px;
     height: 30px;
     position: absolute;
@@ -2529,7 +2529,7 @@
 	padding-left: 60px;
 }
 .case-studies-page .outcome-section li h1::before{
-	content: url(../images/icons/red-down.png);
+	content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/red-down.png);
     width: 36px;
     height: 65px;
     position: absolute;
@@ -2537,7 +2537,7 @@
     left: 0px;
 }
 .case-studies-page .outcome-section li h1.green-up::before{
-	content: url(../images/icons/green-up.png);
+	content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/green-up.png);
 }
 .case-studies-page .trends-section{
 	background-color: #FFBB00;
@@ -2671,7 +2671,7 @@
 		right: 85%;
 	}
 	.case-studies-page .global-brands-section  .slick-slider .slick-arrow:before{
-		content: url('../images/icons/next-1.png');
+		content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/next-1.png');
 	}
 
 
@@ -2750,7 +2750,7 @@
 		right: 47%;
 	}
 	.case-studies-page .students-testimonials .slick-slider .slick-arrow:before{
-		content: url('../images/icons/next.png');
+		content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/next.png');
 	}
 
 
@@ -2816,7 +2816,7 @@
 		right: 68%;
 	}
 	.case-studies-page .testimonials-section .slick-slider .slick-arrow:before{
-		content: url('../images/icons/next.png');
+		content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/next.png');
 	}
 
 .case-studies-page .experts-talk-section h1{
@@ -3083,7 +3083,7 @@
 	font-weight: 400;
 }
 .accenture-case-studies-page .solution-section .custom-warning li::before{
-	content: url(../images/icons/check-2.png);
+	content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check-2.png);
 	width: 40px;
     height: 40px;
 }
