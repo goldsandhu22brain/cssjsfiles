@@ -3361,7 +3361,7 @@ footer .bottom-footer p {
 .content-module-7 {
     background-color: #f33558;
     padding: 150px 0;
-    background-image: url('https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/Group153.png');
+    background-image: url(https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/Group153.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover
@@ -3381,7 +3381,7 @@ footer .bottom-footer p {
 .content-module-8 {
     padding-top: 110px;
     padding-bottom: 95px;
-    background-image: url('https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/bg-img.png');
+    background-image: url(https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/bg-img.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain
@@ -3528,7 +3528,7 @@ footer .bottom-footer p {
 .content-module-11 {
     padding-top: 110px;
     padding-bottom: 170px;
-    background-image: url('https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/img-bg-8.jpg');
+    background-image: url(https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/img-bg-8.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: inherit
@@ -3681,7 +3681,7 @@ footer .bottom-footer p {
     content: "";
     left: -60px;
     top: -90px;
-    background-image: url('https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/Vector.png');
+    background-image: url(https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/Vector.png);
     background-position: top left;
     background-repeat: no-repeat;
     background-size: contain;
@@ -3755,7 +3755,7 @@ footer .bottom-footer p {
 
 .content-module-15 {
     background-color: #1d1d48;
-    background-image: url('https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/bg-7.png');
+    background-image: url(https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/bg-7.png);
     padding: 130px 80px;
     background-position: center;
     background-repeat: no-repeat;
@@ -3784,7 +3784,7 @@ footer .bottom-footer p {
 }
 
 .content-module-16 .content-module-down {
-    background-image: url('https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/bg-3.png');
+    background-image: url(https://mediacdn.brainmeasures.com/images/Pages/EmpTesting/BackGroundimg/bg-3.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
