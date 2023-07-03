@@ -206,7 +206,7 @@
     position: absolute;
 	width: 785px;
     height: 729px;
-    background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-1.png);
+    background-image: url("https://mediacdn.brainmeasures.com/images/BackGroundBanners/mask-1.png");
     top: -430px;
     right: 0;
 	z-index: -1;
@@ -289,15 +289,15 @@
 .developed-section .wrap{
 	max-width: 480px;
 }
-.developed-section .wrap .title{
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	font-size: 14px;
-	color: #000000;
-	padding-left: 17px;
-	background-image: url('../images/title.png');
-	background-repeat: no-repeat;
-}
+	.developed-section .wrap .title {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 500;
+		font-size: 14px;
+		color: #000000;
+		padding-left: 17px;
+		background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/title.png');
+		background-repeat: no-repeat;
+	}
 .developed-section .wrap h4{
 	margin: 12px 0 8px;
 }
@@ -1769,14 +1769,14 @@
 }
 
 
-.heading-wrap1{
+.heading-wrap1 {
 	font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    color: #FFFFFF;
-    padding-left: 17px;
-    background-image: url(../images/title-2.png);
-    background-repeat: no-repeat;
+	font-weight: 500;
+	font-size: 20px;
+	color: #FFFFFF;
+	padding-left: 17px;
+	background-image: url(https://mediacdn.brainmeasures.com/images/Pages/casestudy/title-2.png);
+	background-repeat: no-repeat;
 	height: 54px;
 	display: flex;
 	align-items: center;
@@ -1994,17 +1994,17 @@
 	background: #EDF2FB;
 	text-align: center;
 }
-.brainmeasures-certification .sample-report .img-wrap{
-	background-image: url('../images/report-frame.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	margin: 35px 0 20px;
-    width: 100%;
-    height: 695px;
-    overflow: auto;
-    position: relative;
-}
+	.brainmeasures-certification .sample-report .img-wrap {
+		background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/report-frame.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin: 35px 0 20px;
+		width: 100%;
+		height: 695px;
+		overflow: auto;
+		position: relative;
+	}
 
 .containerdiv {
   border: 0;
@@ -2070,7 +2070,7 @@
     text-align: left;
 }
 .brainmeasures-certification .work-level li::before {
-    content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check.png);
+    content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check.png');
     width: 30px;
     height: 30px;
     position: absolute;
@@ -2142,14 +2142,14 @@
 .case-studies-listing .listing-section .wrap.wrap-1{
 	background: #83B81A;
 }
-.case-studies-listing .listing-section .wrap.wrap-2{
-	background-image: url(../images/listing-2.png);
+.case-studies-listing .listing-section .wrap.wrap-2 {
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/listing-2.png');
 }
-.case-studies-listing .listing-section .wrap.wrap-3{
-	background-image: url(../images/listing-3.png);
+.case-studies-listing .listing-section .wrap.wrap-3 {
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/listing-3.png');
 }
-.case-studies-listing .listing-section .wrap.wrap-4{
-	background-image: url(../images/listing-4.png);
+.case-studies-listing .listing-section .wrap.wrap-4 {
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/listing-4.png');
 }
 .case-studies-listing .listing-section .wrap.wrap-4{
     padding-left: 196px;
@@ -2160,20 +2160,20 @@
 .case-studies-listing .listing-section .wrap.wrap-6{
 	background: #016FD0;
 }
-.case-studies-listing .listing-section .wrap.wrap-7{
-	background-image: url(../images/listing-7.png);
+.case-studies-listing .listing-section .wrap.wrap-7 {
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/listing-7.png');
 }
 .case-studies-listing .listing-section .wrap.wrap-8{
 	background: #7C5591;
 }
-.case-studies-listing .listing-section .wrap.wrap-9{
-	background-image: url(../images/listing-9.png);
+.case-studies-listing .listing-section .wrap.wrap-9 {
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/listing-9.png');
 }
 .case-studies-listing .listing-section .wrap.wrap-9{
     padding-left: 270px;
 }
-.case-studies-listing .listing-section .wrap.wrap-10{
-	background-image: url(../images/listing-10.png);
+.case-studies-listing .listing-section .wrap.wrap-10 {
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/listing-10.png');
 }
 .case-studies-listing .listing-section .wrap.wrap-11{
 	background: linear-gradient(107.25deg, #7B0553 6.08%, #460647 36.58%, #050040 92.49%);
