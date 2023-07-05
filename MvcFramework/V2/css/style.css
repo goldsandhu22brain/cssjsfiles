@@ -3178,7 +3178,7 @@
 /* 20. Capgemini Case Studies Page
 /*--------------------------------------*/
 .capgemini-case-studies-page .banner-section {
-	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/capgemini-bg.png'), radial-gradient(22.53% 40.96% at 59.2% 100%, #2B0B3D 0%, #2B0B3D 100%);
+	background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/capgemini-bg.png), radial-gradient(22.53% 40.96% at 59.2% 100%, #2B0B3D 0%, #2B0B3D 100%);
 }
 .acer-case-studies-page .banner-section {
 	background-image: url('https://mediacdn.brainmeasures.com/images/BackGroundBanners/acer-bg.png'), radial-gradient(50.13% 91.14% at 59.2% 75.76%, #0D1438 0%, #0B3D3D 100%);
