@@ -2,17 +2,17 @@
 
 /* 1. Banner Section
 /*--------------------------------------*/
-.banner-section{
-	background-image: url('../images/banner-bg.png'), linear-gradient(305.84deg, #5A19D7 9.58%, #7122AE 99.05%);
+.banner-section {
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/cs-bg.png'), linear-gradient(305.84deg, #5A19D7 9.58%, #7122AE 99.05%);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 100% 100%;
 	height: calc(100vh - 80px);
-	position:relative;
+	position: relative;
 	margin-top: 80px;
 	color: #FFF7F7;
 	display: flex;
-    align-items: center;
+	align-items: center;
 }
 .banner-section .wrap{
 	max-width: 550px;
