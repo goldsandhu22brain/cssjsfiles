@@ -1,5 +1,5 @@
 var $jq = jQuery.noConflict();
-$(document).ready(function () {
+jQuery(document).ready(function () {
 	/* Start: Fix Header */
 	$(window).scroll(function() {     
 		var scroll = $(window).scrollTop();
@@ -15,7 +15,8 @@ $(document).ready(function () {
 /*Start: Back to Top */
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 650) {
-			$('#scrollTop').fadeIn();
+			// $('#scrollTop').fadeIn();
+			// $('#scrollTop').fadeIn();
 		} else {
 			$('#scrollTop').fadeOut();
 		}
@@ -181,4 +182,19 @@ $(document).ready(function () {
 		},
 	  ]
 	});
+
+function ReLoadImages() {
+	setTimeout(() => {
+
+		$('img[data-src]').each(function () {
+			$(this).attr('src', $(this).attr('data-src'));
+
+			$(this).removeAttr('data-src');
+		})
+	}, 40);
+
+}
+ReLoadImages();
+
+
 });
