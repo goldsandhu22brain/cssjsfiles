@@ -334,7 +334,7 @@ a {
     }
 
 .home-banner {
-    background: url(https://cdn.brainmeasures.com/Images/Home/banner-bg.png) no-repeat, url(https://cdn.brainmeasures.com/Images/Home/banner-bg-2.png) no-repeat, radial-gradient(#600DFF, #600DFF, #600DFF);
+    background: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/banner-bg.png/banner-bg.png) no-repeat, url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/banner-bg.png/banner-bg-2.png) no-repeat, radial-gradient(#600DFF, #600DFF, #600DFF);
     background-position: center bottom -90px, top 50% right 5%, right top 35%;
     background-size: 100%, auto, auto;
     min-height: 100vh;
@@ -569,7 +569,7 @@ a {
 
 .home-individual {
     position: relative;
-    background: url(https://cdn.brainmeasures.com/Images/Home/home-service-bg-2.png) no-repeat top center #f7f7f7;
+    background: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/home-service-bg-2.png) no-repeat top center #f7f7f7;
     background-attachment: fixed;
     padding: 50px 0px;
 }
@@ -663,7 +663,7 @@ a {
 }
 
 span.underline-d {
-    background: url(https://cdn.brainmeasures.com/Images/Home/underline.png) no-repeat bottom center;
+    background: url(https://mediacdn.brainmeasures.com/images/Pages/home/underline.png) no-repeat bottom center;
     background-size: 100%;
     display: inline-block;
     padding-bottom: 10px;
@@ -854,7 +854,7 @@ span.underline-d {
 }
 
 .proctor-section {
-    background: url(https://cdn.brainmeasures.com/Images/Home/proctor-exam-bg.png) no-repeat center center;
+    background: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/proctor-exam-bg.png) no-repeat center center;
     background-size: 100%;
     background-attachment: fixed;
     padding: 50px 0px;
@@ -923,7 +923,7 @@ span.underline-d {
     }
 
         .reviews-4 .review-box .quote-box h3 {
-            background: url(https://cdn.brainmeasures.com/Images/Home/r-4-quote.png) no-repeat top left;
+            background: url(https://mediacdn.brainmeasures.com/images/Pages/home/r-4-quote.png) no-repeat top left;
             background-size: 20px;
             padding-left: 30px;
             margin: 0px;
@@ -945,7 +945,7 @@ span.underline-d {
     }
 
         .reviews-4 .user-details table tr td:first-child {
-            background: url(https://cdn.brainmeasures.com/Images/Home/r-4-arrow.png) no-repeat top center;
+            background: url(https://mediacdn.brainmeasures.com/images/Pages/home/r-4-arrow.png) no-repeat top center;
             background-size: 20px;
             width: 50px;
         }
