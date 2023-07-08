@@ -2295,15 +2295,15 @@
 	background-size: cover;
 	z-index: -1;
 }
-.case-studies-page .banner-section .wrap .cs-title{
-	font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: #000000;
-    padding-left: 15px;
-    background-image: url(../images/cs-title.png);
-    background-repeat: no-repeat;
-}
+	.case-studies-page .banner-section .wrap .cs-title {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 500;
+		font-size: 14px;
+		color: #000000;
+		padding-left: 15px;
+		background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/cs-title.png');
+		background-repeat: no-repeat;
+	}
 .case-studies-page .banner-section .banner-img{
 	text-align: right;
 }
@@ -2754,11 +2754,11 @@
 	}
 
 
-.case-studies-page .testimonials-section{
+.case-studies-page .testimonials-section {
 	background: #1D1D48;
 	color: #FFFFFF;
 	padding-bottom: 150px;
-	background-image: url('../images/comma.png');
+	background-image: url('https://mediacdn.brainmeasures.com/images/Pages/casestudy/comma.png');
 	background-repeat: no-repeat;
 	background-position: 100% 0;
 }
