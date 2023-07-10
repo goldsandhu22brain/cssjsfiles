@@ -1,5 +1,4 @@
-var $jq = jQuery.noConflict();
-jQuery(document).ready(function () {
+$(document).ready(function () {
 	/* Start: Fix Header */
 	$(window).scroll(function() {     
 		var scroll = $(window).scrollTop();
