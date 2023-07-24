@@ -1,0 +1,99 @@
+
+  .Dflexx {
+	  display: flex;
+	  margin-bottom: 30px;
+   }
+
+   .htsbox {
+	   height: 100%;
+	   padding: 20px !important;
+	   background: rgba(28, 28, 28, 0.7);
+	   border-radius: 7px;
+	  transition: 0.4s;
+    }
+
+	.htsbox:hover {
+		background: rgba(28, 28, 28, 0.9);
+		box-shadow: 2px 2px 10px #444;
+		transition: 0.4s;
+	}
+
+	.htsbox h3 {
+		margin: 0px 0px 15px 0px !important;
+		font-family: Dbold;
+		color: #fafd03;
+	}
+
+	.htsbox p {
+		margin: 0px !important;
+		font-family: DGotham;
+		color: #fff;
+	}
+
+	.htsbox a {
+		margin: 15px 0 0 0 !important;
+		font-family: DGotham;
+		color: #fff;
+		border: 1px solid #fff;
+		padding: 7px 20px;
+		display: inline-block;
+		border-radius: 5px;
+		transition: 0.4s;
+	}
+
+		.htsbox a:hover {
+			text-decoration: none;
+			background: #111;
+			transition: 0.4s;
+		}
+
+    a:focus {
+	   outline: none;
+	   text-decoration: none;
+    }
+
+    a.btnbig {
+	   display: inline-block;
+	   color: #fbfe03;
+	   border: 1px solid #fff;
+	   margin-bottom: 20px;
+	   font-family: DGotham;
+	   font-size: 26px;
+	   border-radius: 10px;
+	   text-transform: uppercase;
+	   padding: 10px 40px;
+	   animation: fsize 2s infinite;
+    }
+
+	a.btnbig:hover {
+		text-decoration: none;
+	}
+
+    @keyframes fsize {
+	0%
+
+{
+	color: #fff;
+}
+
+100% {
+	color: #fbfe03;
+	background: #111;
+}
+
+}
+
+    @media only screen and (max-width: 720px) {
+	.Dflexx
+
+{
+	display: block !important;
+	margin-bottom: 0px;
+}
+
+.htsbox {
+	margin-bottom: 30px;
+}
+
+}
+
