@@ -1,0 +1,199 @@
+.footerchanges .footertop {
+	padding: 30px 0px !important;
+	background: linear-gradient(45deg, #531dbc, #7638ed) !important;
+}
+
+.footerchanges .footer-top h1 {
+	color: #fff !important;
+	font-weight: 700 !important;
+	margin: 0px !important;
+	font-size: 28px !important;
+}
+
+.footerchanges .footer-top .year-box {
+	display: inline-block !important;
+	width: 25% !important;
+	float: left !important;
+	text-align: right !important;
+}
+
+	.footerchanges .footer-top .year-box h2 {
+		color: #fff !important;
+		font-weight: 700 !important;
+		font-size: 28px !important;
+		margin: 0px !important;
+	}
+
+		.footerchanges .footer-top .year-box h2 span {
+			color: #fff !important;
+			font-weight: 400 !important;
+			font-size: 18px !important;
+			display: inline-block !important;
+			margin-left: 5px !important;
+		}
+
+.footer-main.footerchanges {
+	background: #0f0c14 !important;
+	padding: 50px 0px 15px 0px !important;
+	margin-top: 0px;
+}
+
+.footerchanges .footer-brand h1 {
+	color: #fff !important;
+	font-weight: 700 !important;
+	font-size: 32px !important;
+}
+
+.footerchanges .footer-brand h6 {
+	color: #fff !important;
+	opacity: 0.7 !important;
+	font-weight: 400 !important;
+	font-size: 15px !important;
+	margin-bottom: 26px !important;
+}
+
+.footerchanges .footer-brand p {
+	color: #fff !important;
+	opacity: 1 !important;
+	font-size: 12px !important;
+	font-weight: 300 !important;
+}
+
+.footerchanges .footer-brand h3 {
+	color: #ffca00 !important;
+	font-size: 24px !important;
+}
+
+	.footerchanges .footer-brand h3 span {
+		font-size: 16px !important;
+		display: inline-block !important;
+	}
+
+.footer-brand-a {
+	display: inline-block;
+	font-size: 13px;
+	color: #fff;
+	opacity: 0.8;
+	margin-right: 15px;
+}
+
+.footerchanges .footer-links h3 {
+	color: #fff !important;
+	opacity: 1 !important;
+	font-size: 16px !important;
+}
+
+.footerchanges .footer-links ul {
+	list-style: none !important;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.footerchanges .footer-links li a {
+	color: #fff !important;
+	opacity: 0.8 !important;
+	font-size: 13px !important;
+	padding: 8px 2px !important;
+	font-weight: 300 !important;
+	border: none;
+	border: 0;
+	border-width: 0;
+}
+
+	.footerchanges .footer-links li a:hover {
+		opacity: 1 !important;
+	}
+
+.footerchanges .footer-brand-a {
+	display: inline-block !important;
+	font-size: 13px !important;
+	color: #fff !important;
+	opacity: 0.8 !important;
+	margin-right: 15px !important;
+}
+
+	.footerchanges .footer-brand-a:hover {
+		opacity: 1 !important;
+		color: #fff !important;
+	}
+
+.footerchanges .footer-top {
+	text-align: center !important;
+}
+
+	.footerchanges .footer-top .year-box {
+		width: 50% !important;
+		text-align: center !important;
+	}
+
+.footerchanges .footer-links li {
+	margin-bottom: 20px !important;
+	margin-top: 15px !important;
+	display: block !important;
+}
+
+.footerchanges.copyright-footer {
+	text-align: center !important;
+}
+
+	.footerchanges .copyright-footer p {
+		text-align: center;
+		font-size: 13px !important;
+		color: #fff !important;
+		opacity: 0.4 !important;
+		font-weight: 300 !important;
+	}
+
+.footerchanges .image-max-full {
+	max-width: 95% !important;
+}
+
+.footerchanges.rounded {
+	border-radius: .25rem !important;
+}
+
+.footerchanges .col-6 {
+	flex: 0 0 auto !important;
+	width: 45% !important;
+}
+
+.footerchanges, img, svg {
+	vertical-align: middle !important;
+}
+
+	.footerchanges .mt-3 {
+		margin-top: 30px !important;
+		display: flex !important;
+		flex-wrap: wrap !important;
+	}
+
+.footerchanges, ::after, ::before {
+	box-sizing: border-box !important;
+}
+
+.footer-main ul li a {
+	border-style: unset !important;
+	padding: 0px 0px !important;
+}
+
+.footer-main .footerchanges ul li {
+	margin: 0px !important;
+	position: unset !important;
+}
+
+.col-sm-12 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.footerchanges .container {
+	width: 80% !important;
+}
+
+.h5, h5 {
+	color: white;
+}
+
+.footerchanges img {
+	width: 95%;
+}
