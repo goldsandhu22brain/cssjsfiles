@@ -1,0 +1,57 @@
+
+col-sm-12, h1,h6,a,h5,p{
+    color:white
+
+}
+footerchanges footer-brand-a  {
+    color: white;
+    font-size: 15px;
+}
+.footerlinks .col-sm-2,h3, li,  ul a {
+    text-decoration:none;
+    list-style:none;
+    box-sizing:border-box;
+    color:white;
+    line-height:2;
+    
+}
+
+.image-max-full.rounded {
+    width: 70px !important;  
+}
+.copyright-footer p{
+    text-align:center;
+    opacity:0.4;
+}
+
+.image-max-full{
+    width:150px;
+}
+
+.color-black {
+    color: black;
+}
+
+.color- b {
+        color: black;
+    }
+
+.nav-stacked a {
+    color: black;
+}
+
+.product-title {
+    color: #3c8dbc;
+}
+
+.space {
+    line-height: 70%;
+}
+
+
+
+
+
+   
+   
+
