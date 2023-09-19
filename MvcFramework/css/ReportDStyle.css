@@ -1,0 +1,205 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+.report-left-user{
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.report-left-user img.report-user-icon{
+	max-width: 120px;
+}
+.report-left-user h2{
+	font-size: 20px;
+	margin-top: 20px;
+}
+.report-left-user p{
+	font-size: 14px;
+	opacity: 0.7;
+	margin-bottom: 0;
+}
+.report-left-info{
+	border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.report-left-info h5{
+	font-size: 16px;
+	margin: 0;
+	display: inline-block;
+}
+.report-left-info p{
+	font-size: 14px;
+	opacity: 0.7;
+	display: inline-block;
+	margin: 0;
+}
+.report-left-info table{
+	width: 100%;
+}
+.report-left-info table td{
+	vertical-align: middle;
+	padding: 5px 0px;
+}
+.report-left-info table td:last-child{
+	text-align: right;
+}
+.report-test-title{
+	border-bottom: 1px solid #ddd;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+.report-test-title h2{
+	font-size: 18px;
+	color: #000000;
+	margin: 0px;
+}
+.report-test-stats-box{
+	text-align: center;
+	padding: 20px;
+	border-radius: 10px;
+	background: linear-gradient(#eb1d63, #ef1239);
+	color: #fff;
+	box-shadow: 0px 0px 10px #bbb;
+	transition: 0.4s ease;
+	margin-bottom: 15px;
+}
+.report-test-stats-box:hover{
+	transform: translateY(calc(-1.5rem / 5));
+}
+.report-test-stats-box span{
+	display: block;
+	font-size: 60px;
+}
+.report-test-stats-box h5{
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+.report-test-stats-box h2{
+	font-size: 18px;
+	margin: 0px;
+}
+.bg-grad-purple{
+	background: linear-gradient(#3f51b5, #673ab7);
+}
+.bg-grad-green{
+	background: linear-gradient(#0ba36f, #009688);
+}
+.bg-grad-orange{
+	background: linear-gradient(#ff5b22, #ff6922);
+}
+.report-result-pass{
+	margin: 0px;
+    display: inline-block;
+    background: linear-gradient(#0ba36f, #009688);
+    color: #fff;
+    line-height: 1;
+    font-size: 19px;
+    padding: 2px 15px 5px 15px;
+    border-radius: 4px;
+}
+.report-result-fail{
+	margin: 0px;
+    display: inline-block;
+    background: linear-gradient(#eb1d63, #ef1239);
+    color: #fff;
+    line-height: 1;
+    font-size: 19px;
+    padding: 2px 15px 5px 15px;
+    border-radius: 4px;
+}
+.chart-box{
+	border: 1px solid #ddd;
+	padding: 15px;
+	margin-bottom: 30px;
+	border-radius: 7px;
+}
+.chart-box h2{
+	font-size: 16px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+	letter-spacing: 2px;
+}
+.half-chart{
+	max-height: 350px !important;
+}
+.report-check-true{
+	font-size: 20px;
+	color: #4caf50;
+}
+.report-check-false{
+	font-size: 20px;
+	color: #db2c1f;	
+}
+.report-question-table tr td:last-child{
+	width: 100px;
+	text-align: center;
+}
+.report-question-table tr td{
+	vertical-align: middle;
+	font-size: 13px;
+	padding: 5px;
+}
+.table-height{
+	max-height: 400px;
+	overflow: auto;
+}
+.table-height::-webkit-scrollbar {
+  width: 6px;
+}
+.table-height::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+.table-height::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+.table-height::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.table-progress-2{
+	border-radius: 0px;
+}
+.left-circle-box{
+	width: 140px;
+	float: left;
+	margin: 5px;
+}
+.left-circle-box span{
+	display: inline-block;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    box-shadow: 0px 0px 10px #a3a2a2;
+    transition: 0.4s;
+}
+.left-circle-box span:hover{
+	box-shadow: 0px 0px 0px;
+	transition: 0.4s;
+}
+.bg-1{
+	background: radial-gradient(#eb1d63, #ef1239);
+}
+.bg-2{
+	background: radial-gradient(#3f51b5, #673ab7);
+}
+.bg-3{
+	background: radial-gradient(#0ba36f, #009688);
+}
+.bg-4{
+	background: radial-gradient(#ff5b22, #ff6922);
+}
+.bg-mynav{
+	background: linear-gradient(45deg, #3f51b5, #673ab7);
+}
+.report-wrapper {
+	background-color: #fff
+}

@@ -1,0 +1,32 @@
+﻿.kind {
+    color: red !important;
+    animation: blinker 1s linear infinite;
+}
+
+.kindbtn {
+    animation: blinker 1s linear infinite;
+}
+
+.AssignCourse {
+    color: red !important;
+    animation: blinker 1s linear infinite;
+}
+
+.mangebtn {
+    background: red !important;
+    color: #fff;
+    padding: 2px 7px;
+    line-height: 1;
+}
+
+.dropdown-menu > li > a:first-child {
+    color: red !important;
+    animation: blinker 1s linear infinite;
+    color: #777;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
