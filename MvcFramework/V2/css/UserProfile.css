@@ -1,0 +1,74 @@
+﻿.PhotoUploadWrapper {
+    width: 658px;
+    margin: 0px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #fcfcfc;
+}
+
+.PhotoUploadContent {
+    width: 655px;
+    margin: 0px auto;
+    background: #f9f9f9;
+    overflow: auto;
+    border: 2px solid #eeeeee;
+}
+
+.PhotoUpoloadHeader {
+    background: url(../images/photoupload_header.png) no-repeat left top;
+    height: 47px;
+    width: 646px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    line-height: 36px;
+    text-indent: 18px;
+    color: #333333;
+}
+
+.PhotoUpoloadLeft {
+    width: 323px;
+    float: left;
+}
+
+.PhotoUpoloadLeftHeader {
+    background: #666666;
+    height: 40px;
+}
+
+.PhotoUpoloadLeftMainCont {
+    width: 323px;
+    border-right: 2px solid #bcbcbc;
+    overflow: hidden;
+}
+
+
+.PhotoUpoloadRight {
+    width: 323px;
+    float: right;
+}
+
+.PhotoUpoloadRightHeader {
+    background: #666666;
+    height: 40px;
+}
+
+.PhotoUpoloadCoseBtn {
+    margin-left: 630px;
+    margin-top: -10px;
+    position: absolute;
+}
+
+
+
+.photo_selected_BG {
+    background: url(../images/photo_selected_BG123.png) no-repeat left top;
+    width: 320px;
+    height: 230px;
+    margin: 0px auto;
+}
+
+
+.btn.btn-file {
+    position: relative;
+    overflow: hidden;
+}
