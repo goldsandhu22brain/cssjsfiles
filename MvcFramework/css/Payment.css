@@ -1,0 +1,31 @@
+﻿p.p_note {
+    color: #5c5b5b;
+    font-size: 16px;
+    font-weight: 700;
+    color: red !important;
+    font-style: italic;
+}
+
+.paybox {
+    margin: 0px !important;
+    padding: 2px !important;
+}
+
+    .paybox h4 {
+        color: #2a3941;
+        padding: 4px;
+        font-size: 17px;
+        margin: 10px auto;
+        font-weight: 700;
+    }
+
+.btnpay {
+    color: #fff;
+    background: #2a3941;
+    padding: 4px;
+    font-size: 17px;
+    border-radius: 2px;
+    width: 90%;
+    margin: 10px auto;
+    transition: .5s;
+}
