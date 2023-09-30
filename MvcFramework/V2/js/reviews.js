@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var reviewUpDown = "";
     $('#btnReviewCancel').click(function () {
-        window.location.href = "Reviews.aspx";
+        window.location.href = "/Reviews";
     });
 
     $('#btnReviewSubmit').click(function () {
@@ -21,7 +21,7 @@ $(document).ready(function () {
                 cache: false,
                 async: true,
                 contentType: 'application/json; charset=utf-8',
-                url: 'Reviews.aspx/SaveFeedRating',
+                url: '/Reviews/SaveFeedRating',
                 data: JSON.stringify({ 'details': details }),
                 dataType: 'json',
                 success: function (response) {
@@ -63,7 +63,7 @@ $(document).ready(function () {
                 cache: false,
                 async: true,
                 contentType: 'application/json; charset=utf-8',
-                url: 'Reviews.aspx/SaveFeedbackDetail',
+                url: '/Reviews/SaveFeedbackDetail',
                 data: JSON.stringify({ 'details': details }),
                 dataType: 'json',
                 success: function (response) {
@@ -105,7 +105,7 @@ $(document).ready(function () {
                 cache: false,
                 async: true,
                 contentType: 'application/json; charset=utf-8',
-                url: 'Reviews.aspx/SaveDesignRateDetail',
+                url: '/Reviews/SaveDesignRateDetail',
                 data: JSON.stringify({ 'details': details }),
                 dataType: 'json',
                 success: function (response) {
@@ -147,7 +147,7 @@ $(document).ready(function () {
     //            cache: false,
     //            async: true,
     //            contentType: 'application/json; charset=utf-8',
-    //            url: 'OurStory.aspx/SaveQuickRegistration',
+    //            url: '/OurStory/SaveQuickRegistration',
     //            data: JSON.stringify({ 'details': RegistrationDetails }),
     //            dataType: 'json',
     //            success: function (response) {
@@ -159,11 +159,11 @@ $(document).ready(function () {
     //                    $("#txtPSW").val(''),
     //                    $("#txtRegisterEmail").val('');
     //                    if (chkUserType == 'Individual')
-    //                        document.location.href = '/Individual/Index.aspx';
+    //                        document.location.href = '/Individual/Index';
     //                    else if (chkUserType == 'Corporate')
-    //                        document.location.href = '/Corporate/Index.aspx';
+    //                        document.location.href = '/Corporate/Index';
     //                    else
-    //                        document.location.href = '/Affiliate/Index.aspx';
+    //                        document.location.href = '/Affiliate/Index';
     //                }
     //                else {
     //                    Warning(result.ResponseData);
