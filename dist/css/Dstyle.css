@@ -150,7 +150,7 @@ body.hold-transition .content-wrapper, body.hold-transition .left-side, body.hol
 }
 
 .content {
-    min-height: 340px;
+    min-height: 250px;
     padding: 15px;
     margin-right: auto;
     margin-left: auto;
@@ -6775,7 +6775,7 @@ body.hold-transition .content-wrapper, body.hold-transition .left-side, body.hol
 }
 
 .content {
-    min-height: 250px;
+    min-height: 340px;
     padding: 15px;
     margin-right: auto;
     margin-left: auto;
