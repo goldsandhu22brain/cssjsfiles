@@ -20,9 +20,9 @@
 }
 
 .dropdown-menu > li > a:first-child {
-    color: red !important;
-    animation: blinker 1s linear infinite;
-    color: #777;
+    /* color: red !important;
+    animation: blinker 1s linear infinite;*/
+    color: #000000c4;
 }
 
 @keyframes blinker {
