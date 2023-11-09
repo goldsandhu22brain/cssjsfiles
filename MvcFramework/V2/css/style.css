@@ -3274,7 +3274,7 @@
 .hnt-product .hero-section {
 	color: #FFF;
 	padding: 102px 0;
-	background-image: url('../images/hero-img-2.png');
+	background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/hero-img-2.png);
 	background-color: #171427;
 	background-repeat: no-repeat;
 	min-height: 479px;
@@ -3521,7 +3521,7 @@
 .hnt-product .acuminate-section {
 	background-color: #AFE5E0;
 	position: relative;
-	background-image: url(../images/bg/acuminate-bg.png);
+	background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/acuminate-bg.png);
 	background-repeat: no-repeat;
 	background-position: 100% 5%;
 }
@@ -3536,14 +3536,14 @@
 		}
 
 	.hnt-product .acuminate-section .accordion-button::after {
-		background-image: url(../images/icons/plus-2.png);
+		background-image: url(https://mediacdn.brainmeasures.com/images/Pages/Global/check/plus-2.png);
 		position: absolute;
 		right: -90px;
 		top: 6px;
 	}
 
 	.hnt-product .acuminate-section .accordion-button:not(.collapsed)::after {
-		background-image: url(../images/icons/minus-2.png);
+		background-image: url(https://mediacdn.brainmeasures.com/images/Pages/Global/check/minus-2.png);
 		top: 0;
 	}
 
@@ -3737,7 +3737,7 @@
 	background: #000000;
 	color: #FFFFFF;
 	position: relative;
-	background-image: url(../images/bg/interview-bg.png);
+	background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/interview-bg.png);
 	background-repeat: no-repeat;
 	background-position: 0 100%;
 }
@@ -3876,7 +3876,7 @@
 	}
 
 		.hnt-product .insights-interview-section li::before {
-			content: url(../images/icons/check.png);
+			content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/check/check.png);
 			width: 30px;
 			height: 30px;
 			position: absolute;
@@ -4402,7 +4402,7 @@
 
 .hnt-product .type-test-section {
 	background-color: #FFE44B;
-	background-image: url(../images/bg/test-bg.png);
+	background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/test-bg.png);
 	background-repeat: no-repeat;
 	background-position: 100% 100%;
 	padding-bottom: 200px;
@@ -4472,7 +4472,7 @@
 	}
 
 .hnt-product .customized-solutions-section1 {
-	background-image: url(../images/bg/customized-bg.png);
+	background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/customized-bg.png);
 	background-repeat: no-repeat;
 	background-position: 100% 100%;
 }
@@ -4584,7 +4584,7 @@
 		}
 
 		.hnt-product .psychometric-tests-section li::before {
-			content: url(../images/icons/check-blue.png);
+			content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/check-blue.png);
 			width: 40px;
 			height: 40px;
 			position: absolute;
@@ -4629,7 +4629,7 @@
 }
 
 	.hnt-product .bm-learning-section li::before {
-		content: url(../images/icons/check-5.png);
+		content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/check/check-5.png);
 		width: 40px;
 		height: 40px;
 		position: absolute;
@@ -4761,7 +4761,7 @@
 		position: absolute;
 		width: 100%;
 		height: 357px;
-		background-image: url(../images/bg/api-bg.png);
+		background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/api-bg.png);
 		background-repeat: no-repeat;
 		bottom: 219px;
 		right: 0;
@@ -4830,7 +4830,7 @@
 		}
 
 			.hnt-product .api-section .features li::before {
-				content: url(../images/icons/check-6.png);
+				content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/check/check-6.png);
 				width: 30px;
 				height: 30px;
 				position: absolute;
@@ -4847,7 +4847,7 @@
 	}
 
 	.hnt-product .api-section .technical li::before {
-		content: url(../images/icons/check-7.png);
+		content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/check/check-7.png);
 	}
 
 .hnt-product .premium-test-section p {
@@ -5007,7 +5007,7 @@
 			}
 
 .hnt-product .hnt-testimonials-section {
-	background-image: url(../images/bg/hnt-testimonial-bg.png);
+	background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/hnt-testimonial-bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;
