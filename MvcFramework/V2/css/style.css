@@ -4546,7 +4546,7 @@
 
 .hnt-product .psychometric-tests-section {
 	background-color: #E4EFFF;
-	background-image: url(../images/psy-test-img-1.png);
+	background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/psy-test-img-1.png);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
@@ -4761,7 +4761,7 @@
 		position: absolute;
 		width: 100%;
 		height: 357px;
-		background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/api-bg-png);
+		background-image: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/api-bg.png);
 		background-repeat: no-repeat;
 		bottom: 219px;
 		right: 0;
@@ -4997,7 +4997,7 @@
 		}
 
 		.hnt-product .pricing-section .wrap.custom {
-			background-image: url(../images/custom.png);
+			background-image: url(https://mediacdn.brainmeasures.com/images/Pages/hnt/custom.png);
 			background-repeat: no-repeat;
 			background-position: bottom;
 		}
