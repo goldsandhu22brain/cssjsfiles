@@ -266,7 +266,9 @@ $(function () {
     const navbarMenu = document.getElementById("menu-nav");
 
     // Show and Hide Navbar Menu
-    burgerMenu.addEventListener("click", () => {
+  //  burgerMenu.addEventListener("click", () =>
+    document.getElementById("click", () =>
+    {
         burgerMenu.classList.toggle("is-active");
         navbarMenu.classList.toggle("is-active");
 
