@@ -4473,6 +4473,9 @@ a.sefixed2 {
         margin: 10px 0 !important;
         font-size: 17px
     }
+    div#sticker {
+    display: block;
+}
 }
 
 p.Cenroll span {
