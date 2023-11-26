@@ -242,7 +242,7 @@ header .navbar-toggler:focus{
 	}
 	.navbar .navbar-nav .dropdown-menu .dropdown-item{
 		font-size: 13px;
-		line-height: 15px;
+		line-height: 15px;padding: 10px 15px !important;
 	}
 	header .navbar .navbar-nav .btn{
 		margin-left: 0;
