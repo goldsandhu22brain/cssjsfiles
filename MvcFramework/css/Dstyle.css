@@ -3448,3 +3448,8 @@ ul.helpul {
         padding: 50px 0
     }
 }
+
+@media (max-width: 767px) {
+	.newcontent a#btnSubmitSugg {white-space: inherit; }
+	
+}
