@@ -660,7 +660,13 @@ ul.bottomc {
     .modal-content img {
         width: 100%
     }
-
+.bs-example-modal-lgvideo .modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bs-example-modal-lgvideo .modal-content iframe {
+    padding: 15px 15px 10px;
+}
 ul.empluvpp {
     border: 1px solid #b7b7b7;
     border-radius: 7px;
