@@ -7676,6 +7676,16 @@ ul.topright.navbar-nav li.you {
         left: 20px;
         /* margin: 0; */
     }
+    ul.topright.navbar-nav.desktop {
+    display: block !important;
+}
+   
+ul.topright.navbar-nav li.nav-item {
+    display: none;
+}
+    ul.topright.navbar-nav li.nav-item.you {
+    display: block;
+}
 }
 
 @media screen and (max-width:767px) {
