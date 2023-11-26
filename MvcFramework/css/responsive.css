@@ -310,7 +310,5 @@ padding: 10px 10px;}
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-	.newcontent a#btnSubmitSugg {white-space: inherit; }
-	
 	
 }
