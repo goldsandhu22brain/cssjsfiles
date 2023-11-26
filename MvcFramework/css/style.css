@@ -76,7 +76,7 @@ border: 3px solid #fff;
 .toggle-top button {
     padding: 0px 5px;
 }
-header.fixed-top.sticky {
+header.fixed-top.sticky, header.fixed-top {
     background: #dc3545  ;
     top: 0;
 }
