@@ -137,6 +137,7 @@
     .register-page .left-wrap {
         padding: 60px 70px 0 110px;
     }
+    section.register-page {position: relative; overflow: hidden; }
 }
 
 @media (max-width: 575.98px) {
