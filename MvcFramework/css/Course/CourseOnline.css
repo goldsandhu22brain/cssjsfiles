@@ -1073,6 +1073,13 @@ img.fixedbar {
 .CourseList .course h3 {
     padding-top: 20px;
 }
+.CourseList .course h3 i.fa.fa-record {
+    margin-right: 10px;
+    background: #dcdcdc;
+    padding: 5px;
+    border-radius: 50%;
+    color: #2a3941;
+}
             .CourseList .courses .search .btn {
                 padding: 7px 15px 7px 10px;
                 font-size: 18px;
