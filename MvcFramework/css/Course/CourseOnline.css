@@ -1025,7 +1025,9 @@ img.fixedbar {
 .CourseList {
     margin-top: 30px;
     margin-bottom: 50px;
-    padding: 0 !important
+    background: #fbfbfb;
+    border-top: 1px solid #ededed;
+    padding: 15px !important;
 }
 
     .CourseList .header h2 {
@@ -1046,11 +1048,11 @@ img.fixedbar {
         }
 
     .CourseList .courses {
-        background: #fbfbfb;
-        border-top: 1px solid #ededed;
-        min-height: 0px;/*online course page*/
-        margin-top: 30px;
-        padding: 15px
+        background: #fbfbfb !important;
+    border-top: 0px solid #ededed;
+    min-height: 0px;
+    margin-top: 0;
+    padding: 0;
     }
 
         .CourseList .courses .search {
