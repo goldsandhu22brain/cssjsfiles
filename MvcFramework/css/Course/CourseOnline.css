@@ -1067,7 +1067,9 @@ img.fixedbar {
                 border-radius: 20px 0 0 20px;
                 border-color: #2a3941
             }
-
+.CourseList .courses .search .input-group.cor-coursesbg {
+    border-radius: 20px 0 0 20px;
+}
             .CourseList .courses .search .btn {
                 padding: 7px 15px 7px 10px;
                 font-size: 18px;
