@@ -5158,7 +5158,9 @@ table.text-center, table.text-center td, table.text-center th {
 .overlowVisible {
     overflow: visible !important
 }
-
+.tab-pane .box.mybox .box-body {
+    overflow: auto !important;
+}
 .mangebtn {
     background: #2a3941;
     color: #fff;
