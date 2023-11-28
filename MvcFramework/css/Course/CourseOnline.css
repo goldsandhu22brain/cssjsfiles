@@ -1070,6 +1070,9 @@ img.fixedbar {
 .CourseList .courses .search .input-group.cor-coursesbg {
     border-radius: 20px 0 0 20px;
 }
+.CourseList .course h3 {
+    padding-top: 20px;
+}
             .CourseList .courses .search .btn {
                 padding: 7px 15px 7px 10px;
                 font-size: 18px;
