@@ -1,0 +1,18 @@
+.TakeTestSection .text-numbers {text-align: center; display: flex; justify-content: center; margin: 30px 0; }
+.TakeTestSection .text-numbers span {border: 2px solid #ff7a93; border-radius: 20px; background-color: rgba(0,0,0,0); color: #fff; width: 34px; height: 36px; display: flex; align-items: center; justify-content: center; margin-right: 6px; font-size: 16px; line-height: 50px; font-weight: 400; }
+.TakeTestSection .text-numbers span:hover {background-color: #1d1d48; border: 2px solid #1d1d48; }
+.TakeTestSection .test-body .test-box {background: #720a55; border-radius: 20px; padding: 40px 45px; margin-bottom: 30px; }
+.TakeTestSection .test-body .test-box h2 {color: #fff; font-size: 20px; line-height: 34px; font-weight: 600; margin-bottom: 20px; }
+.TakeTestSection .TakeTestSectionQuestionAnswerPart {display: flex; flex-flow: wrap; }
+.TakeTestSection .TakeTestSectionQuestionAnswerPart .TakeTestSectionQuestionRadioButtonOption {width: calc(50% - 20px); border: 1px solid #f33558; border-radius: 10px; display: flex; padding: 10px; margin: 0 20px 10px 0; cursor: pointer; }
+.TakeTestSection .TakeTestSectionQuestionAnswerPart .TakeTestSectionQuestionRadioButtonOption span {color: #fff; font-size: 15px; line-height: 34px; font-weight: 400; }
+.TakeTestSection .TakeTestSectionTitle .TakeTestSectionTitle2 {font-size: 24px; line-height: 34px; font-weight: 500; color: #fff; }
+.TakeTestSection .TakeTestSectionQuestionTestButtonDiv a.TakeTestSectionQuestionTestButton {display: inline-block; padding: 13px 35px; background-color: #fb0; color: #000; text-decoration: none; position: relative; font-size: 16px; line-height: 20px; text-transform: capitalize; background-image: none; font-family: "Inter",sans-serif; font-weight: 700; border-radius: 8px; border: 1px solid #fb0; }
+.TakeTestSection .TakeTestSectionQuestionTestButtonDiv a.TakeTestSectionQuestionTestButton i {display: none; }
+.TakeTestSection .TakeTestSectionQuestionTestButtonDiv a.TakeTestSectionQuestionTestButton:hover {background-color: #f33558; border: 1px solid #f33558; color: #fff; }
+.TakeTestSection .TakeTestSectionQuestionAnswerPart .TakeTestSectionQuestionRadioButtonOption:hover {background-color: #f33558; }
+
+@media (max-width: 767px){
+.TakeTestSection .TakeTestSectionQuestionAnswerPart .TakeTestSectionQuestionRadioButtonOption{width: calc(100% - 0px);margin: 0 0px 10px 0;}
+.TakeTestSection .test-body .test-box{padding: 20px;}
+}
