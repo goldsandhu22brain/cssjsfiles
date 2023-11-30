@@ -121,3 +121,10 @@
 .ui-menu .ui-menu-item {
     margin: 5px !important;
 }
+
+
+.no-padd .nav-tabs-custom ul.nav-tabs li {margin: 5px 0; }
+.no-padd .nav-tabs-custom ul.nav-tabs li a {padding: 10px 5px; line-height: normal; font-size: 14px; position: relative; cursor: pointer; }
+.no-padd .nav-tabs-custom ul.nav-tabs li a:after {content: '|'; position: absolute; right: -4px; top: 0; bottom: 0; margin: auto; display: flex; align-items: center; font-size: 20px; color: #444; }
+.no-padd .nav-tabs-custom ul.nav-tabs li:last-child a:after, .no-padd .nav-tabs-custom ul.nav-tabs li.active a:after{display: none; }
+.no-padd .nav-tabs-custom ul.nav-tabs li.active a {color: #fff; }
