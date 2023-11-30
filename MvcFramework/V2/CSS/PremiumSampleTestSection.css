@@ -11,6 +11,8 @@
 .TakeTestSection .TakeTestSectionQuestionTestButtonDiv a.TakeTestSectionQuestionTestButton i {display: none; }
 .TakeTestSection .TakeTestSectionQuestionTestButtonDiv a.TakeTestSectionQuestionTestButton:hover {background-color: #f33558; border: 1px solid #f33558; color: #fff; }
 .TakeTestSection .TakeTestSectionQuestionAnswerPart .TakeTestSectionQuestionRadioButtonOption:hover {background-color: #f33558; }
+.TakeTestSection section.test-main {background: transparent !important; }
+.TakeTestSection section.test-main .TakeTestSectionQuestionTestResultTitle {color: #fff; }
 
 @media (max-width: 767px){
 .TakeTestSection .TakeTestSectionQuestionAnswerPart .TakeTestSectionQuestionRadioButtonOption{width: calc(100% - 0px);margin: 0 0px 10px 0;}
