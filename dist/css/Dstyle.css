@@ -454,6 +454,10 @@ a {
 .no-padd .nav-tabs-custom ul.nav-tabs li a:after {
     display: none;
 }
+    .nav-tabs-custom .box.mybox table.table {
+    overflow: auto;
+    display: inline-block;
+}
         .navbar-collapse.pull-left + .navbar-custom-menu {
             display: block;
             position: absolute;
