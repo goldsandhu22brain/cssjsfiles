@@ -445,6 +445,9 @@ a {
     width: 100%;
     padding: 0px 25px;
 }
+#offeringCounter .col-md-2 {
+    width: 100% !important;
+}
         .navbar-collapse.pull-left + .navbar-custom-menu {
             display: block;
             position: absolute;
