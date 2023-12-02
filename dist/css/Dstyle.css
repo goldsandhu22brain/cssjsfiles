@@ -441,7 +441,10 @@ a {
     .navbar-collapse.pull-left {
         float: none !important
     }
-
+.bottom-nav .navbar-collapse {
+    width: 100%;
+    padding: 0px 25px;
+}
         .navbar-collapse.pull-left + .navbar-custom-menu {
             display: block;
             position: absolute;
