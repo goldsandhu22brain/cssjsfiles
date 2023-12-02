@@ -451,6 +451,9 @@ a {
 .bottom-nav ul.nav.navbar-nav {
     margin: 0;
 }
+.no-padd .nav-tabs-custom ul.nav-tabs li a:after {
+    display: none;
+}
         .navbar-collapse.pull-left + .navbar-custom-menu {
             display: block;
             position: absolute;
