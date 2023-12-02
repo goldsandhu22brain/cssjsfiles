@@ -6635,6 +6635,10 @@ h2.wartxt {
     .navbar-nav > .tasks-menu > .dropdown-menu > li.footer > a {
         background-color: #2a3941 !important
     }
+
+    footer.top-footer .col-xs-6 {
+    width: 100%;
+    }
 }
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
