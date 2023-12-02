@@ -443,10 +443,13 @@ a {
     }
 .bottom-nav .navbar-collapse {
     width: 100%;
-    padding: 0px 25px;
+    padding: 0px 10px;
 }
 #offeringCounter .col-md-2 {
     width: 100% !important;
+}
+.bottom-nav ul.nav.navbar-nav {
+    margin: 0;
 }
         .navbar-collapse.pull-left + .navbar-custom-menu {
             display: block;
