@@ -6639,6 +6639,9 @@ h2.wartxt {
     footer.top-footer .col-xs-6 {
     width: 100%;
     }
+    .box-footer button.btn.btn-danger {
+    margin: 10px 0 0 !important;
+    }
 }
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
