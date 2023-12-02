@@ -5025,7 +5025,9 @@ table.text-center, table.text-center td, table.text-center th {
             white-space: normal !important
         }
 }
-
+.bottom-nav {
+    padding-top: 10px;
+}
 .bottom-nav .navbar {
     margin-bottom: 0;
     box-shadow: 1px 1px 4px #d3d3d3;
