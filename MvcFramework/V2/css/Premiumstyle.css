@@ -8489,6 +8489,7 @@ header .navbar-nav .dropdown .dropdown-menu .dropdown-item {
     }
 
     .internal-banner.listing-page-details.new-new-list, section.banner.brainmeasures-details-banner {padding-top: 100px;}
+    .popup2 .modal-body .content .h5{word-wrap: break-word;}
 
 }
 
