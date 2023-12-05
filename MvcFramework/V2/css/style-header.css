@@ -251,6 +251,11 @@ header .navbar-toggler:focus{
 		padding-left: 0;
 		border-left: 0;
 	}
+	header .navbar .navbar-collapse li a.btn {
+  		background-color: #FF0000;
+    		border-color: #FF0000;
+    		color: #fff;
+	}
 	
 }
 
