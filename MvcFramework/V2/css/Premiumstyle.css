@@ -4507,6 +4507,8 @@ input.form-control {
     .brainmeasures-details-banner {
         padding-top: 70px
     }
+    .internal-banner.listing-page-details.new-new-list, .banner.brainmeasures-details-banner {padding-top: 100px;}
+    .popup2 .modal-body .content .h5{word-wrap: break-word;}
 }
 
 .brainmeasures-details-banner .h2, .brainmeasures-details-banner p {
@@ -8487,9 +8489,6 @@ header .navbar-nav .dropdown .dropdown-menu .dropdown-item {
     .brainmeasures-details-content-2-box {
         text-align: center;
     }
-
-    .internal-banner.listing-page-details.new-new-list, section.banner.brainmeasures-details-banner {padding-top: 100px;}
-    .popup2 .modal-body .content .h5{word-wrap: break-word;}
 
 }
 
