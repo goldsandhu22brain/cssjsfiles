@@ -8488,7 +8488,7 @@ header .navbar-nav .dropdown .dropdown-menu .dropdown-item {
         text-align: center;
     }
 
-    .internal-banner.listing-page-details.new-new-list{margin-top: 60px;}
+    .internal-banner.listing-page-details.new-new-list, section.banner.brainmeasures-details-banner {padding-top: 100px;}
 
 }
 
