@@ -8593,6 +8593,7 @@ header .navbar-nav .dropdown .dropdown-menu .dropdown-item {
 .search-box .dropdown-categary .dropdown-selected-box .tab-details {display: none !important;}
 .search-box .dropdown-categary .dropdown-selected-box .nav .ftl-vertical-tab-menu {width: 100%;}
 .search-box .dropdown-categary .dropdown-selected-box .nav .list-group h6.cat_name {margin: 0;padding: 0 10px;}
+.search-box .dropdown-categary .dropdown-selected-box .nav {margin: 0 !important;}
 
 
 /*D css end*/
