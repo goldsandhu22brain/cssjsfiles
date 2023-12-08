@@ -1629,8 +1629,10 @@ a {
         }
     .nav-tabs-custom .box.mybox table.table ul.dropdown-menu {
     left: initial;
-    right: 0;
+    right: 25px;
+    top: -10px;
 }
+    
 }
 
 .box {
