@@ -1627,6 +1627,10 @@ a {
         .small-box p {
             font-size: 12px
         }
+    .nav-tabs-custom .box.mybox table.table ul.dropdown-menu {
+    left: initial;
+    right: 0;
+}
 }
 
 .box {
