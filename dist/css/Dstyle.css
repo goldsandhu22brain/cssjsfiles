@@ -1614,7 +1614,11 @@ a {
         .small-box:hover .icon {
             font-size: 95px
         }
-
+ .nav-tabs-custom .box.mybox table.table ul.dropdown-menu {
+    left: initial;
+    right: 25px;
+    top: -10px;
+}
 @media (max-width:767px) {
     .small-box {
         text-align: center
@@ -1627,11 +1631,7 @@ a {
         .small-box p {
             font-size: 12px
         }
-    .nav-tabs-custom .box.mybox table.table ul.dropdown-menu {
-    left: initial;
-    right: 25px;
-    top: -10px;
-}
+   
     
 }
 
