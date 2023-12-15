@@ -13274,3 +13274,9 @@ h2.wartxt {
         background-color: #2a3941 !important
     }
 }
+
+@media (max-width: 991px){
+.mailbox-messages table ul.dropdown-menu {right: 25px; left: initial; top: 0px; }
+
+    
+}
