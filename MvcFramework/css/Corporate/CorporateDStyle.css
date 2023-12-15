@@ -6641,3 +6641,10 @@ footer .footer-links .footer-menu ul {padding: 0;}
 .syllabus-text h2, .content-module h2{font-size: 50px; line-height: 60px; font-weight: 800; margin-bottom: 10px; }
 .syllabus-text .btn.btn-primary, .brands-section .btn.btn-primary, .content-module .btn.btn-primary{display: inline-block; padding: 13px 35px; background-color: #f33558; color: #fff; text-decoration: none; position: relative; font-size: 16px; line-height: 20px; text-transform: capitalize; background-image: none; font-family: "Inter",sans-serif; font-weight: 700; border-radius: 8px; border: 1px solid #f33558; }
 .syllabus-text .btn.btn-primary:hover, .brands-section .btn.btn-primary:hover, .content-module .btn.btn-primary:hover{background-color: #fb0; color: #000; border: 1px solid #fb0; }
+
+.modal-footer button.btn.btn-primary {display: inline-block; padding: 13px 35px; background-color: #cc1e1d; color: #fff; text-decoration: none; position: relative; font-size: 16px; line-height: 20px; text-transform: capitalize; background-image: none; font-family: "Inter",sans-serif; font-weight: 700; border-radius: 8px; border: 1px solid #cc1e1d; }
+.modal-footer button.btn.btn-primary:hover {color: #000; background-color: #fb0; border: 1px solid #fb0; }
+.modal-footer .btn.btn-secondary {display: inline-block; padding: 13px 35px; background-color: #fb0; color: #000; text-decoration: none; position: relative; font-size: 16px; line-height: 20px; text-transform: capitalize; background-image: none; font-family: "Inter",sans-serif; font-weight: 700; border-radius: 8px; border: 1px solid #fb0; }
+.modal-footer .btn.btn-secondary:hover {background-color: #f33558; color: #fff; border: 1px solid #f33558; }
+.modal-footer .btn.btn-outline {display: inline-block; padding: 13px 35px; background-color: rgba(0,0,0,0); color: #000; text-decoration: none; position: relative; font-size: 16px; line-height: 20px; text-transform: capitalize; background-image: none; font-family: "Inter",sans-serif; font-weight: 700; border-radius: 8px; border: 1px solid #000; }
+.modal-footer .btn.btn-outline:hover {background-color: #fb0; color: #000; border: 1px solid #fb0; }
