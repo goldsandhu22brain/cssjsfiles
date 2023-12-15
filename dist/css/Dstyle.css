@@ -13288,3 +13288,9 @@ h2.wartxt {
     margin: 0;
 }
 }
+
+@media (max-width: 767px){
+.AccountMeterPurchaseContent div {overflow: auto;}
+
+    
+}
