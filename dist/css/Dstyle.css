@@ -13277,6 +13277,14 @@ h2.wartxt {
 
 @media (max-width: 991px){
 .mailbox-messages table ul.dropdown-menu {right: 25px; left: initial; top: 0px; }
-
-    
+.CorpUserActivityReportContent .form-group.predt {
+    display: inline-block;
+    width: 100%;
+}
+.CorpUserActivityReportContent .form-group .form-group.predt {
+    margin: 0 0 20px;
+}
+.CorpUserActivityReportContent .form-group {
+    margin: 0;
+}
 }
