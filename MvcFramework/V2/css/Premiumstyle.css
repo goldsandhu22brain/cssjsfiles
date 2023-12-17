@@ -8599,6 +8599,7 @@ header .navbar-nav .dropdown .dropdown-menu .dropdown-item {
 .search-box .dropdown-categary .dropdown-selected-box {max-width: calc(97% - 0px) !important;top: 70px !important;}
 .internal-banner .search-box .dropdown-categary {margin-top: 0px;margin-bottom: 20px;}
 .internal-banner.background-list-bg .search-box .flex-column-reverse {flex-direction: row !important;}
+.internal-banner.background-list-bg .internal-banner-content {margin-top: 70px;}
     
 }
 @media (max-width: 767px){
