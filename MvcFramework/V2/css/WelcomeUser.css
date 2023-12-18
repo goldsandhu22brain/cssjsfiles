@@ -30,6 +30,7 @@
     width: 100%;
     top: 50px;
     z-index: 999;
+	margin-top:-10px
 }
 .main-header .navbar-brand:hover {
     color: #FFFFFF;
