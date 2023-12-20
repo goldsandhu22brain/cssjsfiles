@@ -5048,7 +5048,7 @@ table.text-center, table.text-center td, table.text-center th {
         }
 }
 .bottom-nav {
-    padding-top: 10px;
+   /* padding-top: 10px;*/
 }
 .bottom-nav .navbar {
     margin-bottom: 0;
