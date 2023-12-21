@@ -6988,6 +6988,10 @@ a {
         color: #121f26;
         transition: .5s
     }
+.mr-ml {
+    margin-left: -15px;
+    margin-right: -15px;
+}
 
 .content-header {
     position: relative;
