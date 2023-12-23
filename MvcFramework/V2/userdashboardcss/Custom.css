@@ -123,7 +123,7 @@
 }
 
 .no-padd .nav-tabs-custom ul.nav-tabs {display: flex;align-items: center;justify-content: center;width: 100%;flex-wrap: wrap;}
-.no-padd .nav-tabs-custom ul.nav-tabs li {margin: 0px 0 5px; }
+.no-padd .nav-tabs-custom ul.nav-tabs li {margin: 0px 27px 0px; }
 .no-padd .nav-tabs-custom ul.nav-tabs li a {padding: 10px 5px; line-height: normal; font-size: 14px; position: relative; cursor: pointer; }
 .no-padd .nav-tabs-custom ul.nav-tabs li a:after {content: '|'; position: absolute; right: -4px; top: 0; bottom: 0; margin: auto; display: flex; align-items: center; font-size: 20px; color: #444; }
 .no-padd .nav-tabs-custom ul.nav-tabs li:last-child a:after, .no-padd .nav-tabs-custom ul.nav-tabs li.active a:after{display: none; }
