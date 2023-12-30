@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+.psy_bgwhite {
+	background-color: white !important;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+	width: 7px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+	/* Handle on hover */
+	body::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+
+.box-shadow {
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1240px;
+	}
+}
+
+.heading2 span {
+	position: relative;
+}
+
+	.heading2 span::after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #3c4852;
+		margin-top: 8px;
+		position: absolute;
+		left: 0;
+		transition: 0.6s all ease-in-out;
+	}
+
+.home-banner {
+	background: url(https://cdn.brainmeasures.com/Images/Psychometric/home-banner-bg-2.png)no-repeat center top #f4f9fd;
+	background-size: 100%;
+	min-height: 100vh;
+	padding: 50px 0px;
+}
+
+.home-banner-image {
+	width: auto;
+	max-width: 100%;
+}
+
+.logo-brand {
+	display: inline-block;
+}
+
+	.logo-brand h1 {
+		margin: 0px;
+		font-weight: 700;
+		color: #000000;
+		font-size: 26px;
+	}
+
+	.logo-brand p {
+		font-size: 13px;
+		color: #999;
+		font-weight: 600;
+		margin-bottom: 0px;
+	}
+
+.home-banner-texts {
+	margin-top: 5%;
+}
+
+	.home-banner-texts h1 {
+		font-weight: 700;
+		color: #000000;
+		font-size: 48px;
+	}
+
+	.home-banner-texts h3 {
+		font-weight: 600;
+		color: #1fbcbf;
+		font-size: 28px;
+		line-height: 36px;
+	}
+
+	.home-banner-texts p {
+		color: #1fbcbf;
+		line-height: 1.8;
+	}
+
+.cta-1 {
+	display: inline-block;
+	background: linear-gradient(45deg, #f30446, #ed3756);
+	color: #fff;
+	font-size: 17px;
+	padding: 12px 26px;
+	border-radius: 100px;
+	box-shadow: 0px 0px 10px #bfc3c7;
+	transition: 0.4s;
+}
+
+	.cta-1:hover {
+		color: #fff;
+		border-radius: 0px 100px 100px 0px;
+		transition: 0.4s;
+	}
+
+.home-bottom-content {
+	margin-top: 60px;
+}
+
+	.home-bottom-content h4 {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+
+		.home-bottom-content h4 span {
+			font-weight: 700;
+		}
+
+	.home-bottom-content p {
+		color: #000000;
+		margin-top: 46px;
+		font-size: 15px;
+		margin-bottom: 0px;
+	}
+
+	.home-bottom-content a {
+		display: inherit;
+		font-size: 15px;
+		color: #000000;
+		font-weight: 600;
+	}
+
+.home-what-you-get {
+	padding: 50px 0px;
+}
+
+.title-1 h2 {
+	font-weight: 700;
+	color: #3c4852;
+	font-size: 32px;
+}
+
+.dark-color {
+	color: #3c4852;
+}
+
+.font-small {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 2;
+	color: #3c4852;
+	text-align: justify;
+	padding-right: 30px;
+}
+
+.font-22 {
+	font-size: 22px;
+}
+
+.image-max-full {
+	max-width: 100%;
+}
+
+.home-features {
+}
+
+.home-features-table {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+	.home-features-table tr td {
+		vertical-align: top;
+	}
+
+		.home-features-table tr td:first-child {
+			width: 80px;
+		}
+
+	.home-features-table h4 {
+		color: #3c4852;
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 5px;
+	}
+
+	.home-features-table p {
+		color: #3c4852;
+		font-size: 14px;
+		font-weight: 500;
+		margin: 0px;
+		text-align: justify;
+	}
+
+
+.font-small-white {
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.7;
+	color: #fff;
+}
+
+
+.test-list-banner {
+	background: url(https://cdn.brainmeasures.com/Images/Psychometric/home-banner-bg-2.png)no-repeat center top #f4f9fd;
+	background-size: 100%;
+	padding: 20px 0px;
+}
+
+.specific-text {
+	color: #000000;
+	margin-top: 40px;
+	font-size: 15px;
+	margin-bottom: 0px;
+}
+
+.specific-link {
+	display: inherit;
+	font-size: 15px;
+	color: #000000;
+	font-weight: 600;
+}
+
+	.specific-link:hover {
+		color: #000000;
+		opacity: 0.9;
+	}
+
+.text-list-section {
+	padding: 50px 0px;
+}
+
+.type-list-box {
+	text-align: center;
+	background: #1fbcbf;
+	padding: 25px 15px;
+	color: #fff;
+}
+
+.icon-main-box {
+	padding: 5px !important;
+}
+
+.type-list-box:hover {
+	background: #0d8e90;
+}
+
+.type-list-box img {
+	margin-bottom: 15px;
+}
+
+.type-list-box h3 {
+	margin: 0px;
+	font-size: 16px;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.test-detail-banner {
+	background: url(https://cdn.brainmeasures.com/Images/Psychometric/test-detail-bg.png) no-repeat center top #f4f9fd;
+	background-size: 100%;
+	padding: 20px 0px;
+	background-attachment: fixed;
+}
+
+.detail-box {
+	text-align: center;
+}
+
+.test-detail-section {
+	background: url(https://cdn.brainmeasures.com/Images/Psychometric/test-detail-bg-content.png) no-repeat center top -40% #fff;
+	background-size: 100%;
+	padding: 50px 0px;
+	background-attachment: fixed;
+}
+
+.tick-ul {
+	list-style: none;
+	padding: 0;
+	margin-left: 0;
+}
+
+	.tick-ul li {
+		background: url(https://cdn.brainmeasures.com/Images/Psychometric/tick-2.png) no-repeat top 10px left;
+		padding: 10px 0px 10px 40px;
+		color: #3c4852;
+		font-weight: 600;
+		font-size: 17px;
+	}
+
+.detail-test-list {
+	width: 100%;
+}
+
+	.detail-test-list tr td {
+		vertical-align: middle;
+		background: #fff;
+		border-bottom: 2px solid #ddd;
+		border-top: 2px solid #ddd;
+		padding: 10px 15px;
+	}
+
+		.detail-test-list tr td:last-child {
+			text-align: right;
+		}
+
+		.detail-test-list tr td h3 {
+			margin: 0px;
+			font-size: 15px;
+			font-weight: 700;
+			color: #38307c;
+		}
+
+		.detail-test-list tr td p {
+			font-size: 14px;
+			color: #3c4852;
+			margin: 0px;
+			font-weight: 500;
+		}
+
+			.detail-test-list tr td p i {
+				position: relative;
+				top: 0px;
+				margin-right: 5px;
+			}
+
+		.detail-test-list tr td h6 a {
+			color: #38307c;
+			display: inline-block;
+		}
+
+			.detail-test-list tr td h6 a i {
+			}
+
+.start-test-btn-table {
+	display: inline-block;
+	background: linear-gradient(45deg, #f30446, #ed3756);
+	color: #fff;
+	padding: 8px 20px 9px 20px;
+	transition: 0.4s;
+	font-weight: 400;
+	font-size: 14px;
+	border-radius: 100px;
+}
+
+	.start-test-btn-table:hover {
+		border-radius: 0px 100px 100px 0px;
+		transition: 0.4s;
+		color: #fff;
+		text-decoration: none;
+	}
+
+.py-links-menu .nav-link {
+	font-weight: 600;
+	color: #000000;
+	font-size: 14px;
+	padding: 0.5rem !important;
+}
+
+	.py-links-menu .nav-link:hover {
+		color: #f30446;
+	}
+
+	.py-links-menu .nav-link.py-signup {
+		background: linear-gradient(45deg, #1b989b, #3ddee1);
+		color: #fff;
+		border-radius: 100px;
+	}
+
+.py-menubar {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.py-white-bg {
+	background: #fff;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.py-menubar .navbar-toggler {
+	background: #fff;
+}
+
+.py-menubar .navbar-toggler-icon {
+	background: #ed3756;
+	height: 4px;
+	display: block;
+	margin: 4px;
+}
+
+
+.btn-fill-round {
+	display: inline-block;
+	background: #f90457;
+	color: #fff;
+	font-weight: 600;
+	padding: 10px 50px;
+	border-radius: 100px;
+	border: 2px solid #f90457;
+	transition: 0.4s;
+}
+
+	.btn-fill-round:hover {
+		background: #dd0e54;
+		border-color: #dd0e54;
+		color: #fff;
+		transition: 0.4s;
+	}
+
+.type-tags {
+	display: inline-block;
+	background: #f3f3f3;
+	color: #111;
+	line-height: 1;
+	padding: 9px 18px;
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 5px;
+	margin: 4px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+	.py-menubar {
+		background: #fff;
+		padding-bottom: 20px;
+	}
+
+	.home-banner {
+		padding-top: 100px;
+	}
+	
+}
