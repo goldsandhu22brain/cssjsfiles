@@ -80,6 +80,7 @@ header.fixed-top.sticky {
     background: #dc3545;
     top: 0;
 }
+/* tosif's cs 02-01-24 */
 header.fixed-top    { top: 0; }
 
 header .navbar-dark .navbar-brand {
@@ -2204,6 +2205,7 @@ position: relative;
 	display: flex;
     align-items: center;
 } */
+/* 02-01-24 Tosif's css */
 .backbanner {
     background-image: url(/MvcFramework/images/skill-back.jpg);
     background-repeat: no-repeat;

@@ -66,6 +66,8 @@ header .navbar .dropdown:hover .dropdown-menu{
 	transform: scale(1,1);
 	opacity: 1;
 }
+/* 02-01-24 css changes Tosif is below */
+body header .navbar .dropdown:hover .dropdown-menu { opacity: 1; display: block; }
 
 header .navbar .dropdown .dropdown-toggle::after{
 	content: url('https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-white.png');
