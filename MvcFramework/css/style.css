@@ -76,16 +76,18 @@ border: 3px solid #fff;
 .toggle-top button {
     padding: 0px 5px;
 }
-header.fixed-top.sticky, header.fixed-top {
-    background: #dc3545  ;
+header.fixed-top.sticky {
+    background: #dc3545;
     top: 0;
 }
+header.fixed-top    { top: 0; }
 
 header .navbar-dark .navbar-brand {
     color: #fff;
     padding: 5px 10px;
     font-weight: 600;
     letter-spacing: 1px;
+    height: auto;
 }
 header.fixed-top.sticky .navbar-dark .navbar-nav .nav-link {
     color: #fff;
@@ -2192,13 +2194,24 @@ position: relative;
     border-radius: 5px;
     border: 3px solid #3021bd;
 }
-.backbanner {
+/* .backbanner {
     background-image: url(/MvcFramework/images/skill-back.jpg);
     background-repeat: no-repeat;
     background-size: 100% 120%;
     background-position: bottom right;
     padding: 10% 0;
     height: 100vh;  
+	display: flex;
+    align-items: center;
+} */
+.backbanner {
+    background-image: url(/MvcFramework/images/skill-back.jpg);
+    background-repeat: no-repeat;
+    background-size:  100% 100%;
+    background-position: bottom right;
+    padding: 10% 0;
+    height: 100vh;  
+    min-height: 650px;
 	display: flex;
     align-items: center;
 }
