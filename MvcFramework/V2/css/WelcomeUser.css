@@ -28,7 +28,7 @@
 .bottom-nav{
 	position: fixed;
     width: 100%;
-    top: 50px;
+    top: 60px;
     z-index: 999;
 	margin-top:-10px
 }
