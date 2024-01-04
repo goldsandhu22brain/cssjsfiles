@@ -157,8 +157,9 @@ header .navbar .navbar-nav .nav-item {
 
 
 /* ---------Banner css start------------  */
+/* 04-01-24 tosif's css change below */
 body .btn:active:focus,
-.btn:focus { outline: none !important; }
+.btn:focus                                  { box-shadow: none; outline: none !important; }
 .main-banner .btn-success {
     background: #ff5629;
     font-family: 'MyriadProRegular';
