@@ -1,0 +1,180 @@
+﻿/*increase the datatable search text box*/
+div.dataTables_filter label {
+	width: 100%;
+}
+
+.uparrow .card-header h5 button::before {
+	content: "\f062" !important;
+	font-family: 'Font Awesome 5 Free' !important;
+	font-weight: 600;
+	position: absolute;
+	/*top: 13px;*/
+	left: 10px;
+	transition: -webkit-transform .25s;
+	-webkit-transition: -webkit-transform .25s;
+	transition: transform .25s;
+	transition: transform .25s, -webkit-transform .25s;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+	color: #1761fd;
+	font-size: 10px;
+	background-color: rgba(23,97,253,0.15);
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 50%;
+}
+
+#accordionExample-faq .card-header h5 button.collapsed::before {
+	content: "\f062" !important;
+}
+
+.uparrow .card-header h5 button.collapsed::before {
+	content: "\f062" !important;
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+.auto-search {
+	width: 100%;
+	position: relative;
+	display: flex;
+}
+
+.username-col {
+	color: #1761fd !important;
+	text-decoration: underline;
+}
+
+.datefilter {
+	display: flex !important;
+	padding-top: calc(0.355 + 10px);
+	padding: 4px;
+}
+
+.title {
+	padding-top: calc(0.375rem + 20px);
+}
+
+.align {
+	padding: 19px;
+}
+
+.alignitem {
+	padding-left: 35px;
+}
+
+.byuser {
+	padding-left: 26px;
+}
+
+.color_undeline {
+	color: #1761fd;
+	text-decoration: underline;
+}
+
+.space {
+	padding: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.tab-le {
+	width: 100%;
+}
+
+.align-space {
+	margin-left: 15px;
+}
+.lef-t {
+	margin-top: -4.7rem;
+	margin-left: 28rem;
+}
+
+.mar-lef {
+	margin-left: 47rem;
+	margin-top: -3.5rem;
+}
+.by-sts{
+	margin-top:-18px;
+}
+.reply-tic{
+	margin-left:28rem;
+}
+.Create-Newbut{
+	float:right;
+}
+.submit-btn{
+	margin-left:18.6rem;
+	margin-top:-11rem;
+}
+.dat-filt{
+	display:flex;
+	line-height:3;
+	gap:4px;
+}
+.sub-bttn {
+	margin-left: 19rem;
+	margin-top: -5.5rem;
+	padding: 10px;
+}
+.M-L {
+	margin-left: 59rem;
+	margin-top: -4.8rem;
+}
+.ML-sub {
+	margin-left: 73rem;
+	margin-top: -6.4rem;
+}
+.Df-ML {
+	margin-left: 54rem;
+	margin-top: -4.8rem;
+}
+.ml-btn {
+	margin-left: 67rem;
+	margin-top: -3.7rem;
+}
+.img-center{
+	position:absolute;
+	margin-left:35rem;
+}
+.F-r{
+	float:right;
+
+}
+.M-T{
+	float:right;
+	margin-top:-3rem;
+}
+.btn-MT{
+	margin-top:1.6rem;
+}
+.btn-postion{
+	margin-top:1.2rem;
+}
+.ml-to {
+	margin-left: 3.8rem;
+}
+.show-btn-R{
+	margin-left:50rem;
+	margin-top:-3.7rem;
+}
+.btn-ryt{
+	float:right;
+}
+.position{
+	margin-top:18px;
+}
+.position-center{
+	margin-left:28rem;
+}
+.go-btn{
+	float:right;
+	margin-top:-44px;
+}
+.mt-subbtn{
+	margin-top:17px;
+}
+.ml-togbtn{
+	margin-left:150px !important;
+}
