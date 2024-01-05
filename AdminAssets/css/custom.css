@@ -182,13 +182,14 @@ div.dataTables_filter label {
 /* 05-01-24 Tosif - Admin model modification css below*/
 .Reschedule:hover 				{ text-decoration: underline; cursor: pointer; }
 .Reschedule i 					{ margin-right: 3px; }
+.bookProctorSlotModal .modal-content .modal-header .close { font-size: 24px; line-height: 100%; }
 .bookProctorSlotModal .table tr td 				{ padding: 15px 8px; }
-.bookProctorSlotModal  table 	{ display: table;
-    width: 100%;
-    table-layout: fixed;  }
+.bookProctorSlotModal  table,
+.bookProctorSlotModal  thead,
+.bookProctorSlotModal tbody tr 	{ display: table; width: 100%; table-layout: fixed;  }
 .bookProctorSlotModal thead th 	{ background-color: #f2f2f2;  position: sticky; top: 0; }
-.bookProctorSlotModal tbody 	{ display: block; width: 100%; table-layout: fixed ; max-height: 320px; overflow: auto; }
-.bookProctorSlotModal tbody tr 	{ display: table; width: 100%; table-layout: fixed; }
+.bookProctorSlotModal tbody 	{ display: block !important; width: 100%; table-layout: fixed ; max-height: 320px; overflow: auto; }
+
 /* .bookProctorSlotModal tbody td 	{ text-overflow: ellipsis; overflow: hidden; }z */
 
 @media(min-width: 576px)
