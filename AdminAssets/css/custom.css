@@ -181,6 +181,7 @@ div.dataTables_filter label {
 
 /* 05-01-24 Tosif - Admin model modification css below*/
 .Reschedule:hover 				{ text-decoration: underline; cursor: pointer; }
+.Reschedule i 					{ margin-right: 3px; }
 .bookProctorSlotModal .table tr td 				{ padding: 15px 8px; }
 .bookProctorSlotModal  table 	{ width: 100%; border-collapse: collapse; margin-bottom: 0;  }
 .bookProctorSlotModal thead th 	{ background-color: #f2f2f2;  position: sticky; top: 0; }
