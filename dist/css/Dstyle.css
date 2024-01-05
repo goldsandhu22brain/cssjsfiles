@@ -75,6 +75,11 @@ body {
     margin-left: 0
 }
 
+/* 05-01-24 Tosif's css for interview page is below */
+.content.no-padd > .row             { padding-inline: 0; }
+.content.no-padd .login-input-box > .row        { margin-bottom: 1.5rem; }
+.content.no-padd .login-input-box > .row .form-control  { margin-bottom: 1rem; border-radius: 15px; }
+
 @media (max-width:767px) {
     .content-wrapper, .main-footer, .right-side {
         margin-left: 0
