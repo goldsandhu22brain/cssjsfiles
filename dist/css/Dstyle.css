@@ -78,8 +78,9 @@ body {
 /* 05-01-24 Tosif's css for interview page is below */
 .content.no-padd > .row             { margin-inline: 0; }
 .content.no-padd .login-input-box > .row        { margin-bottom: 1.5rem; }
-.content.no-padd .login-input-box > .row .form-control  { margin-bottom: 1rem; border-radius: 15px; }
-.login-input-box .row .invalid-feedback { font-size: 13px; line-height: 100%; text-transform: capitalize; }
+.content.no-padd .login-input-box > .row .form-control,
+.content.no-padd .login-input-box .row .bootstrap-select>.dropdown-toggle  { margin-bottom: 0.5rem; border-radius: 15px; font-size: 12px; }
+.login-input-box .row .invalid-feedback { font-size: 12px; line-height: 100%; text-transform: capitalize; }
 
 @media (max-width:767px) {
     .content-wrapper, .main-footer, .right-side {
