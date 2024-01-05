@@ -178,3 +178,11 @@ div.dataTables_filter label {
 .ml-togbtn{
 	margin-left:150px !important;
 }
+
+/* 05-01-24 Tosif - Admin model modification css below*/
+.Reschedule:hover 			{ text-decoration: underline; cursor: pointer; }
+@media(min-width: 576px)
+{
+	/* to increase bookProctorSlotModal modal width */
+.bookProctorSlotModal .bookProctorSlotModalDialog.modal-dialog 	{ max-width: 725px; } 
+}
