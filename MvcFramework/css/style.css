@@ -2210,7 +2210,11 @@ position: relative;
 	display: flex;
     align-items: center;
 } */
-/* 02-01-24 Tosif's css */
+/* 02-01-24 & 08-01-24 Tosif's css  */
+.MyPurchasedContent .col-black,
+.ViewResultContent .col-black,
+.FowardTestResultContent .col-black,
+.ViewReceiptsContent .col-black      { text-align: center; }
 .backbanner {
     background-image: url(/MvcFramework/images/skill-back.jpg);
     background-repeat: no-repeat;
