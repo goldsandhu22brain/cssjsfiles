@@ -1069,6 +1069,8 @@ img.fixedbar {
             }
 .CourseList .courses .search .input-group.cor-coursesbg {
     border-radius: 20px 0 0 20px;
+    /* 08-01-24 Tosif's css is below to remove course page search icon line */
+    border: none;
 }
 .CourseList .course h3 {
     padding-top: 20px;
