@@ -87,8 +87,8 @@ body {
 .ViewResultContent .col-black,
 .FowardTestResultContent .col-black,
 .ViewReceiptsContent .col-black      { text-align: center; }
-.Watchtest-btn > a                  { padding: 3px 20px; color: #777; }
-
+.nav-tabs-custom .box.mybox table.table ul.dropdown-menu.Watchtest-btn > a                  { padding: 3px 20px; color: #777; }
+.nav-tabs-custom .box.mybox table.table ul.dropdown-menu.Watchtest-btn > a { text-decoration: none; }
 
 
 @media (max-width:767px) {
