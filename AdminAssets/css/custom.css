@@ -187,9 +187,10 @@ div.dataTables_filter label {
 .bookProctorSlotModal  table,
 .bookProctorSlotModal  thead,
 .bookProctorSlotModal tbody tr 	{ display: table; width: 100%; table-layout: fixed;  }
-.bookProctorSlotModal thead th 	{ background-color: #f2f2f2;  position: sticky; top: 0; border: none; }
+.bookProctorSlotModal thead th 	{ font-weight: bold; background-color: #f2f2f2;  position: sticky; top: 0; border: none; }
 .bookProctorSlotModal tbody 	{ display: block !important; width: 100%; table-layout: fixed ; max-height: 320px; overflow: auto; }
-
+.bookProctorSlotModal thead th:first-child,
+.bookProctorSlotModal tbody tr td:first-child { width: 10% !important; }
 /* .bookProctorSlotModal tbody td 	{ text-overflow: ellipsis; overflow: hidden; }z */
 
 @media(min-width: 576px)
