@@ -222,4 +222,8 @@ a.btnPP {
     line-height: 1;
 }
 
-
+.no-padd .CorporateDashboardCustomTabs .nav-tabs-custom ul                  { justify-content: space-between; }
+.no-padd .CorporateDashboardCustomTabs .nav-tabs-custom ul.nav-tabs li a    { font-size: 13px; }
+.no-padd .AffiliateDashboardCustomTabs                                      { justify-content: flex-start; }
+.no-padd .AffiliateDashboardCustomTabs .nav-tabs-custom ul.nav-tabs li a    { padding-inline: 30px; }
+.no-padd .AffiliateDashboardCustomTabs .nav-tabs-custom ul.nav-tabs li      { margin: 0; }
