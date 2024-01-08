@@ -82,7 +82,7 @@ body {
 .content.no-padd .login-input-box .row .bootstrap-select>.dropdown-toggle  { margin-bottom: 0.5rem; border-radius: 15px; font-size: 12px; }
 .login-input-box .row .invalid-feedback { font-size: 12px; line-height: 100%; text-transform: capitalize; }
 .login-btn.submit                   { background: #2a3941; color: #fff  }
-.MyPurchasedContent .col-black      { padding-top: 10px; text-align: center;  }
+.MyPurchasedContent .col-black      { padding-block: 10px; margin-bottom: 0; text-align: center;  }
 
 @media (max-width:767px) {
     .content-wrapper, .main-footer, .right-side {
