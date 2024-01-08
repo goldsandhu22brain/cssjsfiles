@@ -87,6 +87,7 @@ body {
 .ViewResultContent .col-black,
 .FowardTestResultContent .col-black,
 .ViewReceiptsContent .col-black      { text-align: center; }
+.Watchtest-btn > a                  { padding: 3px 20px; color: #777; }
 
 
 @media (max-width:767px) {
