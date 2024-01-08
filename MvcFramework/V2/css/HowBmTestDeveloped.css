@@ -33,7 +33,7 @@
     margin: 15px;
     color: orange !important;
 }
-
+.test-modal-wrap .modal-dialog          { max-width: unset !important; }
 .Test-modal {
     padding: 20px 0px !important;
     background: rgba(63, 63, 68, 0.93);

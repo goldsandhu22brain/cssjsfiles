@@ -81,6 +81,7 @@ body {
 .content.no-padd .login-input-box > .row .form-control,
 .content.no-padd .login-input-box .row .bootstrap-select>.dropdown-toggle  { margin-bottom: 0.5rem; border-radius: 15px; font-size: 12px; }
 .login-input-box .row .invalid-feedback { font-size: 12px; line-height: 100%; text-transform: capitalize; }
+.login-btn.submit                   { background: #2a3941; color: #fff  }
 
 @media (max-width:767px) {
     .content-wrapper, .main-footer, .right-side {
