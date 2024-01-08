@@ -1,0 +1,1333 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor:pointer;
+}
+thead{
+    text-align:center;
+}
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.mt-20 {
+    margin-top: 20px !important;
+}
+
+.mt-30 {
+    margin-top: 30px !important;
+}
+
+.mt-40 {
+    margin-top: 40px !important;
+}
+
+.mt-50 {
+    margin-top: 50px !important;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mb-40 {
+    margin-bottom: 40px !important;
+}
+
+.mb-50 {
+    margin-bottom: 50px !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+.warning {
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    background: #f10c5a;
+    margin: 3px 2px;
+    line-height: 30px;
+    color: #fff;
+}
+    .warning:hover {
+        color: #fff;
+    }
+
+    .warning.completed {
+        background: #19c54d !important;
+    }
+
+.enabled {
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    background: #FF9999;
+    margin: 3px 2px;
+    line-height: 30px;
+    color: #fff;
+}
+
+    .enabled:hover {
+        color: #fff;
+    }
+
+    .enabled.disabled {
+        background: #99FF99 !important;
+    }
+
+.test-header {
+    background: #3f51b5 !important;
+    padding: 10px 0px !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+    .test-header h4 {
+        color: #fff;
+        margin: 0px;
+        font-weight: 600;
+    }
+
+    .test-header h5 {
+        color: #fff;
+        margin: 5px 0px 0px 0px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+.container{
+    max-width:1300px;
+}
+.test-main {    
+    background: #fff !important;
+}
+
+.logo-brand {
+    display: inherit;
+}
+
+    .logo-brand h1 {
+        margin: 0px;
+        font-weight: 700;
+        color: #000000;
+        font-size: 26px;
+    }
+
+    .logo-brand p {
+        font-size: 13px;
+        color: #999;
+        font-weight: 600;
+    }
+
+.test-right {
+    position: sticky;
+    top: 70px;
+}
+
+.time-left {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000000;
+}
+
+    .time-left span {
+        display: inline-block;
+        background: #bfcfdb;
+        padding: 5px 15px;
+        border-radius: 100px;
+        margin-right: 5px;
+    }
+
+.questio-grid-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #f10c5a;
+    margin: 3px 2px;
+    line-height: 30px;
+    color: #fff;
+}
+
+    .questio-grid-number:hover {
+        color: #fff;
+    }
+
+    .questio-grid-number.completed {
+        background: #19c54d !important;
+    }
+
+    .questio-grid-number.current {
+        background: #fff;
+        color: #3c4852;
+    }
+
+.color-white-test {
+    color: #fff;
+}
+
+.test-small-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2;
+    color: #3c4852;
+}
+
+.question-title {
+    font-size: 20px;
+    color: #000000;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.radio-dk {
+    display: block !important;
+    position: relative !important;
+    padding-left: 35px !important;
+    margin-bottom: 12px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    font-weight: 600 !important;
+}
+input {
+    cursor: pointer !important;
+}
+
+    .radio-dk input {
+        position: absolute !important;
+        opacity: 0 !important;
+        cursor: pointer !important;
+    }
+
+.checkmark {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 20px !important;
+    width: 20px !important;
+    background-color: #d3c4c4 !important;
+    border-radius: 50% !important;
+}
+
+.radio-dk:hover input ~ .checkmark {
+    background-color: #ccc !important;
+}
+
+.radio-dk input:checked ~ .checkmark {
+    background-color: #f30446 !important;
+}
+
+.checkmark:after {
+    content: "" !important;
+    position: absolute !important;
+    display: none !important;
+}
+
+.radio-dk input:checked ~ .checkmark:after {
+    display: block !important;
+}
+
+.radio-dk .checkmark:after {
+    top: 5px !important;
+    left: 5px !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background: white !important;
+}
+/* The container */
+.checkbox-dk {
+    display: block !important;
+    position: relative !important;
+    padding-left: 35px !important;
+    margin-bottom: 12px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    font-weight: 600 !important;
+}
+
+    /* Hide the browser's default checkbox */
+    .checkbox-dk input {
+        position: absolute !important;
+        opacity: 0 !important;
+        cursor: pointer !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+
+/* Create a custom checkbox */
+.checkmark-2 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 22px !important;
+    width: 22px !important;
+    background-color: #d3c4c4 !important;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-dk:hover input ~ .checkmark-2 {
+    background-color: #ccc !important;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-dk input:checked ~ .checkmark-2 {
+    background-color: #f30446 !important;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-2:after {
+    content: "" !important;
+    position: absolute !important;
+    display: none !important;
+}
+
+/* Show the checkmark when checked */
+.checkbox-dk input:checked ~ .checkmark-2:after {
+    display: block !important;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-dk .checkmark-2:after {
+    left: 9px !important;
+    top: 5px !important;
+    width: 5px !important;
+    height: 10px !important;
+    border: solid white !important;
+    border-width: 0 3px 3px 0 !important;
+    -webkit-transform: rotate(45deg) !important;
+    -ms-transform: rotate(45deg) !important;
+    transform: rotate(45deg) !important;
+}
+
+.test-input-box {
+    border-radius: 0px !important;
+}
+/* HIDE RADIO */
+.image-select[type=radio] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+    /* IMAGE STYLES */
+    .image-select[type=radio] + img {
+        cursor: pointer !important;
+        margin: 4px !important;
+    }
+
+    /* CHECKED STYLES */
+    .image-select[type=radio]:checked + img {
+        outline: 2px solid #f30446 !important;
+    }
+
+.image-select[type=checkbox] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+    /* IMAGE STYLES */
+    .image-select[type=checkbox] + img {
+        cursor: pointer !important;
+        margin: 4px !important;
+    }
+
+    /* CHECKED STYLES */
+    .image-select[type=checkbox]:checked + img {
+        outline: 2px solid #f30446 !important;
+    }
+
+.fill-blank {
+    color: #000000;
+    background: transparent;
+    border-bottom: 1px solid #f30446;
+    min-width: 200px;
+    box-shadow: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+    .fill-blank:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+.font-500 {
+    font-weight: 500;
+}
+
+.question-group-table tr td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+    .question-group-table tr td .radio-dk {
+        margin-bottom: 20px;
+    }
+
+.text-buttons {
+    /*margin-top: 50px;
+    border-top: 1px solid #ddd;*/
+    text-align: center;
+    /*padding-top: 30px;*/
+}
+
+.text-previous-btn {
+    display: inline-block;
+    background: #494b5a;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius: 100px 0px 0px 100px;
+    width: 130px;
+    text-align: center;
+}
+
+.text-next-btn {
+    display: inline-block;
+    background: #f30446;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius: 0px 100px 100px 0px;
+    width: 130px;
+    text-align: center;
+}
+
+    .text-previous-btn:hover, .text-next-btn:hover {
+        color: #fff;
+    }
+
+    .text-next-btn:hover {
+        border-radius: 0px;
+        transition: 0.4s;
+    }
+
+.text-previous-btn:hover {
+    border-radius: 0px;
+    transition: 0.4s;
+}
+
+.image-max-full {
+    max-width: 100%;
+}
+
+/* Radio as link button */
+.radio-link-btn {
+    list-style-type: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+    .radio-link-btn li {
+        margin: 0 5px 5px 0;
+        min-height: 40px;
+        position: relative;
+        font-weight: 600;
+    }
+
+    .radio-link-btn label,
+    .radio-link-btn input {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+        .radio-link-btn input[type="radio"] {
+            opacity: 0.01;
+            z-index: 100;
+        }
+
+            .radio-link-btn input[type="radio"]:checked + label,
+            .Checked + label {
+                background: #b5b7c3;
+                padding-left: 10px;
+            }
+
+    .radio-link-btn label {
+        padding: 7px 0px 3px 0px;
+        cursor: pointer;
+        z-index: 90;
+        transition: 0.4s
+    }
+
+        .radio-link-btn label:hover {
+            background: #DDD;
+            padding-left: 10px;
+            transition: 0.4s;
+        }
+
+/* Drag Drop in the blanks */
+.content-task ul {
+    padding-left: 0px;
+    line-height: 2.2;
+}
+
+    .content-task ul li {
+        list-style-type: none;
+        display: inline-block;
+        min-width: 100px;
+        text-align: center;
+    }
+
+        .content-task ul li span {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+            .content-task ul li span[draggable=true] {
+                cursor: grab !important;
+            }
+
+                .content-task ul li span[draggable=true]:active {
+                    cursor: grabbing !important;
+                }
+
+            .content-task ul li span.word-empty {
+                border-bottom: 1px solid #000;
+                min-width: 100px;
+            }
+
+.word-fill {
+    width: 100%;
+    color: #000000;
+    font-weight: 500;
+    background: #ddd;
+    border-radius: 0px;
+    border-color: #b9b6b6;
+}
+
+.match-question-table {
+    width: 100%;
+}
+
+    .match-question-table tr td {
+        padding: 10px;
+        vertical-align: middle;
+    }
+
+        .match-question-table tr td:first-child {
+            width: 45%;
+        }
+
+        .match-question-table tr td:last-child {
+            width: 45%;
+        }
+
+    .match-question-table h2 {
+        border: 1px solid #ddd;
+        font-size: 15px;
+        text-align: center;
+        padding: 12px;
+        font-weight: 600;
+        margin: 0px;
+        height: 45px;
+    }
+
+.match-answer {
+    border: 1px solid #ddd;
+    font-size: 15px;
+    text-align: center;
+    padding: 12px;
+    font-weight: 600;
+    background: #fff;
+    height: 45px;
+}
+
+.match-answer-bottom {
+    list-style: none;
+    padding: 0px;
+}
+
+    .match-answer-bottom li {
+        display: inline-block;
+        float: left;
+        padding: 10px;
+    }
+
+    .match-answer-bottom .match-answer {
+        height: auto;
+        padding: 12px 20px;
+    }
+
+.match-question-table .dropzone {
+    border: 1px dashed #ddd;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    background: #fff;
+    height: 51px;
+    width: 100%;
+    display: block;
+    padding: 2px;
+}
+
+.match-bottom-bar {
+    background: #f7f7f7;
+    padding: 10px 0px 0px 0px;
+}
+
+    .match-bottom-bar p {
+        margin-left: 10px;
+    }
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.multiselect-table tr td:first-child {
+    text-align: left;
+}
+
+.multiselect-table tr td {
+    text-align: center;
+}
+
+.multiselect-table .checkbox-dk {
+    display: inline-block !important;
+}
+
+.logical-spatial-img {
+    position: relative;
+}
+
+.logical-spatial-img-grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33.33333% 33.33333% 33.33333%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+}
+
+    .logical-spatial-img-grid .grid-item {
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+        .logical-spatial-img-grid .grid-item:hover {
+            background-color: rgb(243 4 70 / 10%);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+.grid-item-selected {
+    border: 1px solid rgb(243 4 70 / 50%);
+    background: rgb(243 4 70 / 10%);
+}
+
+.position-relative {
+    position: relative;
+}
+
+
+
+/* STEP 10 */
+.step10 {
+    background-color: #221C44;
+    min-height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    overflow-x: hidden;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+    .step10:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 105%;
+        left: -3%;
+        height: 50vh;
+        border-radius: 0 0 50% 50%;
+        background-image: linear-gradient(#3B3999, #442C6B);
+        background-color: #442C6B; /* For browsers that do not support gradients */
+    }
+
+    .step10 .wrapper {
+        width: 100%;
+        z-index: 1;
+        margin: 0;
+        min-height: inherit;
+    }
+
+    .step10 .range-input {
+        width: 55%;
+    }
+
+    .step10 .range-input {
+        background: linear-gradient(to right, #333 83%, #ccc 83% );
+    }
+
+    .step10 .range-bubble {
+        right: 29.5%;
+    }
+
+    .step10 .d-icon {
+        border: 1px solid #FFC756;
+        background-color: #FFC756;
+        border-radius: 50%;
+        padding: 11px;
+        width: 52px;
+        height: 52px;
+    }
+
+        .step10 .d-icon img {
+            width: 30px;
+            height: 30px;
+        }
+    /* Status and Timer CSS */
+    .step10 .status-wrapper {
+        background-image: linear-gradient(to right, #5A37E8, #BD34C9);
+        background-color: #3D1CBF; /*For browsers that does not support gradient*/
+        /* border-radius: 20px; */
+        padding: 10px 30px;
+        z-index: 1;
+        position: relative;
+    }
+
+    .step10 .status {
+        /* float: left; */
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 5px 0;
+    }
+
+    .step10 .time-wrapper {
+        font-size: 15px;
+        font-weight: 400;
+        color: #fff;
+        /* float:right */
+    }
+
+        .step10 .time-wrapper .timer {
+            background-color: #47DA86;
+            color: #000;
+            font-size: 15px;
+            font-weight: 400;
+            padding: 6px 20px;
+            border-radius: 80px;
+            margin-right: 8px;
+        }
+    /* Test Label Name Eg: "Special Reasoning Test4" */
+    .step10 .test-lbl p {
+        padding: 8px 0;
+    }
+
+    .step10 .test-lbl .dot {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 1px solid #59EF9A;
+        padding: 1px 5px;
+        margin-left: 8px;
+    }
+
+        .step10 .test-lbl .dot:after {
+            content: '';
+            background: #59EF9A;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: relative;
+            bottom: 1px;
+            display: inline-block;
+        }
+    /* Question Label Name Eg: "Q1: Simple Radio Button Question" */
+    .step10 .question-lbl {
+        background-color: #FFD335;
+        padding: 8px 25px;
+        color: #000;
+        border-radius: 70px;
+        font-size: 15px;
+        display: inline-block;
+        line-height: 21px;
+    }
+    /* Questions Type Sections CSS */
+    .step10 .testDiv {
+        height: 72vh;
+        overflow-y: auto;
+    }
+
+        .step10 .testDiv .question, .step10 .testDiv .sub-question {
+            color: #fff;
+            font-weight: 500;
+            line-height: 23px;
+            font-size: 13px;
+        }
+
+        .step10 .testDiv .sub-question {
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .step10 .testDiv .question-img {
+            width: 440px;
+            height: 215px;
+        }
+
+        .step10 .testDiv .question-video {
+            max-width: 360px;
+            max-height: 180px;
+        }
+
+        .step10 .testDiv .question-img-large {
+            width: 750px;
+            height: 319px;
+        }
+        /* Answer Type Section CSS */
+        .step10 .testDiv .answer-img-small {
+            width: 135px;
+            height: 100px;
+        }
+
+        .step10 .testDiv .answer-img-md {
+            width: 270px;
+            height: 140px;
+        }
+
+        .step10 .testDiv .answer-img-large {
+            width: 680px;
+            height: 280px;
+        }
+        /*Radio and CheckBox*/
+        .step10 .testDiv .answer {
+            margin-bottom: 1rem;
+        }
+
+        .step10 .testDiv .td-answer {
+            margin-bottom: 0;
+        }
+
+        .step10 .testDiv .answer input.answer-options {
+            opacity: 0;
+            position: absolute;
+            width: 0
+        }
+
+        .step10 .testDiv .answer .answer-label {
+            color: #fff;
+            font-size: 15px;
+            padding: 8px;
+            display: block;
+            cursor: pointer;
+            background-color: #38337c;
+            border: 2px solid #433C6D;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .step10 .testDiv .td-answer .answer-label {
+            background-color: transparent;
+            border: 0;
+            border-radius: 0;
+        }
+
+        .step10 .testDiv .answer-50wd {
+            width: 45%;
+            margin-right: 0.9rem;
+            display: inline-block;
+        }
+
+        .step10 .testDiv .answer-30wd {
+            width: 30%;
+            margin-right: 1rem;
+            display: inline-block;
+        }
+
+        .step10 .testDiv .answer-label.sub-label {
+            font-size: 12px;
+            padding: 8px 10px;
+            /* display: block; */
+            background-color: transparent;
+        }
+        /* .step10 .testDiv .image-answer{
+    margin-right: 1rem;
+}
+.step10 .testDiv .image-answer.sm{
+    width:20%;
+    display: inline-block;
+} */
+        .step10 .testDiv .image-answer .answer-label {
+            font-size: 12px;
+            padding: 15px 10px;
+            /* display: block; */
+            background-color: transparent;
+            /* border: 0; */
+            justify-content: center;
+        }
+        /*Radio*/
+        .step10 .testDiv input[type="radio"]:checked + label,
+        .step10 .testDiv input[type="radio"]:focus + label {
+            background-color: #6967FF;
+            border: 2px solid #C2ACFF;
+        }
+
+        .step10 .testDiv .td-answer input[type="radio"]:checked + label,
+        .step10 .testDiv .td-answer input[type="radio"]:focus + label {
+            background-color: #6967FF;
+            border: 0;
+        }
+
+        .step10 .testDiv .image-answer input[type="radio"]:checked + label,
+        .step10 .testDiv .image-answer input[type="radio"]:focus + label {
+            background-color: #3533E5;
+            border: 2px solid #3533E5;
+        }
+
+        .step10 .testDiv .radio-with-text {
+            border: 1px solid #fff;
+            font-size: 15px;
+            border-radius: 50%;
+            margin-right: 8px;
+            height: 33px;
+            width: 33px;
+            text-align: center;
+            line-height: 31px;
+            font-weight: 500;
+            display: block;
+        }
+
+        .step10 .testDiv input[type="radio"]:checked + label .radio-with-text,
+        .step10 .testDiv input[type="radio"]:focus + label .radio-with-text {
+            border: 1px solid #fff;
+            color: #000;
+            background-color: #fff;
+        }
+
+        .step10 .testDiv .radio-no-text {
+            border: 2px solid #6967FF;
+            background-color: transparent;
+            border-radius: 50%;
+            height: 15px;
+            width: 15px;
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: sub;
+        }
+
+        .step10 .testDiv .image-answer .radio-no-text {
+            height: 15px;
+            width: 15px;
+        }
+
+            .step10 .testDiv .image-answer .radio-no-text.lg {
+                height: 20px;
+                width: 20px;
+            }
+
+        .step10 .testDiv input[type="radio"]:checked + label .radio-no-text,
+        .step10 .testDiv input[type="radio"]:focus + label .radio-no-text {
+            border: 1px solid #fff;
+            background-color: #fff;
+        }
+        /* .step10 .testDiv .image-answer input[type="radio"]:checked + label .radio-no-text:after,
+.step10 .testDiv .image-answer input[type="radio"]:focus + label .radio-no-text:after{
+    content: '';
+    background: #1d1739;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 3px;
+    left:3px;
+    display: inline-block;
+} */
+        /*Check Box*/
+        .step10 .testDiv input[type="checkbox"]:checked + label {
+            background-color: #6967FF;
+            border: 2px solid #C2ACFF;
+        }
+
+        .step10 .testDiv .image-answer input[type="checkbox"]:checked + label {
+            background-color: #3533E5;
+            border: 2px solid #3533E5;
+        }
+
+        .step10 .testDiv .cb-with-text {
+            border: 1px solid #fff;
+            font-size: 15px;
+            margin-right: 8px;
+            border-radius: 6px;
+            height: 33px;
+            width: 33px;
+            text-align: center;
+            line-height: 31px;
+            font-weight: 500;
+            display: block;
+        }
+
+        .step10 .testDiv input[type="checkbox"]:checked + label .cb-with-text {
+            border: 1px solid #fff;
+            color: #000;
+            background-color: #fff;
+        }
+
+        .step10 .testDiv .cb-no-text {
+            border: 2px solid #6967FF;
+            background-color: transparent;
+            border-radius: 2px;
+            height: 15px;
+            width: 15px;
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: sub;
+        }
+
+        .step10 .testDiv .image-answer .cb-no-text {
+            height: 15px;
+            width: 15px;
+        }
+
+            .step10 .testDiv .image-answer .cb-no-text.lg {
+                height: 20px;
+                width: 20px;
+            }
+
+        .step10 .testDiv input[type="checkbox"]:checked + label .cb-no-text {
+            border: 1px solid #fff;
+            background-color: #fff;
+        }
+        /* Sub Question Section CSS */
+        .step10 .testDiv .card {
+            border: 0;
+        }
+
+        .step10 .testDiv .card-header {
+            background-color: #3B2C74;
+            border-bottom: 2px solid #3B2C74;
+            font-size: 15px;
+            color: #fff;
+            padding: 12px 16px;
+        }
+
+        .step10 .testDiv .card-body {
+            background-color: #221C44;
+            border: 1px solid #6967FF;
+            border-top: 0;
+        }
+    /* Right Panel - User Alert Section CSS */
+    .step10 .tileCardSection .alert-border {
+        border-radius: 30px 30px 0 0;
+        position: relative;
+        margin: 0 auto;
+        background-color: #18C764;
+        height: 65px;
+    }
+
+        .step10 .tileCardSection .alert-border:before {
+            content: "";
+            height: 69%;
+            width: 99%;
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            transition: all 0.8s;
+            top: 60%;
+            content: "";
+            position: absolute;
+            left: 0.5%;
+            height: 55px;
+            background: #1d1739;
+        }
+
+    .step10 .tileCardSection .alert-container {
+        height: 75px;
+        font-size: 12px;
+        color: #fff;
+        background-color: #342D5C;
+        width: 93%;
+        margin: 0 auto 0;
+        border-radius: 10px;
+        z-index: 1;
+        margin-top: -5px;
+    }
+
+    .step10 .tileCardSection .scroll-container {
+        height: 60px;
+        overflow-y: auto;
+    }
+
+    .step10 .tileCardSection .alert-container .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        border: 1px solid red;
+        background-color: red;
+    }
+    /* Right Panel - No of question Section CSS */
+    .step10 .tileCardSection .question-list {
+        border: double 1px transparent;
+        border-radius: 0 0 30px 30px;
+        background-image: linear-gradient(#1D1739, #1D1739), linear-gradient(#6956DF,#6B2086);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+    }
+
+    .step10 .tileCardSection li {
+        display: inline-block;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        line-height: 28px;
+        text-align: center;
+        margin: 0.5rem 0.35rem 0 0;
+        border: 1px solid #6967FF;
+        background-color: transparent;
+    }
+
+        .step10 .tileCardSection li.hold {
+            border: 1px solid #EA1DE2;
+            background-color: transparent;
+        }
+
+        .step10 .tileCardSection li.answered {
+            border: 1px solid #6967FF;
+            background-color: #6967FF;
+        }
+
+        .step10 .tileCardSection li.marked {
+            border: 1px solid #D11CCD;
+            background-color: #D11CCD;
+        }
+
+        .step10 .tileCardSection li.current {
+            border: 1px solid #514879;
+            background-color: #514879;
+        }
+    /* Right Panel - Legends Section CSS */
+    .step10 .tileCardSection .legend {
+        color: #fff;
+        font-size: 11px;
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+
+        .step10 .tileCardSection .legend .hold {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid #EA1DE2;
+            background-color: transparent;
+        }
+
+        .step10 .tileCardSection .legend .answered {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid #6967FF;
+            background-color: #6967FF;
+        }
+
+        .step10 .tileCardSection .legend .unanswered {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid #6967FF;
+            background-color: transparent;
+        }
+
+        .step10 .tileCardSection .legend .marked {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid #D11CCD;
+            background-color: #D11CCD;
+        }
+
+        .step10 .tileCardSection .legend .current {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid #514879;
+            background-color: #514879;
+        }
+
+    .step10 .tileCardSection .legend-wrapper {
+        background-color: #342D5C;
+    }
+
+    .step10 .action-btn, .step10 .next-btn {
+        width: 120px;
+    }
+    /* AppropriateAnswer */
+    .step10 .testDiv .c-table {
+        border: 2px solid #433C6D;
+        color: #fff;
+        text-align: center;
+        table-layout: fixed;
+    }
+
+        .step10 .testDiv .c-table thead {
+            background-color: #3B2C74;
+        }
+
+        .step10 .testDiv .c-table.table-bordered > :not(caption) > * > * {
+            border-width: 2px 2px;
+        }
+
+        .step10 .testDiv .c-table .smiley-img {
+            width: 33px;
+            margin: 5px;
+        }
+
+
+    /* Fill in the blanks */
+    .step10 .testDiv .blank {
+        display: inline-block;
+        border-bottom: 2px solid #fff;
+        min-width: 120px;
+        margin: 0 5px -12px 5px;
+        /* padding-top: 5px; */
+        min-height: 40px;
+        width: auto;
+        height: auto;
+    }
+
+    .step10 .testDiv .blank-question {
+        display: inline-block;
+        /* font-size: 15px; */
+        color: #fff;
+        font-weight: 500;
+        line-height: 40px;
+    }
+
+    .step10 .testDiv .ulList {
+        min-height: 50px;
+        padding: 20px 12px 15px 12px;
+        border: 3px solid white;
+    }
+
+    .step10 .testDiv .drop-answer {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+        .step10 .testDiv .drop-answer button {
+            min-width: 120px;
+            width: auto;
+        }
+
+    .step10 .testDiv ul .drop-answer {
+        margin-left: 10px;
+    }
+
+        .step10 .testDiv ul .drop-answer:first-child {
+            margin-left: 0px;
+        }
+
+
+/* Sample Will remove or incorporate based on feedback */
+/* .step10.sample .testDiv{
+    height: 78vh;
+    overflow-y: auto;
+} */
+
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    .wrapper {
+        width: 95%;
+    }
+
+    .step2 .wrapper {
+        width: 95%;
+    }
+
+    .step10 .container {
+        max-width: 1000px
+    }
+
+    .step10 .tileCardSection .col-10 {
+        width: 100%;
+    }
+
+    .step10 .wrapper {
+        width: 100%;
+        z-index: 1;
+        margin: 0;
+        min-height: inherit;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .wrapper {
+        width: 80%;
+    }
+
+    .step2 .wrapper {
+        width: 85%;
+    }
+
+    .step10 .wrapper {
+        width: 100%;
+        z-index: 1;
+        margin: 0;
+        min-height: inherit;
+    }
+}
