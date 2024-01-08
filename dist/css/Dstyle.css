@@ -75,13 +75,14 @@ body {
     margin-left: 0
 }
 
-/* 05-01-24 Tosif's css for interview page is below */
+/* 05-01-24 & 08-01-24 Tosif's css for interview page is below */
 .content.no-padd > .row             { margin-inline: 0; }
 .content.no-padd .login-input-box > .row        { margin-bottom: 1.5rem; }
 .content.no-padd .login-input-box > .row .form-control,
 .content.no-padd .login-input-box .row .bootstrap-select>.dropdown-toggle  { margin-bottom: 0.5rem; border-radius: 15px; font-size: 12px; }
 .login-input-box .row .invalid-feedback { font-size: 12px; line-height: 100%; text-transform: capitalize; }
 .login-btn.submit                   { background: #2a3941; color: #fff  }
+.MyPurchasedContent .col-black      { padding-top: 10px; text-align: center;  }
 
 @media (max-width:767px) {
     .content-wrapper, .main-footer, .right-side {
