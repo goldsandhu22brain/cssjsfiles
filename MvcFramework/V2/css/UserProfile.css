@@ -72,3 +72,8 @@
     position: relative;
     overflow: hidden;
 }
+
+/* tosif's css 08/01/24  */
+.myimg_bdr .up_mg .form-group       { margin-left: 35px; }
+
+@media (max-width : 1200px) { .myimg_bdr .up_mg .form-group { margin-left: 0; } }
