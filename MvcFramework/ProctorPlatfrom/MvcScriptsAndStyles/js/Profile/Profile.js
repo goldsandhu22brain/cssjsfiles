@@ -42,13 +42,13 @@ function ValidateSecurityQuestionInputs() {
     });   
 
     if (!isAnsEnter) {
-        validateMessage += '<li>Please enter answers for all three security questions.</li>';
+        validateMessage += 'Please enter answers for all security questions.';
         isValid = false;
     }
 
     if (!isValid) {
-        validateMessage += '</ul>';
-        alert(validateMessage);
+        validateMessage += '';
+        ToastMessage(validateMessage);
     }
     return isValid;
 }
