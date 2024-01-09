@@ -232,8 +232,9 @@ input::placeholder {
     width: 500px;
 }
 .camera-fullsize {
-    width: 1590px !important;
-    height: 670px !important;
+    width: 1400px !important;
+    height: 600px !important;
+    overflow: hidden;
 }
 
 .admin-conference .open-chat-message .btn-control {
@@ -250,7 +251,7 @@ input::placeholder {
 }
 
 .admin-conference .conference #controls {
-    left: 10%;
+    left: 0%;
 }
 
 .admin-conference .modal-dialog {
