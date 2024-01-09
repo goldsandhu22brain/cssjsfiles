@@ -48,7 +48,7 @@ function ValidateSecurityQuestionInputs() {
 
     if (!isValid) {
         validateMessage += '';
-        ToastMessage(validateMessage);
+        window.ToastMessage(validateMessage, true);
     }
     return isValid;
 }

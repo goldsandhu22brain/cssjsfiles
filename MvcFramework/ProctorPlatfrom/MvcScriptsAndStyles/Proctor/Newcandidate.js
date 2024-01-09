@@ -41218,6 +41218,7 @@ function _GetSecurityQuestion() {
             },
             success: function success(response) {
               var result = response;
+                window.ToastMessage = (0, _common.ToastMessage);
               window.SecQnsCallBack = function (resultResponse) {
                 if (resultResponse && resultResponse.Status == 200) {
                   (0, _jquery.default)('#submit-sec-qns').val("Submit");
