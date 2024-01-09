@@ -27,6 +27,7 @@
 /* ---------Fonts css End------------  */
 body {
     font-family: 'MyriadProRegular';
+    font-size: 16px;
 }
 a {
     text-decoration: none;
