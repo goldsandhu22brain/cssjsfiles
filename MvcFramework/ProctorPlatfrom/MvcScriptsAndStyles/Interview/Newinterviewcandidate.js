@@ -40818,7 +40818,7 @@ function UploadRecorder(Type, FormData) {
     }
   });
 }
-},{"../node_modules/jquery":"HlZQ"}],"MqIK":[function(require,module,exports) {
+},{"../node_modules/jquery":"HlZQ"}],"InI2":[function(require,module,exports) {
 var define;
 "use strict";
 
@@ -41043,6 +41043,10 @@ function LoadQuestion(panelStatus) {
   panelStatus = (_panelStatus = panelStatus) !== null && _panelStatus !== void 0 ? _panelStatus : "0";
   var isExists = document.getElementById('InjectTest');
   var testingId = GlobalObj.OfferingId;
+  if (isExists == null) {
+    (0, _jquery.default)("#new-inject-test").html('<div id="InjectTest"></div>');
+    isExists = document.getElementById('InjectTest');
+  }
   if (isExists != null) {
     var url = getInterviewUrl() + "/LoadInterviewTest?Id=" + (testingId !== null && testingId !== void 0 ? testingId : params.OfferingId) + "&panelStatus=" + panelStatus;
     //console.log(url);
@@ -41307,7 +41311,7 @@ function _SystemCheckAPI() {
             },
             success: function success(response) {
               var result = response;
-                if (result) {
+              if (result) {
                 (0, _jquery.default)("#pills-system-check-item").html("");
                 (0, _jquery.default)("#pills-system-check-item").html(result);
                 (0, _jquery.default)('#load-system-check').val("Next");
@@ -41321,7 +41325,7 @@ function _SystemCheckAPI() {
               (0, _common.ToastMessage)(response.responseText, false);
             }
           });
-        case 4:
+        case 3:
         case "end":
           return _context5.stop();
       }
@@ -41872,7 +41876,7 @@ function IsPresentInRoom(Obj) {
         }).length;
       }).length > 0) {
         // enable the test button
-         if (InterviewTestType == "100" || InterviewTestType == "250") {
+        if (InterviewTestType == "100" || InterviewTestType == "250") {
           show(startMcqTestButton);
           hide(startCodingTestButton);
           return true;
@@ -42118,5 +42122,5 @@ hide(screenShareStatus);
 //Bind Events - End
 fullScreen.onclick();
 (0, _common.DisableActivities)();
-},{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["MqIK"], null)
-//# sourceMappingURL=/newinterviewcandidate.6b524c72.js.map
+},{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
+//# sourceMappingURL=/Newinterviewcandidate.ca6b6538.js.map
