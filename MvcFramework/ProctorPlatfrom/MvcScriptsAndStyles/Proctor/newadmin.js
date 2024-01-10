@@ -41224,7 +41224,6 @@ function SkipCandidateProof() {
   hide(reqProof);
   hide(viewNewProof);
   show(enableStartbutton);
-  show(enableStartbutton);
 }
 function PauseCandidateTest() {
   CandidateTest("CandidatePauseTest", true, "CandidateResumeTest", false);
@@ -41451,6 +41450,8 @@ var NewProofImageId = "";
 var NewProofDocumentName = "";
 var NewProofDocumentType = "";
 function ViewNewProof() {
+  var vnf_btn = document.getElementById("view-new-proof");
+  vnf_btn.textContent = vnf_btn.dataset.loadingText;
   _jquery.default.ajax({
     url: '/Proof/AdminView',
     type: 'GET',
@@ -41477,6 +41478,7 @@ function ViewNewProof() {
         UpdateProofStatus(false);
       });
       (0, _jquery.default)('#test-myModal').show();
+      vnf_btn.textContent = "View New Proof";
       return true;
     },
     error: function error(response) {
@@ -41495,6 +41497,7 @@ function ViewNewProof() {
         UpdateProofStatus(false);
       });
       (0, _jquery.default)('#test-myModal').show();
+      vnf_btn.textContent = "View New Proof";
       return true;
     }
   });
@@ -41704,4 +41707,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.706fd4f8.js.map
+//# sourceMappingURL=/newadmin.1f8c9549.js.map

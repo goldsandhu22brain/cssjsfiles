@@ -40781,7 +40781,7 @@ function ClearConsoleLogs() {
       diff;
     for (check = 0; check < 1000; check++) {
       //	console.log(check);
-      console.clear();
+     // console.clear();
     }
     diff = performance.now() - startTime;
     if (diff > 200 || debuggerCheck) {
@@ -41962,7 +41962,7 @@ function NewProofUpload() {
   (0, _jquery.default)("#newproof").change(function () {
     newproof(this);
   });
-  (0, _jquery.default)("#uploadnewproof").click(UploadProof);
+    (0, _jquery.default)("#uploadnewproof").click(UploadProof);   
 }
 function newproof(input) {
   if (input.files && input.files[0]) {
@@ -42060,6 +42060,7 @@ hmsStore.subscribe(renderMessageList, _hmsVideoStore.selectHMSMessages);
 hide(screenShareStatus);
 //Bind Events - End
 fullScreen.onclick();
-(0, _common.DisableActivities)();
+    (0, _common.DisableActivities)();
+    loadSystemCheck.onclick();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["RV9k"], null)
 //# sourceMappingURL=/newcandidate.aa2585da.js.map
