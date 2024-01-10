@@ -23,6 +23,19 @@ $(function () {
     });
 });
 
+$(window).scroll(function () {
+    var nav = $('.d-nav');
+    var top = 50;
+    if ($(window).scrollTop() >= top) {
+
+        nav.addClass('nav-bg-purple');
+
+    } else {
+        nav.removeClass('nav-bg-purple');
+    }
+});
+
+
 // below function to add purple bg in header whenever user scroll down for better visibility
 $(window).scroll(function () {
     var nav = $('.d-nav');
@@ -48,12 +61,7 @@ function ValidateTranscript() {
 
     }
     if ($('#txtTranscriptNoNew').val().trim() != '') {
-        if (!parseInt($('#txtTranscriptNoNew').val())) {
-            isValid = true;
-            message += 'Please enter transcript no. in numeric format.';
-
-        }
-        else if ($('#txtTranscriptNoNew').val().length > 20) {
+       if ($('#txtTranscriptNoNew').val().length > 20) {
             isValid = false;
             message += 'Length of transcript no. cannot exceed 20 characters.';
             // window.location.href = "/Report/Transcript?transcriptId=" + $('#txtTranscriptNoNew').val();
