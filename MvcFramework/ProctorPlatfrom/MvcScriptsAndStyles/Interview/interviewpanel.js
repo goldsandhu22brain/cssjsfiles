@@ -40893,6 +40893,7 @@ var pauseTestButton = document.querySelector("#pause-test");
 var resumeTestButton = document.querySelector("#resume-test");
 var endTestButton = document.querySelector("#force-end-test");
 var UserAlertTestButton = document.querySelector("#btn-user-alert-test");
+var refreshCamera = document.querySelector("#refresh-camera");
 var CandidateUserId = "";
 var params = new Proxy(new URLSearchParams(window.location.search), {
   get: function get(searchParams, prop) {
@@ -41170,9 +41171,11 @@ function renderPeer(peer) {
 function renderPeers() {
   var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
   peers.forEach(function (peer) {
-    if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && !(peer !== null && peer !== void 0 && peer.isLocal)) {
-      peersContainer.append(renderPeer(peer));
-    } else {
+      if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && !(peer !== null && peer !== void 0 && peer.isLocal)) {
+          document.getElementById("openvideo").onclick();
+          (0, _jquery.default)(peersContainer).empty();
+          peersContainer.append(renderPeer(peer));
+      } else {
       // hmsStore.subscribe(UpdateUnreadMessageCount, selectMessagesUnreadCountByPeerID(peer.id));// unread message  count
     }
   });
@@ -41650,6 +41653,10 @@ endTestButton.onclick = ForceCandidateTestEnd;
 leaveBtn.onclick = handleLeave;
 sendToCandidate.onclick = sendMessageToBroadCast;
 sendToPanel.onclick = SendMessageToPanel;
+refreshCamera.onclick = function () {
+        hmsStore.unsubscribe(renderPeers, _hmsVideoStore.selectPeers);
+        hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
+    };
 //muteVideoBtn.onclick = handlePresenterVideo;
 muteAudioBtn.onclick = handlePresenterAudio;
 //screenShareBtn.onclick = handleScreenShare;

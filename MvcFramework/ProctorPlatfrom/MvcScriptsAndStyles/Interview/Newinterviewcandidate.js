@@ -40920,6 +40920,7 @@ var startTestButton = document.getElementById("load-test-section");
 var startCodingTestButton = document.getElementById("load-coding-test");
 var authenticateSubmit = document.getElementById("authenticateSubmit");
 var loadSystemCheck = document.getElementById("load-system-check");
+var refreshvideo = document.getElementById("refreshvideo");
 var params = new Proxy(new URLSearchParams(window.location.search), {
   get: function get(searchParams, prop) {
     return searchParams.get(prop);
@@ -41622,7 +41623,8 @@ function renderPeers() {
   var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
   peers.forEach(function (peer) {
     if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && peer !== null && peer !== void 0 && peer.isLocal) {
-      var render = renderPeer(peer);
+        var render = renderPeer(peer);
+        (0, _jquery.default)(peersContainer).empty();
       peersContainer.append(render.elem);
       render.deferred && render.deferred(_common.CameraCaptureCallBack); //trigger callback
 
@@ -42042,6 +42044,12 @@ function resumeTest() {
   for (var i = 0; i < items.length; i++) {
     items[0].classList.remove("test-pause");
   }
+  if ((0, _jquery.default)(".test-question-grid").hasClass("test-pause")) {
+    (0, _jquery.default)(".test-question-grid").removeClass("test-pause");
+  }
+  if ((0, _jquery.default)(".test-question-container").hasClass("test-pause")) {
+    (0, _jquery.default)(".test-question-container").removeClass("test-pause");
+  }
 }
 function UserAlertTrigger() {
   var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID); //candidate peer
@@ -42066,9 +42074,22 @@ authenticateSubmit.onclick = AuthenticationSubmit;
 screenShareBtn.onclick = handleScreenShare;
 joinRoom.onclick = InitialLoad;
 afterScreenShare.onclick = NextScreenShare;
+ refreshvideo.onclick = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+   return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+                case 0:
+                    renderedPeerIDs = new Set();
+                    hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
+                case 2:
+                case "end":
+                    return _context.stop();
+            }
+        }, _callee);
+}));
 hide(startMcqTestButton);
 hide(startCodingTestButton);
 leaveBtn.onclick = TestSubmitAutomatically;
+
 startMcqTestButton.onclick = function () {
   SystemCheck();
   (0, _jquery.default)('#load-test').val((0, _jquery.default)('#load-test').data("loading-text"));
@@ -42123,4 +42144,4 @@ hide(screenShareStatus);
 fullScreen.onclick();
 (0, _common.DisableActivities)();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.ca6b6538.js.map
+//# sourceMappingURL=/Newinterviewcandidate.c371e498.js.map
