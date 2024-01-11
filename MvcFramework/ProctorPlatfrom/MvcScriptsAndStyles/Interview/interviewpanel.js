@@ -41621,12 +41621,14 @@ function CameraSwitch() {
     (0, _jquery.default)(".peer-tile").addClass("camera-fullsize");
     (0, _jquery.default)(".peer-video-tile").addClass("camera-fullsize");
     (0, _jquery.default)(".tile-short.shape-circle.shape-color").addClass("camera-fullsize");
+    (0, _jquery.default)(".peer-video").addClass("camera-fullsize");
   } else {
     (0, _jquery.default)(".sidebar.video-box").removeClass("camera-fullsize");
     (0, _jquery.default)(".peers-container").removeClass("camera-fullsize");
     (0, _jquery.default)(".peer-tile").removeClass("camera-fullsize");
     (0, _jquery.default)(".peer-video-tile").removeClass("camera-fullsize");
     (0, _jquery.default)(".tile-short.shape-circle.shape-color").removeClass("camera-fullsize");
+    (0, _jquery.default)(".peer-video").removeClass("camera-fullsize");
   }
 }
 function FeedBackForm() {
