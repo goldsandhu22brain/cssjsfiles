@@ -599,7 +599,7 @@ function GetAnswerCount(input, isReview, callBack = null) {
 
 		},
 		complete: function () {
-
+			$('.proctor-loader').css("visibility", "hidden");
 		},
 		error: function () {
 		}
