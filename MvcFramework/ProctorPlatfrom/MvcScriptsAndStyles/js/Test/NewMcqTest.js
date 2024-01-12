@@ -243,6 +243,7 @@ function LoadQuestionIdTileCard() {
 }
 
 function reportBtn(input) {
+	$(input).text($(input).attr('data-loading'));
 	var url = getBaseUrl() + "/ReportQuestion";
 	var currentQuestionId = $(input).attr('data-question-id');
 	PushTracking(260);
@@ -256,6 +257,7 @@ function reportBtn(input) {
 			//$('.proctor-loader').css("visibility", "visible");
 		},
 		success: function (response) {
+			$(input).text($(input).attr('data-original'));
 			$(".ReportMessage").empty();
 			$(".ReportMessage").html("Current Question's Reported Successfully!!!");
 			$('#ReportQuestionModal').modal("show");
@@ -273,6 +275,7 @@ function reportBtn(input) {
 
 //code for getting next question based on question no mcq
 function nextQuestion(input, isReview) {
+	$(input).text($(input).attr('data-loading'));	
 	var nextQuestionId = $(input).attr('data-question-id');
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
@@ -297,7 +300,7 @@ function nextQuestion(input, isReview) {
 		},
 		success: function (response) {
 			var result = response;
-			//console.log(result);			
+			$(input).text($(input).attr('data-original'));
 			$('#testDiv').replaceWith(result);
 			ReStartTimer();
 			//clearInterval(timerExamInterval);
@@ -324,6 +327,7 @@ function onClikQuestionNo(input, isReview) {
 	}
 	else {
 		btnData = document.getElementById("nextBtn");
+		$(btnData).text($(btnData).attr('data-loading'));
 	}
 	var nextQuestionId = $(input).attr('data-question-id');
 	PushTracking(230, questionNo);
@@ -351,6 +355,7 @@ function onClikQuestionNo(input, isReview) {
 		},
 		success: function (response) {
 			var result = response;
+			$(btnData).text($(btnData).attr('data-original'));
 			$('#testDiv').replaceWith(result);
 			ReStartTimer();
 			//clearInterval(timerExamInterval);
@@ -380,6 +385,7 @@ function WarningSection(_fullScreen, _mouseActivity, _debugger) {
 }
 //code for previous question
 function nextPrev(input, isReview) {
+	$(input).text($(input).attr('data-loading'));	
 	var nextQuestionId = $(input).attr('data-question-id');
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
@@ -404,6 +410,7 @@ function nextPrev(input, isReview) {
 		},
 		success: function (response) {
 			var result = response;
+			$(input).text($(input).attr('data-original'));
 			$('#testDiv').replaceWith(result);
 			ReStartTimer();
 			//clearInterval(timerExamInterval);
