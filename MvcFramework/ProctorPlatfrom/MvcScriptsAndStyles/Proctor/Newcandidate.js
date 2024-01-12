@@ -41782,13 +41782,12 @@ function handleLeave() {
 }
 function handleEndRoom() {
   var callBack = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-  // stopRecording().then((values) => {
-  EndRoomClick("Test Room Ended Successfully by Candidate");
-  (0, _common.ToastMessage)("Test Room Ended Successfully by Candidate", true);
-  callBack && callBack();
-  // });
+  stopRecording().then(function (values) {
+    EndRoomClick("Test Room Ended Successfully by Candidate");
+    (0, _common.ToastMessage)("Test Room Ended Successfully by Candidate", true);
+    callBack && callBack();
+  });
 }
-
 function EndRoomClick(msg) {
   try {
     var lock = true; // set to true to disallow rejoins
@@ -42174,7 +42173,7 @@ leaveBtn.onclick = TestSubmitAutomatically;
 startTestButton.onclick = function () {
   SystemCheck();
   (0, _jquery.default)('#load-test').val((0, _jquery.default)('#load-test').data("loading-text"));
-  //startRecording();//trigger the recording
+  startRecording(); //trigger the recording
   LoadQuestion();
 };
 newProofUpload.onclick = NewProofUpload;
@@ -42205,4 +42204,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.a92341db.js.map
+//# sourceMappingURL=/Newcandidate.b98c26f5.js.map
