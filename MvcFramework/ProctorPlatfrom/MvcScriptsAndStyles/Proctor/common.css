@@ -791,6 +791,7 @@ h1 {
     width: 230px;
     font-size: 15px;
     border-radius: 90px;
+    cursor: pointer;
 }
 
 .outline-btn-light {
@@ -803,6 +804,7 @@ h1 {
     font-size: 15px;
     width: 120px;
     color: #fff;
+    cursor: pointer;
 }
 
     .outline-btn-light:hover, .outline-btn-light:active, .outline-btn-light:focus {
@@ -847,6 +849,7 @@ h1 {
     box-shadow: none !important;
     width: 175px;
     font-size: 15px;
+    cursor: pointer;
 }
 .review-btn, .review-btn:hover, .review-btn:active, .review-btn:focus {
     font-weight: 500;
@@ -859,6 +862,7 @@ h1 {
     box-shadow: none !important;
     width: 175px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .input-error {

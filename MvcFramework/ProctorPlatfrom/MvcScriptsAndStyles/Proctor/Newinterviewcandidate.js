@@ -41326,7 +41326,7 @@ function _InitialLoad() {
               UpdateGlobalVariable(result); // updating the Global Variable
               (0, _jquery.default)(".error-message").html("");
               if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-                var url = '<br><a href="' + GlobalObj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+                var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
                 (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
                 change_tab('error-message');
                 return;
@@ -41787,7 +41787,7 @@ function handleLeave() {
     change_tab('error-message');
     peersContainer.innerHTML = "";
     callBack && callBack();
-    var url = '<br><a href="' + GlobalObj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+    var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
     (0, _jquery.default)(".error-message").html(url);
     (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
   };
@@ -42022,14 +42022,14 @@ function IsPresentInRoom(Obj) {
       } else {
         //No panel member in the rooms respective to the round
         screenShareStatus.textContent = "";
-        var url = '<br><a href="' + Obj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+        var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
         (0, _jquery.default)(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
         (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
         change_tab('error-message');
       }
     } else {
       screenShareStatus.textContent = "";
-      var url = '<br><a href="' + Obj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+      var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
       (0, _jquery.default)(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
       (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
       change_tab('error-message');
@@ -42069,7 +42069,7 @@ function AfterSubmitTest(response) {
         hide(startMcqTestButton);
         hide(startCodingTestButton);
         if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-          var url = '<br><a href="' + GlobalObj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+          var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
           (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
           (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
           change_tab('error-message');
@@ -42136,7 +42136,11 @@ function TestSubmitAutomatically() {
     };
     window.SubmitTestAutomatically(AfterSubmitTest);
   } else {
+    function callRedirect() {
+      window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
+    }
     handleLeave();
+    window.setTimeout(callRedirect, 3000);
   }
 }
 var RecordingIconDisplay = function RecordingIconDisplay(isRecording) {
@@ -42270,4 +42274,4 @@ hide(screenShareStatus);
 fullScreen.onclick();
 (0, _common.DisableActivities)();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.450b3959.js.map
+//# sourceMappingURL=/Newinterviewcandidate.881fbbc6.js.map

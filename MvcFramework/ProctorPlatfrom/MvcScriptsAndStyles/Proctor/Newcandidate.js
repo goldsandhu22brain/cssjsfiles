@@ -41776,7 +41776,7 @@ function handleLeave() {
   change_tab('error-message');
   peersContainer.innerHTML = "";
   callBack && callBack();
-  var url = '<br><a href="' + GlobalObj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+  var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
   (0, _jquery.default)(".error-message").html(url);
   (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
 }
@@ -42002,7 +42002,11 @@ function TestSubmitAutomatically() {
   if (window.SubmitTestAutomatically != null) {
     window.SubmitTestAutomatically(AfterSubmitTest);
   } else {
+    function callRedirect() {
+      window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
+    }
     handleLeave();
+    window.setTimeout(callRedirect, 3000);
   }
 }
 var RecordingIconDisplay = function RecordingIconDisplay(isRecording) {
@@ -42201,4 +42205,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.6fe4cecb.js.map
+//# sourceMappingURL=/Newcandidate.a92341db.js.map
