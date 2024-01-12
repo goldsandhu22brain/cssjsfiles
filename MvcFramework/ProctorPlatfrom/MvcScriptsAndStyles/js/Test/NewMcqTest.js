@@ -457,7 +457,8 @@ function SubmitTestAutomatically(callBack = null) {
 				}
 				else {
 					$('.proctor-loader').css("visibility", "hidden");
-					$('#testDiv').replaceWith(result);
+				//	$('#testDiv').replaceWith(result);
+					$(".test-main").html(result);
 					ReStartTimer();
 					clearInterval(timerExamInterval);
 				}
