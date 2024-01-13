@@ -41218,18 +41218,18 @@ function LoadQuestion(panelStatus) {
     }
   }
 }
-function GetRoomCode(_x) {
+function GetRoomCode(_x, _x2) {
   return _GetRoomCode.apply(this, arguments);
 }
 function _GetRoomCode() {
-  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_interviewId) {
+  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_interviewId, _roundId) {
     var fullName,
       url,
       _args2 = arguments;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          fullName = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : null;
+          fullName = _args2.length > 2 && _args2[2] !== undefined ? _args2[2] : null;
           url = getInterviewUrl() + "/GetRoomCodeByInterviewId"; // fullScreenEnable();
           _jquery.default.ajax({
             url: url,
@@ -41237,6 +41237,7 @@ function _GetRoomCode() {
             dataType: 'json',
             data: {
               interviewId: _interviewId,
+              roundId: _roundId,
               role: "candidate"
             },
             crossDomain: true,
@@ -41334,7 +41335,7 @@ function _InitialLoad() {
               GlobalObj.ActivityCallBack = UserAlertTrigger;
               scopeData = GlobalObj; //assigning the global variable in NodeScope
               PhotoCaptureTimer = parseInt(GlobalObj.FaceDetectionInterval);
-              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.FullName);
+              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.TestRoundId, GlobalObj.FullName);
             },
             complete: function complete() {
               (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
@@ -41601,7 +41602,7 @@ function _stopRecording() {
   }));
   return _stopRecording.apply(this, arguments);
 }
-function JoinRoom(_x2, _x3) {
+function JoinRoom(_x3, _x4) {
   return _JoinRoom.apply(this, arguments);
 }
 function _JoinRoom() {
@@ -41649,7 +41650,7 @@ function _JoinRoom() {
                           }
                         }, _callee10);
                       }));
-                      return function (_x5) {
+                      return function (_x6) {
                         return _ref3.apply(this, arguments);
                       };
                     }());
@@ -41660,7 +41661,7 @@ function _JoinRoom() {
                 }
               }, _callee11);
             }));
-            return function (_x4) {
+            return function (_x5) {
               return _ref2.apply(this, arguments);
             };
           }()).catch(function (error) {
@@ -42273,5 +42274,6 @@ hide(screenShareStatus);
 //Bind Events - End
 fullScreen.onclick();
 (0, _common.DisableActivities)();
+SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.881fbbc6.js.map
+//# sourceMappingURL=/Newinterviewcandidate.7a10accf.js.map

@@ -41020,6 +41020,8 @@ var resumeTestButton = document.querySelector("#resume-test");
 var endTestButton = document.querySelector("#force-end-test");
 var UserAlertTestButton = document.querySelector("#btn-user-alert-test");
 var refreshCamera = document.querySelector("#refresh-camera");
+var joinRoom = document.getElementById("join-room");
+var loadSystemCheck = document.getElementById("load-system-check");
 var CandidateUserId = "";
 var params = new Proxy(new URLSearchParams(window.location.search), {
   get: function get(searchParams, prop) {
@@ -41111,6 +41113,7 @@ function _JoinRoom() {
                             case 2:
                               rooms = _context.sent;
                               (0, _common.ToastMessage)("Panel " + userName + " Joined");
+                              change_tab('load-test');
                               InterviewTestType = GlobalObj.InterviewTestType;
                               if (InterviewTestType == "100" || InterviewTestType == "250") {
                                 show(enableStartMcqbutton);
@@ -41128,13 +41131,13 @@ function _JoinRoom() {
                                 hide(enableStartCodingbutton);
                               }
                               IsPanelReJoining();
-                            case 7:
+                            case 8:
                             case "end":
                               return _context.stop();
                           }
                         }, _callee);
                       }));
-                      return function (_x6) {
+                      return function (_x7) {
                         return _ref2.apply(this, arguments);
                       };
                     }());
@@ -41145,7 +41148,7 @@ function _JoinRoom() {
                 }
               }, _callee2);
             }));
-            return function (_x5) {
+            return function (_x6) {
               return _ref.apply(this, arguments);
             };
           }()).catch(function (error) {
@@ -41160,14 +41163,62 @@ function _JoinRoom() {
   return _JoinRoom.apply(this, arguments);
 }
 ;
+function SystemCheckAPI() {
+  return _SystemCheckAPI.apply(this, arguments);
+}
+function _SystemCheckAPI() {
+  _SystemCheckAPI = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+    var url;
+    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          (0, _jquery.default)('#load-system-check').val((0, _jquery.default)('#load-system-check').data("loading-text"));
+          url = getInterviewUrl() + "/NewSystemCheck";
+          _jquery.default.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html',
+            data: {
+              cameraCheck: false
+            },
+            crossDomain: true,
+            cache: false,
+            async: true,
+            beforeSend: function beforeSend() {
+              (0, _jquery.default)('.proctor-loader').css("visibility", "visible");
+            },
+            success: function success(response) {
+              var result = response;
+              if (result) {
+                (0, _jquery.default)("#pills-system-check-item").html("");
+                (0, _jquery.default)("#pills-system-check-item").html(result);
+                (0, _jquery.default)('#load-system-check').val("Next");
+                change_tab('system-check');
+              }
+            },
+            complete: function complete() {
+              (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+            },
+            error: function error(response) {
+              (0, _common.ToastMessage)(response.responseText, false);
+            }
+          });
+        case 3:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4);
+  }));
+  return _SystemCheckAPI.apply(this, arguments);
+}
 function UpdateRooms() {
   return _UpdateRooms.apply(this, arguments);
 }
 function _UpdateRooms() {
-  _UpdateRooms = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+  _UpdateRooms = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
         case 0:
           url = getInterviewUrl() + "/UpdateRooms";
           _jquery.default.ajax({
@@ -41191,9 +41242,9 @@ function _UpdateRooms() {
           });
         case 2:
         case "end":
-          return _context4.stop();
+          return _context5.stop();
       }
-    }, _callee4);
+    }, _callee5);
   }));
   return _UpdateRooms.apply(this, arguments);
 }
@@ -41389,33 +41440,33 @@ function showScreenShareVideo() {
   return _showScreenShareVideo.apply(this, arguments);
 }
 function _showScreenShareVideo() {
-  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
     var screenShareOn, amIScreenSharing, presenter, screenShareVideoTrack;
-    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
+    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+      while (1) switch (_context6.prev = _context6.next) {
         case 0:
           screenShareOn = hmsStore.getState(_hmsVideoStore.selectIsSomeoneScreenSharing);
           if (!screenShareOn) {
-            _context5.next = 15;
+            _context6.next = 15;
             break;
           }
           amIScreenSharing = hmsStore.getState(_hmsVideoStore.selectIsLocalScreenShared);
           presenter = hmsStore.getState(_hmsVideoStore.selectPeerScreenSharing);
           screenShareVideoTrack = hmsStore.getState((0, _hmsVideoStore.selectScreenShareByPeerID)(presenter === null || presenter === void 0 ? void 0 : presenter.id));
           if (!amIScreenSharing) {
-            _context5.next = 9;
+            _context6.next = 9;
             break;
           }
           screenShareStatus.textContent = "Screen share started!!!";
-          _context5.next = 13;
+          _context6.next = 13;
           break;
         case 9:
           hide(screenShareStatus);
           show(screenShareVideo);
-          _context5.next = 13;
+          _context6.next = 13;
           return hmsActions.attachVideo(screenShareVideoTrack === null || screenShareVideoTrack === void 0 ? void 0 : screenShareVideoTrack.id, screenShareVideo);
         case 13:
-          _context5.next = 18;
+          _context6.next = 18;
           break;
         case 15:
           screenShareStatus.textContent = "Welcome! Sit back and relax till streaming start.";
@@ -41423,9 +41474,9 @@ function _showScreenShareVideo() {
           show(screenShareStatus);
         case 18:
         case "end":
-          return _context5.stop();
+          return _context6.stop();
       }
-    }, _callee5);
+    }, _callee6);
   }));
   return _showScreenShareVideo.apply(this, arguments);
 }
@@ -41443,10 +41494,10 @@ function renderEndRoomButton(_x3) {
   return _renderEndRoomButton.apply(this, arguments);
 }
 function _renderEndRoomButton() {
-  _renderEndRoomButton = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(permissions) {
+  _renderEndRoomButton = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(permissions) {
     var endRoomButton;
-    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
-      while (1) switch (_context6.prev = _context6.next) {
+    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
         case 0:
           endRoomButton = document.getElementById('end-room-button');
           if (permissions != null && permissions.endRoom) {
@@ -41457,9 +41508,9 @@ function _renderEndRoomButton() {
           }
         case 2:
         case "end":
-          return _context6.stop();
+          return _context7.stop();
       }
-    }, _callee6);
+    }, _callee7);
   }));
   return _renderEndRoomButton.apply(this, arguments);
 }
@@ -41621,12 +41672,14 @@ function CameraSwitch() {
     (0, _jquery.default)(".peer-tile").addClass("camera-fullsize");
     (0, _jquery.default)(".peer-video-tile").addClass("camera-fullsize");
     (0, _jquery.default)(".tile-short.shape-circle.shape-color").addClass("camera-fullsize");
+    (0, _jquery.default)(".peer-video").addClass("camera-fullsize");
   } else {
     (0, _jquery.default)(".sidebar.video-box").removeClass("camera-fullsize");
     (0, _jquery.default)(".peers-container").removeClass("camera-fullsize");
     (0, _jquery.default)(".peer-tile").removeClass("camera-fullsize");
     (0, _jquery.default)(".peer-video-tile").removeClass("camera-fullsize");
     (0, _jquery.default)(".tile-short.shape-circle.shape-color").removeClass("camera-fullsize");
+    (0, _jquery.default)(".peer-video").removeClass("camera-fullsize");
   }
 }
 function FeedBackForm() {
@@ -41662,18 +41715,18 @@ function FeedbackSubmit() {
     }
   });
 }
-function GetRoomCode(_x4) {
+function GetRoomCode(_x4, _x5) {
   return _GetRoomCode.apply(this, arguments);
 }
 function _GetRoomCode() {
-  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(_interviewId) {
+  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(_interviewId, _roundId) {
     var fullName,
       url,
-      _args7 = arguments;
-    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
-      while (1) switch (_context7.prev = _context7.next) {
+      _args8 = arguments;
+    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
         case 0:
-          fullName = _args7.length > 1 && _args7[1] !== undefined ? _args7[1] : null;
+          fullName = _args8.length > 2 && _args8[2] !== undefined ? _args8[2] : null;
           url = getInterviewUrl() + "/GetRoomCodeByInterviewId";
           _jquery.default.ajax({
             url: url,
@@ -41681,6 +41734,7 @@ function _GetRoomCode() {
             dataType: 'json',
             data: {
               interviewId: _interviewId,
+              roundId: _roundId,
               role: "panel"
             },
             crossDomain: true,
@@ -41701,9 +41755,9 @@ function _GetRoomCode() {
           });
         case 3:
         case "end":
-          return _context7.stop();
+          return _context8.stop();
       }
-    }, _callee7);
+    }, _callee8);
   }));
   return _GetRoomCode.apply(this, arguments);
 }
@@ -41718,10 +41772,10 @@ function InitialLoad() {
 } //Functions - End
 //Bind Events - Start
 function _InitialLoad() {
-  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8() {
+  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
-      while (1) switch (_context8.prev = _context8.next) {
+    return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+      while (1) switch (_context9.prev = _context9.next) {
         case 0:
           url = getInterviewUrl() + "/InitialLoad";
           _jquery.default.ajax({
@@ -41754,7 +41808,7 @@ function _InitialLoad() {
                 hide(enableStartMcqbutton);
                 hide(enableStartCodingbutton);
               }
-              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.FullName);
+              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.TestRoundId, GlobalObj.FullName);
             },
             complete: function complete() {
               (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
@@ -41763,9 +41817,9 @@ function _InitialLoad() {
           });
         case 2:
         case "end":
-          return _context8.stop();
+          return _context9.stop();
       }
-    }, _callee8);
+    }, _callee9);
   }));
   return _InitialLoad.apply(this, arguments);
 }
@@ -41776,6 +41830,8 @@ UserAlertTestButton.onclick = UserAlertTest;
 pauseTestButton.onclick = PauseCandidateTest;
 resumeTestButton.onclick = ResumeCandidateTest;
 endTestButton.onclick = ForceCandidateTestEnd;
+joinRoom.onclick = InitialLoad;
+loadSystemCheck.onclick = SystemCheckAPI;
 leaveBtn.onclick = handleLeave;
 sendToCandidate.onclick = sendMessageToBroadCast;
 sendToPanel.onclick = SendMessageToPanel;
@@ -41808,7 +41864,6 @@ hmsStore.subscribe(renderMessageList, _hmsVideoStore.selectHMSMessages);
 hmsStore.subscribe(UpdateUnreadMessageCount, _hmsVideoStore.selectUnreadHMSMessagesCount); // unread message  count
 hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
-//trigger Join
-InitialLoad();
+SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.e6d8d386.js.map
+//# sourceMappingURL=/interviewpanel.8d7985a6.js.map
