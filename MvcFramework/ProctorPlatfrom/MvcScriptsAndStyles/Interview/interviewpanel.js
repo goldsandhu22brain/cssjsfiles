@@ -41366,7 +41366,11 @@ function show(el) {
 function handleLeave() {
   CandidateTest("PanelLeaveRoom", false, "PanelLeaveRoom", true);
   hmsActions.leave();
-  peersContainer.innerHTML = "";
+  //peersContainer.innerHTML = "";
+  function callRedirect() {
+    window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
+  }
+  window.setTimeout(callRedirect, 3000);
 }
 function CandidateTest(property1, value1) {
   var property2 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
@@ -41485,6 +41489,10 @@ function EndRoomClick() {
     var lock = true; // set to true to disallow rejoins
     var reason = "Test Room Ended Successfully by Panel Member";
     hmsActions.endRoom(lock, reason);
+    function callRedirect() {
+      window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
+    }
+    window.setTimeout(callRedirect, 3000);
   } catch (error) {
     // Permission denied or not connected to room
     console.error(error);
@@ -41866,4 +41874,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.8d7985a6.js.map
+//# sourceMappingURL=/interviewpanel.61405383.js.map
