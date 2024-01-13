@@ -103,7 +103,7 @@ function onDetectRTCLoaded() {
             imgwebrtc == false;
         }
     }
-    var camerror = $('#cam-error') != null;
+    var camerror = $('#cam-error').length>0;
     if (DetectRTC.hasWebcam) {
         $('#cam-error').addClass('d-none');
         $('#cam-success').removeClass('d-none');
