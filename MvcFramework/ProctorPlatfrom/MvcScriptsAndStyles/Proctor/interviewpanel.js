@@ -41104,7 +41104,7 @@ function _JoinRoom() {
                       }
                     }).then( /*#__PURE__*/function () {
                       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values) {
-                        var rooms, InterviewTestType;
+                        var rooms, InterviewTestType, panelInterval, CanWaitOrLeave, panelIntervalCall;
                         return _regeneratorRuntime().wrap(function _callee$(_context) {
                           while (1) switch (_context.prev = _context.next) {
                             case 0:
@@ -41131,7 +41131,39 @@ function _JoinRoom() {
                                 hide(enableStartCodingbutton);
                               }
                               IsPanelReJoining();
-                            case 8:
+                              if (IsCandidateJoined()) {
+                                panelIntervalCall = function _panelIntervalCall() {
+                                  panelInterval = setInterval(function () {
+                                    setTimeout(function () {
+                                      CanWaitOrLeave(panelInterval);
+                                    }, 0);
+                                  }, 120000); // 2mins
+                                };
+                                panelInterval = null;
+                                CanWaitOrLeave = function CanWaitOrLeave(callback) {
+                                  var st = GlobalObj.StartTime;
+                                  var d1 = new Date(st);
+                                  var d2 = new Date(); //current date time
+                                  var diff = (d2 - d1) / 1000;
+                                  if (diff > 240) {
+                                    //after 2mins
+                                    (0, _jquery.default)("#Inject-UAA").html("");
+                                    (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark'>Candidate not yet joined</h3><div id='controls' class='text-center'><button id = 'Wait' class= 'btn-control btn-Approve btn-left-rounded'> Wait</button><button id = 'Leave' class= 'btn-control btn-left-rounded'>Leave</button> ");
+                                    (0, _jquery.default)("#Wait").click(function () {
+                                      (0, _jquery.default)('#test-myModal').hide();
+                                      panelIntervalCall();
+                                    });
+                                    (0, _jquery.default)("#Leave").click(function () {
+                                      handleLeave();
+                                    });
+                                    (0, _jquery.default)('#test-myModal').show();
+                                    clearInterval(callback);
+                                  } else {
+                                    console.log(diff);
+                                  }
+                                };
+                              }
+                            case 9:
                             case "end":
                               return _context.stop();
                           }
@@ -41163,6 +41195,12 @@ function _JoinRoom() {
   return _JoinRoom.apply(this, arguments);
 }
 ;
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
 function SystemCheckAPI() {
   return _SystemCheckAPI.apply(this, arguments);
 }
@@ -41533,6 +41571,13 @@ function GetCandidatePeerDetails() {
   }
   return presenter;
 }
+function IsCandidateJoined() {
+  var _hmsStore$getState2;
+  var candidate = (_hmsStore$getState2 = hmsStore.getState(_hmsVideoStore.selectPeers)) === null || _hmsStore$getState2 === void 0 ? void 0 : _hmsStore$getState2.find(function (x) {
+    return x.roleName == candidateRole;
+  });
+  return candidate == null;
+}
 function TriggerEnableStartButton() {
   var presenter = GetCandidatePeerDetails();
   if (!presenter) {
@@ -41874,4 +41919,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.61405383.js.map
+//# sourceMappingURL=/interviewpanel.1ca9877f.js.map
