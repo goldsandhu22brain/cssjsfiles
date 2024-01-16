@@ -34,7 +34,7 @@ function MeasureConnectionSpeed() {
         var speedMbps = (speedKbps / 1024).toFixed(2);
 
         if (speedMbps >= 1.0) {
-            $('#imgband').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/tick.png');
+            $('#imgband').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/tick.png');
 
             if (Isvalid == true) {
                 $('#hfreNext').show();
@@ -44,13 +44,13 @@ function MeasureConnectionSpeed() {
             }
         }
         else {
-            $('#imgband').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png);
+            $('#imgband').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png);
             $('#imgband').addClass('stepred');
         }
     }
 
     download.onerror = function (err, msg) {
-        $('#imgband').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png');
+        $('#imgband').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
         $('#imgband').addClass('stepred');
     }
 
@@ -74,43 +74,43 @@ function onDetectRTCLoaded() {
    var name = DetectRTC.osName;
 	//alert("OS : " + name);
     if (name == 'Windows' || name.toUpperCase().indexOf('MAC')>=0) {
-        $('#imgos').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/tick.png');
+        $('#imgos').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/tick.png');
         $('#divos').addClass('stepgreen');
     }
     else {
-        $('#imgos').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png');
+        $('#imgos').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
         $('#divos').removeClass('stepgreen');
         $('#divos').addClass('stepred');
         Isvalid = false;
     }
     if (DetectRTC.browser.isChrome) {
-        $('#imgbrowser').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/tick.png');
+        $('#imgbrowser').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/tick.png');
         $('#divbrowser').addClass('stepgreen');
     }
     else {
-        $('#imgbrowser').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png');
+        $('#imgbrowser').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
         $('#divbrowser').removeClass('stepgreen');
         $('#divbrowser').addClass('stepred');
         Isvalid = false;
     }
 
     if (DetectRTC.hasMicrophone) {
-        $('#imgmicro').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/tick.png');
+        $('#imgmicro').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/tick.png');
         $('#divmicro').addClass('stepgreen');
     }
     else {
-        $('#imgmicro').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png');
+        $('#imgmicro').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
         $('#divmicro').removeClass('stepgreen');
         $('#divmicro').addClass('stepred');
         Isvalid = false;
     }
 
     if (DetectRTC.isWebRTCSupported) {
-        $('#imgwebrtc').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/tick.png');
+        $('#imgwebrtc').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/tick.png');
         $('#divwebrtc').addClass('stepgreen');
     }
     else {
-        $('#imgwebrtc').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png');
+        $('#imgwebrtc').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
         $('#divwebrtc').removeClass('stepgreen');
         $('#divwebrtc').addClass('stepred');
         Isvalid = false;
@@ -124,21 +124,21 @@ function onDetectRTCLoaded() {
     }
 
     if (DetectRTC.hasWebcam) {
-        $('#imgcamera').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/tick.png');
+        $('#imgcamera').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/tick.png');
         $('#divcamera').addClass('stepgreen');
     }
     else {
-        $('#imgcamera').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png');
+        $('#imgcamera').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
         $('#divcamera').removeClass('stepgreen');
         $('#divcamera').addClass('stepred');
         Isvalid = false;
     }
     if (DetectRTC.isWebSocketsSupported) {
-        $('#imgport').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/tick.png');
+        $('#imgport').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/tick.png');
         $('#divport').addClass('stepgreen');
     }
     else {
-        $('#imgport').attr('src', 'https://mediacdn.brainmeasures.com/images/Pages/System/unchecked.png');
+        $('#imgport').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
         $('#divport').removeClass('stepgreen');
         $('#divport').addClass('stepred');
         Isvalid = false;
