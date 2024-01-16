@@ -40531,6 +40531,9 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
     // you can use the following to show appropriate toast notifications for eg.
 
     switch (notification.type) {
+      case 'DEVICE_CHANGE_UPDATE':
+        CallBack(notification);
+        break;
       case HMSNotificationTypes.PEER_LIST:
         ToastMessage("".concat(notification.data, " are the peers in the room")); // received right after join
         break;
@@ -40544,7 +40547,7 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         ToastMessage("".concat(notification.data.message, " received from ").concat(notification.data.senderName));
         break;
       case HMSNotificationTypes.ERROR:
-        ToastMessage("[Error] ".concat(notification.data.message, ", [Error Code] ").concat(notification.data.code));
+        GetErrorMessageByCode(notification.data);
         break;
       case HMSNotificationTypes.RECONNECTING:
         ToastMessage('[Reconnecting]', notification.data);
@@ -40618,6 +40621,129 @@ function _ScreenSharedType() {
     }, _callee);
   }));
   return _ScreenSharedType.apply(this, arguments);
+}
+function GetErrorMessageByCode(data) {
+  switch (data.code) {
+    case 1000:
+      ToastMessage('Cause: Failed to connect to Websocket - Happens due to network issues or firewall blocking Websocket connections \n Take Action: Mention user to check their network connection and firewall/anti-virus/VPN or try again after some time.', true);
+      break;
+    case 1003:
+      ToastMessage('Cause: Websocket disconnected - Happens due to network issues \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 2002:
+      ToastMessage('Cause: Invalid Endpoint URL \n Take Action: Check the endpoint provided while calling�join�on�HMSSDK.', true);
+      break;
+    case 2003:
+      ToastMessage('Cause: Endpoint is not reachable \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 2004:
+      ToastMessage('Cause: Token is not in proper JWT format \n Take Action: The token passed while calling�join�is not in correct format. Retry getting a new token.', true);
+      break;
+    case 3000:
+      ToastMessage('Cause: Overconstrained error \n Take Action: No Action needed from end user, we will be internally retrying.', true);
+      break;
+    case 3001:
+      ToastMessage('Cause: User denied permission to access capture device at browser level \n Take Action: Ask user to check permission granted to audio/video capture devices in browser(in address bar).', true);
+      break;
+    case 3002:
+      ToastMessage('Cause: Capture Device is not Available \n Take Action: Ask user to check if the audio/video capture device is connected or not.', true);
+      break;
+    case 3003:
+      ToastMessage('Cause: Capture device is in use by some other application \n Take Action: Show notification to user mentioning that the capturing device is used by some other application currently.', true);
+      break;
+    case 3004:
+      ToastMessage('Cause: Lost access to capture device midway \n Take Action: Suggest the user to check connection to their hardware device and try reconnecting.', true);
+      break;
+    case 3005:
+      ToastMessage('Cause: There is no media to return. Please select either video or audio or both. \n Take Action: There is no media to return. Please select either video or audio or both.', true);
+      break;
+    case 3008:
+      ToastMessage('Cause: Browser has throw an autoplay exception \n Take Action: Show notification to user mentioning that the browser blocked autoplay', true);
+      break;
+    case 3009:
+      ToastMessage('Cause: Device unable to satisfy requested media constraints \n Take Action: Reduce media constraints for the role in dashboard or upgrade device hardware.', true);
+      break;
+    case 3010:
+      ToastMessage('Cause: No audio detected from track, indicates problem with device hardware \n Take Action: Notify user to try using a headphone for microphone.', true);
+      break;
+    case 3011:
+      ToastMessage('Cause: System denied permission to access capture device \n Take Action: Ask user to check permission granted to audio/video/screen capture devices in system settings.', true);
+      break;
+    case 3012:
+      ToastMessage('Cause: Current tab is not shared when forceCurrentTab was set to true for screenshare \n Take Action: -', true);
+      break;
+    case 3013:
+      ToastMessage('Cause: An error occurred while playing audio of remote audio tracks \n Take Action: -', true);
+      break;
+    case 3014:
+      ToastMessage('Cause: Selected audio/video device not detected on change \n Take Action: Ask user to check if the audio/video capture device is connected or not.', true);
+      break;
+    case 4001:
+      ToastMessage('Cause: Failed to create offer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4002:
+      ToastMessage('Cause: Failed to create answer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4003:
+      ToastMessage('Cause: Failed to set offer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4004:
+      ToastMessage('Cause: Failed to set answer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4005:
+      ToastMessage('Cause: ICE Connection Failed due to network issue \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 4006:
+      ToastMessage('Cause: ICE Connection Disconnected due to network issue \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 5001:
+      ToastMessage('Cause: Trying to join a room which is already joined \n Take Action: Trying to join an already joined room.', true);
+      break;
+    case 5002:
+      ToastMessage('Cause: Trying to join a room when preview is in progress \n Take Action: Call join action only when room state is "Preview" and not "Connecting".', true);
+      break;
+    case 6000:
+      ToastMessage('Cause: Calling actions when not connected/joined to a room \n Take Action: Call the required action after joining a room.', true);
+      break;
+    case 6002:
+      ToastMessage('Cause: WebRTC Error: Error while renegotiating \n Take Action: We can add check�error.message�for more info.', true);
+      break;
+    case 6003:
+      ToastMessage('Cause: WebRTC engine is not ready yet \n Take Action: Wait for preview to complete before calling join.', true);
+      break;
+    case 6008:
+      ToastMessage('Cause: Invalid arguments(peer ID, track ID, or others) passed to actions \n Take Action: Check if the corresponding arguments are valid by checking the store when calling the action', true);
+      break;
+    case 6009:
+      ToastMessage('Cause: Trying to join a room when preview is in progress \n Take Action: Call join action only when room state is "Preview" and not "Connecting".', true);
+      break;
+    case 6010:
+      ToastMessage('Cause: navigator.mediaDevices is undefined in insecure contexts served over HTTP protocol \n Take Action: Deploy the app in a secure context with HTTPS protocol.', true);
+      break;
+    case 6011:
+      ToastMessage('Cause: RTCPeerConnection is undefined in browser \n Take Action: Switch/Upgrade browser to WebRTC compatible version/check for browser extension blocking WebRTC.', true);
+      break;
+    case 6012:
+      ToastMessage('Cause: The application does not have access to localStorage \n Take Action: Try joining the link in a normal browser window if using in incognito mode causes this error. Alternatively, allowing cookies and localStorage via browser settings also works in incognito mode', true);
+      break;
+    case 7001:
+      ToastMessage('Cause: Platform Not Supported \n Take Action: The platform is not supported for plugin', true);
+      break;
+    case 7002:
+      ToastMessage('Cause: Plugin Init Failed \n Take Action: Plugin initialization has failed', true);
+      break;
+    case 7003:
+      ToastMessage('Cause: Plugin Processing Failed \n Take Action: Plugin processing failed', true);
+      break;
+    case 7004:
+      ToastMessage('Cause: Plugin Add Already Going on \n Take Action: Plugin add is already in progress', true);
+      break;
+    case 8001:
+      ToastMessage('Cause: Playlist: Invalid action call \n Take Action: Check current playing entry, next entry, previous entry when calling seek/seekTo, playNext, playPrevious.', true);
+      break;
+    default:
+      ToastMessage(data.message, true);
+  }
 }
 function ToastMessage(msg) {
   var display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -40835,6 +40961,7 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 // Initialize HMS Store
 var hmsManager = new _hmsVideoStore.HMSReactiveStore();
 hmsManager.triggerOnSubscribe();
@@ -40920,6 +41047,7 @@ var startTestButton = document.getElementById("load-test-section");
 var startCodingTestButton = document.getElementById("load-coding-test");
 var authenticateSubmit = document.getElementById("authenticateSubmit");
 var loadSystemCheck = document.getElementById("load-system-check");
+var refreshvideo = document.getElementById("refreshvideo");
 var params = new Proxy(new URLSearchParams(window.location.search), {
   get: function get(searchParams, prop) {
     return searchParams.get(prop);
@@ -41090,18 +41218,18 @@ function LoadQuestion(panelStatus) {
     }
   }
 }
-function GetRoomCode(_x) {
+function GetRoomCode(_x, _x2) {
   return _GetRoomCode.apply(this, arguments);
 }
 function _GetRoomCode() {
-  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(_interviewId) {
+  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_interviewId, _roundId) {
     var fullName,
       url,
-      _args = arguments;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
+      _args2 = arguments;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          fullName = _args.length > 1 && _args[1] !== undefined ? _args[1] : null;
+          fullName = _args2.length > 2 && _args2[2] !== undefined ? _args2[2] : null;
           url = getInterviewUrl() + "/GetRoomCodeByInterviewId"; // fullScreenEnable();
           _jquery.default.ajax({
             url: url,
@@ -41109,6 +41237,7 @@ function _GetRoomCode() {
             dataType: 'json',
             data: {
               interviewId: _interviewId,
+              roundId: _roundId,
               role: "candidate"
             },
             crossDomain: true,
@@ -41130,9 +41259,9 @@ function _GetRoomCode() {
           });
         case 3:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
-    }, _callee);
+    }, _callee2);
   }));
   return _GetRoomCode.apply(this, arguments);
 }
@@ -41140,10 +41269,10 @@ function UpdateSlots() {
   return _UpdateSlots.apply(this, arguments);
 }
 function _UpdateSlots() {
-  _UpdateSlots = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+  _UpdateSlots = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
         case 0:
           url = getBaseUrl() + "/UpdateSlots";
           _jquery.default.ajax({
@@ -41165,9 +41294,9 @@ function _UpdateSlots() {
           });
         case 2:
         case "end":
-          return _context2.stop();
+          return _context3.stop();
       }
-    }, _callee2);
+    }, _callee3);
   }));
   return _UpdateSlots.apply(this, arguments);
 }
@@ -41175,10 +41304,10 @@ function InitialLoad() {
   return _InitialLoad.apply(this, arguments);
 }
 function _InitialLoad() {
-  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
+    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
         case 0:
           url = getInterviewUrl() + "/InitialLoad";
           (0, _jquery.default)('#proof-check').text((0, _jquery.default)('#proof-check').data("loading-text"));
@@ -41198,7 +41327,7 @@ function _InitialLoad() {
               UpdateGlobalVariable(result); // updating the Global Variable
               (0, _jquery.default)(".error-message").html("");
               if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-                var url = '<br><a href="' + GlobalObj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+                var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
                 (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
                 change_tab('error-message');
                 return;
@@ -41206,7 +41335,7 @@ function _InitialLoad() {
               GlobalObj.ActivityCallBack = UserAlertTrigger;
               scopeData = GlobalObj; //assigning the global variable in NodeScope
               PhotoCaptureTimer = parseInt(GlobalObj.FaceDetectionInterval);
-              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.FullName);
+              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.TestRoundId, GlobalObj.FullName);
             },
             complete: function complete() {
               (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
@@ -41217,9 +41346,9 @@ function _InitialLoad() {
           });
         case 3:
         case "end":
-          return _context3.stop();
+          return _context4.stop();
       }
-    }, _callee3);
+    }, _callee4);
   }));
   return _InitialLoad.apply(this, arguments);
 }
@@ -41237,10 +41366,10 @@ function GetSecurityQuestion() {
   return _GetSecurityQuestion.apply(this, arguments);
 }
 function _GetSecurityQuestion() {
-  _GetSecurityQuestion = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+  _GetSecurityQuestion = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
         case 0:
           url = getBaseUrl() + "/SecurityQuestions";
           (0, _jquery.default)("#pills-security-questions").html();
@@ -41281,9 +41410,9 @@ function _GetSecurityQuestion() {
           });
         case 3:
         case "end":
-          return _context4.stop();
+          return _context5.stop();
       }
-    }, _callee4);
+    }, _callee5);
   }));
   return _GetSecurityQuestion.apply(this, arguments);
 }
@@ -41291,10 +41420,10 @@ function SystemCheckAPI() {
   return _SystemCheckAPI.apply(this, arguments);
 }
 function _SystemCheckAPI() {
-  _SystemCheckAPI = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+  _SystemCheckAPI = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
+    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+      while (1) switch (_context6.prev = _context6.next) {
         case 0:
           (0, _jquery.default)('#load-system-check').val((0, _jquery.default)('#load-system-check').data("loading-text"));
           url = getBaseUrl() + "/NewSystemCheck";
@@ -41327,9 +41456,9 @@ function _SystemCheckAPI() {
           });
         case 3:
         case "end":
-          return _context5.stop();
+          return _context6.stop();
       }
-    }, _callee5);
+    }, _callee6);
   }));
   return _SystemCheckAPI.apply(this, arguments);
 }
@@ -41337,10 +41466,10 @@ function AuthenticationSubmit() {
   return _AuthenticationSubmit.apply(this, arguments);
 }
 function _AuthenticationSubmit() {
-  _AuthenticationSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+  _AuthenticationSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
-      while (1) switch (_context6.prev = _context6.next) {
+    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
         case 0:
           url = getBaseUrl() + "/AuthenticateCandidate";
           (0, _jquery.default)('#authenticateSubmit').val((0, _jquery.default)('#authenticateSubmit').data("loading-text"));
@@ -41381,9 +41510,9 @@ function _AuthenticationSubmit() {
           });
         case 3:
         case "end":
-          return _context6.stop();
+          return _context7.stop();
       }
-    }, _callee6);
+    }, _callee7);
   }));
   return _AuthenticationSubmit.apply(this, arguments);
 }
@@ -41391,10 +41520,10 @@ function startRecording() {
   return _startRecording.apply(this, arguments);
 }
 function _startRecording() {
-  _startRecording = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7() {
+  _startRecording = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
-      while (1) switch (_context7.prev = _context7.next) {
+    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
         case 0:
           url = getBaseUrl() + "/StartRecording";
           _jquery.default.ajax({
@@ -41424,9 +41553,9 @@ function _startRecording() {
           });
         case 2:
         case "end":
-          return _context7.stop();
+          return _context8.stop();
       }
-    }, _callee7);
+    }, _callee8);
   }));
   return _startRecording.apply(this, arguments);
 }
@@ -41434,10 +41563,10 @@ function stopRecording() {
   return _stopRecording.apply(this, arguments);
 } // Joining the room
 function _stopRecording() {
-  _stopRecording = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8() {
+  _stopRecording = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
-      while (1) switch (_context8.prev = _context8.next) {
+    return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+      while (1) switch (_context9.prev = _context9.next) {
         case 0:
           url = getBaseUrl() + "/StopRecording";
           _jquery.default.ajax({
@@ -41467,29 +41596,29 @@ function _stopRecording() {
           });
         case 2:
         case "end":
-          return _context8.stop();
+          return _context9.stop();
       }
-    }, _callee8);
+    }, _callee9);
   }));
   return _stopRecording.apply(this, arguments);
 }
-function JoinRoom(_x2, _x3) {
+function JoinRoom(_x3, _x4) {
   return _JoinRoom.apply(this, arguments);
 }
 function _JoinRoom() {
-  _JoinRoom = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(userName, roomCode) {
+  _JoinRoom = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(userName, roomCode) {
     var authTokenAPI;
-    return _regeneratorRuntime().wrap(function _callee11$(_context11) {
-      while (1) switch (_context11.prev = _context11.next) {
+    return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+      while (1) switch (_context12.prev = _context12.next) {
         case 0:
           // use room code to fetch auth token    
           authTokenAPI = hmsActions.getAuthTokenByRoomCode({
             roomCode: roomCode
           }).then( /*#__PURE__*/function () {
-            var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(authToken) {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(authToken) {
               var joining;
-              return _regeneratorRuntime().wrap(function _callee10$(_context10) {
-                while (1) switch (_context10.prev = _context10.next) {
+              return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+                while (1) switch (_context11.prev = _context11.next) {
                   case 0:
                     // join room using username and auth token
                     joining = hmsActions.join({
@@ -41504,45 +41633,45 @@ function _JoinRoom() {
                         captureNetworkQualityInPreview: true
                       }
                     }).then( /*#__PURE__*/function () {
-                      var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(values) {
+                      var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(values) {
                         var slots;
-                        return _regeneratorRuntime().wrap(function _callee9$(_context9) {
-                          while (1) switch (_context9.prev = _context9.next) {
+                        return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+                          while (1) switch (_context10.prev = _context10.next) {
                             case 0:
-                              _context9.next = 2;
+                              _context10.next = 2;
                               return UpdateSlots();
                             case 2:
-                              slots = _context9.sent;
+                              slots = _context10.sent;
                               change_tab("authentication");
                               show(customView);
                             case 5:
                             case "end":
-                              return _context9.stop();
+                              return _context10.stop();
                           }
-                        }, _callee9);
+                        }, _callee10);
                       }));
-                      return function (_x5) {
-                        return _ref2.apply(this, arguments);
+                      return function (_x6) {
+                        return _ref3.apply(this, arguments);
                       };
                     }());
                     (0, _common.Events)();
                   case 2:
                   case "end":
-                    return _context10.stop();
+                    return _context11.stop();
                 }
-              }, _callee10);
+              }, _callee11);
             }));
-            return function (_x4) {
-              return _ref.apply(this, arguments);
+            return function (_x5) {
+              return _ref2.apply(this, arguments);
             };
           }()).catch(function (error) {
             (0, _common.ToastMessage)("Failed to Join Room!!! Contact System Administrator", true);
           });
         case 1:
         case "end":
-          return _context11.stop();
+          return _context12.stop();
       }
-    }, _callee11);
+    }, _callee12);
   }));
   return _JoinRoom.apply(this, arguments);
 }
@@ -41623,6 +41752,7 @@ function renderPeers() {
   peers.forEach(function (peer) {
     if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && peer !== null && peer !== void 0 && peer.isLocal) {
       var render = renderPeer(peer);
+      (0, _jquery.default)(peersContainer).empty();
       peersContainer.append(render.elem);
       render.deferred && render.deferred(_common.CameraCaptureCallBack); //trigger callback
 
@@ -41658,7 +41788,7 @@ function handleLeave() {
     change_tab('error-message');
     peersContainer.innerHTML = "";
     callBack && callBack();
-    var url = '<br><a href="' + GlobalObj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+    var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
     (0, _jquery.default)(".error-message").html(url);
     (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
   };
@@ -41728,14 +41858,14 @@ function handleScreenShare() {
   return _handleScreenShare.apply(this, arguments);
 }
 function _handleScreenShare() {
-  _handleScreenShare = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12() {
+  _handleScreenShare = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13() {
     var screenShareOn;
-    return _regeneratorRuntime().wrap(function _callee12$(_context12) {
-      while (1) switch (_context12.prev = _context12.next) {
+    return _regeneratorRuntime().wrap(function _callee13$(_context13) {
+      while (1) switch (_context13.prev = _context13.next) {
         case 0:
           (0, _jquery.default)('#screen-share').val("SHARE YOUR SCREEN");
           screenShareOn = !hmsStore.getState(_hmsVideoStore.selectIsSomeoneScreenSharing);
-          _context12.next = 4;
+          _context13.next = 4;
           return hmsActions.setScreenShareEnabled(screenShareOn);
         case 4:
           if (scopeData.IsProctorLive) {
@@ -41755,9 +41885,9 @@ function _handleScreenShare() {
           (0, _jquery.default)('.step-next-4').removeClass("hide");
         case 8:
         case "end":
-          return _context12.stop();
+          return _context13.stop();
       }
-    }, _callee12);
+    }, _callee13);
   }));
   return _handleScreenShare.apply(this, arguments);
 }
@@ -41765,21 +41895,21 @@ function showScreenShareVideo() {
   return _showScreenShareVideo.apply(this, arguments);
 }
 function _showScreenShareVideo() {
-  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13() {
+  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14() {
     var screenShareOn, amIScreenSharing, presenter, screenShareVideoTrack, peers, panelMembers;
-    return _regeneratorRuntime().wrap(function _callee13$(_context13) {
-      while (1) switch (_context13.prev = _context13.next) {
+    return _regeneratorRuntime().wrap(function _callee14$(_context14) {
+      while (1) switch (_context14.prev = _context14.next) {
         case 0:
           screenShareOn = hmsStore.getState(_hmsVideoStore.selectIsSomeoneScreenSharing);
           if (!screenShareOn) {
-            _context13.next = 16;
+            _context14.next = 16;
             break;
           }
           amIScreenSharing = hmsStore.getState(_hmsVideoStore.selectIsLocalScreenShared);
           presenter = hmsStore.getState(_hmsVideoStore.selectPeerScreenSharing);
           screenShareVideoTrack = hmsStore.getState((0, _hmsVideoStore.selectScreenShareByPeerID)(presenter === null || presenter === void 0 ? void 0 : presenter.id));
           if (!amIScreenSharing) {
-            _context13.next = 11;
+            _context14.next = 11;
             break;
           }
           fullScreenEnable();
@@ -41802,23 +41932,23 @@ function _showScreenShareVideo() {
             }
           }
           (0, _common.PushTracking)(71); //start the sharing
-          _context13.next = 14;
+          _context14.next = 14;
           break;
         case 11:
           hide(screenShareStatus);
-          _context13.next = 14;
+          _context14.next = 14;
           return hmsActions.attachVideo(screenShareVideoTrack === null || screenShareVideoTrack === void 0 ? void 0 : screenShareVideoTrack.id, screenShareVideo);
         case 14:
-          _context13.next = 18;
+          _context14.next = 18;
           break;
         case 16:
           (0, _common.PushTracking)(72); //stopped the sharing
           screenShareStatus.textContent = "Preparing to start test!!!";
         case 18:
         case "end":
-          return _context13.stop();
+          return _context14.stop();
       }
-    }, _callee13);
+    }, _callee14);
   }));
   return _showScreenShareVideo.apply(this, arguments);
 }
@@ -41893,14 +42023,14 @@ function IsPresentInRoom(Obj) {
       } else {
         //No panel member in the rooms respective to the round
         screenShareStatus.textContent = "";
-        var url = '<br><a href="' + Obj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+        var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
         (0, _jquery.default)(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
         (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
         change_tab('error-message');
       }
     } else {
       screenShareStatus.textContent = "";
-      var url = '<br><a href="' + Obj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+      var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
       (0, _jquery.default)(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
       (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
       change_tab('error-message');
@@ -41940,7 +42070,7 @@ function AfterSubmitTest(response) {
         hide(startMcqTestButton);
         hide(startCodingTestButton);
         if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-          var url = '<br><a href="' + GlobalObj.PublicWebsiteDomain + '/User/Dashboard">Click Here for Dashboard</a>';
+          var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
           (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
           (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
           change_tab('error-message');
@@ -42007,7 +42137,11 @@ function TestSubmitAutomatically() {
     };
     window.SubmitTestAutomatically(AfterSubmitTest);
   } else {
+    function callRedirect() {
+      window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
+    }
     handleLeave();
+    window.setTimeout(callRedirect, 3000);
   }
 }
 var RecordingIconDisplay = function RecordingIconDisplay(isRecording) {
@@ -42042,6 +42176,12 @@ function resumeTest() {
   for (var i = 0; i < items.length; i++) {
     items[0].classList.remove("test-pause");
   }
+  if ((0, _jquery.default)(".test-question-grid").hasClass("test-pause")) {
+    (0, _jquery.default)(".test-question-grid").removeClass("test-pause");
+  }
+  if ((0, _jquery.default)(".test-question-container").hasClass("test-pause")) {
+    (0, _jquery.default)(".test-question-container").removeClass("test-pause");
+  }
 }
 function UserAlertTrigger() {
   var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID); //candidate peer
@@ -42066,6 +42206,18 @@ authenticateSubmit.onclick = AuthenticationSubmit;
 screenShareBtn.onclick = handleScreenShare;
 joinRoom.onclick = InitialLoad;
 afterScreenShare.onclick = NextScreenShare;
+refreshvideo.onclick = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+  return _regeneratorRuntime().wrap(function _callee$(_context) {
+    while (1) switch (_context.prev = _context.next) {
+      case 0:
+        new Set(), _readOnlyError("renderedPeerIDs");
+        hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
+      case 2:
+      case "end":
+        return _context.stop();
+    }
+  }, _callee);
+}));
 hide(startMcqTestButton);
 hide(startCodingTestButton);
 leaveBtn.onclick = TestSubmitAutomatically;
@@ -42122,5 +42274,6 @@ hide(screenShareStatus);
 //Bind Events - End
 fullScreen.onclick();
 (0, _common.DisableActivities)();
+SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.ca6b6538.js.map
+//# sourceMappingURL=/Newinterviewcandidate.7a10accf.js.map

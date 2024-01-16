@@ -167,6 +167,7 @@ thead{
     margin: 3px 2px;
     line-height: 30px;
     color: #fff;
+    cursor: pointer;
 }
 
     .questio-grid-number:hover {

@@ -90,8 +90,8 @@ a{
     margin-right: 5px;
 }
 
-.questio-grid-number{
-  display: inline-block;
+.questio-grid-number {
+    display: inline-block;
     width: 30px;
     height: 30px;
     text-align: center;
@@ -99,6 +99,7 @@ a{
     margin: 3px 2px;
     line-height: 30px;
     color: #fff;
+    cursor: pointer;
 }
 .questio-grid-number:hover{
   color: #fff;

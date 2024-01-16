@@ -40531,6 +40531,9 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
     // you can use the following to show appropriate toast notifications for eg.
 
     switch (notification.type) {
+      case 'DEVICE_CHANGE_UPDATE':
+        CallBack(notification);
+        break;
       case HMSNotificationTypes.PEER_LIST:
         ToastMessage("".concat(notification.data, " are the peers in the room")); // received right after join
         break;
@@ -40544,7 +40547,7 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         ToastMessage("".concat(notification.data.message, " received from ").concat(notification.data.senderName));
         break;
       case HMSNotificationTypes.ERROR:
-        ToastMessage("[Error] ".concat(notification.data.message, ", [Error Code] ").concat(notification.data.code));
+        GetErrorMessageByCode(notification.data);
         break;
       case HMSNotificationTypes.RECONNECTING:
         ToastMessage('[Reconnecting]', notification.data);
@@ -40618,6 +40621,129 @@ function _ScreenSharedType() {
     }, _callee);
   }));
   return _ScreenSharedType.apply(this, arguments);
+}
+function GetErrorMessageByCode(data) {
+  switch (data.code) {
+    case 1000:
+      ToastMessage('Cause: Failed to connect to Websocket - Happens due to network issues or firewall blocking Websocket connections \n Take Action: Mention user to check their network connection and firewall/anti-virus/VPN or try again after some time.', true);
+      break;
+    case 1003:
+      ToastMessage('Cause: Websocket disconnected - Happens due to network issues \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 2002:
+      ToastMessage('Cause: Invalid Endpoint URL \n Take Action: Check the endpoint provided while calling�join�on�HMSSDK.', true);
+      break;
+    case 2003:
+      ToastMessage('Cause: Endpoint is not reachable \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 2004:
+      ToastMessage('Cause: Token is not in proper JWT format \n Take Action: The token passed while calling�join�is not in correct format. Retry getting a new token.', true);
+      break;
+    case 3000:
+      ToastMessage('Cause: Overconstrained error \n Take Action: No Action needed from end user, we will be internally retrying.', true);
+      break;
+    case 3001:
+      ToastMessage('Cause: User denied permission to access capture device at browser level \n Take Action: Ask user to check permission granted to audio/video capture devices in browser(in address bar).', true);
+      break;
+    case 3002:
+      ToastMessage('Cause: Capture Device is not Available \n Take Action: Ask user to check if the audio/video capture device is connected or not.', true);
+      break;
+    case 3003:
+      ToastMessage('Cause: Capture device is in use by some other application \n Take Action: Show notification to user mentioning that the capturing device is used by some other application currently.', true);
+      break;
+    case 3004:
+      ToastMessage('Cause: Lost access to capture device midway \n Take Action: Suggest the user to check connection to their hardware device and try reconnecting.', true);
+      break;
+    case 3005:
+      ToastMessage('Cause: There is no media to return. Please select either video or audio or both. \n Take Action: There is no media to return. Please select either video or audio or both.', true);
+      break;
+    case 3008:
+      ToastMessage('Cause: Browser has throw an autoplay exception \n Take Action: Show notification to user mentioning that the browser blocked autoplay', true);
+      break;
+    case 3009:
+      ToastMessage('Cause: Device unable to satisfy requested media constraints \n Take Action: Reduce media constraints for the role in dashboard or upgrade device hardware.', true);
+      break;
+    case 3010:
+      ToastMessage('Cause: No audio detected from track, indicates problem with device hardware \n Take Action: Notify user to try using a headphone for microphone.', true);
+      break;
+    case 3011:
+      ToastMessage('Cause: System denied permission to access capture device \n Take Action: Ask user to check permission granted to audio/video/screen capture devices in system settings.', true);
+      break;
+    case 3012:
+      ToastMessage('Cause: Current tab is not shared when forceCurrentTab was set to true for screenshare \n Take Action: -', true);
+      break;
+    case 3013:
+      ToastMessage('Cause: An error occurred while playing audio of remote audio tracks \n Take Action: -', true);
+      break;
+    case 3014:
+      ToastMessage('Cause: Selected audio/video device not detected on change \n Take Action: Ask user to check if the audio/video capture device is connected or not.', true);
+      break;
+    case 4001:
+      ToastMessage('Cause: Failed to create offer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4002:
+      ToastMessage('Cause: Failed to create answer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4003:
+      ToastMessage('Cause: Failed to set offer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4004:
+      ToastMessage('Cause: Failed to set answer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4005:
+      ToastMessage('Cause: ICE Connection Failed due to network issue \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 4006:
+      ToastMessage('Cause: ICE Connection Disconnected due to network issue \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 5001:
+      ToastMessage('Cause: Trying to join a room which is already joined \n Take Action: Trying to join an already joined room.', true);
+      break;
+    case 5002:
+      ToastMessage('Cause: Trying to join a room when preview is in progress \n Take Action: Call join action only when room state is "Preview" and not "Connecting".', true);
+      break;
+    case 6000:
+      ToastMessage('Cause: Calling actions when not connected/joined to a room \n Take Action: Call the required action after joining a room.', true);
+      break;
+    case 6002:
+      ToastMessage('Cause: WebRTC Error: Error while renegotiating \n Take Action: We can add check�error.message�for more info.', true);
+      break;
+    case 6003:
+      ToastMessage('Cause: WebRTC engine is not ready yet \n Take Action: Wait for preview to complete before calling join.', true);
+      break;
+    case 6008:
+      ToastMessage('Cause: Invalid arguments(peer ID, track ID, or others) passed to actions \n Take Action: Check if the corresponding arguments are valid by checking the store when calling the action', true);
+      break;
+    case 6009:
+      ToastMessage('Cause: Trying to join a room when preview is in progress \n Take Action: Call join action only when room state is "Preview" and not "Connecting".', true);
+      break;
+    case 6010:
+      ToastMessage('Cause: navigator.mediaDevices is undefined in insecure contexts served over HTTP protocol \n Take Action: Deploy the app in a secure context with HTTPS protocol.', true);
+      break;
+    case 6011:
+      ToastMessage('Cause: RTCPeerConnection is undefined in browser \n Take Action: Switch/Upgrade browser to WebRTC compatible version/check for browser extension blocking WebRTC.', true);
+      break;
+    case 6012:
+      ToastMessage('Cause: The application does not have access to localStorage \n Take Action: Try joining the link in a normal browser window if using in incognito mode causes this error. Alternatively, allowing cookies and localStorage via browser settings also works in incognito mode', true);
+      break;
+    case 7001:
+      ToastMessage('Cause: Platform Not Supported \n Take Action: The platform is not supported for plugin', true);
+      break;
+    case 7002:
+      ToastMessage('Cause: Plugin Init Failed \n Take Action: Plugin initialization has failed', true);
+      break;
+    case 7003:
+      ToastMessage('Cause: Plugin Processing Failed \n Take Action: Plugin processing failed', true);
+      break;
+    case 7004:
+      ToastMessage('Cause: Plugin Add Already Going on \n Take Action: Plugin add is already in progress', true);
+      break;
+    case 8001:
+      ToastMessage('Cause: Playlist: Invalid action call \n Take Action: Check current playing entry, next entry, previous entry when calling seek/seekTo, playNext, playPrevious.', true);
+      break;
+    default:
+      ToastMessage(data.message, true);
+  }
 }
 function ToastMessage(msg) {
   var display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -41707,4 +41833,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.1f8c9549.js.map
+//# sourceMappingURL=/newadmin.87e65f8b.js.map

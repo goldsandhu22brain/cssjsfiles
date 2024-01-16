@@ -103,22 +103,23 @@ function onDetectRTCLoaded() {
             imgwebrtc == false;
         }
     }
-
+    var camerror = $('#cam-error').length>0;
     if (DetectRTC.hasWebcam) {
         $('#cam-error').addClass('d-none');
         $('#cam-success').removeClass('d-none');
     }
-    else {
+    else if (camerror) {
         $('#cam-error').removeClass('d-none');
         $('#cam-success').addClass('d-none');
         Isvalid = false;
-    }
+    }    
     if (DetectRTC.isWebSocketsSupported) {
     }
     else {
         Isvalid = false;
     }
-    if ($(".bg-danger.d-none")?.length == 6) {
+    var dnonecount = $(".bg-danger.d-none")?.length;
+    if (dnonecount == 6 || (dnonecount == 5 && !camerror)) {
         $(".step-next-3")?.show();
     }
     else {

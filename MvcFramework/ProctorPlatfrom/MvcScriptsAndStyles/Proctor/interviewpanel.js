@@ -40531,6 +40531,9 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
     // you can use the following to show appropriate toast notifications for eg.
 
     switch (notification.type) {
+      case 'DEVICE_CHANGE_UPDATE':
+        CallBack(notification);
+        break;
       case HMSNotificationTypes.PEER_LIST:
         ToastMessage("".concat(notification.data, " are the peers in the room")); // received right after join
         break;
@@ -40544,7 +40547,7 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         ToastMessage("".concat(notification.data.message, " received from ").concat(notification.data.senderName));
         break;
       case HMSNotificationTypes.ERROR:
-        ToastMessage("[Error] ".concat(notification.data.message, ", [Error Code] ").concat(notification.data.code));
+        GetErrorMessageByCode(notification.data);
         break;
       case HMSNotificationTypes.RECONNECTING:
         ToastMessage('[Reconnecting]', notification.data);
@@ -40618,6 +40621,129 @@ function _ScreenSharedType() {
     }, _callee);
   }));
   return _ScreenSharedType.apply(this, arguments);
+}
+function GetErrorMessageByCode(data) {
+  switch (data.code) {
+    case 1000:
+      ToastMessage('Cause: Failed to connect to Websocket - Happens due to network issues or firewall blocking Websocket connections \n Take Action: Mention user to check their network connection and firewall/anti-virus/VPN or try again after some time.', true);
+      break;
+    case 1003:
+      ToastMessage('Cause: Websocket disconnected - Happens due to network issues \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 2002:
+      ToastMessage('Cause: Invalid Endpoint URL \n Take Action: Check the endpoint provided while calling�join�on�HMSSDK.', true);
+      break;
+    case 2003:
+      ToastMessage('Cause: Endpoint is not reachable \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 2004:
+      ToastMessage('Cause: Token is not in proper JWT format \n Take Action: The token passed while calling�join�is not in correct format. Retry getting a new token.', true);
+      break;
+    case 3000:
+      ToastMessage('Cause: Overconstrained error \n Take Action: No Action needed from end user, we will be internally retrying.', true);
+      break;
+    case 3001:
+      ToastMessage('Cause: User denied permission to access capture device at browser level \n Take Action: Ask user to check permission granted to audio/video capture devices in browser(in address bar).', true);
+      break;
+    case 3002:
+      ToastMessage('Cause: Capture Device is not Available \n Take Action: Ask user to check if the audio/video capture device is connected or not.', true);
+      break;
+    case 3003:
+      ToastMessage('Cause: Capture device is in use by some other application \n Take Action: Show notification to user mentioning that the capturing device is used by some other application currently.', true);
+      break;
+    case 3004:
+      ToastMessage('Cause: Lost access to capture device midway \n Take Action: Suggest the user to check connection to their hardware device and try reconnecting.', true);
+      break;
+    case 3005:
+      ToastMessage('Cause: There is no media to return. Please select either video or audio or both. \n Take Action: There is no media to return. Please select either video or audio or both.', true);
+      break;
+    case 3008:
+      ToastMessage('Cause: Browser has throw an autoplay exception \n Take Action: Show notification to user mentioning that the browser blocked autoplay', true);
+      break;
+    case 3009:
+      ToastMessage('Cause: Device unable to satisfy requested media constraints \n Take Action: Reduce media constraints for the role in dashboard or upgrade device hardware.', true);
+      break;
+    case 3010:
+      ToastMessage('Cause: No audio detected from track, indicates problem with device hardware \n Take Action: Notify user to try using a headphone for microphone.', true);
+      break;
+    case 3011:
+      ToastMessage('Cause: System denied permission to access capture device \n Take Action: Ask user to check permission granted to audio/video/screen capture devices in system settings.', true);
+      break;
+    case 3012:
+      ToastMessage('Cause: Current tab is not shared when forceCurrentTab was set to true for screenshare \n Take Action: -', true);
+      break;
+    case 3013:
+      ToastMessage('Cause: An error occurred while playing audio of remote audio tracks \n Take Action: -', true);
+      break;
+    case 3014:
+      ToastMessage('Cause: Selected audio/video device not detected on change \n Take Action: Ask user to check if the audio/video capture device is connected or not.', true);
+      break;
+    case 4001:
+      ToastMessage('Cause: Failed to create offer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4002:
+      ToastMessage('Cause: Failed to create answer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4003:
+      ToastMessage('Cause: Failed to set offer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4004:
+      ToastMessage('Cause: Failed to set answer \n Take Action: Ask the user to retry joining', true);
+      break;
+    case 4005:
+      ToastMessage('Cause: ICE Connection Failed due to network issue \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 4006:
+      ToastMessage('Cause: ICE Connection Disconnected due to network issue \n Take Action: Mention user to check their network connection or try again after some time.', true);
+      break;
+    case 5001:
+      ToastMessage('Cause: Trying to join a room which is already joined \n Take Action: Trying to join an already joined room.', true);
+      break;
+    case 5002:
+      ToastMessage('Cause: Trying to join a room when preview is in progress \n Take Action: Call join action only when room state is "Preview" and not "Connecting".', true);
+      break;
+    case 6000:
+      ToastMessage('Cause: Calling actions when not connected/joined to a room \n Take Action: Call the required action after joining a room.', true);
+      break;
+    case 6002:
+      ToastMessage('Cause: WebRTC Error: Error while renegotiating \n Take Action: We can add check�error.message�for more info.', true);
+      break;
+    case 6003:
+      ToastMessage('Cause: WebRTC engine is not ready yet \n Take Action: Wait for preview to complete before calling join.', true);
+      break;
+    case 6008:
+      ToastMessage('Cause: Invalid arguments(peer ID, track ID, or others) passed to actions \n Take Action: Check if the corresponding arguments are valid by checking the store when calling the action', true);
+      break;
+    case 6009:
+      ToastMessage('Cause: Trying to join a room when preview is in progress \n Take Action: Call join action only when room state is "Preview" and not "Connecting".', true);
+      break;
+    case 6010:
+      ToastMessage('Cause: navigator.mediaDevices is undefined in insecure contexts served over HTTP protocol \n Take Action: Deploy the app in a secure context with HTTPS protocol.', true);
+      break;
+    case 6011:
+      ToastMessage('Cause: RTCPeerConnection is undefined in browser \n Take Action: Switch/Upgrade browser to WebRTC compatible version/check for browser extension blocking WebRTC.', true);
+      break;
+    case 6012:
+      ToastMessage('Cause: The application does not have access to localStorage \n Take Action: Try joining the link in a normal browser window if using in incognito mode causes this error. Alternatively, allowing cookies and localStorage via browser settings also works in incognito mode', true);
+      break;
+    case 7001:
+      ToastMessage('Cause: Platform Not Supported \n Take Action: The platform is not supported for plugin', true);
+      break;
+    case 7002:
+      ToastMessage('Cause: Plugin Init Failed \n Take Action: Plugin initialization has failed', true);
+      break;
+    case 7003:
+      ToastMessage('Cause: Plugin Processing Failed \n Take Action: Plugin processing failed', true);
+      break;
+    case 7004:
+      ToastMessage('Cause: Plugin Add Already Going on \n Take Action: Plugin add is already in progress', true);
+      break;
+    case 8001:
+      ToastMessage('Cause: Playlist: Invalid action call \n Take Action: Check current playing entry, next entry, previous entry when calling seek/seekTo, playNext, playPrevious.', true);
+      break;
+    default:
+      ToastMessage(data.message, true);
+  }
 }
 function ToastMessage(msg) {
   var display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -40893,6 +41019,9 @@ var pauseTestButton = document.querySelector("#pause-test");
 var resumeTestButton = document.querySelector("#resume-test");
 var endTestButton = document.querySelector("#force-end-test");
 var UserAlertTestButton = document.querySelector("#btn-user-alert-test");
+var refreshCamera = document.querySelector("#refresh-camera");
+var joinRoom = document.getElementById("join-room");
+var loadSystemCheck = document.getElementById("load-system-check");
 var CandidateUserId = "";
 var params = new Proxy(new URLSearchParams(window.location.search), {
   get: function get(searchParams, prop) {
@@ -40975,7 +41104,7 @@ function _JoinRoom() {
                       }
                     }).then( /*#__PURE__*/function () {
                       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values) {
-                        var rooms, InterviewTestType;
+                        var rooms, InterviewTestType, panelInterval, CanWaitOrLeave, panelIntervalCall;
                         return _regeneratorRuntime().wrap(function _callee$(_context) {
                           while (1) switch (_context.prev = _context.next) {
                             case 0:
@@ -40984,6 +41113,7 @@ function _JoinRoom() {
                             case 2:
                               rooms = _context.sent;
                               (0, _common.ToastMessage)("Panel " + userName + " Joined");
+                              change_tab('load-test');
                               InterviewTestType = GlobalObj.InterviewTestType;
                               if (InterviewTestType == "100" || InterviewTestType == "250") {
                                 show(enableStartMcqbutton);
@@ -41001,13 +41131,45 @@ function _JoinRoom() {
                                 hide(enableStartCodingbutton);
                               }
                               IsPanelReJoining();
-                            case 7:
+                              if (IsCandidateJoined()) {
+                                panelIntervalCall = function _panelIntervalCall() {
+                                  panelInterval = setInterval(function () {
+                                    setTimeout(function () {
+                                      CanWaitOrLeave(panelInterval);
+                                    }, 0);
+                                  }, 120000); // 2mins
+                                };
+                                panelInterval = null;
+                                CanWaitOrLeave = function CanWaitOrLeave(callback) {
+                                  var st = GlobalObj.StartTime;
+                                  var d1 = new Date(st);
+                                  var d2 = new Date(); //current date time
+                                  var diff = (d2 - d1) / 1000;
+                                  if (diff > 240) {
+                                    //after 2mins
+                                    (0, _jquery.default)("#Inject-UAA").html("");
+                                    (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark'>Candidate not yet joined</h3><div id='controls' class='text-center'><button id = 'Wait' class= 'btn-control btn-Approve btn-left-rounded'> Wait</button><button id = 'Leave' class= 'btn-control btn-left-rounded'>Leave</button> ");
+                                    (0, _jquery.default)("#Wait").click(function () {
+                                      (0, _jquery.default)('#test-myModal').hide();
+                                      panelIntervalCall();
+                                    });
+                                    (0, _jquery.default)("#Leave").click(function () {
+                                      handleLeave();
+                                    });
+                                    (0, _jquery.default)('#test-myModal').show();
+                                    clearInterval(callback);
+                                  } else {
+                                    console.log(diff);
+                                  }
+                                };
+                              }
+                            case 9:
                             case "end":
                               return _context.stop();
                           }
                         }, _callee);
                       }));
-                      return function (_x6) {
+                      return function (_x7) {
                         return _ref2.apply(this, arguments);
                       };
                     }());
@@ -41018,7 +41180,7 @@ function _JoinRoom() {
                 }
               }, _callee2);
             }));
-            return function (_x5) {
+            return function (_x6) {
               return _ref.apply(this, arguments);
             };
           }()).catch(function (error) {
@@ -41033,14 +41195,68 @@ function _JoinRoom() {
   return _JoinRoom.apply(this, arguments);
 }
 ;
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+function SystemCheckAPI() {
+  return _SystemCheckAPI.apply(this, arguments);
+}
+function _SystemCheckAPI() {
+  _SystemCheckAPI = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+    var url;
+    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          (0, _jquery.default)('#load-system-check').val((0, _jquery.default)('#load-system-check').data("loading-text"));
+          url = getInterviewUrl() + "/NewSystemCheck";
+          _jquery.default.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html',
+            data: {
+              cameraCheck: false
+            },
+            crossDomain: true,
+            cache: false,
+            async: true,
+            beforeSend: function beforeSend() {
+              (0, _jquery.default)('.proctor-loader').css("visibility", "visible");
+            },
+            success: function success(response) {
+              var result = response;
+              if (result) {
+                (0, _jquery.default)("#pills-system-check-item").html("");
+                (0, _jquery.default)("#pills-system-check-item").html(result);
+                (0, _jquery.default)('#load-system-check').val("Next");
+                change_tab('system-check');
+              }
+            },
+            complete: function complete() {
+              (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+            },
+            error: function error(response) {
+              (0, _common.ToastMessage)(response.responseText, false);
+            }
+          });
+        case 3:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4);
+  }));
+  return _SystemCheckAPI.apply(this, arguments);
+}
 function UpdateRooms() {
   return _UpdateRooms.apply(this, arguments);
 }
 function _UpdateRooms() {
-  _UpdateRooms = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+  _UpdateRooms = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
         case 0:
           url = getInterviewUrl() + "/UpdateRooms";
           _jquery.default.ajax({
@@ -41064,9 +41280,9 @@ function _UpdateRooms() {
           });
         case 2:
         case "end":
-          return _context4.stop();
+          return _context5.stop();
       }
-    }, _callee4);
+    }, _callee5);
   }));
   return _UpdateRooms.apply(this, arguments);
 }
@@ -41171,6 +41387,8 @@ function renderPeers() {
   var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
   peers.forEach(function (peer) {
     if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && !(peer !== null && peer !== void 0 && peer.isLocal)) {
+      document.getElementById("openvideo").onclick();
+      (0, _jquery.default)(peersContainer).empty();
       peersContainer.append(renderPeer(peer));
     } else {
       // hmsStore.subscribe(UpdateUnreadMessageCount, selectMessagesUnreadCountByPeerID(peer.id));// unread message  count
@@ -41186,7 +41404,11 @@ function show(el) {
 function handleLeave() {
   CandidateTest("PanelLeaveRoom", false, "PanelLeaveRoom", true);
   hmsActions.leave();
-  peersContainer.innerHTML = "";
+  //peersContainer.innerHTML = "";
+  function callRedirect() {
+    window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
+  }
+  window.setTimeout(callRedirect, 3000);
 }
 function CandidateTest(property1, value1) {
   var property2 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
@@ -41260,33 +41482,33 @@ function showScreenShareVideo() {
   return _showScreenShareVideo.apply(this, arguments);
 }
 function _showScreenShareVideo() {
-  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
     var screenShareOn, amIScreenSharing, presenter, screenShareVideoTrack;
-    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
+    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+      while (1) switch (_context6.prev = _context6.next) {
         case 0:
           screenShareOn = hmsStore.getState(_hmsVideoStore.selectIsSomeoneScreenSharing);
           if (!screenShareOn) {
-            _context5.next = 15;
+            _context6.next = 15;
             break;
           }
           amIScreenSharing = hmsStore.getState(_hmsVideoStore.selectIsLocalScreenShared);
           presenter = hmsStore.getState(_hmsVideoStore.selectPeerScreenSharing);
           screenShareVideoTrack = hmsStore.getState((0, _hmsVideoStore.selectScreenShareByPeerID)(presenter === null || presenter === void 0 ? void 0 : presenter.id));
           if (!amIScreenSharing) {
-            _context5.next = 9;
+            _context6.next = 9;
             break;
           }
           screenShareStatus.textContent = "Screen share started!!!";
-          _context5.next = 13;
+          _context6.next = 13;
           break;
         case 9:
           hide(screenShareStatus);
           show(screenShareVideo);
-          _context5.next = 13;
+          _context6.next = 13;
           return hmsActions.attachVideo(screenShareVideoTrack === null || screenShareVideoTrack === void 0 ? void 0 : screenShareVideoTrack.id, screenShareVideo);
         case 13:
-          _context5.next = 18;
+          _context6.next = 18;
           break;
         case 15:
           screenShareStatus.textContent = "Welcome! Sit back and relax till streaming start.";
@@ -41294,9 +41516,9 @@ function _showScreenShareVideo() {
           show(screenShareStatus);
         case 18:
         case "end":
-          return _context5.stop();
+          return _context6.stop();
       }
-    }, _callee5);
+    }, _callee6);
   }));
   return _showScreenShareVideo.apply(this, arguments);
 }
@@ -41305,6 +41527,10 @@ function EndRoomClick() {
     var lock = true; // set to true to disallow rejoins
     var reason = "Test Room Ended Successfully by Panel Member";
     hmsActions.endRoom(lock, reason);
+    function callRedirect() {
+      window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
+    }
+    window.setTimeout(callRedirect, 3000);
   } catch (error) {
     // Permission denied or not connected to room
     console.error(error);
@@ -41314,10 +41540,10 @@ function renderEndRoomButton(_x3) {
   return _renderEndRoomButton.apply(this, arguments);
 }
 function _renderEndRoomButton() {
-  _renderEndRoomButton = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(permissions) {
+  _renderEndRoomButton = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(permissions) {
     var endRoomButton;
-    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
-      while (1) switch (_context6.prev = _context6.next) {
+    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
         case 0:
           endRoomButton = document.getElementById('end-room-button');
           if (permissions != null && permissions.endRoom) {
@@ -41328,9 +41554,9 @@ function _renderEndRoomButton() {
           }
         case 2:
         case "end":
-          return _context6.stop();
+          return _context7.stop();
       }
-    }, _callee6);
+    }, _callee7);
   }));
   return _renderEndRoomButton.apply(this, arguments);
 }
@@ -41344,6 +41570,13 @@ function GetCandidatePeerDetails() {
     presenter = candidate;
   }
   return presenter;
+}
+function IsCandidateJoined() {
+  var _hmsStore$getState2;
+  var candidate = (_hmsStore$getState2 = hmsStore.getState(_hmsVideoStore.selectPeers)) === null || _hmsStore$getState2 === void 0 ? void 0 : _hmsStore$getState2.find(function (x) {
+    return x.roleName == candidateRole;
+  });
+  return candidate == null;
 }
 function TriggerEnableStartButton() {
   var presenter = GetCandidatePeerDetails();
@@ -41492,12 +41725,14 @@ function CameraSwitch() {
     (0, _jquery.default)(".peer-tile").addClass("camera-fullsize");
     (0, _jquery.default)(".peer-video-tile").addClass("camera-fullsize");
     (0, _jquery.default)(".tile-short.shape-circle.shape-color").addClass("camera-fullsize");
+    (0, _jquery.default)(".peer-video").addClass("camera-fullsize");
   } else {
     (0, _jquery.default)(".sidebar.video-box").removeClass("camera-fullsize");
     (0, _jquery.default)(".peers-container").removeClass("camera-fullsize");
     (0, _jquery.default)(".peer-tile").removeClass("camera-fullsize");
     (0, _jquery.default)(".peer-video-tile").removeClass("camera-fullsize");
     (0, _jquery.default)(".tile-short.shape-circle.shape-color").removeClass("camera-fullsize");
+    (0, _jquery.default)(".peer-video").removeClass("camera-fullsize");
   }
 }
 function FeedBackForm() {
@@ -41533,18 +41768,18 @@ function FeedbackSubmit() {
     }
   });
 }
-function GetRoomCode(_x4) {
+function GetRoomCode(_x4, _x5) {
   return _GetRoomCode.apply(this, arguments);
 }
 function _GetRoomCode() {
-  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(_interviewId) {
+  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(_interviewId, _roundId) {
     var fullName,
       url,
-      _args7 = arguments;
-    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
-      while (1) switch (_context7.prev = _context7.next) {
+      _args8 = arguments;
+    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
         case 0:
-          fullName = _args7.length > 1 && _args7[1] !== undefined ? _args7[1] : null;
+          fullName = _args8.length > 2 && _args8[2] !== undefined ? _args8[2] : null;
           url = getInterviewUrl() + "/GetRoomCodeByInterviewId";
           _jquery.default.ajax({
             url: url,
@@ -41552,6 +41787,7 @@ function _GetRoomCode() {
             dataType: 'json',
             data: {
               interviewId: _interviewId,
+              roundId: _roundId,
               role: "panel"
             },
             crossDomain: true,
@@ -41572,9 +41808,9 @@ function _GetRoomCode() {
           });
         case 3:
         case "end":
-          return _context7.stop();
+          return _context8.stop();
       }
-    }, _callee7);
+    }, _callee8);
   }));
   return _GetRoomCode.apply(this, arguments);
 }
@@ -41589,10 +41825,10 @@ function InitialLoad() {
 } //Functions - End
 //Bind Events - Start
 function _InitialLoad() {
-  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8() {
+  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
-      while (1) switch (_context8.prev = _context8.next) {
+    return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+      while (1) switch (_context9.prev = _context9.next) {
         case 0:
           url = getInterviewUrl() + "/InitialLoad";
           _jquery.default.ajax({
@@ -41625,7 +41861,7 @@ function _InitialLoad() {
                 hide(enableStartMcqbutton);
                 hide(enableStartCodingbutton);
               }
-              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.FullName);
+              GetRoomCode(GlobalObj.RedemptionId, GlobalObj.TestRoundId, GlobalObj.FullName);
             },
             complete: function complete() {
               (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
@@ -41634,9 +41870,9 @@ function _InitialLoad() {
           });
         case 2:
         case "end":
-          return _context8.stop();
+          return _context9.stop();
       }
-    }, _callee8);
+    }, _callee9);
   }));
   return _InitialLoad.apply(this, arguments);
 }
@@ -41647,9 +41883,15 @@ UserAlertTestButton.onclick = UserAlertTest;
 pauseTestButton.onclick = PauseCandidateTest;
 resumeTestButton.onclick = ResumeCandidateTest;
 endTestButton.onclick = ForceCandidateTestEnd;
+joinRoom.onclick = InitialLoad;
+loadSystemCheck.onclick = SystemCheckAPI;
 leaveBtn.onclick = handleLeave;
 sendToCandidate.onclick = sendMessageToBroadCast;
 sendToPanel.onclick = SendMessageToPanel;
+refreshCamera.onclick = function () {
+  hmsStore.unsubscribe(renderPeers, _hmsVideoStore.selectPeers);
+  hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
+};
 //muteVideoBtn.onclick = handlePresenterVideo;
 muteAudioBtn.onclick = handlePresenterAudio;
 //screenShareBtn.onclick = handleScreenShare;
@@ -41675,7 +41917,6 @@ hmsStore.subscribe(renderMessageList, _hmsVideoStore.selectHMSMessages);
 hmsStore.subscribe(UpdateUnreadMessageCount, _hmsVideoStore.selectUnreadHMSMessagesCount); // unread message  count
 hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
-//trigger Join
-InitialLoad();
+SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.ac44af60.js.map
+//# sourceMappingURL=/interviewpanel.1ca9877f.js.map
