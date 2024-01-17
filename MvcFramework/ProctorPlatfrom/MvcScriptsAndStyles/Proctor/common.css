@@ -29,10 +29,14 @@ header {
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 6px 14px;
-    background-color: #f44336;
+    background-color: #f44336 !important;
     color: white;
     font-family: inherit;
     font-size: 14px;
+}
+.test-myModal-center {
+    top: 1%;   
+    left: 22%;
 }
 
 .hide {
@@ -2538,4 +2542,4 @@ p {
     visibility: visible;
 }
 
-/*# sourceMappingURL=/common.a276504c.css.map */
+/*# sourceMappingURL=/common.a47f421c.css.map */

@@ -41146,10 +41146,13 @@ function _JoinRoom() {
                                   (0, _jquery.default)("#Wait").click(function () {
                                     (0, _jquery.default)('#test-myModal').hide();
                                     panelIntervalCall();
+                                    (0, _jquery.default)("#test-myModal .modal-header").show();
                                   });
                                   (0, _jquery.default)("#Leave").click(function () {
                                     handleLeave();
+                                    (0, _jquery.default)("#test-myModal .modal-header").show();
                                   });
+                                  (0, _jquery.default)("#test-myModal .modal-header").hide();
                                   (0, _jquery.default)('#test-myModal').show();
                                   clearInterval(callback);
                                 } else {
@@ -41927,4 +41930,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.9eec2b4e.js.map
+//# sourceMappingURL=/interviewpanel.db6c559f.js.map
