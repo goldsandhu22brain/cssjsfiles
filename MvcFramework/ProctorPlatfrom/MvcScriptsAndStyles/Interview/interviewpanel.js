@@ -41022,6 +41022,7 @@ var UserAlertTestButton = document.querySelector("#btn-user-alert-test");
 var refreshCamera = document.querySelector("#refresh-camera");
 var joinRoom = document.getElementById("join-room");
 var loadSystemCheck = document.getElementById("load-system-check");
+var customView = document.querySelector(".custom-tab-view");
 var CandidateUserId = "";
 var params = new Proxy(new URLSearchParams(window.location.search), {
   get: function get(searchParams, prop) {
@@ -41172,7 +41173,8 @@ function _JoinRoom() {
                               };
 
                               panelIntervalCall();
-                            case 13:
+                              show(customView);
+                            case 14:
                             case "end":
                               return _context.stop();
                           }
@@ -41930,4 +41932,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.db6c559f.js.map
+//# sourceMappingURL=/interviewpanel.555668ab.js.map
