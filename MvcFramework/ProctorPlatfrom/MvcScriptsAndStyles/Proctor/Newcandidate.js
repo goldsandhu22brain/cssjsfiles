@@ -41771,14 +41771,16 @@ function show(el) {
 }
 function handleLeave() {
   var callBack = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-  hmsActions.leave();
-  hide(customView);
-  change_tab('error-message');
-  peersContainer.innerHTML = "";
-  callBack && callBack();
-  var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-  (0, _jquery.default)(".error-message").html(url);
-  (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+  stopRecording().then(function (values) {
+    hmsActions.leave();
+    hide(customView);
+    change_tab('error-message');
+    peersContainer.innerHTML = "";
+    callBack && callBack();
+    var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
+    (0, _jquery.default)(".error-message").html(url);
+    (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+  });
 }
 function handleEndRoom() {
   var callBack = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
@@ -42204,4 +42206,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.b98c26f5.js.map
+//# sourceMappingURL=/Newcandidate.62236d7c.js.map

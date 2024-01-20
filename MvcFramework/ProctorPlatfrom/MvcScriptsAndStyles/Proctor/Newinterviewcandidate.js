@@ -41793,9 +41793,23 @@ function handleLeave() {
     (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
   };
   if (callBack == null) {
-    roomleave();
+    if (GlobalObj.CanRecord) {
+      stopRecording().then(function (values) {
+        roomleave();
+      });
+    } else {
+      roomleave();
+    }
   } else {
-    callBack(roomleave);
+    if (GlobalObj.CanRecord) {
+      callBack(function () {
+        stopRecording().then(function (values) {
+          roomleave();
+        });
+      });
+    } else {
+      callBack(roomleave);
+    }
   }
 }
 function handleEndRoom() {
@@ -42276,4 +42290,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.7a10accf.js.map
+//# sourceMappingURL=/Newinterviewcandidate.3b280436.js.map
