@@ -40521,7 +40521,8 @@ function _stopRecording() {
             type: 'GET',
             dataType: 'json',
             data: {
-              redemptionId: GlobalObj.RedemptionId
+              redemptionId: GlobalObj.RedemptionId,
+              roomId: GlobalObj.RoomId
             },
             crossDomain: true,
             cache: false,
@@ -40627,4 +40628,4 @@ hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
 //Bind Events - End
 JoinRoom("Recorder", GlobalObj.roomcode);
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ"}]},{},["DcFx"], null)
-//# sourceMappingURL=/recorder.54e38222.js.map
+//# sourceMappingURL=/recorder.ff9dcde8.js.map
