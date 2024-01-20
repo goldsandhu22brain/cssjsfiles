@@ -41022,6 +41022,7 @@ var UserAlertTestButton = document.querySelector("#btn-user-alert-test");
 var refreshCamera = document.querySelector("#refresh-camera");
 var joinRoom = document.getElementById("join-room");
 var loadSystemCheck = document.getElementById("load-system-check");
+var customView = document.querySelector(".custom-tab-view");
 var CandidateUserId = "";
 var params = new Proxy(new URLSearchParams(window.location.search), {
   get: function get(searchParams, prop) {
@@ -41104,7 +41105,7 @@ function _JoinRoom() {
                       }
                     }).then( /*#__PURE__*/function () {
                       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values) {
-                        var rooms, InterviewTestType, panelInterval, CanWaitOrLeave, panelIntervalCall;
+                        var rooms, InterviewTestType, panelInterval, panelIntervalCall, CanWaitOrLeave;
                         return _regeneratorRuntime().wrap(function _callee$(_context) {
                           while (1) switch (_context.prev = _context.next) {
                             case 0:
@@ -41131,39 +41132,49 @@ function _JoinRoom() {
                                 hide(enableStartCodingbutton);
                               }
                               IsPanelReJoining();
-                              if (IsCandidateJoined()) {
-                                panelIntervalCall = function _panelIntervalCall() {
-                                  panelInterval = setInterval(function () {
-                                    setTimeout(function () {
+                              panelInterval = null;
+                              panelIntervalCall = null;
+                              CanWaitOrLeave = function CanWaitOrLeave(callback) {
+                                var st = GlobalObj.StartTime; //UTC Time
+                                var d1 = new Date(st);
+                                var now = new Date(); //current date time                    
+                                var d2 = new Date(now.getTime() + now.getTimezoneOffset() * 60000); // to get UTC time
+                                var diff = (d2 - d1) / 1000;
+                                if (diff > 240) {
+                                  //after 2mins
+                                  (0, _jquery.default)("#Inject-UAA").html("");
+                                  (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark'>Candidate not yet joined</h3><div id='controls' class='text-center'><button id = 'Wait' class= 'btn-control btn-Approve btn-left-rounded'> Wait</button><button id = 'Leave' class= 'btn-control btn-left-rounded'>Leave</button> ");
+                                  (0, _jquery.default)("#Wait").click(function () {
+                                    (0, _jquery.default)('#test-myModal').hide();
+                                    panelIntervalCall();
+                                    (0, _jquery.default)("#test-myModal .modal-header").show();
+                                  });
+                                  (0, _jquery.default)("#Leave").click(function () {
+                                    handleLeave();
+                                    (0, _jquery.default)("#test-myModal .modal-header").show();
+                                  });
+                                  (0, _jquery.default)("#test-myModal .modal-header").hide();
+                                  (0, _jquery.default)('#test-myModal').show();
+                                  clearInterval(callback);
+                                } else {
+                                  console.log(diff);
+                                }
+                              };
+                              panelIntervalCall = function panelIntervalCall() {
+                                panelInterval = setInterval(function () {
+                                  setTimeout(function () {
+                                    if (IsCandidateJoined()) {
                                       CanWaitOrLeave(panelInterval);
-                                    }, 0);
-                                  }, 120000); // 2mins
-                                };
-                                panelInterval = null;
-                                CanWaitOrLeave = function CanWaitOrLeave(callback) {
-                                  var st = GlobalObj.StartTime;
-                                  var d1 = new Date(st);
-                                  var d2 = new Date(); //current date time
-                                  var diff = (d2 - d1) / 1000;
-                                  if (diff > 240) {
-                                    //after 2mins
-                                    (0, _jquery.default)("#Inject-UAA").html("");
-                                    (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark'>Candidate not yet joined</h3><div id='controls' class='text-center'><button id = 'Wait' class= 'btn-control btn-Approve btn-left-rounded'> Wait</button><button id = 'Leave' class= 'btn-control btn-left-rounded'>Leave</button> ");
-                                    (0, _jquery.default)("#Wait").click(function () {
-                                      (0, _jquery.default)('#test-myModal').hide();
-                                      panelIntervalCall();
-                                    });
-                                    (0, _jquery.default)("#Leave").click(function () {
-                                      handleLeave();
-                                    });
-                                    (0, _jquery.default)('#test-myModal').show();
-                                    clearInterval(callback);
-                                  } else {
-                                    console.log(diff);
-                                  }
-                                };
-                              }
-                            case 9:
+                                    } else {
+                                      clearInterval(panelInterval);
+                                    }
+                                  }, 0);
+                                }, 120000); // 2mins  
+                              };
+
+                              panelIntervalCall();
+                              show(customView);
+                            case 14:
                             case "end":
                               return _context.stop();
                           }
@@ -41211,7 +41222,7 @@ function _SystemCheckAPI() {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
           (0, _jquery.default)('#load-system-check').val((0, _jquery.default)('#load-system-check').data("loading-text"));
-          url = getInterviewUrl() + "/NewSystemCheck";
+          url = getBaseUrl() + "/NewSystemCheck";
           _jquery.default.ajax({
             url: url,
             type: 'GET',
@@ -41524,13 +41535,15 @@ function _showScreenShareVideo() {
 }
 function EndRoomClick() {
   try {
-    var lock = true; // set to true to disallow rejoins
-    var reason = "Test Room Ended Successfully by Panel Member";
-    hmsActions.endRoom(lock, reason);
-    function callRedirect() {
-      window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
+    if (confirm("Want to End the Interview!!!")) {
+      var lock = true; // set to true to disallow rejoins
+      var reason = "Test Room Ended Successfully by Panel Member";
+      hmsActions.endRoom(lock, reason);
+      function callRedirect() {
+        window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
+      }
+      window.setTimeout(callRedirect, 3000);
     }
-    window.setTimeout(callRedirect, 3000);
   } catch (error) {
     // Permission denied or not connected to room
     console.error(error);
@@ -41815,7 +41828,7 @@ function _GetRoomCode() {
   return _GetRoomCode.apply(this, arguments);
 }
 function getBaseUrl() {
-  return "/Admin";
+  return "/Test";
 }
 function getInterviewUrl() {
   return "/Interview";
@@ -41919,4 +41932,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.1ca9877f.js.map
+//# sourceMappingURL=/interviewpanel.555668ab.js.map

@@ -29,10 +29,14 @@ header {
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 6px 14px;
-    background-color: #f44336;
+    background-color: #f44336 !important;
     color: white;
     font-family: inherit;
     font-size: 14px;
+}
+.test-myModal-center {
+    top: 1%;   
+    left: 22%;
 }
 
 .hide {
@@ -631,7 +635,8 @@ div.dataTables_filter input {
 
         .custom-tab-view .sidebar.chat-box {
             top: 280px;
-            height: 330px;
+            height: 340px;
+            overflow: hidden;
         }
 
     .custom-tab-view .btn-close {
@@ -2415,6 +2420,9 @@ p {
 .custom-step-testsubmitted{
 
 }
+.panel-admin-conference .new-admin-screen .wrapper {
+    width: 100% !important;
+}
 
 /*custom-new class -end*/
 .mt-next{
@@ -2538,4 +2546,4 @@ p {
     visibility: visible;
 }
 
-/*# sourceMappingURL=/common.a276504c.css.map */
+/*# sourceMappingURL=/common.0d99e8b0.css.map */
