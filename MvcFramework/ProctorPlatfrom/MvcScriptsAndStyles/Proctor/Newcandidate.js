@@ -40531,51 +40531,61 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
     // you can use the following to show appropriate toast notifications for eg.
 
     switch (notification.type) {
-      case 'DEVICE_CHANGE_UPDATE':
-        CallBack(notification);
-        break;
       case HMSNotificationTypes.PEER_LIST:
         ToastMessage("".concat(notification.data, " are the peers in the room")); // received right after join
+        CallBack(notification);
         break;
       case HMSNotificationTypes.PEER_JOINED:
         ToastMessage("".concat(notification.data.name, " joined"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.PEER_LEFT:
         ToastMessage("".concat(notification.data.name, " left"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.NEW_MESSAGE:
         ToastMessage("".concat(notification.data.message, " received from ").concat(notification.data.senderName));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.ERROR:
         GetErrorMessageByCode(notification.data);
+        CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTING:
         ToastMessage('[Reconnecting]', notification.data);
+        CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTED:
         ToastMessage('[Reconnected]');
+        CallBack(notification);
         break;
       case HMSNotificationTypes.NAME_UPDATED:
       case HMSNotificationTypes.ROLE_UPDATED:
         ToastMessage("peer updated(".concat(notification.type, "), new peer="), notification.data);
+        CallBack(notification);
         break;
       case HMSNotificationTypes.METADATA_UPDATED:
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_DEGRADED:
         ToastMessage("track - ".concat(notification.data, " degraded due to poor network"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_RESTORED:
         ToastMessage("track - ".concat(notification.data, " recovered"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.ROOM_ENDED:
         ToastMessage("room ended, reason - ".concat(notification.data.reason));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.REMOVED_FROM_ROOM:
         ToastMessage("removed from room, reason - ".concat(notification.data.reason));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.DEVICE_CHANGE_UPDATE:
         ToastMessage("device changed - ".concat(notification.data));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_ADDED:
         ToastMessage("Track added - ".concat(notification.data));
@@ -41053,6 +41063,10 @@ function NotificationCallBack(Notify) {
         (0, _common.ToastMessage)("camera not detected/removed from the candidate system", true);
         leaveBtn.onclick();
       }
+      break;
+    case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
+      (0, _common.ToastMessage)("Room Ended, Reason - ".concat(notification.data.reason), true);
+      callRedirect();
       break;
   }
 }
@@ -42003,12 +42017,12 @@ function TestSubmitAutomatically() {
   if (window.SubmitTestAutomatically != null) {
     window.SubmitTestAutomatically(AfterSubmitTest);
   } else {
-    function callRedirect() {
-      window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
-    }
     handleLeave();
     window.setTimeout(callRedirect, 3000);
   }
+}
+function callRedirect() {
+  window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
 }
 var RecordingIconDisplay = function RecordingIconDisplay(isRecording) {
   var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID); //candidate peer
@@ -42206,4 +42220,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.62236d7c.js.map
+//# sourceMappingURL=/Newcandidate.faeee0df.js.map
