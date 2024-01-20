@@ -40531,51 +40531,61 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
     // you can use the following to show appropriate toast notifications for eg.
 
     switch (notification.type) {
-      case 'DEVICE_CHANGE_UPDATE':
-        CallBack(notification);
-        break;
       case HMSNotificationTypes.PEER_LIST:
         ToastMessage("".concat(notification.data, " are the peers in the room")); // received right after join
+        CallBack(notification);
         break;
       case HMSNotificationTypes.PEER_JOINED:
         ToastMessage("".concat(notification.data.name, " joined"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.PEER_LEFT:
         ToastMessage("".concat(notification.data.name, " left"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.NEW_MESSAGE:
         ToastMessage("".concat(notification.data.message, " received from ").concat(notification.data.senderName));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.ERROR:
         GetErrorMessageByCode(notification.data);
+        CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTING:
         ToastMessage('[Reconnecting]', notification.data);
+        CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTED:
         ToastMessage('[Reconnected]');
+        CallBack(notification);
         break;
       case HMSNotificationTypes.NAME_UPDATED:
       case HMSNotificationTypes.ROLE_UPDATED:
         ToastMessage("peer updated(".concat(notification.type, "), new peer="), notification.data);
+        CallBack(notification);
         break;
       case HMSNotificationTypes.METADATA_UPDATED:
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_DEGRADED:
         ToastMessage("track - ".concat(notification.data, " degraded due to poor network"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_RESTORED:
         ToastMessage("track - ".concat(notification.data, " recovered"));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.ROOM_ENDED:
         ToastMessage("room ended, reason - ".concat(notification.data.reason));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.REMOVED_FROM_ROOM:
         ToastMessage("removed from room, reason - ".concat(notification.data.reason));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.DEVICE_CHANGE_UPDATE:
         ToastMessage("device changed - ".concat(notification.data));
+        CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_ADDED:
         ToastMessage("Track added - ".concat(notification.data));
@@ -40997,6 +41007,10 @@ function NotificationCallBack(Notify) {
         }
       }
       break;
+    case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
+      (0, _common.ToastMessage)("Room Ended, Reason - ".concat(notification.data.reason), true);
+      callRedirect();
+      break;
   }
 }
 ;
@@ -41415,11 +41429,11 @@ function show(el) {
 function handleLeave() {
   CandidateTest("PanelLeaveRoom", false, "PanelLeaveRoom", true);
   hmsActions.leave();
-  //peersContainer.innerHTML = "";
-  function callRedirect() {
-    window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
-  }
+  //peersContainer.innerHTML = "";     
   window.setTimeout(callRedirect, 3000);
+}
+function callRedirect() {
+  window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
 }
 function CandidateTest(property1, value1) {
   var property2 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
@@ -41539,9 +41553,6 @@ function EndRoomClick() {
       var lock = true; // set to true to disallow rejoins
       var reason = "Test Room Ended Successfully by Panel Member";
       hmsActions.endRoom(lock, reason);
-      function callRedirect() {
-        window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
-      }
       window.setTimeout(callRedirect, 3000);
     }
   } catch (error) {
@@ -41932,4 +41943,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.555668ab.js.map
+//# sourceMappingURL=/interviewpanel.c3bf049f.js.map

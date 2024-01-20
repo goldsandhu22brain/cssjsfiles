@@ -40462,7 +40462,7 @@ var hmsManager = new _hmsVideoStore.HMSReactiveStore();
 hmsManager.triggerOnSubscribe();
 var hmsStore = hmsManager.getStore();
 var hmsActions = hmsManager.getActions();
-
+var hmsNotifications = hmsManager.getNotifications();
 // HTML elements
 var conference = document.querySelector(".conference");
 var screenShareVideo = document.querySelector(".screen-share-video");
@@ -40506,6 +40506,68 @@ function _JoinRoom() {
   }));
   return _JoinRoom.apply(this, arguments);
 }
+function stopRecording() {
+  return _stopRecording.apply(this, arguments);
+}
+function _stopRecording() {
+  _stopRecording = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+    var url;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          url = "/Recorder100MS/StopRecording";
+          _jquery.default.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            data: {
+              redemptionId: GlobalObj.RedemptionId,
+              roomId: GlobalObj.RoomId
+            },
+            crossDomain: true,
+            cache: false,
+            async: true,
+            beforeSend: function beforeSend() {},
+            success: function success(response) {},
+            complete: function complete() {},
+            error: function error() {}
+          });
+        case 2:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2);
+  }));
+  return _stopRecording.apply(this, arguments);
+}
+var unsubscribe = hmsNotifications.onNotification(function (notification) {
+  var _hmsStore$getState2;
+  // you can use the following to show appropriate toast notifications for eg.
+  switch (notification.type) {
+    case _hmsVideoStore.HMSNotificationTypes.PEER_LEFT:
+      if (notification.data.roleName == 'candidate') {
+        var _hmsStore$getState, _hmsStore$getState$fi;
+        var IsCandidatePresent = ((_hmsStore$getState = hmsStore.getState(_hmsVideoStore.selectPeers)) === null || _hmsStore$getState === void 0 ? void 0 : (_hmsStore$getState$fi = _hmsStore$getState.filter(function (x) {
+          return x.roleName == "candidate";
+        })) === null || _hmsStore$getState$fi === void 0 ? void 0 : _hmsStore$getState$fi.length) == 0;
+        if (IsCandidatePresent) {
+          stopRecording();
+        }
+      }
+      break;
+    case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
+      if (((_hmsStore$getState2 = hmsStore.getState(_hmsVideoStore.selectPeers)) === null || _hmsStore$getState2 === void 0 ? void 0 : _hmsStore$getState2.filter(function (x) {
+        return x.roleName == "candidate" || x.roleName == "panel";
+      }).length) == 0) {
+        stopRecording();
+      }
+      break;
+    case _hmsVideoStore.HMSNotificationTypes.REMOVED_FROM_ROOM:
+      break;
+    default:
+      break;
+  }
+});
 function hide(el) {
   el.style.display = "none";
 }
@@ -40566,4 +40628,4 @@ hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
 //Bind Events - End
 JoinRoom("Recorder", GlobalObj.roomcode);
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ"}]},{},["DcFx"], null)
-//# sourceMappingURL=/recorder.6cf7e505.js.map
+//# sourceMappingURL=/recorder.ff9dcde8.js.map
