@@ -41049,6 +41049,7 @@ var feedBackButton = document.getElementById("feed-back");
 var cameraSwitch = document.querySelector(".btn-camera-fullsize");
 // store peer IDs already rendered to avoid re-render on mute/unmute
 var renderedPeerIDs = new Set();
+var panelInterval = null;
 var connectionTooltip = {
   0: "Reconnecting",
   1: "Very Bad Connection",
@@ -41119,7 +41120,7 @@ function _JoinRoom() {
                       }
                     }).then( /*#__PURE__*/function () {
                       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values) {
-                        var rooms, InterviewTestType, panelInterval, panelIntervalCall, CanWaitOrLeave;
+                        var rooms, InterviewTestType, panelIntervalCall, CanWaitOrLeave;
                         return _regeneratorRuntime().wrap(function _callee$(_context) {
                           while (1) switch (_context.prev = _context.next) {
                             case 0:
@@ -41146,7 +41147,6 @@ function _JoinRoom() {
                                 hide(enableStartCodingbutton);
                               }
                               IsPanelReJoining();
-                              panelInterval = null;
                               panelIntervalCall = null;
                               CanWaitOrLeave = function CanWaitOrLeave(callback) {
                                 var st = GlobalObj.StartTime; //UTC Time
@@ -41188,7 +41188,7 @@ function _JoinRoom() {
 
                               panelIntervalCall();
                               show(customView);
-                            case 14:
+                            case 13:
                             case "end":
                               return _context.stop();
                           }
@@ -41428,12 +41428,15 @@ function show(el) {
 }
 function handleLeave() {
   CandidateTest("PanelLeaveRoom", false, "PanelLeaveRoom", true);
+  if (panelInterval != null) {
+    clearInterval(panelInterval);
+  }
   hmsActions.leave();
   //peersContainer.innerHTML = "";     
   window.setTimeout(callRedirect, 3000);
 }
 function callRedirect() {
-  window.location.href = GlobalObj.PublicWebsite + "/user/Interview/";
+  window.location.href = GlobalObj.PublicWebsite + "/user/Interview/View/" + GlobalObj.RedemptionId;
 }
 function CandidateTest(property1, value1) {
   var property2 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
@@ -41943,4 +41946,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.c3bf049f.js.map
+//# sourceMappingURL=/interviewpanel.8c434156.js.map
