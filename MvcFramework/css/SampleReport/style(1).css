@@ -570,7 +570,7 @@ fieldset#body {
 	color:#E64C65;
 } */
 .graph_list li a label em{
-	font-size:0.7em;
+	/*font-size:0.7em;*/
 	vertical-align:top;
 }
 /****** video Player *******/
