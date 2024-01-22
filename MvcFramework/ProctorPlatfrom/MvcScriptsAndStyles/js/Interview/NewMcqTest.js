@@ -43,16 +43,16 @@ function drop(ev) {
 		ev.target.appendChild(document.getElementById(data));
 	}
 }
-function dropItem(ev) {
-	var data = ev.dataTransfer.getData("text");
-	var target = ev.target.closest('ul');
-	target.appendChild(document.getElementById(data));
+//function dropItem(ev) {
+//	var data = ev.dataTransfer.getData("text");
+//	var target = ev.target.closest('ul');
+//	target.appendChild(document.getElementById(data));
 
-	var parentData = ev.dataTransfer.getData("parent");
-	if ($("#" + parentData).children().length == 0) {
-		$("#" + parentData).append(EmptyData);
-	}
-}
+//	var parentData = ev.dataTransfer.getData("parent");
+//	if ($("#" + parentData).children().length == 0) {
+//		$("#" + parentData).append(EmptyData);
+//	}
+//}
 
 function removeChild(target, answerList, data) {
 	if (!(target instanceof HTMLDivElement)) {
@@ -62,6 +62,24 @@ function removeChild(target, answerList, data) {
 	var previousChildNode = document.getElementById(previousChildId);
 	answerList.appendChild(previousChildNode);
 	target.appendChild(document.getElementById(data));
+}
+function dropItem(ev) {
+	var data = ev.dataTransfer.getData("text");
+	if (validateDropLocation(ev)) {
+		var target = ev.target.closest('ul')
+		target.appendChild(document.getElementById(data));
+		var parentData = ev.dataTransfer.getData("parent");
+		if ($("#" + parentData).children().length == 0) {
+			$("#" + parentData).append(EmptyData);
+		}
+	}
+}
+function validateDropLocation(ev) {
+	let parentContainer = ev.target.closest('.card');
+	var data = ev.dataTransfer.getData("text");
+	var btnElement = document.getElementById(data).children;
+	console.log("parentcontainer", parentContainer.id == btnElement[0].dataset.parent);
+	return (parentContainer.id == btnElement[0].dataset.parent);
 }
 
 function ReLoadImages() {
@@ -387,11 +405,11 @@ function WarningSection(_fullScreen, _mouseActivity, _debugger) {
 }
 
 function DisplayAlert(type, msg = "") {
-	if ($("#scroll-container #" + type) == null || $("#scroll-container #" + type).length == 0) {
+	if ($("#scroll-container") != null && ($("#scroll-container #" + type) == null || $("#scroll-container #" + type).length == 0)) {
 		var div = AlertType(type, msg);
 		$("#scroll-container").append(div);
 	}
-	if ($("#scroll-container").children().length > 0) {
+	if ($("#scroll-container") != null && $("#scroll-container").children().length > 0) {
 		$(".alert-container").removeClass("hide");
 	}
 	else if (!$(".alert-container").hasClass("hide")) { $(".alert-container").addClass("hide"); }

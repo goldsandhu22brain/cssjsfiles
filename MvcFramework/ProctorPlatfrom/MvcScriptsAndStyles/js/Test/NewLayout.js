@@ -1,9 +1,9 @@
 ﻿function DisplayAlert(type, msg = "") {
-	if ($("#scroll-container #" + type) == null || $("#scroll-container #" + type).length == 0) {
+	if ($("#scroll-container") != null && ($("#scroll-container #" + type) == null || $("#scroll-container #" + type).length == 0)) {
 		var div = AlertType(type, msg);
 		$("#scroll-container").append(div);
 	}
-	if ($("#scroll-container").children().length > 0) {
+	if ($("#scroll-container") != null && $("#scroll-container").children().length > 0) {
 		$(".alert-container").removeClass("hide");
 	}
 	else if (!$(".alert-container").hasClass("hide")) { $(".alert-container").addClass("hide"); }
