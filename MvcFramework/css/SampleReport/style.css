@@ -240,3 +240,14 @@ button.primary.ghost {
 .hxccgmydvbcd,.mr_e_company_section span{display: inline-block;}
 .mr_e_company_section span{color:#333;font-size: 14px;display: inline;}
 .jyuiopytr{}
+.column_right_grid .newsletter input {
+    border: 1px solid rgb (80 86 108);
+}
+.column_right_grid input[type="text"] {
+    padding: 10px;
+    background: none;
+}
+.graph_list li a label em {
+    vertical-align: middle;
+}
+
