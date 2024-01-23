@@ -215,7 +215,19 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 				case 'Ordering':
 				case 'MapOrdering':
 				case 'FillInTheBlanks': {
-					ans = $(".drop-area div.blank button");
+					//ans = $(".drop-area div.blank button");
+					var dd_item = $(".drop-area div.blank");
+					var filteredItem = [];
+					for (var i = 0; i < dd_item.length; i++) {
+						var b = dd_item[i].children.length;
+						if (b > 1) {
+							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0]);
+						}
+						else {
+							filteredItem.push(dd_item[i].children[0]);
+						}						
+					}
+					ans = filteredItem;// $(".drop-area div.blank button");
 					break;
 				}
 			}
