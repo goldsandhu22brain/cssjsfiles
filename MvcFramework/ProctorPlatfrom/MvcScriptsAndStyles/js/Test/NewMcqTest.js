@@ -33,16 +33,16 @@ function drag(ev) {
 
 function drop(ev) {
 	ev.preventDefault();
-
 	var data = ev.dataTransfer.getData("text");
-	if (ev.target.hasChildNodes()) {
-		var answerList = document.getElementById(data).parentNode;
-		removeChild(ev.target, answerList, data);
-	} else {
-		//dropItem(ev);
-		ev.target.appendChild(document.getElementById(data));
+	if (validateDropLocation(ev)) {
+		if (ev.target.hasChildNodes()) {
+			var answerList = document.getElementById(data).parentNode;
+			removeChild(ev.target, answerList, data);
+		} else {
+			ev.target.appendChild(document.getElementById(data));
+		}
 	}
-}
+}  
 //function dropItem(ev) {
 //	var data = ev.dataTransfer.getData("text");
 //	var target = ev.target.closest('ul');
