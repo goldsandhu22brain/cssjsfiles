@@ -199,10 +199,10 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 					for (var i = 0; i < dd_item.length; i++) {
 						var b = dd_item[i].children.length;
 						if (b > 1) {
-							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0]);
+							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0].firstChild);
 						}
 						else {
-							filteredItem.push(dd_item[i].children[0]);
+							filteredItem.push(dd_item[i].children[0].firstChild);
 						}						
 					}
 					ans = filteredItem;// $(".drop-area div.blank button");
