@@ -75,7 +75,7 @@ function dropItem(ev) {
 	}
 }
 function validateDropLocation(ev) {
-	let parentContainer = ev.target.closest('.card');
+	let parentContainer = ev.target.closest('.custom-drag-drop');
 	var data = ev.dataTransfer.getData("text");
 	var btnElement = document.getElementById(data).children;
 	console.log("parentcontainer", parentContainer.id == btnElement[0].dataset.parent);
