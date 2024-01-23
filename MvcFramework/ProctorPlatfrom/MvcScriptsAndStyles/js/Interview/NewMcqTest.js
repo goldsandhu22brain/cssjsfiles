@@ -58,9 +58,11 @@ function removeChild(target, answerList, data) {
 	if (!(target instanceof HTMLDivElement)) {
 		target = target.closest('div');
 	}
+	if (target.firstElementChild != null) {
 	var previousChildId = target.firstElementChild.id;
 	var previousChildNode = document.getElementById(previousChildId);
 	answerList.appendChild(previousChildNode);
+	}
 	target.appendChild(document.getElementById(data));
 }
 function dropItem(ev) {
