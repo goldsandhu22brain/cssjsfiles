@@ -42006,7 +42006,7 @@ function InitiatingTimer() {
           document.getElementById("exam-timer").innerHTML = maxMcqTime + " / " + minutes + ":" + seconds;
         }
         if (--timer < 0) {
-          timer = duration;
+          // timer = duration;
           TestSubmitAutomatically();
         }
       }
@@ -42220,4 +42220,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.faeee0df.js.map
+//# sourceMappingURL=/Newcandidate.96d27eb9.js.map

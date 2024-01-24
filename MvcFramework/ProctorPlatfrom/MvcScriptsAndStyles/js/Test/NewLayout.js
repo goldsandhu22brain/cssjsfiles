@@ -142,7 +142,7 @@ function InitiatingTimer() {
 					document.getElementById("exam-timer").innerHTML = maxMcqTime + " / " + minutes + ":" + seconds;
 				}
 				if (--timer < 0) {
-					timer = duration;
+					//timer = duration;
 					SubmitTestAutomatically();
 				}
 			}
