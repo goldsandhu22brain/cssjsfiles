@@ -3698,3 +3698,17 @@ background-color: #F5F7F9;
     font-size: 16px;
     padding: 7px 15px;
 }
+
+i.glyphicon.glyphicon-star. :after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    background: white;
+    width: 50%;
+    height: 100%;
+    left: 47%;
+}
+i.glyphicon.glyphicon-star.half {
+    /* background: #fff; */
+    position: relative;
+}
