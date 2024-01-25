@@ -2092,6 +2092,21 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 }
 
 
+@media screen and (min-device-width: 320px) and (max-device-width: 768px) { 
+    #primary-menu {
+        display: none;
+    }
+    div#primary-menu-trigger {
+        display: none;
+    }
+    div#logo {
+        display: block;
+        width: 100%;
+        text-align: center;
+
+    }
+    
+}
 /* ----------------------------------------------------------------
 	Top Search
 -----------------------------------------------------------------*/
