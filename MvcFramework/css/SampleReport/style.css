@@ -240,3 +240,9 @@ button.primary.ghost {
 .hxccgmydvbcd,.mr_e_company_section span{display: inline-block;}
 .mr_e_company_section span{color:#333;font-size: 14px;display: inline;}
 .jyuiopytr{}
+.btn-email {
+    background: none !important;
+    padding: 10px !important;
+    color: white !important;
+}
+

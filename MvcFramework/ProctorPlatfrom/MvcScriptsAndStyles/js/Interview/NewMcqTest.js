@@ -33,16 +33,16 @@ function drag(ev) {
 
 function drop(ev) {
 	ev.preventDefault();
-
 	var data = ev.dataTransfer.getData("text");
-	if (ev.target.hasChildNodes()) {
-		var answerList = document.getElementById(data).parentNode;
-		removeChild(ev.target, answerList, data);
-	} else {
-		//dropItem(ev);
-		ev.target.appendChild(document.getElementById(data));
+	if (validateDropLocation(ev)) {
+		if (ev.target.hasChildNodes()) {
+			var answerList = document.getElementById(data).parentNode;
+			removeChild(ev.target, answerList, data);
+		} else {
+			ev.target.appendChild(document.getElementById(data));
+		}
 	}
-}
+}  
 //function dropItem(ev) {
 //	var data = ev.dataTransfer.getData("text");
 //	var target = ev.target.closest('ul');
@@ -58,9 +58,11 @@ function removeChild(target, answerList, data) {
 	if (!(target instanceof HTMLDivElement)) {
 		target = target.closest('div');
 	}
+	if (target.firstElementChild != null) {
 	var previousChildId = target.firstElementChild.id;
 	var previousChildNode = document.getElementById(previousChildId);
 	answerList.appendChild(previousChildNode);
+	}
 	target.appendChild(document.getElementById(data));
 }
 function dropItem(ev) {
@@ -75,7 +77,7 @@ function dropItem(ev) {
 	}
 }
 function validateDropLocation(ev) {
-	let parentContainer = ev.target.closest('.card');
+	let parentContainer = ev.target.closest('.custom-drag-drop');
 	var data = ev.dataTransfer.getData("text");
 	var btnElement = document.getElementById(data).children;
 	console.log("parentcontainer", parentContainer.id == btnElement[0].dataset.parent);
@@ -191,7 +193,19 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 		case 'Ordering':
 		case 'MapOrdering':
 		case 'FillInTheBlanks': {
-			ans = $(".drop-area div.blank button");
+			//ans = $(".drop-area div.blank button");
+			var dd_item = $(".drop-area div.blank");
+					var filteredItem = [];
+					for (var i = 0; i < dd_item.length; i++) {
+						var b = dd_item[i].children.length;
+						if (b > 1) {
+							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0].firstChild);
+						}
+						else {
+							filteredItem.push(dd_item[i].children[0].firstChild);
+						}						
+					}
+					ans = filteredItem;// $(".drop-area div.blank button");
 			break;
 		}
 		case 'MultipleQuestion':

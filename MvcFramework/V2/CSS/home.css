@@ -53,7 +53,9 @@
     background: #4918BB;
     padding: 0 10px; /* Adjust padding as needed */
 }
-
+input#txtTranscriptNoNew {
+    font-size: 12px;
+}
 .custom-search-box .form-control {
     flex-grow: 1;
     border: none;
