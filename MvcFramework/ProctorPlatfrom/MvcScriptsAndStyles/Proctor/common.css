@@ -191,7 +191,7 @@ form h2,
 }
 
 .video-section-border {
-    border: 1px solid !important;
+    /*border: 1px solid !important;*/
 }
 
 .connection-network {
@@ -2354,7 +2354,8 @@ p {
 
 /*new adminscreen -start*/
 .new-admin-screen {
-    background-color: wheat;
+    background-image: linear-gradient(to bottom right, #46DF95, #1771C5, #C22EBD, #EE5050);
+    background-color: #1771C5;
     min-height: 100vh;
 }
 
@@ -2386,6 +2387,15 @@ p {
         right: -4.5% !important;
         bottom: -228px !important;
     }
+.btn-alignment {
+    width: inherit !important;
+    left: -5px !important;
+}
+
+.btn-position-panel {
+    position: fixed !important;
+    bottom: 45px !important;
+}
 /*new adminscreen -end*/
 
 /*custom-new class -start*/
