@@ -283,8 +283,8 @@ function reportBtn(input) {
 			$(".ReportMessage").empty();
 			$(".ReportMessage").html("Current Question's Reported Successfully!!!");
 			$('#ReportQuestionModal').modal("show");
-			$('#reportclose').unbind('click', () => { $('#ReportQuestionModal').modal("hide"); });
-			$('#reportclose').bind('click', () => { $('#ReportQuestionModal').modal("hide"); });
+			$('#reportclose').off('click', () => { $('#ReportQuestionModal').modal("hide"); });
+			$('#reportclose').on('click', () => { $('#ReportQuestionModal').modal("hide"); });
 			$(".modal-backdrop").hide();
 		},
 		complete: function () {
@@ -591,10 +591,10 @@ function submitTest(input, isReview) {
 		GetAnswerCount(input, isReview, function (e) {
 			$("#test-confiramtion-body").html(e);
 			$('#test-confiramtion').modal("show");
-			$('#SubmitYes').unbind('click', () => { beforeTestCallBack(); callSubmit(input, isReview, testCallBack); });
-			$('#SubmitYes').bind('click', () => { beforeTestCallBack(); callSubmit(input, isReview, testCallBack); $("#test-confiramtion").modal("hide"); });
-			$('#testclose').unbind('click', () => { $("#test-confiramtion").modal("hide"); });
-			$('#testclose').bind('click', () => { $("#test-confiramtion").modal("hide"); });
+			$('#SubmitYes').off('click', () => { beforeTestCallBack(); callSubmit(input, isReview, testCallBack); });
+			$('#SubmitYes').on('click', () => { beforeTestCallBack(); callSubmit(input, isReview, testCallBack); $("#test-confiramtion").modal("hide"); });
+			$('#testclose').off('click', () => { $("#test-confiramtion").modal("hide"); });
+			$('#testclose').on('click', () => { $("#test-confiramtion").modal("hide"); });
 		});
 	}
 }
