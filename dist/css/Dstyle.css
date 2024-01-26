@@ -9848,9 +9848,8 @@ table.text-center, table.text-center td, table.text-center th {
     display: inline-block;
     margin-top: -20px
 }
-
-.modal {
-    background: rgba(0,0,0,.3)
+.modal-header .close {
+    margin-top: -32px;
 }
 
 .modal-content {
@@ -13315,4 +13314,12 @@ h2.wartxt {
 .AccountMeterPurchaseContent div {overflow: auto;}
 
     
+}
+/* Priyanka thakur */
+.modal {
+    background: rgba(0,0,0,.3)
+}
+.modal-body {
+    height: 100px;
+    overflow-y: scroll;
 }
