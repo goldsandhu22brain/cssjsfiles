@@ -41012,6 +41012,7 @@ function NotificationCallBack(Notify) {
         }
         if (localLatestMetadata["StartQuiz"]) {
           show(startTestButton);
+          (0, _jquery.default)('#startbtn-admin-wait').addClass('hide');
           localLatestMetadata["StartQuiz"] = false;
         }
         if (localLatestMetadata["NewProof"]) {
