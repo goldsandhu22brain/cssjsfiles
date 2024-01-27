@@ -13323,3 +13323,13 @@ h2.wartxt {
     height: 100px;
     overflow-y: scroll;
 }
+
+ul.dropdown-menu{
+	min-width:110px !important;
+	
+}
+ul.dropdown-menu.leftdisplay{
+	left: initial;
+    right: 25px;
+    top: -10px;
+}
