@@ -54,6 +54,11 @@ footerchanges footer-brand-a  {
 .open>.dropdown-menu {
     min-width: 110px !important;
 }
+@media only screen and (min-width: 769px) {
+    .navbar-collapse:before {
+        content: none;
+    }
+}
    
    
 
