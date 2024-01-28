@@ -59,9 +59,9 @@ function removeChild(target, answerList, data) {
 		target = target.closest('div');
 	}
 	if (target.firstElementChild != null) {
-	var previousChildId = target.firstElementChild.id;
-	var previousChildNode = document.getElementById(previousChildId);
-	answerList.appendChild(previousChildNode);
+		var previousChildId = target.firstElementChild.id;
+		var previousChildNode = document.getElementById(previousChildId);
+		answerList.appendChild(previousChildNode);
 	}
 	target.appendChild(document.getElementById(data));
 }
@@ -174,38 +174,16 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 				$.merge(ans, _ans2);
 				break;
 			}
+		case 'SituationalAgreeDisAgree5Options':
 		case 'SituationalTrueFalseCannotTell':
 			{
-				ans = $("input:radio[name='s0']:checked");
-				var _ans2 = $("input:radio[name='s1']:checked");
-				var _ans3 = $("input:radio[name='s2']:checked");
-				$.merge(ans, $.merge(_ans2, _ans3));
+				ans = $("input:radio:checked");
 				break;
 			}
-		case 'SituationalAgreeDisAgree5Options':
-			ans = $("input:radio[name='s0']:checked");
-			var _ans1 = $("input:radio[name='s1']:checked");
-			var _ans2 = $("input:radio[name='s2']:checked");
-			var _ans3 = $("input:radio[name='s3']:checked");
-			var _ans4 = $("input:radio[name='s4']:checked");
-			$.merge(ans, $.merge(_ans1, $.merge(_ans2, $.merge(_ans3, _ans4))));
-			break;
 		case 'Ordering':
 		case 'MapOrdering':
 		case 'FillInTheBlanks': {
-			//ans = $(".drop-area div.blank button");
-			var dd_item = $(".drop-area div.blank");
-					var filteredItem = [];
-					for (var i = 0; i < dd_item.length; i++) {
-						var b = dd_item[i].children.length;
-						if (b > 1) {
-							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0].firstChild);
-						}
-						else {
-							filteredItem.push(dd_item[i].children[0].firstChild);
-						}						
-					}
-					ans = filteredItem;// $(".drop-area div.blank button");
+			ans = $(".drop-area div.blank button");
 			break;
 		}
 		case 'MultipleQuestion':
@@ -229,7 +207,18 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 				case 'Ordering':
 				case 'MapOrdering':
 				case 'FillInTheBlanks': {
-					ans = $(".drop-area div.blank button");
+					var dd_item = $(".drop-area div.blank");
+					var filteredItem = [];
+					for (var i = 0; i < dd_item.length; i++) {
+						var b = dd_item[i].children.length;
+						if (b > 1) {
+							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0].firstChild);
+						}
+						else {
+							filteredItem.push(dd_item[i].children[0].firstChild);
+						}
+					}
+					ans = filteredItem;// $(".drop-area div.blank button");
 					break;
 				}
 			}
