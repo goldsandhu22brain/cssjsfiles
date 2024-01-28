@@ -132,11 +132,11 @@ function GetQuestionHTML(currentQuestionType, subQuestionType) {
 		case 'FillInTheBlanks': {
 			ans.AnswerString = $(".drop-area")[0].innerHTML;
 			break;
-		}
-		case 'Ordering':
-		case 'MapOrdering':
+		}		
 		case 'MultipleQuestion':
 			switch (subQuestionType) {
+				case 'Ordering':
+				case 'MapOrdering':
 				case 'FillInTheBlanks':							
 					for (var i = 0; i < $(".drop-area").length; i++) {						
 						ans.MultiQAnswerString.push($(".drop-area")[i].innerHTML);
