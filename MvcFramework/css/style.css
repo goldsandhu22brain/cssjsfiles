@@ -142,6 +142,7 @@ header .navbar-dark .navbar-nav .nav-link {
     font-family: 'MyriadProBold';
     letter-spacing: 1px;
     color: #fff;
+    padding: 0px 0px 0px 12px;
 }
 header .navbar-dark span.navbar-text .navbar-nav li a {
     padding: 7px 15px;
