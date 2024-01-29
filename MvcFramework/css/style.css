@@ -2217,13 +2217,14 @@ position: relative;
 .backbanner {
     background-image: url(/MvcFramework/images/skill-back.jpg);
     background-repeat: no-repeat;
-    background-size:  100% 100%;
-    background-position: bottom right;
+    background-size: 100% 100%;
+    /* background-position: bottom right; */
     padding: 10% 0;
-    height: 100vh;  
+    height: 100vh;
     min-height: 650px;
-	display: flex;
+    display: flex;
     align-items: center;
+    background-size: cover;
 }
 .backbanner h1 {
    color: #fff;
