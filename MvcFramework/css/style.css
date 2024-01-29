@@ -3712,3 +3712,9 @@ i.glyphicon.glyphicon-star.half {
     /* background: #fff; */
     position: relative;
 }
+/*Abhishek*/
+.navbar-brand img {
+    width: 70%;
+}
+
+
