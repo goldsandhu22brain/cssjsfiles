@@ -143,3 +143,31 @@
     position: relative !important;
     cursor: pointer !important;
 }
+.interview-mt {
+    margin-bottom: 15px;
+}
+
+.interview-deleterow {
+    text-indent: 27px;
+    line-height: 2.5;
+}
+
+.interview-slot {
+    float: inline-end;
+    width: auto;
+    margin-top: -102px;
+    margin-bottom: 25px;
+}
+.mb-type {
+    margin-bottom: 16px;
+}
+
+.addtest {
+    line-height: 2;
+    font-weight: 600;
+}
+
+.mt-trash {
+    margin-left: -103px;
+    width: auto;
+}
