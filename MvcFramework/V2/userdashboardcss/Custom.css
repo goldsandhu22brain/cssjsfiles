@@ -146,8 +146,8 @@
 .result-btn-wrap {
     display: flex;
     justify-content: space-around;
-    margin-top: 29px;
-    float: inline-end;
+    margin-top: -4px;
+   margin-left:855px
 }
 
 .btn-search {
