@@ -42,7 +42,7 @@ function drop(ev) {
 			ev.target.appendChild(document.getElementById(data));
 		}
 	}
-}  
+}    
 //function dropItem(ev) {
 //	var data = ev.dataTransfer.getData("text");
 //	var target = ev.target.closest('ul');
@@ -59,9 +59,9 @@ function removeChild(target, answerList, data) {
 		target = target.closest('div');
 	}
 	if (target.firstElementChild != null) {
-	var previousChildId = target.firstElementChild.id;
-	var previousChildNode = document.getElementById(previousChildId);
-	answerList.appendChild(previousChildNode);
+		var previousChildId = target.firstElementChild.id;
+		var previousChildNode = document.getElementById(previousChildId);
+		answerList.appendChild(previousChildNode);
 	}
 	target.appendChild(document.getElementById(data));
 }
@@ -132,13 +132,13 @@ function GetQuestionHTML(currentQuestionType, subQuestionType) {
 		case 'FillInTheBlanks': {
 			ans.AnswerString = $(".drop-area")[0].innerHTML;
 			break;
-		}
-		case 'Ordering':
-		case 'MapOrdering':
+		}		
 		case 'MultipleQuestion':
 			switch (subQuestionType) {
-				case 'FillInTheBlanks':							
-					for (var i = 0; i < $(".drop-area").length; i++) {						
+				case 'FillInTheBlanks':
+				case 'Ordering':
+				case 'MapOrdering':
+					for (var i = 0; i < $(".drop-area").length; i++) {
 						ans.MultiQAnswerString.push($(".drop-area")[i].innerHTML);
 					}
 					break;
@@ -174,38 +174,16 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 				$.merge(ans, _ans2);
 				break;
 			}
+		case 'SituationalAgreeDisAgree5Options':
 		case 'SituationalTrueFalseCannotTell':
 			{
-				ans = $("input:radio[name='s0']:checked");
-				var _ans2 = $("input:radio[name='s1']:checked");
-				var _ans3 = $("input:radio[name='s2']:checked");
-				$.merge(ans, $.merge(_ans2, _ans3));
+				ans = $("input:radio:checked");
 				break;
 			}
-		case 'SituationalAgreeDisAgree5Options':
-			ans = $("input:radio[name='s0']:checked");
-			var _ans1 = $("input:radio[name='s1']:checked");
-			var _ans2 = $("input:radio[name='s2']:checked");
-			var _ans3 = $("input:radio[name='s3']:checked");
-			var _ans4 = $("input:radio[name='s4']:checked");
-			$.merge(ans, $.merge(_ans1, $.merge(_ans2, $.merge(_ans3, _ans4))));
-			break;
 		case 'Ordering':
 		case 'MapOrdering':
 		case 'FillInTheBlanks': {
-			//ans = $(".drop-area div.blank button");
-			var dd_item = $(".drop-area div.blank");
-					var filteredItem = [];
-					for (var i = 0; i < dd_item.length; i++) {
-						var b = dd_item[i].children.length;
-						if (b > 1) {
-							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0].firstChild);
-						}
-						else {
-							filteredItem.push(dd_item[i].children[0].firstChild);
-						}						
-					}
-					ans = filteredItem;// $(".drop-area div.blank button");
+			ans = $(".drop-area div.blank button");
 			break;
 		}
 		case 'MultipleQuestion':
@@ -229,7 +207,18 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 				case 'Ordering':
 				case 'MapOrdering':
 				case 'FillInTheBlanks': {
-					ans = $(".drop-area div.blank button");
+					var dd_item = $(".drop-area div.blank");
+					var filteredItem = [];
+					for (var i = 0; i < dd_item.length; i++) {
+						var b = dd_item[i].children.length;
+						if (b > 1) {
+							filteredItem.push([...dd_item[i].children].filter(z => z.id != '00000000-0000-0000-0000-000000000000')[0].firstChild);
+						}
+						else {
+							filteredItem.push(dd_item[i].children[0].firstChild);
+						}						
+					}
+					ans = filteredItem;// $(".drop-area div.blank button");
 					break;
 				}
 			}
@@ -278,6 +267,7 @@ function LoadQuestionIdTileCard() {
 }
 
 function reportBtn(input) {
+	$(input).text($(input).attr('data-loading'));
 	var url = getBaseUrl() + "/ReportQuestion";
 	var currentQuestionId = $(input).attr('data-question-id');
 	PushTracking(260);
@@ -291,11 +281,11 @@ function reportBtn(input) {
 			//$('.proctor-loader').css("visibility", "visible");
 		},
 		success: function (response) {
+			$(input).text($(input).attr('data-original'));
 			$(".ReportMessage").empty();
 			$(".ReportMessage").html("Current Question's Reported Successfully!!!");
 			$('#ReportQuestionModal').modal("show");
-			$('#reportclose').unbind('click', () => { $('#ReportQuestionModal').modal("hide"); });
-			$('#reportclose').bind('click', () => { $('#ReportQuestionModal').modal("hide"); });
+			$('#reportclose').off('click').on('click', () => { $('#ReportQuestionModal').modal("hide"); });
 			$(".modal-backdrop").hide();
 		},
 		complete: function () {
@@ -308,6 +298,7 @@ function reportBtn(input) {
 
 //code for getting next question based on question no mcq
 function nextQuestion(input, isReview) {
+	$(input).text($(input).attr('data-loading'));	
 	var nextQuestionId = $(input).attr('data-question-id');
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
@@ -334,7 +325,7 @@ function nextQuestion(input, isReview) {
 		},
 		success: function (response) {
 			var result = response;
-			//console.log(result);			
+			$(input).text($(input).attr('data-original'));
 			$('#testDiv').replaceWith(result);
 			ReStartTimer();
 			//clearInterval(timerExamInterval);
@@ -361,6 +352,7 @@ function onClikQuestionNo(input, isReview) {
 	}
 	else {
 		btnData = document.getElementById("nextBtn");
+		$(btnData).text($(btnData).attr('data-loading'));
 	}
 	var nextQuestionId = $(input).attr('data-question-id');
 	PushTracking(230, questionNo);
@@ -374,7 +366,7 @@ function onClikQuestionNo(input, isReview) {
 	var url = getInterviewBaseUrl() + "/SubmitAnswer";
 	var fullScreen = GetDisplayAlert("fullScreen");
 	var mouseActivity = GetDisplayAlert("mouseActivity");
-	var debuggerCheck = GetDisplayAlert("debuggerCheck");
+	var debuggerCheck = GetDisplayAlert("debuggerCheck");	
 	var IsReviewQ = isReview;
 	var testType = GlobalObj.InterviewTestType;
 	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
@@ -390,6 +382,7 @@ function onClikQuestionNo(input, isReview) {
 		},
 		success: function (response) {
 			var result = response;
+			$(btnData).text($(btnData).attr('data-original'));
 			$('#testDiv').replaceWith(result);
 			ReStartTimer();
 			//clearInterval(timerExamInterval);
@@ -468,6 +461,7 @@ function PushTracking(activityId, questionNo = "") {
 }
 //code for previous question
 function nextPrev(input, isReview) {
+	$(input).text($(input).attr('data-loading'));	
 	var nextQuestionId = $(input).attr('data-question-id');
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
@@ -481,7 +475,7 @@ function nextPrev(input, isReview) {
 	var IsReviewQ = isReview;
 	var testType = GlobalObj.InterviewTestType;
 	PushTracking(220, nextQuestionId);
-	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType,   Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
 	$.extend(dataJson, QuestionHTML);
 	$.ajax({
 		url: url,
@@ -494,6 +488,7 @@ function nextPrev(input, isReview) {
 		},
 		success: function (response) {
 			var result = response;
+			$(input).text($(input).attr('data-original'));
 			$('#testDiv').replaceWith(result);
 			ReStartTimer();
 			//clearInterval(timerExamInterval);
@@ -539,7 +534,7 @@ function SubmitTestAutomatically(callBack = null) {
 					callbackFn(result);
 				}
 				else {
-					$('.proctor-loader').css("visibility", "hidden");
+					$('.proctor-loader').css("visibility", "hidden");				
 					$('#testDiv').replaceWith(result);
 					ReStartTimer();
 					clearInterval(timerExamInterval);
@@ -660,10 +655,8 @@ function submitTest(input, isReview) {
 		GetAnswerCount(input, isReview, function (e) {
 			$("#test-confiramtion-body").html(e);
 			$('#test-confiramtion').modal("show");
-			$('#SubmitYes').unbind('click', () => { beforeTestCallBack(); callSubmit(input, isReview, testCallBack); });
-			$('#SubmitYes').bind('click', () => { beforeTestCallBack(); callSubmit(input, isReview, testCallBack); $("#test-confiramtion").modal("hide"); });
-			$('#testclose').unbind('click', () => { $("#test-confiramtion").modal("hide"); });
-			$('#testclose').bind('click', () => { $("#test-confiramtion").modal("hide"); });
+			$('#SubmitYes').off('click').on('click', () => { beforeTestCallBack(); callSubmit(input, isReview, testCallBack); $("#test-confiramtion").modal("hide"); });
+			$('#testclose').off('click').on('click', () => { $("#test-confiramtion").modal("hide"); });
 		});
 	}
 }
@@ -673,7 +666,7 @@ function GetAnswerCount(input, isReview, callBack = null) {
 	var currentQuestionType = $(input).attr('data-current-questionType');
 	var subQuestionType = $(input).attr('data-sub-questionType');
 	var answer = GetAnswer(currentQuestionType, subQuestionType);
-	var QuestionHTML = GetQuestionHTML(currentQuestionType, subQuestionType);
+	var QuestionHTML = GetQuestionHTML(currentQuestionType, subQuestionType);	
 	var IsReviewQ = isReview;
 	var testType = GlobalObj.InterviewTestType;
 	var url = getBaseUrl() + "/GetAnswerTypeCount";

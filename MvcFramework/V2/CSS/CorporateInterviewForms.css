@@ -1,0 +1,51 @@
+.interview-mt {
+    margin-bottom: 15px;
+}
+
+.interview-deleterow {
+    text-indent: 58px;
+    line-height: 2;
+}
+
+.interview-slot {
+    float: inline-end;
+    width: auto;
+    margin-top: -64px;
+    margin-bottom: 25px;
+}
+
+.mb-type {
+    margin-bottom: 16px;
+}
+
+.addtest {
+    line-height: 2;
+    font-weight: 600;
+}
+
+.mt-trash {
+    margin-left: -103px;
+    width: auto;
+}
+.mt-testtype {
+    margin-left: -14px;
+}
+.mt-allow {
+    margin-top: 6px;
+    margin-left: -9px
+}
+.ml-negative {
+    margin-left: 17px;
+}
+.align-key {
+    display: flex;
+    justify-content: flex-end;
+    line-height: 2.5;
+}
+
+.remove-btn {
+    float: inline-end;
+}
+.width-slot {
+    width:60px
+}
