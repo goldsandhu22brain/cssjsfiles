@@ -49,7 +49,7 @@ footerchanges footer-brand-a  {
 }
 
 
-.DashboardCenterTab .box-body { min-height: 250px; }
+.DashboardCenterTab .box-body { /*min-height: 250px;*/ }
 
 .open>.dropdown-menu {
     min-width: 110px !important;
