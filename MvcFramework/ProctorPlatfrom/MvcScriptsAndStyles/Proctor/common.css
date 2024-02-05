@@ -2400,6 +2400,9 @@ p {
     position: fixed !important;
     bottom: 45px !important;
 }
+#uaa-datatable_paginate {
+    margin-left: 85px !important;
+}
 /*new adminscreen -end*/
 
 /*custom-new class -start*/
