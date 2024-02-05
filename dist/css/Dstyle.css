@@ -13333,3 +13333,24 @@ ul.dropdown-menu.leftdisplay{
     right: 25px;
     top: -10px;
 }
+
+
+@media screen and (max-width: 767px) {
+
+    .align-item {
+        display: block;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    table#gvVoilation {
+        border-style: solid !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div:has(> #gvVoilation) {
+        height: auto !important;
+    }
+}
