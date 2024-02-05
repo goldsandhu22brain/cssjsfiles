@@ -49,3 +49,16 @@
 .width-slot {
     width:60px
 }
+/*For Mobile :*/
+@media screen and (max-width: 767px) {
+    .dropdown-menu
+
+{
+    max-width: 100% !important;
+    box-shadow: none;
+    border-color: #eee;
+}
+
+input.form-control {
+    max-width: 89%;
+}
