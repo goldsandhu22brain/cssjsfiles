@@ -445,4 +445,11 @@ a:focus {
 	background-color: white;
 	font-size: medium;
 }
+@media screen and (max-width: 767px) {
+	.width-size {
+		width: 80%;
+	}
+}
+
+
 
