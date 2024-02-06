@@ -13335,6 +13335,13 @@ ul.dropdown-menu.leftdisplay{
 }
 
 
+@media screen and (max-width: 992px) {
+
+    .align-item {
+        margin-left: 00px;
+    }
+}
+
 @media screen and (max-width: 767px) {
 
     .align-item {
@@ -13343,14 +13350,13 @@ ul.dropdown-menu.leftdisplay{
     }
 }
 
-@media screen and (max-width: 767px) {
-    table#gvVoilation {
-        border-style: solid !important;
-    }
+table#gvVoilation {
+    border-style: solid !important;
 }
 
-@media screen and (max-width: 767px) {
-    div:has(> #gvVoilation) {
-        height: auto !important;
-    }
+div:has(> #gvVoilation) {
+    height: auto !important;
 }
+
+
+
