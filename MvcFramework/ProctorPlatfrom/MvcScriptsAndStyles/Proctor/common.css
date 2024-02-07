@@ -1134,6 +1134,10 @@ p {
         background-color: #A50C83; /* For browsers that do not support gradients */
         background-image: linear-gradient(to right, #F16B20, #A50C83);
     }
+/**interview css added**/
+.nxt-interbtn {
+    height: 46px !important;
+}
 
 
 
