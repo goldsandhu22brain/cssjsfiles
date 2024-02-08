@@ -1,0 +1,33 @@
+@media screen and (max-width: 767px) {
+
+    #logo img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+    }
+
+    .entry-title h2,
+    .post-grid .entry-title h2 {
+        font-size: 18px !important;
+        font-weight: 600;
+    }
+
+    .postcontent {
+        width: auto;
+    }
+
+    .col_last {
+        clear: right;
+        margin: auto !important;
+    }
+}
+
+
+@media (max-width: 479px) {
+
+    .container,
+    #header.full-header .container,
+    .container-fullwidth {
+        width: 310px !important;
+    }
+}

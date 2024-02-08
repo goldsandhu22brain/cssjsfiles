@@ -580,7 +580,10 @@ function submitTest(input, isReview) {
 	var beforeTestCallBack = window.BeforeSubmitTest;
 	beforeTestCallBack = beforeTestCallBack == null ? function () { } : beforeTestCallBack;
 	var allAnswered = $(input).attr('data-allquestion-answered');
-	if (allAnswered == true || allAnswered == 'true' || allAnswered == 'True') {
+	var currentQuestionType = $(input).attr('data-current-questionType');
+	var subQuestionType = $(input).attr('data-sub-questionType');
+	var answer = GetAnswer(currentQuestionType, subQuestionType);
+	if ((allAnswered == true || allAnswered == 'true' || allAnswered == 'True') && CurrentAnswered(answer)) {
 		beforeTestCallBack && beforeTestCallBack();
 		callSubmit(input, isReview, testCallBack);
 	}
@@ -594,6 +597,12 @@ function submitTest(input, isReview) {
 			$('#testclose').off('click').on('click', () => { $("#test-confiramtion").modal("hide"); });
 		});
 	}
+}
+function CurrentAnswered(answer) {
+	if (answer?.length == 0 || answer?.filter(x => x.Id == '00000000-0000-0000-0000-000000000000').length > 0) {
+		return false;
+	}
+	return true;
 }
 
 function GetAnswerCount(input, isReview, callBack = null) {

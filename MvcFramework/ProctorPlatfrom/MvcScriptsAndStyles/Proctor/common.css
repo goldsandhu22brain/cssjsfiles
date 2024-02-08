@@ -1134,6 +1134,10 @@ p {
         background-color: #A50C83; /* For browsers that do not support gradients */
         background-image: linear-gradient(to right, #F16B20, #A50C83);
     }
+/**interview css added**/
+.nxt-interbtn {
+    height: 46px !important;
+}
 
 
 
@@ -1561,6 +1565,19 @@ p {
     .step8 .range-bubble {
         right: -1.3%;
     }
+.mb-startbtn {
+    margin-bottom: 218px !important;
+    margin-left: 68px !important;
+}
+.content-position {
+    margin-left: 265px !important;
+    margin-top: 158px !important;
+}
+
+.vb-position {
+    margin-left: 267px !important;
+    margin-top: 60px !important;
+} 
 
 
 /* STEP 9 */
@@ -2395,6 +2412,12 @@ p {
 .btn-position-panel {
     position: fixed !important;
     bottom: 45px !important;
+}
+#uaa-datatable_paginate {
+    float: inline-end !important;
+}
+.admin-img {
+    margin-left: 180px;
 }
 /*new adminscreen -end*/
 

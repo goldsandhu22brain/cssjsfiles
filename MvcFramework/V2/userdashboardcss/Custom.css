@@ -143,3 +143,19 @@
     position: relative !important;
     cursor: pointer !important;
 }
+.result-btn-wrap {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -4px;
+   margin-left:855px
+}
+
+.btn-search {
+    width: auto;
+}
+
+.btn-download {
+    width: fit-content;
+    margin-top: 1px;
+    margin-left: -74px;
+}

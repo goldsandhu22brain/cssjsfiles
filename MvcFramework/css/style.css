@@ -142,6 +142,7 @@ header .navbar-dark .navbar-nav .nav-link {
     font-family: 'MyriadProBold';
     letter-spacing: 1px;
     color: #fff;
+    padding: 0px 0px 0px 12px;
 }
 header .navbar-dark span.navbar-text .navbar-nav li a {
     padding: 7px 15px;
@@ -2216,13 +2217,14 @@ position: relative;
 .backbanner {
     background-image: url(/MvcFramework/images/skill-back.jpg);
     background-repeat: no-repeat;
-    background-size:  100% 100%;
-    background-position: bottom right;
+    background-size: 100% 100%;
+    /* background-position: bottom right; */
     padding: 10% 0;
-    height: 100vh;  
+    height: 100vh;
     min-height: 650px;
-	display: flex;
+    display: flex;
     align-items: center;
+    background-size: cover;
 }
 .backbanner h1 {
    color: #fff;
@@ -3693,7 +3695,7 @@ background-color: #F5F7F9;
 .button2:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
-/* Priyanka thakur 24-01-2024 */
+
 .more.dropdown-menu>li>a {
     font-size: 16px;
     padding: 7px 15px;
@@ -3712,3 +3714,9 @@ i.glyphicon.glyphicon-star.half {
     /* background: #fff; */
     position: relative;
 }
+
+.navbar-brand img {
+    width: 82%;
+}
+
+

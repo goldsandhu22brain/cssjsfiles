@@ -41604,7 +41604,7 @@ function ViewNewProof() {
     async: false,
     success: function success(response) {
       (0, _jquery.default)("#Inject-UAA").html("");
-      (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark'>Uploaded Document:" + NewProofDocumentName + "</h3><img class='w-50' src='" + response + "'/>   <div id='controls' class='text-center'><button id = 'approveProof' class= 'btn-control btn-Approve btn-left-rounded'> Approve</button><button id = 'rejectProof' class= 'btn-control btn-left-rounded'> Reject</button> ");
+      (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark text-center'>Uploaded Document:" + NewProofDocumentName + "</h3><img class='w-50 admin-img' src='" + response + "'/>   <div id='controls' class='text-center'><button id = 'approveProof' class= 'btn-control btn-Approve btn-left-rounded'> Approve</button><button id = 'rejectProof' class= 'btn-control btn-left-rounded'> Reject</button> ");
       (0, _jquery.default)("#approveProof").click(function () {
         hide(viewNewProof);
         hide(reqProof);
