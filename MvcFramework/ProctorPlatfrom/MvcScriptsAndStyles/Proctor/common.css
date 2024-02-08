@@ -2414,7 +2414,7 @@ p {
     bottom: 45px !important;
 }
 #uaa-datatable_paginate {
-    margin-left: 85px !important;
+    float: inline-end !important;
 }
 .admin-img {
     margin-left: 180px;
