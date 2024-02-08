@@ -41337,6 +41337,7 @@ function NextScreenShare() {
   (0, _jquery.default)("#new-inject-test").attr("class", "new-conference conference candidate-conference hide"); //clear classes
   show(conference);
   show(screenShareStatus);
+  startRecording(); //trigger the recording
   (0, _jquery.default)("#start-test").click();
 }
 function GetSecurityQuestion() {
@@ -42191,7 +42192,6 @@ leaveBtn.onclick = TestSubmitAutomatically;
 startTestButton.onclick = function () {
   SystemCheck();
   (0, _jquery.default)('#load-test').val((0, _jquery.default)('#load-test').data("loading-text"));
-  startRecording(); //trigger the recording
   LoadQuestion();
 };
 newProofUpload.onclick = NewProofUpload;
@@ -42222,4 +42222,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.537e42c6.js.map
+//# sourceMappingURL=/Newcandidate.9b7862fb.js.map

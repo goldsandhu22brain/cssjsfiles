@@ -41367,12 +41367,17 @@ function _InitialLoad() {
   return _InitialLoad.apply(this, arguments);
 }
 function NextScreenShare() {
+  var canrecord = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
   change_tab('load-test');
   (0, _jquery.default)(".custom-step-8").attr("class", "step8 custom-step-8"); //clear classes
   (0, _jquery.default)("#new-inject-test").attr("class", "new-interview-conference conference candidate-conference hide"); //clear classes
   show(conference);
   show(screenShareStatus);
   IsPresentInRoom(GlobalObj);
+  if (canrecord && GlobalObj.CanRecord) {
+    startRecording(); //trigger the recording
+  }
+
   (0, _jquery.default)("#start-test").click();
   //$("#load-test-section").click();
 }
@@ -42110,7 +42115,7 @@ function AfterSubmitTest(response) {
         (0, _jquery.default)('#new-inject-test').html("");
         (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
         show(presenterController);
-        NextScreenShare();
+        NextScreenShare(false);
       }
     } catch (e) {}
   };
@@ -42257,29 +42262,17 @@ leaveBtn.onclick = TestSubmitAutomatically;
 startMcqTestButton.onclick = function () {
   SystemCheck();
   (0, _jquery.default)('#load-test').val((0, _jquery.default)('#load-test').data("loading-text"));
-  if (GlobalObj.CanRecord) {
-    startRecording(); //trigger the recording
-  }
-
   LoadQuestion("0", true);
 };
 startTestButton.onclick = function () {
   SystemCheck();
   (0, _jquery.default)('#load-test-section').val((0, _jquery.default)('#load-test-section').data("loading-text"));
   var status = (0, _jquery.default)('#load-test-section').data("data-panel-status");
-  if (GlobalObj.CanRecord) {
-    startRecording(); //trigger the recording
-  }
-
   LoadQuestion(status);
 };
 startCodingTestButton.onclick = function () {
   SystemCheck();
   (0, _jquery.default)('#load-coding-test').val((0, _jquery.default)('#load-coding-test').data("loading-text"));
-  if (GlobalObj.CanRecord) {
-    startRecording(); //trigger the recording
-  }
-
   LoadQuestion("0", true);
 };
 fullScreen.onclick = fullScreenEnable;
@@ -42309,4 +42302,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.4fdc87cc.js.map
+//# sourceMappingURL=/Newinterviewcandidate.ae1d7220.js.map
