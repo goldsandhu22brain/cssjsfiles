@@ -41685,13 +41685,13 @@ function UpdatePanelMetadata(Property, Value) {
       var eachPeerMeta = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer === null || peer === void 0 ? void 0 : peer.id));
       var newPeerMetadata = _objectSpread({}, eachPeerMeta);
       newPeerMetadata[Property] = Value;
-      var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
+      //var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
       var obj = {};
       obj[peer === null || peer === void 0 ? void 0 : peer.id] = newPeerMetadata;
       hmsActions.changeMetadata(obj);
-      var newLocalMetadata = _objectSpread({}, local_metadata);
+      //var newLocalMetadata = _objectSpread({}, local_metadata);
       // update the old Metadata
-      hmsActions.changeMetadata(newLocalMetadata);
+      //hmsActions.changeMetadata(newLocalMetadata);
     }
   });
 }
