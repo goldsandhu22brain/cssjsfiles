@@ -40987,8 +40987,8 @@ function NotificationCallBack(Notify) {
     case _hmsVideoStore.HMSNotificationTypes.METADATA_UPDATED:
       var peer = dataProp;
       var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer.id));
-      var _localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
-      var localLatestMetadata = PeerMetdataData[_localPeerId];
+      var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
+      var localLatestMetadata = PeerMetdataData[localPeerId];
       var peerLatestMetadata = PeerMetdataData[peer.id];
       if (localLatestMetadata) {
         hmsActions.changeMetadata(localLatestMetadata);
@@ -41445,7 +41445,7 @@ function CandidateTest(property1, value1) {
     var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
     var newPresenterMetadata = _objectSpread({}, presenter_metadata);
     newPresenterMetadata[property1] = value1;
-    if (property2 != undefined && value2 != undefined) {
+    if (property2 != "") {
       newPresenterMetadata[property2] = value2;
     }
     var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
@@ -41685,16 +41685,17 @@ function UpdatePanelMetadata(Property, Value) {
       var eachPeerMeta = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer === null || peer === void 0 ? void 0 : peer.id));
       var newPeerMetadata = _objectSpread({}, eachPeerMeta);
       newPeerMetadata[Property] = Value;
-      var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
+      //const local_metadata = hmsStore.getState(selectPeerMetadata(localPeerId));
       var obj = {};
       obj[peer === null || peer === void 0 ? void 0 : peer.id] = newPeerMetadata;
       hmsActions.changeMetadata(obj);
-      var newLocalMetadata = _objectSpread({}, local_metadata);
+      //const newLocalMetadata = { ...local_metadata };
       // update the old Metadata
-      hmsActions.changeMetadata(newLocalMetadata);
+      //hmsActions.changeMetadata(newLocalMetadata);
     }
   });
 }
+
 function IsPanelReJoining() {
   var presenter = GetCandidatePeerDetails();
   if (!presenter) {
@@ -41706,7 +41707,7 @@ function IsPanelReJoining() {
     var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
     var newPresenterMetadata = _objectSpread({}, presenter_metadata);
     if (newPresenterMetadata["PanelLeaveRoom"] == true) {
-      CandidateTest("PanelLeaveRoom", true, "PanelLeaveRoom", false);
+      CandidateTest("PanelLeaveRoom", true, "PanelLeaveRoom", null);
     }
     setTimeout(DisplayUpdatePanelRoleButton, 2000);
   }
@@ -41741,14 +41742,14 @@ function TriggerNewProofButton() {
     if (!presenter) {
       (0, _common.ToastMessage)(candShareMessage, true);
     }
-    var _localPeerId2 = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
+    var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
     var presenterId = presenter === null || presenter === void 0 ? void 0 : presenter.id;
     if (presenterId) {
       var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
       var newPresenterMetadata = _objectSpread(_objectSpread({}, presenter_metadata), {}, {
         NewProof: true
       });
-      var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(_localPeerId2));
+      var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
       var obj = {};
       obj[presenterId] = newPresenterMetadata;
       hmsActions.changeMetadata(obj);
@@ -41976,4 +41977,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.0da3798b.js.map
+//# sourceMappingURL=/interviewpanel.8bab81a6.js.map
