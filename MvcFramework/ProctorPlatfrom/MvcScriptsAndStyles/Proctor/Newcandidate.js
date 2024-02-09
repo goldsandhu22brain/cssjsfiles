@@ -40980,6 +40980,19 @@ var hmsNotifications = hmsManager.getNotifications();
 var scopeData;
 var ProofAdminPeerId = "";
 var docElement = document.documentElement;
+var PanelRoleButtons = {
+  "view-proof": true,
+  "request-proof": true,
+  "view-new-proof": false,
+  "skip-proof": true,
+  "load-test": false,
+  "pause-test": false,
+  "resume-test": false,
+  "force-end-test": false,
+  "camera-fullsize": true,
+  "leave-btn": true,
+  "end-room-button": true
+};
 function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
@@ -41002,28 +41015,57 @@ function NotificationCallBack(Notify) {
       var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer.id));
       var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
       var localLatestMetadata = PeerMetdataData[localPeerId];
+      var canUpdatePanel = false;
       if (localLatestMetadata) {
+        localLatestMetadata["PanelRoleButtons"] = null;
         if (localLatestMetadata["CandidateSkipProof"]) {
+          canUpdatePanel = true;
           (0, _jquery.default)('#proof-test').hide();
           (0, _jquery.default)('#admin-wait').addClass('hide');
           (0, _jquery.default)('.step-next-3').removeClass('hide');
           (0, _jquery.default)('.btn-Approve').addClass('hide');
+          PanelRoleButtons["load-test"] = true;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
+          PanelRoleButtons["force-end-test"] = true;
+          PanelRoleButtons["view-proof"] = false;
+          PanelRoleButtons["request-proof"] = false;
+          PanelRoleButtons["view-new-proof"] = false;
+          PanelRoleButtons["skip-proof"] = false;
           localLatestMetadata["CandidateSkipProof"] = false;
         }
         if (localLatestMetadata["StartQuiz"]) {
+          canUpdatePanel = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
+          PanelRoleButtons["force-end-test"] = true;
+          PanelRoleButtons["view-proof"] = false;
+          PanelRoleButtons["request-proof"] = false;
+          PanelRoleButtons["view-new-proof"] = false;
+          PanelRoleButtons["skip-proof"] = false;
           show(startTestButton);
           (0, _jquery.default)('#startbtn-admin-wait').addClass('hide');
           localLatestMetadata["StartQuiz"] = false;
         }
         if (localLatestMetadata["NewProof"]) {
+          canUpdatePanel = true;
+          PanelRoleButtons["view-new-proof"] = true;
+          PanelRoleButtons["request-proof"] = true;
+          PanelRoleButtons["skip-proof"] = true;
           (0, _jquery.default)('#proof-test').removeClass('hide');
           (0, _jquery.default)('#admin-wait').addClass('hide');
           ProofAdminPeerId = peer.id;
           localLatestMetadata["NewProof"] = false;
         }
         if (localLatestMetadata["NewProofStatus"] == true) {
+          canUpdatePanel = true;
+          PanelRoleButtons["view-new-proof"] = false;
+          PanelRoleButtons["request-proof"] = false;
+          PanelRoleButtons["skip-proof"] = false;
           (0, _jquery.default)('.step-next-3').removeClass('hide');
           (0, _jquery.default)('.btn-Approve').addClass('hide');
+          //PanelRoleButtons["view-new-proof"] = true;
           localLatestMetadata["NewProofStatus"] = false;
           var proofmsg = localLatestMetadata["NewProofStatusMessage"];
           if (proofmsg != "" && proofmsg != null) {
@@ -41031,6 +41073,10 @@ function NotificationCallBack(Notify) {
             localLatestMetadata["NewProofStatusMessage"] = "";
           }
         } else if (localLatestMetadata["NewProofStatus"] == false) {
+          canUpdatePanel = true;
+          PanelRoleButtons["view-new-proof"] = true;
+          PanelRoleButtons["request-proof"] = true;
+          PanelRoleButtons["skip-proof"] = true;
           var proofmsg = localLatestMetadata["NewProofStatusMessage"];
           if (proofmsg != "" && proofmsg != null) {
             (0, _common.ToastMessage)(proofmsg, true);
@@ -41038,23 +41084,53 @@ function NotificationCallBack(Notify) {
           }
         }
         if (localLatestMetadata["CandidatePauseTest"] == true || localLatestMetadata["CandidateResumeTest"] == false) {
+          canUpdatePanel = true;
           localLatestMetadata["CandidatePauseTest"] = true;
           localLatestMetadata["CandidateResumeTest"] = false;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = false;
+          PanelRoleButtons["resume-test"] = true;
           pauseTest();
           (0, _common.ToastMessage)("Paused the test by Admin", true);
         } else if (localLatestMetadata["CandidateResumeTest"] == true || localLatestMetadata["CandidatePauseTest"] == false) {
+          canUpdatePanel = true;
           localLatestMetadata["CandidatePauseTest"] = false;
           localLatestMetadata["CandidateResumeTest"] = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
           resumeTest();
         }
         if (localLatestMetadata["CandidateEndTest"] == true) {
+          pauseTest();
           TestSubmitAutomatically();
         }
         if (localLatestMetadata["AdminLeaveRoom"] == true) {
+          canUpdatePanel = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = false;
+          PanelRoleButtons["resume-test"] = true;
+          PanelRoleButtons["force-end-test"] = true;
+          PanelRoleButtons["view-proof"] = false;
+          PanelRoleButtons["request-proof"] = false;
+          PanelRoleButtons["view-new-proof"] = false;
+          PanelRoleButtons["skip-proof"] = false;
           pauseTest();
           (0, _common.ToastMessage)("Admin Leaved the Room!! Please wait for admin to rejoin and enable the test", true);
         } else if (localLatestMetadata["AdminLeaveRoom"] == false) {
+          canUpdatePanel = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
+          PanelRoleButtons["force-end-test"] = true;
+          PanelRoleButtons["view-proof"] = false;
+          PanelRoleButtons["request-proof"] = false;
+          PanelRoleButtons["view-new-proof"] = false;
+          PanelRoleButtons["skip-proof"] = false;
           resumeTest("Admin Re-Joined the Room");
+        }
+        if (canUpdatePanel) {
+          localLatestMetadata["PanelRoleButtons"] = PanelRoleButtons;
         }
         hmsActions.changeMetadata(localLatestMetadata);
       }
@@ -42222,4 +42298,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.9b7862fb.js.map
+//# sourceMappingURL=/Newcandidate.6b50786f.js.map

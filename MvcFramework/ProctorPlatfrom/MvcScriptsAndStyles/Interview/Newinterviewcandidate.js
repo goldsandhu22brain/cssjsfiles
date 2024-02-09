@@ -40980,6 +40980,17 @@ var hmsActions = hmsManager.getActions();
 var hmsNotifications = hmsManager.getNotifications();
 var scopeData;
 var docElement = document.documentElement;
+var PanelRoleButtons = {
+  "load-test": false,
+  "load-mcq-test": false,
+  "load-coding-test": false,
+  "pause-test": false,
+  "resume-test": false,
+  "force-end-test": false,
+  "camera-fullsize": true,
+  "leave-btn": true,
+  "end-room-button": true
+};
 function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
@@ -41002,27 +41013,58 @@ function NotificationCallBack(Notify) {
       var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer.id));
       var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
       var localLatestMetadata = PeerMetdataData[localPeerId];
+      var canUpdatePanel = false;
       if (localLatestMetadata) {
+        localLatestMetadata["PanelRoleButtons"] = null;
         if (localLatestMetadata["StartQuiz"]) {
+          canUpdatePanel = true;
           show(startTestButton);
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["load-mcq-test"] = false;
+          PanelRoleButtons["load-coding-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
+          PanelRoleButtons["force-end-test"] = true;
           localLatestMetadata["StartQuiz"] = false;
         }
         if (localLatestMetadata["StartMCQQuiz"]) {
+          canUpdatePanel = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["load-mcq-test"] = false;
+          PanelRoleButtons["load-coding-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
+          PanelRoleButtons["force-end-test"] = true;
           show(startMcqTestButton);
           localLatestMetadata["StartMCQQuiz"] = false;
         }
         if (localLatestMetadata["StartCodingQuiz"]) {
+          canUpdatePanel = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["load-mcq-test"] = false;
+          PanelRoleButtons["load-coding-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
+          PanelRoleButtons["force-end-test"] = true;
           show(startCodingTestButton);
           localLatestMetadata["StartCodingQuiz"] = false;
         }
         if (localLatestMetadata["CandidatePauseTest"] == true || localLatestMetadata["CandidateResumeTest"] == false) {
+          canUpdatePanel = true;
           localLatestMetadata["CandidatePauseTest"] = true;
           localLatestMetadata["CandidateResumeTest"] = false;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = false;
+          PanelRoleButtons["resume-test"] = true;
           pauseTest();
           (0, _common.ToastMessage)("Paused the test by Panel", true);
         } else if (localLatestMetadata["CandidateResumeTest"] == true || localLatestMetadata["CandidatePauseTest"] == false) {
+          canUpdatePanel = true;
           localLatestMetadata["CandidatePauseTest"] = false;
           localLatestMetadata["CandidateResumeTest"] = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
           resumeTest();
         }
         if (localLatestMetadata["CandidateEndTest"] == true) {
@@ -41030,10 +41072,23 @@ function NotificationCallBack(Notify) {
           window.SubmitTestAutomatically(AfterSubmitTest);
         }
         if (localLatestMetadata["PanelLeaveRoom"] == true) {
+          canUpdatePanel = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = false;
+          PanelRoleButtons["resume-test"] = true;
+          PanelRoleButtons["force-end-test"] = true;
           pauseTest();
           (0, _common.ToastMessage)("Panel Leaved the Room!! Please wait for Panel Memeber to rejoin and enable the test", true);
         } else if (localLatestMetadata["PanelLeaveRoom"] == false) {
+          canUpdatePanel = true;
+          PanelRoleButtons["load-test"] = false;
+          PanelRoleButtons["pause-test"] = true;
+          PanelRoleButtons["resume-test"] = false;
+          PanelRoleButtons["force-end-test"] = true;
           resumeTest("Panel Re-Joined the Room");
+        }
+        if (canUpdatePanel) {
+          localLatestMetadata["PanelRoleButtons"] = PanelRoleButtons;
         }
         hmsActions.changeMetadata(localLatestMetadata);
       }
@@ -42302,4 +42357,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.ae1d7220.js.map
+//# sourceMappingURL=/Newinterviewcandidate.6de46aa1.js.map

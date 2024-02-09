@@ -40987,11 +40987,12 @@ function NotificationCallBack(Notify) {
     case _hmsVideoStore.HMSNotificationTypes.METADATA_UPDATED:
       var peer = dataProp;
       var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer.id));
-      var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
-      var localLatestMetadata = PeerMetdataData[localPeerId];
+      var _localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
+      var localLatestMetadata = PeerMetdataData[_localPeerId];
       var peerLatestMetadata = PeerMetdataData[peer.id];
       if (localLatestMetadata) {
         hmsActions.changeMetadata(localLatestMetadata);
+        localLatestMetadata = TriggerCustomEventsCall(localLatestMetadata);
       } else if (peerLatestMetadata) {
         if (peerLatestMetadata["IsRecording"] == true) {
           (0, _jquery.default)(".recording-icon").removeClass("hide");
@@ -41005,6 +41006,7 @@ function NotificationCallBack(Notify) {
           (0, _jquery.default)(".interview-alert-btn").addClass("glow");
           peerLatestMetadata["UserAlertActivity"] = false;
         }
+        peerLatestMetadata = TriggerCustomEventsCall(peerLatestMetadata);
       }
       break;
     case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
@@ -41132,19 +41134,11 @@ function _JoinRoom() {
                               change_tab('load-test');
                               InterviewTestType = GlobalObj.InterviewTestType;
                               if (InterviewTestType == "100" || InterviewTestType == "250") {
-                                show(enableStartMcqbutton);
-                                hide(enableStartCodingbutton);
-                                hide(enableStartbutton);
-                                // return true;
+                                UpdatePanelMetadata("CustomEventsCall", "show(enableStartMcqbutton);hide(enableStartCodingbutton);hide(enableStartbutton);");
                               } else if (InterviewTestType == "200") {
-                                hide(enableStartMcqbutton);
-                                show(enableStartCodingbutton);
-                                hide(enableStartbutton);
-                                // return true;
+                                UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(enableStartCodingbutton);hide(enableStartbutton);");
                               } else {
-                                show(enableStartbutton);
-                                hide(enableStartMcqbutton);
-                                hide(enableStartCodingbutton);
+                                UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);hide(enableStartbutton);");
                               }
                               IsPanelReJoining();
                               panelIntervalCall = null;
@@ -41465,13 +41459,11 @@ function CandidateTest(property1, value1) {
 }
 function PauseCandidateTest() {
   CandidateTest("CandidatePauseTest", true, "CandidateResumeTest", false);
-  hide(pauseTestButton);
-  show(resumeTestButton);
+  UpdatePanelMetadata("CustomEventsCall", "hide(pauseTestButton);show(resumeTestButton);");
 }
 function ResumeCandidateTest() {
   CandidateTest("CandidateResumeTest", true, "CandidatePauseTest", false);
-  show(pauseTestButton);
-  hide(resumeTestButton);
+  UpdatePanelMetadata("CustomEventsCall", "show(pauseTestButton);hide(resumeTestButton);");
 }
 function ForceCandidateTestEnd() {
   CandidateTest("CandidateEndTest", true);
@@ -41624,10 +41616,7 @@ function TriggerEnableStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    hide(enableStartbutton);
-    show(pauseTestButton);
-    show(endTestButton);
-    (0, _jquery.default)(".interview-extra-btn").hide();
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(pauseTestButton);show(endTestButton);$('.interview-extra-btn').hide();");
   }
 }
 function TriggerEnableMCQStartButton() {
@@ -41649,10 +41638,7 @@ function TriggerEnableMCQStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    hide(enableStartMcqbutton);
-    show(pauseTestButton);
-    show(endTestButton);
-    (0, _jquery.default)(".interview-extra-btn").hide();
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(pauseTestButton);show(endTestButton);$('.interview-extra-btn').hide();");
   }
 }
 function TriggerEnableCodingStartButton() {
@@ -41676,11 +41662,38 @@ function TriggerEnableCodingStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    hide(enableStartCodingbutton);
-    show(pauseTestButton);
-    show(endTestButton);
-    (0, _jquery.default)(".interview-extra-btn").hide();
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartCodingbutton);show(pauseTestButton);show(endTestButton);$('.interview-extra-btn').hide();");
   }
+}
+function TriggerCustomEventsCall(MetaData) {
+  if (MetaData["CustomEventsCall"] != null) {
+    eval(MetaData["CustomEventsCall"]);
+    MetaData["CustomEventsCall"] = null;
+  }
+  return MetaData;
+}
+function GetPanelPeerDetails() {
+  var _hmsStore$getState3;
+  return (_hmsStore$getState3 = hmsStore.getState(_hmsVideoStore.selectPeers)) === null || _hmsStore$getState3 === void 0 ? void 0 : _hmsStore$getState3.filter(function (x) {
+    return x.roleName == role;
+  });
+}
+function UpdatePanelMetadata(Property, Value) {
+  var GetPanel = GetPanelPeerDetails(); //remove current peerid.    
+  GetPanel.forEach(function (peer) {
+    if ((peer === null || peer === void 0 ? void 0 : peer.id) != null) {
+      var eachPeerMeta = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer === null || peer === void 0 ? void 0 : peer.id));
+      var newPeerMetadata = _objectSpread({}, eachPeerMeta);
+      newPeerMetadata[Property] = Value;
+      var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
+      var obj = {};
+      obj[peer === null || peer === void 0 ? void 0 : peer.id] = newPeerMetadata;
+      hmsActions.changeMetadata(obj);
+      var newLocalMetadata = _objectSpread({}, local_metadata);
+      // update the old Metadata
+      hmsActions.changeMetadata(newLocalMetadata);
+    }
+  });
 }
 function IsPanelReJoining() {
   var presenter = GetCandidatePeerDetails();
@@ -41695,6 +41708,31 @@ function IsPanelReJoining() {
     if (newPresenterMetadata["PanelLeaveRoom"] == true) {
       CandidateTest("PanelLeaveRoom", true, "PanelLeaveRoom", false);
     }
+    setTimeout(DisplayUpdatePanelRoleButton, 2000);
+  }
+}
+function DisplayUpdatePanelRoleButton() {
+  var presenter = GetCandidatePeerDetails();
+  if (!presenter) {
+    (0, _common.ToastMessage)(candShareMessage, true);
+  }
+  //const localPeerId = hmsStore.getState(selectLocalPeerID);
+  var presenterId = presenter === null || presenter === void 0 ? void 0 : presenter.id;
+  if (presenterId) {
+    var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
+    var newPresenterMetadata = _objectSpread({}, presenter_metadata);
+    var panelButtons = newPresenterMetadata["PanelRoleButtons"];
+    if (panelButtons != null) {
+      var panelBtnKeys = Object.keys(panelButtons);
+      for (var index = 0; index < panelBtnKeys.length; index++) {
+        var key = panelBtnKeys[index];
+        if (panelButtons[key]) {
+          (0, _jquery.default)("#" + key).show();
+        } else {
+          (0, _jquery.default)("#" + key).hide();
+        }
+      }
+    }
   }
 }
 function TriggerNewProofButton() {
@@ -41703,14 +41741,14 @@ function TriggerNewProofButton() {
     if (!presenter) {
       (0, _common.ToastMessage)(candShareMessage, true);
     }
-    var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
+    var _localPeerId2 = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
     var presenterId = presenter === null || presenter === void 0 ? void 0 : presenter.id;
     if (presenterId) {
       var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
       var newPresenterMetadata = _objectSpread(_objectSpread({}, presenter_metadata), {}, {
         NewProof: true
       });
-      var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
+      var local_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(_localPeerId2));
       var obj = {};
       obj[presenterId] = newPresenterMetadata;
       hmsActions.changeMetadata(obj);
@@ -41874,19 +41912,11 @@ function _InitialLoad() {
               scopeData = GlobalObj; //assigning the global variable in NodeScope
               var InterviewTestType = GlobalObj.InterviewTestType;
               if (InterviewTestType == "100" || InterviewTestType == "250") {
-                show(enableStartMcqbutton);
-                hide(enableStartCodingbutton);
-                hide(enableStartbutton);
-                // return true;
+                UpdatePanelMetadata("CustomEventsCall", "show(enableStartMcqbutton);hide(enableStartCodingbutton);hide(enableStartbutton);");
               } else if (InterviewTestType == "200") {
-                hide(enableStartMcqbutton);
-                show(enableStartCodingbutton);
-                hide(enableStartbutton);
-                // return true;
+                UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(enableStartCodingbutton);hide(enableStartbutton);");
               } else {
-                show(enableStartbutton);
-                hide(enableStartMcqbutton);
-                hide(enableStartCodingbutton);
+                UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);show(enableStartbutton);");
               }
               GetRoomCode(GlobalObj.RedemptionId, GlobalObj.TestRoundId, GlobalObj.FullName);
             },
@@ -41946,4 +41976,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.8c434156.js.map
+//# sourceMappingURL=/interviewpanel.0da3798b.js.map
