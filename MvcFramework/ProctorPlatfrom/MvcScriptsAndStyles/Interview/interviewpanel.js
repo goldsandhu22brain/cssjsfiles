@@ -41706,7 +41706,7 @@ function IsPanelReJoining() {
     var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
     var newPresenterMetadata = _objectSpread({}, presenter_metadata);
     if (newPresenterMetadata["PanelLeaveRoom"] == true) {
-      CandidateTest("PanelLeaveRoom", true, "PanelLeaveRoom", false);
+      CandidateTest("PanelLeaveRoom", true, "PanelLeaveRoom", null);
     }
     setTimeout(DisplayUpdatePanelRoleButton, 2000);
   }

@@ -41554,7 +41554,7 @@ function IsAdminReJoining() {
     var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
     var newPresenterMetadata = _objectSpread({}, presenter_metadata);
     if (newPresenterMetadata["AdminLeaveRoom"] == true) {
-      CandidateTest("AdminLeaveRoom", true, "AdminLeaveRoom", false);
+      CandidateTest("AdminLeaveRoom", true, "AdminLeaveRoom", null);
     }
     setTimeout(DisplayUpdatePanelRoleButton, 2000);
   }
