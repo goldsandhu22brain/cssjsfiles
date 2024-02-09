@@ -334,7 +334,7 @@ a {
     }
 
 .home-banner {
-    background: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/banner-bg.png) no-repeat, url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/banner-bg.png) no-repeat, radial-gradient(#600DFF, #600DFF, #600DFF);
+    background: url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/banner-bg.png) no-repeat, url(https://mediacdn.brainmeasures.com/images/BackGroundBanners/banner-bg-2.png) no-repeat, radial-gradient(#600DFF, #600DFF, #600DFF);
     background-position: center bottom -90px, top 50% right 5%, right top 35%;
     background-size: 100%, auto, auto;
     min-height: 100vh;
