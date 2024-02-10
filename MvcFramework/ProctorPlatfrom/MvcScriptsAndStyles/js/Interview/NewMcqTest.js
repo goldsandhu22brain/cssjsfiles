@@ -42,7 +42,7 @@ function drop(ev) {
 			ev.target.appendChild(document.getElementById(data));
 		}
 	}
-}    
+}
 //function dropItem(ev) {
 //	var data = ev.dataTransfer.getData("text");
 //	var target = ev.target.closest('ul');
@@ -132,7 +132,7 @@ function GetQuestionHTML(currentQuestionType, subQuestionType) {
 		case 'FillInTheBlanks': {
 			ans.AnswerString = $(".drop-area")[0].innerHTML;
 			break;
-		}		
+		}
 		case 'MultipleQuestion':
 			switch (subQuestionType) {
 				case 'FillInTheBlanks':
@@ -216,7 +216,7 @@ function GetAnswer(currentQuestionType, subQuestionType) {
 						}
 						else {
 							filteredItem.push(dd_item[i].children[0].firstChild);
-						}						
+						}
 					}
 					ans = filteredItem;// $(".drop-area div.blank button");
 					break;
@@ -298,7 +298,7 @@ function reportBtn(input) {
 
 //code for getting next question based on question no mcq
 function nextQuestion(input, isReview) {
-	$(input).text($(input).attr('data-loading'));	
+	$(input).text($(input).attr('data-loading'));
 	var nextQuestionId = $(input).attr('data-question-id');
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
@@ -309,10 +309,9 @@ function nextQuestion(input, isReview) {
 	var mouseActivity = GetDisplayAlert("mouseActivity");
 	var debuggerCheck = GetDisplayAlert("debuggerCheck");
 	var url = getInterviewBaseUrl() + "/SubmitAnswer";
-	var IsReviewQ = isReview;
 	var testType = GlobalObj.InterviewTestType;
 	PushTracking(210, nextQuestionId);
-	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	var dataJson = { IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
 	$.extend(dataJson, QuestionHTML);
 	$.ajax({
 		url: url,
@@ -366,10 +365,9 @@ function onClikQuestionNo(input, isReview) {
 	var url = getInterviewBaseUrl() + "/SubmitAnswer";
 	var fullScreen = GetDisplayAlert("fullScreen");
 	var mouseActivity = GetDisplayAlert("mouseActivity");
-	var debuggerCheck = GetDisplayAlert("debuggerCheck");	
-	var IsReviewQ = isReview;
+	var debuggerCheck = GetDisplayAlert("debuggerCheck");
 	var testType = GlobalObj.InterviewTestType;
-	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	var dataJson = { IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
 	$.extend(dataJson, QuestionHTML);
 	$.ajax({
 		url: url,
@@ -461,7 +459,7 @@ function PushTracking(activityId, questionNo = "") {
 }
 //code for previous question
 function nextPrev(input, isReview) {
-	$(input).text($(input).attr('data-loading'));	
+	$(input).text($(input).attr('data-loading'));
 	var nextQuestionId = $(input).attr('data-question-id');
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
@@ -472,10 +470,9 @@ function nextPrev(input, isReview) {
 	var mouseActivity = GetDisplayAlert("mouseActivity");
 	var debuggerCheck = GetDisplayAlert("debuggerCheck");
 	var url = getInterviewBaseUrl() + "/SubmitAnswer";
-	var IsReviewQ = isReview;
 	var testType = GlobalObj.InterviewTestType;
 	PushTracking(220, nextQuestionId);
-	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	var dataJson = { IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, NextId: nextQuestionId, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
 	$.extend(dataJson, QuestionHTML);
 	$.ajax({
 		url: url,
@@ -534,8 +531,9 @@ function SubmitTestAutomatically(callBack = null) {
 					callbackFn(result);
 				}
 				else {
-					$('.proctor-loader').css("visibility", "hidden");				
-					$('#testDiv').replaceWith(result);
+					$('.proctor-loader').css("visibility", "hidden");
+					//	$('#testDiv').replaceWith(result);
+					$(".test-main").html(result);
 					ReStartTimer();
 					clearInterval(timerExamInterval);
 				}
@@ -583,8 +581,7 @@ function callSubmit(input, isReview, callBack = null) {
 	var debuggerCheck = GetDisplayAlert("debuggerCheck");
 	var url = getInterviewBaseUrl() + "/SubmitAnswer";
 	var testType = GlobalObj.InterviewTestType;
-	var IsReviewQ = isReview;
-	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	var dataJson = { IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
 	$.extend(dataJson, QuestionHTML);
 	$.ajax({
 		url: url,
@@ -611,7 +608,9 @@ function callSubmit(input, isReview, callBack = null) {
 					callbackFn(apiResponse);
 				}
 				else {
-					$('#testDiv').replaceWith(apiResponse);
+					//$('#testDiv').replaceWith(apiResponse);
+					$('.proctor-loader').css("visibility", "hidden");					
+					$(".test-main").html(apiResponse);
 					ReStartTimer();
 					//clearInterval(timerExamInterval);
 					WarningSection(fullScreen, mouseActivity, debuggerCheck);
@@ -645,7 +644,10 @@ function submitTest(input, isReview) {
 	var beforeTestCallBack = window.BeforeSubmitTest;
 	beforeTestCallBack = beforeTestCallBack == null ? function () { } : beforeTestCallBack;
 	var allAnswered = $(input).attr('data-allquestion-answered');
-	if (allAnswered == true || allAnswered == 'true' || allAnswered == 'True') {
+	var currentQuestionType = $(input).attr('data-current-questionType');
+	var subQuestionType = $(input).attr('data-sub-questionType');
+	var answer = GetAnswer(currentQuestionType, subQuestionType);
+	if ((allAnswered == true || allAnswered == 'true' || allAnswered == 'True') && CurrentAnswered(answer)) {
 		beforeTestCallBack && beforeTestCallBack();
 		callSubmit(input, isReview, testCallBack);
 	}
@@ -660,17 +662,22 @@ function submitTest(input, isReview) {
 		});
 	}
 }
+function CurrentAnswered(answer) {
+	if (answer?.length == 0 || answer?.filter(x => x.Id == '00000000-0000-0000-0000-000000000000').length > 0) {
+		return false;
+	}
+	return true;
+}
 
 function GetAnswerCount(input, isReview, callBack = null) {
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
 	var subQuestionType = $(input).attr('data-sub-questionType');
 	var answer = GetAnswer(currentQuestionType, subQuestionType);
-	var QuestionHTML = GetQuestionHTML(currentQuestionType, subQuestionType);	
-	var IsReviewQ = isReview;
+	var QuestionHTML = GetQuestionHTML(currentQuestionType, subQuestionType);
 	var testType = GlobalObj.InterviewTestType;
 	var url = getBaseUrl() + "/GetAnswerTypeCount";
-	var dataJson = { IsReviewChecked: IsReviewQ, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	var dataJson = { IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
 	$.extend(dataJson, QuestionHTML);
 	$.ajax({
 		url: url,
