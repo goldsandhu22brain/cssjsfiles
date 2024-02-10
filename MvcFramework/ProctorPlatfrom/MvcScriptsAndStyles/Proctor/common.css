@@ -1577,7 +1577,18 @@ p {
 .vb-position {
     margin-left: 267px !important;
     margin-top: 60px !important;
-} 
+}
+.interview-content-postion {
+    position: absolute !important;
+    margin-top: -460px !important;
+    margin-left: 116px !important;
+}
+
+.interview-start-btn {
+    position: absolute !important;
+    margin-top: -308px !important;
+    margin-left: -100px !important;
+}
 
 
 /* STEP 9 */
