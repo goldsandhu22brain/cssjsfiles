@@ -40978,6 +40978,7 @@ hmsManager.triggerOnSubscribe();
 var hmsStore = hmsManager.getStore();
 var hmsActions = hmsManager.getActions();
 var hmsNotifications = hmsManager.getNotifications();
+window.ToastMessage = _common.ToastMessage;
 var scopeData;
 var docElement = document.documentElement;
 var PanelRoleButtons = {
@@ -42357,4 +42358,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.6de46aa1.js.map
+//# sourceMappingURL=/Newinterviewcandidate.fdaa8582.js.map

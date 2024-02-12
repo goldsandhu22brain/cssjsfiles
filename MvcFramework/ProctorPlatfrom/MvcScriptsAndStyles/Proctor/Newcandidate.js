@@ -40977,6 +40977,7 @@ hmsManager.triggerOnSubscribe();
 var hmsStore = hmsManager.getStore();
 var hmsActions = hmsManager.getActions();
 var hmsNotifications = hmsManager.getNotifications();
+window.ToastMessage = _common.ToastMessage;
 var scopeData;
 var ProofAdminPeerId = "";
 var docElement = document.documentElement;
@@ -41442,7 +41443,6 @@ function _GetSecurityQuestion() {
             },
             success: function success(response) {
               var result = response;
-              window.ToastMessage = _common.ToastMessage;
               window.SecQnsCallBack = function (resultResponse) {
                 if (resultResponse && resultResponse.Status == 200) {
                   (0, _jquery.default)('#submit-sec-qns').val("Submit");
@@ -42298,4 +42298,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.6b50786f.js.map
+//# sourceMappingURL=/Newcandidate.6f71fbf2.js.map

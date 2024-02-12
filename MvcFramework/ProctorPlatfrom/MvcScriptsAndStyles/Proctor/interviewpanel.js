@@ -40977,6 +40977,7 @@ hmsManager.triggerOnSubscribe();
 var hmsStore = hmsManager.getStore();
 var hmsActions = hmsManager.getActions();
 var hmsNotifications = hmsManager.getNotifications();
+window.ToastMessage = _common.ToastMessage;
 //screensharing roles
 var role = "panel";
 var candidateRole = "candidate";
@@ -41977,4 +41978,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.8bab81a6.js.map
+//# sourceMappingURL=/interviewpanel.31b63e9d.js.map

@@ -1573,7 +1573,6 @@ p {
     margin-left: 265px !important;
     margin-top: 158px !important;
 }
-
 .vb-position {
     margin-left: 267px !important;
     margin-top: 60px !important;
@@ -1583,13 +1582,11 @@ p {
     margin-top: -460px !important;
     margin-left: 116px !important;
 }
-
 .interview-start-btn {
     position: absolute !important;
     margin-top: -308px !important;
     margin-left: -100px !important;
 }
-
 
 /* STEP 9 */
 .step9 {
@@ -2383,7 +2380,7 @@ p {
 /*new adminscreen -start*/
 .new-admin-screen {
     background-image: linear-gradient(to bottom right, #46DF95, #1771C5, #C22EBD, #EE5050);
-    background-color: #1771C5;
+    background-color: #1771C5; 
     min-height: 100vh;
 }
 
@@ -2415,26 +2412,23 @@ p {
         right: -4.5% !important;
         bottom: -228px !important;
     }
-.btn-alignment {
-    width: inherit !important;
-    left: -5px !important;
+.btn-alignment{
+    width:inherit !important;
+    left:-5px !important;
 }
-
 .btn-position-panel {
     position: fixed !important;
     bottom: 45px !important;
 }
 #uaa-datatable_paginate {
-    float: inline-end !important;
+    float:inline-end !important;
 }
 .admin-img {
     margin-left: 180px;
 }
 /*new adminscreen -end*/
-
 /*custom-new class -start*/
 .custom-step-1 {
-
 }
 .custom-step-2 {
 
@@ -2590,4 +2584,4 @@ p {
     visibility: visible;
 }
 
-/*# sourceMappingURL=/common.0d99e8b0.css.map */
+/*# sourceMappingURL=/common.5f936c7d.css.map */
