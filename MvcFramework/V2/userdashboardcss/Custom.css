@@ -159,3 +159,16 @@
     margin-top: 1px;
     margin-left: -74px;
 }
+
+@media screen and (max-width: 767px) {
+
+
+    .btn-cpurchase {
+        Margin-top: 1rem;
+    }
+}
+
+#dvCountDown {
+    top: 150px;
+    position: relative;
+}
