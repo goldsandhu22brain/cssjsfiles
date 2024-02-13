@@ -49,16 +49,81 @@
 .width-slot {
     width:68px;
 }
+
+dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+    top: 100% !important;
+}
+
 /*For Mobile :*/
 @media screen and (max-width: 767px) {
-    .dropdown-menu
 
-{
-    max-width: 100% !important;
-    box-shadow: none;
-    border-color: #eee;
+    .dropdown-menu {
+        max-width: 100% !important;
+        box-shadow: none;
+        border-color: #eee;
+    }
+
+    input.form-control {
+        max-width: 89%;
+    }
+
+    @media screen and (max-width: 767px) {
+        .mt-trash {
+            margin-left: 0px !important;
+            width: auto;
+        }
+
+
+
+        .mb-type {
+            float: left;
+            right: 0 !important;
+            margin-bottom: 0px !important;
+        }
+
+        #InsertRowsForTest1 .text-center {
+            text-align: left;
+            margin-left: -100px;
+            right: 0 !important;
+        }
+
+        #InsertRowsForTest1 .col-sm-5 {
+            left: 0px !important;
+        }
+
+        .left-alignment {
+            margin-left: 0px !important;
+            left: 0px !important;
+        }
+
+        .mt-testtype {
+            margin-left: 0px !important;
+        }
+
+        #TestRounds_0__QuestionCount_0_1 {
+            margin-left: 45px;
+        }
+
+        #AddTestRow1 {
+            margin-left: 15px;
+        }
+
+        .interview-slot {
+            margin-top: 0px !important;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .interview-deleterow {
+            text-indent: 0px !important;
+        }
+    }
 }
 
-input.form-control {
-    max-width: 89%;
-}
+
+
+
+
