@@ -1,7 +1,8 @@
 ﻿/***********************custom js for mcq test window***********************/
 
 var elem = document.documentElement;
-
+var LoadQuestionErrorText = 'Error while loading question, Please report the question...';
+var SubmitErrorText = 'Error while submitting test, Please report the question...';
 if (document.addEventListener) {
 	document.addEventListener('fullscreenchange', exitHandler, false);
 	document.addEventListener('mozfullscreenchange', exitHandler, false);
@@ -333,7 +334,8 @@ function nextQuestion(input, isReview) {
 		},
 		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);			
-			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while loading question, Please report the question...', true);
+			console.log(e); if (window.ToastMessage) window.ToastMessage(LoadQuestionErrorText, true);
+			else FreeToastMessage(LoadQuestionErrorText, true);
 		}
 	});
 }
@@ -388,7 +390,8 @@ function onClikQuestionNo(input, isReview) {
 		},
 		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while loading question, Please report the question...', true);
+			console.log(e); if (window.ToastMessage) window.ToastMessage(LoadQuestionErrorText, true);
+			else FreeToastMessage(LoadQuestionErrorText, true);
 
 		}
 	});
@@ -443,7 +446,8 @@ function nextPrev(input, isReview) {
 		},
 		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			if (window.ToastMessage) window.ToastMessage('Error while loading question, Please report the question...', true);
+			if (window.ToastMessage) window.ToastMessage(LoadQuestionErrorText, true);
+			else FreeToastMessage(LoadQuestionErrorText, true);
 
 		}
 	});
@@ -503,7 +507,8 @@ function SubmitTestAutomatically(callBack = null) {
 			$('.proctor-loader').css("visibility", "hidden");
 		},
 		error: function (e) {			
-			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while submitting test, Please report the question...', true);
+			console.log(e); if (window.ToastMessage) window.ToastMessage(SubmitErrorText, true);
+			else FreeToastMessage(SubmitErrorText, true);
 		}
 	});
 }
@@ -571,7 +576,8 @@ function callSubmit(input, isReview, callBack = null) {
 		},
 		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while submitting test, Please report the question...', true);
+			console.log(e); if (window.ToastMessage) window.ToastMessage(SubmitErrorText, true);
+			else FreeToastMessage(SubmitErrorText, true);
 		}
 	});
 }
@@ -641,4 +647,20 @@ function GetAnswerCount(input, isReview, callBack = null) {
 		error: function (e) {
 		}
 	});
+}
+function FreeToastMessage(msg, display = false) {
+
+	if (display) {
+		// Get the snackbar DIV
+		var x = document.getElementById("toastMessage");
+		x.innerHTML = msg;
+		// Add the "show" class to DIV
+		x.className = "show";
+
+		// After 3 seconds, remove the show class from DIV
+		setTimeout(function () {
+			x.className = x.className.replace("show", "");
+			x.innerHTML = "";
+		}, 3000);
+	}
 }
