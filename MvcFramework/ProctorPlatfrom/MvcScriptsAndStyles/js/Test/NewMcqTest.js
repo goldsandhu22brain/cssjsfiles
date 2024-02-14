@@ -258,7 +258,7 @@ function LoadQuestionIdTileCard() {
 			var result = response;
 			$('#newTileCardSection').replaceWith(result);
 		},
-		error: function () {
+		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
 		}
 	});
@@ -289,7 +289,7 @@ function reportBtn(input) {
 		complete: function () {
 			//$('.proctor-loader').css("visibility", "hidden");
 		},
-		error: function () {
+		error: function (e) {
 		}
 	});
 }
@@ -331,9 +331,9 @@ function nextQuestion(input, isReview) {
 		complete: function () {
 			//$('.proctor-loader').css("visibility", "hidden");
 		},
-		error: function () {
+		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);			
-			window.ToastMessage('Error while loading question, Please report the question...', true);
+			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while loading question, Please report the question...', true);
 		}
 	});
 }
@@ -386,9 +386,9 @@ function onClikQuestionNo(input, isReview) {
 		complete: function () {
 			//$('.proctor-loader').css("visibility", "hidden");
 		},
-		error: function () {
+		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			window.ToastMessage('Error while loading question, Please report the question...', true);
+			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while loading question, Please report the question...', true);
 
 		}
 	});
@@ -441,9 +441,10 @@ function nextPrev(input, isReview) {
 		complete: function () {
 			//$('.proctor-loader').css("visibility", "hidden");
 		},
-		error: function () {
+		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			window.ToastMessage('Error while loading question, Please report the question...', true);
+			if (window.ToastMessage) window.ToastMessage('Error while loading question, Please report the question...', true);
+
 		}
 	});
 }
@@ -501,8 +502,8 @@ function SubmitTestAutomatically(callBack = null) {
 		complete: function () {
 			$('.proctor-loader').css("visibility", "hidden");
 		},
-		error: function () {			
-			window.ToastMessage('Error while submitting test, Please report the question...', true);
+		error: function (e) {			
+			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while submitting test, Please report the question...', true);
 		}
 	});
 }
@@ -568,9 +569,9 @@ function callSubmit(input, isReview, callBack = null) {
 		complete: function () {
 
 		},
-		error: function () {
+		error: function (e) {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			window.ToastMessage('Error while submitting test, Please report the question...', true);
+			console.log(e); if(window.ToastMessage)window.ToastMessage('Error while submitting test, Please report the question...', true);
 		}
 	});
 }
@@ -637,7 +638,7 @@ function GetAnswerCount(input, isReview, callBack = null) {
 		complete: function () {
 			$('.proctor-loader').css("visibility", "hidden");
 		},
-		error: function () {
+		error: function (e) {
 		}
 	});
 }
