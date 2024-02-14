@@ -335,8 +335,8 @@ function nextQuestion(input, isReview) {
 			//$('.proctor-loader').css("visibility", "hidden");
 		},
 		error: function () {
-			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			alert('Error while loading question...');
+			WarningSection(fullScreen, mouseActivity, debuggerCheck);			
+			window.ToastMessage('Error while submitting test, Please report the question...', true);
 		}
 	});
 }
@@ -392,7 +392,7 @@ function onClikQuestionNo(input, isReview) {
 		},
 		error: function () {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			alert('Error while loading question...');
+			window.ToastMessage('Error while loading question, Please report the question...', true);
 
 		}
 	});
@@ -496,8 +496,8 @@ function nextPrev(input, isReview) {
 			//$('.proctor-loader').css("visibility", "hidden");
 		},
 		error: function () {
-			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			alert('Error while loading question...');
+			WarningSection(fullScreen, mouseActivity, debuggerCheck);			
+			window.ToastMessage('Error while loading question, Please report the question...', true);
 		}
 	});
 }
@@ -556,7 +556,7 @@ function SubmitTestAutomatically(callBack = null) {
 			$('.proctor-loader').css("visibility", "hidden");
 		},
 		error: function () {
-			alert('Error while submitting test...');
+			window.ToastMessage('Error while submitting test, Please report the question...', true);
 		}
 	});
 }
@@ -634,7 +634,7 @@ function callSubmit(input, isReview, callBack = null) {
 		},
 		error: function () {
 			WarningSection(fullScreen, mouseActivity, debuggerCheck);
-			alert('Error while submitting test...');
+			window.ToastMessage('Error while submitting test, Please report the question...', true);
 		}
 	});
 }
