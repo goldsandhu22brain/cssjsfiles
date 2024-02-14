@@ -138,7 +138,7 @@ function GetQuestionHTML(currentQuestionType, subQuestionType) {
 			switch (subQuestionType) {
 				case 'FillInTheBlanks':
 				case 'Ordering':
-				case 'MapOrdering':
+				//case 'MapOrdering':
 					for (var i = 0; i < $(".drop-area").length; i++) {
 						ans.MultiQAnswerString.push($(".drop-area")[i].innerHTML);
 					}
