@@ -199,12 +199,13 @@ div.dataTables_filter label {
 }
 
 .outline-btn-light {
-	font-weight: 500;
-	padding: 10px 20px;
-	border-radius: 10px;
+	font-weight: 500 !important;
+	padding: 10px 20px !important;
+	border-radius: 10px !important;
 	outline: none !important;
 	box-shadow: none !important;
-	width: 275px;
-	font-size: 15px;
-	width: 120px;	
+	width: 275px !important;
+	font-size: 15px !important;
+	width: 120px !important;
+	color: #000000ad !important;
 }
