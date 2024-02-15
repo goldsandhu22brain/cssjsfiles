@@ -179,7 +179,6 @@ div.dataTables_filter label {
 	margin-left:150px !important;
 }
 
-/* 05-01-24 Tosif - Admin model modification css below*/
 .Reschedule:hover 				{ text-decoration: underline; cursor: pointer; }
 .Reschedule i 					{ margin-right: 3px; }
 .bookProctorSlotModal .modal-content .modal-header .close { font-size: 24px; line-height: 100%; }
@@ -197,4 +196,15 @@ div.dataTables_filter label {
 {
 /* to increase bookProctorSlotModal modal width */
 .bookProctorSlotModal .bookProctorSlotModalDialog.modal-dialog 	{ max-width: 900px; } 
+}
+
+.outline-btn-light {
+	font-weight: 500;
+	padding: 10px 20px;
+	border-radius: 10px;
+	outline: none !important;
+	box-shadow: none !important;
+	width: 275px;
+	font-size: 15px;
+	width: 120px;	
 }
