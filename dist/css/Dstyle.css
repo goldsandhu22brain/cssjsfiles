@@ -13319,10 +13319,6 @@ h2.wartxt {
 .modal {
     background: rgba(0,0,0,.3)
 }
-.modal-body {
-    height: 100px;
-    overflow-y: scroll;
-}
 
 ul.dropdown-menu{
 	min-width:110px !important;
