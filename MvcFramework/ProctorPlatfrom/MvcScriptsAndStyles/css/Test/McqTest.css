@@ -1244,7 +1244,7 @@ input {
         border-bottom: 2px solid #fff;
         min-width: 120px;
         margin: 0 5px -12px 5px;
-        /* padding-top: 5px; */
+        padding-top:18px; 
         min-height: 40px;
         width: auto;
         height: auto;
