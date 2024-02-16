@@ -922,12 +922,13 @@
     }
 
     .step10 .testDiv .c-table {
-        table-layout: unset;
+        table-layout: unset !important;
     }
 
     .step10 .testDiv .image-answer .cb-no-text.lg {
         border-radius: 50%;
     }
 }
+
 
 

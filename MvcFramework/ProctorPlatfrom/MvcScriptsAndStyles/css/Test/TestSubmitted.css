@@ -56,9 +56,30 @@
 .test-submitted h1 {
 	font-size: 36px;
 	font-weight: 800;
+	color: black !important;
 }
 
 .test-submitted p {
 	font-size: 15px;
 	color: #383838;
 }
+
+/**Mobile view css**/
+
+@media screen and (max-width: 767px) {
+	.arrow-left
+
+{
+	position: relative;
+}
+
+.test-submitted img {
+	height: 100%;
+	width: 100%;
+}
+
+.test-submitted .content {
+	width: 90%;
+}
+}
+
