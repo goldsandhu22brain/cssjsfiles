@@ -129,7 +129,7 @@
 .no-padd .nav-tabs-custom ul.nav-tabs li:last-child a:after, .no-padd .nav-tabs-custom ul.nav-tabs li.active a:after{display: none; }
 .no-padd .nav-tabs-custom ul.nav-tabs li.active a {color: #fff; }
 .IndiDashboard {
-    padding: 7px 29px 8px 28px !important;
+    padding: 9px 29px 9px 28px !important;
     line-height: normal;
     font-size: 13px;
     position: relative;
