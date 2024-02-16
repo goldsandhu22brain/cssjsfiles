@@ -123,6 +123,27 @@ dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
     }
 }
 
+.bs-searchbox .form-control {
+    width: 95%;
+}
+
+.dropup .open {
+    max-height: 300px !important;
+}
+
+
+@media screen and (max-width: 767px) {
+    .dropdown-menu {
+        max-height: 300px !important;
+    }
+
+    .submit {
+        Margin-left: 0px;
+    }
+}
+
+
+
 
 
 
