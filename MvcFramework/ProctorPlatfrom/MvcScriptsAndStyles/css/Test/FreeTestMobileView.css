@@ -882,6 +882,15 @@
     .step10 .testDiv .c-table {
         width: 100%;
     }
+
+    .step10 .testDiv .answer-50wd {
+        width: 99%;
+    }
+
+    .step10 .testDiv .answer-img-md {
+        width: 115px;
+        height: 123px;
+    }
 }
 
 @media screen and (max-width: 407px) {
@@ -897,4 +906,28 @@
         margin-top: 0px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    button#reportBtn {
+        display: inline-block;
+    }
+
+    .step10 .testDiv .answer-50wd {
+        width: 99% !important;
+    }
+
+    .step10 .testDiv .answer-img-md {
+        height: 115px;
+        width: 123px;
+    }
+
+    .step10 .testDiv .c-table {
+        table-layout: unset;
+    }
+
+    .step10 .testDiv .image-answer .cb-no-text.lg {
+        border-radius: 50%;
+    }
+}
+
 
