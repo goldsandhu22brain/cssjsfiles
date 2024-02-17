@@ -40497,21 +40497,24 @@ function Events() {
 var canDisplayAlert = false;
 function PushTracking(activityId) {
   var questionNo = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-} //$.ajax({
-//	url: '/Tracker/ReportActions',
-//	type: 'POST',
-//	cache: false,
-//	async: true,
-//	data: { ActivityType: activityId, Details: questionNo },
-//	success: function (response) {
-//		if (GlobalObj.IsProctorLive) {
-//			//UserAlertTrigger();	
-//			//GlobalObj.ActivityCallBack();
-//		}
-//	},
-//	error: function () {
-//	},
-//});
+  _jquery.default.ajax({
+    url: '/Tracker/ReportActions',
+    type: 'POST',
+    cache: false,
+    async: true,
+    data: {
+      ActivityType: activityId,
+      Details: questionNo
+    },
+    success: function success(response) {
+      if (GlobalObj.IsProctorLive) {
+        //UserAlertTrigger();	
+        //GlobalObj.ActivityCallBack();
+      }
+    },
+    error: function error() {}
+  });
+}
 ///* Get into full screen */
 function GoInFullscreen(element) {
   if (element.requestFullscreen) element.requestFullscreen();else if (element.oneRequestFullscreen) element.oneRequestFullscreen();else if (element.twoRequestFullscreen) element.twoRequestFullscreen();else if (element.mozRequestFullScreen) element.mozRequestFullScreen();else if (element.webkitRequestFullscreen) element.webkitRequestFullscreen();else if (element.msRequestFullscreen) element.msRequestFullscreen();
@@ -40866,7 +40869,7 @@ function UserIdleEvents() {
 }
 function UserIdleTrack() {
   if (UserIdleTimer >= 60) {
-    PushTracking(53); //idle timer
+    PushTracking(53, "User Idle for " + UserIdleTimer + " Seconds"); //idle timer
   }
 
   TriggerIdleSetTimer();
@@ -42397,4 +42400,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.be475b73.js.map
+//# sourceMappingURL=/Newinterviewcandidate.dc770e14.js.map
