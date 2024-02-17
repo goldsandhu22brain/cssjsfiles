@@ -40843,15 +40843,49 @@ function CameraCaptureCallBack(response) {
   }
 }
 function DisableActivities() {
+  TriggerIdleSetTimer();
+  MouseMoveEvent();
   Disable_Keys();
   DisableMouseRightClick();
   DisableCutCopyPaste();
+  UserIdleTrack();
   ClearConsoleLogs();
+  UserIdleEvents();
 }
+var UserIdleTimer = 0;
+var triggerIdleTimeOut;
+function TriggerIdleSetTimer() {
+  clearInterval(triggerIdleTimeOut);
+  UserIdleTimer = 0;
+  triggerIdleTimeOut = setInterval(function () {
+    UserIdleTimer = UserIdleTimer + 1;
+  }, 1000);
+}
+function UserIdleEvents() {
+  document.onmousemove = UserIdleTrack;
+}
+function UserIdleTrack() {
+  if (UserIdleTimer >= 60) {
+    PushTracking(53); //idle timer
+  }
 
+  TriggerIdleSetTimer();
+}
 //Keyboard Keys Disable 
 function Disable_Keys() {
   document.addEventListener("keydown", function (event) {
+    UserIdleTrack();
+    if (event.key == "Meta") {
+      //window Key
+      PushTracking(48);
+      return false;
+    }
+    if (event.key == "ContextMenu") {
+      //right click from keyboard
+      PushTracking(50);
+      ToastMessage("Right click is disabled for this page.", true);
+      return false;
+    }
     //if (event.shiftKey) {
     //	ToastMessage("ShiftKey is disabled.", true);
     //	PushTracking(54);
@@ -41983,4 +42017,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.04afe09f.js.map
+//# sourceMappingURL=/interviewpanel.5621ea28.js.map
