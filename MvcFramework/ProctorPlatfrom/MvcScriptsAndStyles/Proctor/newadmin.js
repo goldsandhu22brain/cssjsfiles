@@ -40847,7 +40847,6 @@ function CameraCaptureCallBack(response) {
 }
 function DisableActivities() {
   TriggerIdleSetTimer();
-  MouseMoveEvent();
   Disable_Keys();
   DisableMouseRightClick();
   DisableCutCopyPaste();
@@ -41944,4 +41943,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.db54917c.js.map
+//# sourceMappingURL=/newadmin.126df210.js.map

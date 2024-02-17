@@ -40847,7 +40847,6 @@ function CameraCaptureCallBack(response) {
 }
 function DisableActivities() {
   TriggerIdleSetTimer();
-  MouseMoveEvent();
   Disable_Keys();
   DisableMouseRightClick();
   DisableCutCopyPaste();
@@ -42340,4 +42339,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.69d7011f.js.map
+//# sourceMappingURL=/Newcandidate.aa830326.js.map
