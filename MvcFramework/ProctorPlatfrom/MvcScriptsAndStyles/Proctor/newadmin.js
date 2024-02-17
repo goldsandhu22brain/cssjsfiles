@@ -41697,12 +41697,14 @@ function ViewNewProof() {
       (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark text-center'>Uploaded Document:" + NewProofDocumentName + "</h3><img class='w-50 admin-img' src='" + response + "'/>   <div id='controls' class='text-center'><button id = 'approveProof' class= 'btn-control btn-Approve btn-left-rounded'> Approve</button><button id = 'rejectProof' class= 'btn-control btn-left-rounded'> Reject</button> ");
       (0, _jquery.default)("#approveProof").click(function () {
         hide(viewNewProof);
+        hide(skipProof);
         hide(reqProof);
         show(enableStartbutton);
         UpdateProofStatus(true);
       });
       (0, _jquery.default)("#rejectProof").click(function () {
         hide(viewNewProof);
+        show(skipProof);
         show(reqProof);
         hide(enableStartbutton);
         UpdateProofStatus(false);
@@ -41716,12 +41718,14 @@ function ViewNewProof() {
       (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark'>Uploaded Document:" + NewProofDocumentName + "</h3><img class='w-100' src='" + response.responseText + "'/>   <div id='controls' class='text-center'><button id = 'approveProof' class= 'btn-control btn-left-rounded'> Approve</button><button id = 'rejectProof' class= 'btn-control btn-left-rounded'> Reject</button> ");
       (0, _jquery.default)("#approveProof").click(function () {
         hide(viewNewProof);
+        hide(skipProof);
         hide(reqProof);
         show(enableStartbutton);
         UpdateProofStatus(true);
       });
       (0, _jquery.default)("#rejectProof").click(function () {
         hide(viewNewProof);
+        show(skipProof);
         show(reqProof);
         hide(enableStartbutton);
         UpdateProofStatus(false);
@@ -41940,4 +41944,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.0bf60b57.js.map
+//# sourceMappingURL=/newadmin.db54917c.js.map
