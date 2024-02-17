@@ -40852,6 +40852,11 @@ function DisableActivities() {
 //Keyboard Keys Disable 
 function Disable_Keys() {
   document.addEventListener("keydown", function (event) {
+    //if (event.shiftKey) {
+    //	ToastMessage("ShiftKey is disabled.", true);
+    //	PushTracking(54);
+    //	return false;
+    //}
     if (event.ctrlKey) {
       ToastMessage("Ctrl is disabled.", true);
       PushTracking(48);
@@ -40859,7 +40864,7 @@ function Disable_Keys() {
     }
     if (event.altKey) {
       ToastMessage("Alt is disabled.", true);
-      PushTracking(47);
+      PushTracking(51);
       return false;
     }
     if (event.keyCode === 44) {
@@ -41898,4 +41903,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.6d12fe51.js.map
+//# sourceMappingURL=/newadmin.e5df007e.js.map

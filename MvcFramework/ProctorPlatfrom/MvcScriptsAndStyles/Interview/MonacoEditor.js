@@ -131,7 +131,7 @@ window.GetMonacoValue = GetMonacoValue;
 //        },
 //        success: function (response) {
 //            var result = response;
-//            //console.log(result);			
+//            //console.log(result);
 //            $('#testDiv').replaceWith(result);
 //            ReStartTimer();
 //            //clearInterval(timerExamInterval);
@@ -143,7 +143,7 @@ window.GetMonacoValue = GetMonacoValue;
 //        },
 //        error: function () {
 //            WarningSection(fullScreen, mouseActivity, debuggerCheck);
-//            alert('Error while loading question...');
+//            window.ToastMessage('Error while loading question, Please report the question...', true);
 //        }
 //    });
 //}
@@ -239,7 +239,7 @@ window.GetMonacoValue = GetMonacoValue;
 //        },
 //        error: function () {
 //            WarningSection(fullScreen, mouseActivity, debuggerCheck);
-//            alert('Error while loading question...');
+//            window.ToastMessage('Error while loading question, Please report the question...', true);
 //        }
 //    });
 //}
