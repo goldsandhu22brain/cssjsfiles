@@ -41184,7 +41184,7 @@ function NotificationCallBack(Notify) {
       }
       break;
     case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
-      (0, _common.ToastMessage)("Room Ended, Reason - ".concat(notification.data.reason), true);
+      (0, _common.ToastMessage)("Room Ended, Reason - ".concat(dataProp.reason), true);
       callRedirect();
       break;
   }
@@ -41919,7 +41919,7 @@ function handleEndRoom() {
   var callBack = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   stopRecording().then(function (values) {
     EndRoomClick("Test Room Ended Successfully by Candidate");
-    (0, _common.ToastMessage)("Test Room Ended Successfully by Candidate", true);
+    //ToastMessage("Test Room Ended Successfully by Candidate", true);
     callBack && callBack();
   });
 }
@@ -42339,4 +42339,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.aa830326.js.map
+//# sourceMappingURL=/Newcandidate.cd3278dd.js.map

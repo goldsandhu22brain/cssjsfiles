@@ -41052,7 +41052,7 @@ function NotificationCallBack(Notify) {
       }
       break;
     case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
-      (0, _common.ToastMessage)("Room Ended, Reason - ".concat(notification.data.reason), true);
+      (0, _common.ToastMessage)("Room Ended, Reason - ".concat(dataProp.reason), true);
       callRedirect();
       break;
   }
@@ -42019,4 +42019,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.b45abe5e.js.map
+//# sourceMappingURL=/interviewpanel.c8e4d799.js.map
