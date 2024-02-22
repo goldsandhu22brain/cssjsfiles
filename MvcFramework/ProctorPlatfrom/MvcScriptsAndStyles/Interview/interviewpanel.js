@@ -41658,7 +41658,7 @@ function TriggerEnableStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(pauseTestButton);show(endTestButton);$('.interview-extra-btn').hide();");
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(resumeTestButton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
   }
 }
 function TriggerEnableMCQStartButton() {
@@ -41680,7 +41680,7 @@ function TriggerEnableMCQStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(pauseTestButton);show(endTestButton);$('.interview-extra-btn').hide();");
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
   }
 }
 function TriggerEnableCodingStartButton() {
@@ -41704,7 +41704,7 @@ function TriggerEnableCodingStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartCodingbutton);show(pauseTestButton);show(endTestButton);$('.interview-extra-btn').hide();");
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartCodingbutton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
   }
 }
 function TriggerCustomEventsCall(MetaData) {
@@ -42019,4 +42019,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.c8e4d799.js.map
+//# sourceMappingURL=/interviewpanel.81f45c07.js.map

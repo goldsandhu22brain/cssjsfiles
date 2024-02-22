@@ -41552,7 +41552,7 @@ function TriggerEnableStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartbutton);show(pauseTestButton);show(endTestButton);$('.interview-extra-btn').hide();");
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartbutton);hide(resumeTestButton);show(pauseTestButton);show(endTestButton);hide(refreshCamera); hide(skipProof); hide(viewNewProof); hide(reqProof); hide(viewProof)");
   }
 }
 function TriggerCustomEventsCall(MetaData) {
@@ -41943,4 +41943,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.fff83966.js.map
+//# sourceMappingURL=/newadmin.86d56ecb.js.map
