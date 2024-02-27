@@ -41845,7 +41845,7 @@ function CameraSwitch() {
 }
 function FeedBackForm() {
   (0, _jquery.default)("#Inject-UAA").html("");
-  (0, _jquery.default)("#Inject-UAA").html("<textarea id='feeback' name='feeback' rows='5' cols='90'></textarea><a id='feedbacksubmit' class='btn btn-primary'>submit</a>");
+  (0, _jquery.default)("#Inject-UAA").html("<textarea id='feeback' name='feeback' rows='5' cols='100'></textarea><br><a id='feedbacksubmit' class='btn btn-primary'>submit</a>");
   UpdatePopupHeader("Interview Round Feedback");
   (0, _jquery.default)('#test-myModal').show();
   (0, _jquery.default)("#feedbacksubmit").click(FeedbackSubmit);
@@ -41854,6 +41854,7 @@ function UpdatePopupHeader(updateText) {
   (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
 }
 function FeedbackSubmit() {
+  (0, _jquery.default)("#feedbacksubmit").text("loading...");
   var feedbackData = (0, _jquery.default)("#feeback").val();
   _jquery.default.ajax({
     url: '/Interview/FeedBackByPanel',
@@ -41873,6 +41874,9 @@ function FeedbackSubmit() {
     },
     error: function error(response) {
       return true;
+    },
+    complete: function complete() {
+      (0, _jquery.default)("#feedbacksubmit").text("submit");
     }
   });
 }
@@ -42019,4 +42023,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.81f45c07.js.map
+//# sourceMappingURL=/interviewpanel.aed8b523.js.map
