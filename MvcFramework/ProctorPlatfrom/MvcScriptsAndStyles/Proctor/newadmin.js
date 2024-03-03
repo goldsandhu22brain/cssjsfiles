@@ -41493,7 +41493,7 @@ function EndRoomClick() {
     var lock = true; // set to true to disallow rejoins
     var reason = "Test Room Ended Successfully by Admin";
     hmsActions.endRoom(lock, reason);
-    callRedirect(); //enforce the redirect from admin endroom
+    window.setTimeout(callRedirect, 3000); //enforce the redirect from admin endroom
   } catch (error) {
     // Permission denied or not connected to room
     console.error(error);
@@ -41944,4 +41944,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.789698cb.js.map
+//# sourceMappingURL=/newadmin.bd1cac2e.js.map
