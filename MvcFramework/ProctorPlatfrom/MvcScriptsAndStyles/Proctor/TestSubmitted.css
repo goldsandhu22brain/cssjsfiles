@@ -63,5 +63,21 @@
 	color: #383838;
 }
 
+/**mobile view css**/
+@media screen and (max-width: 767px) {
+
+	.arrow-left {
+		position: relative;
+	}
+
+	.test-submitted img {
+		height: 100%;
+		width: 100%;
+	}
+
+	.test-submitted .content {
+		width: 90%;
+	}
+}
 
 /*# sourceMappingURL=/TestSubmitted.8bba0b01.css.map */

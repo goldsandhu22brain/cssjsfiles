@@ -4541,3 +4541,20 @@ p.Cenroll span {
     background-color: #f4b837;
     border-color: #f4b837;
 }
+
+.cbox a.enroll {
+    padding: 5px 10px !important;
+}
+
+.cbox .cboxfoot {
+    margin-left: 0px;
+    padding: 15px !important;
+}
+
+.RelatedCourseSectionViewAll .clearfix {
+    background-color: #6728e4;
+    text-align: center;
+    color: white;
+    padding: 10px 32px;
+}
+

@@ -1168,134 +1168,178 @@ fieldset#body {
 	    right:46%;	
 	}
 }
-@media only screen and (max-width: 1600px){
-   .graph canvas {
-	  padding: 20px 48px;
-	}
-	.chart h4 {
-	  top: 4.3em;
-	  right: 46%;
-   }
-@media only screen and (max-width: 1366px){
-	.wrap{
-		width:90%;
-	}
+@media only screen and (max-width: 1600px) {
 	.graph canvas {
-	  padding: 20px 38px;
+		padding: 20px 48px;
 	}
+
 	.chart h4 {
-     right:46%;
-     top:4.2em;
-   }
-	
-}
-@media only screen and (max-width: 1280px) {
-	.wrap{
-		width:90%;
-	}
-	.chart_list li{
-		width:24.75%;
-	}
-	.graph canvas {
-		padding: 20px 27px; 
-   }
-   .chart h4 {
-     right: 46%;
-     top:4.2em;
-   }
-}
-@media all and (max-width: 1024px) {
-	.wrap {
-		width:95%;
-	}
-	.chart_list li {
-		width:24.6%;
-	}
-	.graph canvas{
-		padding:20px 0;
-	}
-	.chart h4 {
-		right: 45%;
-	}
-}
-@media all and (max-width:800px) {
-	.wrap {
-		width:95%;
-	}
-	body{
-		margin:30px 0;
-	}
-	.column_left, .column_middle, .column_right {
-		float:none;
-		width:100%;
-	}
-	.column_middle{
-		margin:15px 0;
-	}
-	.graph canvas {
-		padding: 20px 13.57em;
-	}
-	.profile_details{
-		margin:15px;
-	}
-	#loginContainer{
-		padding-right:0;
-	}
-	#loginBox{
-		right:-10px;
-	}
-	.chart h4 {
+		top: 4.3em;
 		right: 46%;
 	}
+
+	@media only screen and (max-width: 1366px) {
+		.wrap {
+			width: 90%;
+		}
+
+		.graph canvas {
+			padding: 20px 38px;
+		}
+
+		.chart h4 {
+			right: 46%;
+			top: 4.2em;
+		}
+	}
+
+	@media only screen and (max-width: 1280px) {
+		.wrap {
+			width: 90%;
+		}
+
+		.chart_list li {
+			width: 24.75%;
+		}
+
+		.graph canvas {
+			padding: 20px 27px;
+		}
+
+		.chart h4 {
+			right: 46%;
+			top: 4.2em;
+		}
+	}
+
+	@media all and (max-width: 1024px) {
+		.wrap {
+			width: 95%;
+		}
+
+		.chart_list li {
+			width: 24.6%;
+		}
+
+		.graph canvas {
+			padding: 20px 0;
+		}
+
+		.chart h4 {
+			right: 45%;
+		}
+	}
+
+	@media all and (max-width:800px) {
+		.wrap {
+			width: 95%;
+		}
+
+		body {
+			margin: 30px 0;
+		}
+
+		.column_left, .column_middle, .column_right {
+			float: none;
+			width: 100%;
+		}
+
+		.column_middle {
+			margin: 15px 0;
+		}
+
+		.graph canvas {
+			padding: 20px 13.57em;
+		}
+
+		.profile_details {
+			margin: 15px;
+		}
+
+		#loginContainer {
+			padding-right: 0;
+		}
+
+		#loginBox {
+			right: -10px;
+		}
+
+		.chart h4 {
+			right: 46%;
+		}
+	}
+
+	@media all and (max-width:640px) {
+		.wrap {
+			width: 95%;
+		}
+
+		.graph canvas {
+			padding: 20px 8.8em;
+		}
+
+		.chart h4 {
+			right: 10em;
+		}
+	}
+
+	@media all and (max-width:480px) {
+		.wrap {
+			width: 95%;
+		}
+
+		.graph canvas {
+			padding: 20px 0em;
+		}
+
+		.chart h4 {
+			right: 7.3em;
+		}
+	}
+
+	@media all and (max-width:320px) {
+		.wrap {
+			width: 95%;
+		}
+
+		.chart_list li {
+			width: 24.6%;
+		}
+
+		.tweets_list li {
+			padding: 1em;
+		}
+
+		.profile_picture {
+			padding: 2em;
+		}
+
+		.graph canvas {
+			padding: 20px 0em;
+		}
+
+		.main {
+			padding: 15px 0;
+		}
+
+		.chart, .graph, .video_palyer, .social_network_likes, .weather, .tweets, .social_networks, .sign-in, .downloading_uploading, .date_events, .calender {
+			margin-top: 15px;
+		}
+
+			.video_palyer iframe {
+				height: 160px;
+			}
+
+			.chart h4 {
+				right: 4.4em;
+			}
+	}
 }
-@media all and (max-width:640px) {
-	.wrap{
-		width:95%;
-	}
-	.graph canvas {
-		padding: 20px 8.8em;
-	}
-	.chart h4 {
-		right: 10em;
+
+
+@media screen and (max-width: 495px) {
+	.main-content {
+		padding-top: 0px;
 	}
 }
-@media all and (max-width:480px) {
-	.wrap{
-		width:95%;
-	}
-	.graph canvas{
-		padding:20px 0em;
-	}	
-	.chart h4 {
-		right: 7.3em;
-	}
- }
-@media all and (max-width:320px) {
-	.wrap{
-		width:95%;
-	}
-	.chart_list li{
-		width: 24.6%;
-	}
-	.tweets_list li{
-		padding:1em;
-	}
-	.profile_picture{
-		padding:2em;
-	}
-	.graph canvas {
-		padding:20px 0em;
-	}
-	.main{
-		padding:15px 0;
-	}
-	.chart,.graph,.video_palyer,.social_network_likes,.weather, .tweets,.social_networks,.sign-in,.downloading_uploading,.date_events,.calender{
-		margin-top:15px;
-	}
-	.video_palyer iframe{
-		height:160px;
-	}
-	.chart h4{
-		right: 4.4em;
-   }
-}
+
