@@ -30,7 +30,7 @@
 
 .rat {
     cursor: pointer;
-    margin: -13px;
+    margin: 0px;
     color: orange !important;
 }
 .test-modal-wrap .modal-dialog          { max-width: unset !important; }

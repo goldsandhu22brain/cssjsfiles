@@ -1546,9 +1546,9 @@ h1.sitemap {
     }
 
     .mainarea7 p {
-        color: #f1f1f1;
+       /* color: #f1f1f1;*/
         font-family: DGotham;
-        font-size: 17px;
+        font-size: 15px;
         margin-bottom: 20px;
         text-align: justify
     }
@@ -4557,4 +4557,6 @@ p.Cenroll span {
     color: white;
     padding: 10px 32px;
 }
-
+.cbox .cboxfoot {
+    margin-left: 0px !important;
+}
