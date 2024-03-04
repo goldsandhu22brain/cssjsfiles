@@ -8056,7 +8056,7 @@ a:focus {
 
 .rat {
     cursor: pointer;
-    margin: 15px;
+  /*  margin: 15px;*/
     color: orange
 }
 
