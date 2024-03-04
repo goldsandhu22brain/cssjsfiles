@@ -276,6 +276,7 @@ function reportBtn(input) {
 		dataType: 'Json',
 		data: { Id: currentQuestionId },
 		cache: false,
+		async: true,
 		beforeSend: function () {
 			//$('.proctor-loader').css("visibility", "visible");
 		},
@@ -317,6 +318,7 @@ function nextQuestion(input, isReview) {
 		dataType: 'html',
 		data: dataJson,
 		cache: false,
+		async: true,
 		beforeSend: function () {
 			//$('.proctor-loader').css("visibility", "visible");
 		},
@@ -373,6 +375,7 @@ function onClikQuestionNo(input, isReview) {
 		dataType: 'html',
 		data: dataJson,
 		cache: false,
+		async: true,
 		beforeSend: function () {
 			//$('.proctor-loader').css("visibility", "visible");
 		},
@@ -429,6 +432,7 @@ function nextPrev(input, isReview) {
 		dataType: 'html',
 		data: dataJson,
 		cache: false,
+		async: true,
 		beforeSend: function () {
 			//$('.proctor-loader').css("visibility", "visible");
 		},
@@ -468,6 +472,7 @@ function SubmitTestAutomatically(callBack = null) {
 		type: 'POST',
 		dataType: 'html',
 		cache: false,
+		async: true,
 		beforeSend: function () {
 			if (window.BeforeSubmitTest != null) {
 				window.BeforeSubmitTest();
@@ -540,6 +545,7 @@ function callSubmit(input, isReview, callBack = null) {
 		dataType: 'html',
 		data: dataJson,
 		cache: false,
+		async: true,
 		beforeSend: function () {
 			$('.proctor-loader').css("visibility", "visible");
 		},
