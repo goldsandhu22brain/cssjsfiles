@@ -41058,37 +41058,31 @@ function NotificationCallBack(Notify) {
       var canUpdatePanel = false;
       if (localLatestMetadata) {
         localLatestMetadata["PanelRoleButtons"] = null;
-        if (localLatestMetadata["StartQuiz"]) {
+        if (localLatestMetadata["StartQuiz"] || localLatestMetadata["StartMCQQuiz"] || localLatestMetadata["StartCodingQuiz"]) {
           canUpdatePanel = true;
-          show(startTestButton);
           PanelRoleButtons["load-test"] = false;
           PanelRoleButtons["load-mcq-test"] = false;
           PanelRoleButtons["load-coding-test"] = false;
           PanelRoleButtons["pause-test"] = true;
           PanelRoleButtons["resume-test"] = false;
           PanelRoleButtons["force-end-test"] = true;
+        }
+        if (localLatestMetadata["StartQuiz"]) {
+          show(startTestButton);
+          hide(startMcqTestButton);
+          hide(startCodingTestButton);
           localLatestMetadata["StartQuiz"] = false;
         }
         if (localLatestMetadata["StartMCQQuiz"]) {
-          canUpdatePanel = true;
-          PanelRoleButtons["load-test"] = false;
-          PanelRoleButtons["load-mcq-test"] = false;
-          PanelRoleButtons["load-coding-test"] = false;
-          PanelRoleButtons["pause-test"] = true;
-          PanelRoleButtons["resume-test"] = false;
-          PanelRoleButtons["force-end-test"] = true;
+          hide(startTestButton);
           show(startMcqTestButton);
+          hide(startCodingTestButton);
           localLatestMetadata["StartMCQQuiz"] = false;
         }
         if (localLatestMetadata["StartCodingQuiz"]) {
-          canUpdatePanel = true;
-          PanelRoleButtons["load-test"] = false;
-          PanelRoleButtons["load-mcq-test"] = false;
-          PanelRoleButtons["load-coding-test"] = false;
-          PanelRoleButtons["pause-test"] = true;
-          PanelRoleButtons["resume-test"] = false;
-          PanelRoleButtons["force-end-test"] = true;
+          hide(startMcqTestButton);
           show(startCodingTestButton);
+          hide(startTestButton);
           localLatestMetadata["StartCodingQuiz"] = false;
         }
         if (localLatestMetadata["CandidatePauseTest"] == true || localLatestMetadata["CandidateResumeTest"] == false) {
@@ -42135,43 +42129,59 @@ function IsPresentInRoom(Obj) {
           return y.toLowerCase() == x.toLowerCase();
         }).length;
       }).length > 0) {
-        // enable the test button
-        if (InterviewTestType == "100" || InterviewTestType == "250") {
-          show(startMcqTestButton);
-          hide(startCodingTestButton);
-          return true;
-        } else if (InterviewTestType == "200") {
-          hide(startMcqTestButton);
-          show(startCodingTestButton);
-          return true;
-        } else {
-          show(startTestButton);
-          hide(startMcqTestButton);
-          hide(startCodingTestButton);
-          return true;
-        }
+        // Hide the test button initially
+        hide(startTestButton);
+        hide(startMcqTestButton);
+        hide(startCodingTestButton);
+        return true;
+        //if (InterviewTestType == "100" || InterviewTestType == "250") {
+
+        //}
+        //else if (InterviewTestType == "200") {
+        //    hide(startTestButton); 
+        //    hide(startMcqTestButton);
+        //    show(startCodingTestButton);
+        //    return true;
+        //}
+        //else {
+        //    show(startTestButton); 
+        //    hide(startMcqTestButton);
+        //    hide(startCodingTestButton);
+        //    return true;
+        //}
       } else {
+        (0, _jquery.default)('#startbtn-admin-wait').removeClass('hide');
+        hide(startTestButton);
+        hide(startMcqTestButton);
+        hide(startCodingTestButton);
         //No panel member in the rooms respective to the round
         screenShareStatus.textContent = "";
-        var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-        (0, _jquery.default)(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
-        (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-        change_tab('error-message');
+        //var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
+        //$(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
+        //$('.proctor-loader').css("visibility", "hidden");
+        //change_tab('error-message');
       }
     } else {
-      screenShareStatus.textContent = "";
-      var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-      (0, _jquery.default)(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
-      (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-      change_tab('error-message');
+      (0, _jquery.default)('#startbtn-admin-wait').removeClass('hide');
+      hide(startTestButton);
+      hide(startMcqTestButton);
+      hide(startCodingTestButton);
+      //screenShareStatus.textContent = "";            
+      //var url = '<br><a href="' + Obj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
+      //$(".error-message").html("Please wait for Panel Members to Join the Room!!!" + url);
+      //$('.proctor-loader').css("visibility", "hidden");
+      //change_tab('error-message');
       //No panel member in the rooms
     }
   } else {
+    (0, _jquery.default)('#startbtn-admin-wait').removeClass('hide').addClass('hide');
     if (InterviewTestType == "100" || InterviewTestType == "250") {
+      hide(startTestButton);
       show(startMcqTestButton);
       hide(startCodingTestButton);
       return true;
     } else if (InterviewTestType == "200") {
+      hide(startTestButton);
       hide(startMcqTestButton);
       show(startCodingTestButton);
       return true;
@@ -42197,6 +42207,7 @@ function AfterSubmitTest(response) {
 
         (0, _jquery.default)('#load-test').val("Start MCQ Quiz");
         (0, _jquery.default)('#load-coding-test').val("Start Coding Quiz");
+        hide(startTestButton);
         hide(startMcqTestButton);
         hide(startCodingTestButton);
         if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
@@ -42399,4 +42410,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.611a19e9.js.map
+//# sourceMappingURL=/Newinterviewcandidate.1d87c215.js.map
