@@ -600,3 +600,11 @@ a:focus {
 		font-size: 9px;
 	}
 }
+
+
+
+@media screen and (max-width: 495px) {
+    .main-content {
+        padding-top: 0px;
+    }
+}

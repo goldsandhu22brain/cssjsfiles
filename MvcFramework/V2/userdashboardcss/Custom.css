@@ -231,5 +231,9 @@
     }
 }
 
+img.cat_icon.size-width {
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+}
 
 
