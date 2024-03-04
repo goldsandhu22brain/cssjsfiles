@@ -165,17 +165,6 @@ dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
 }
 
 
-@media screen and (max-width: 767px) {
-    .viewallbtn {
-        margin-bottom: 5px;
-        width: 100%;
-        float: none !important;
-    }
-
-    .dashboardTabFooterBtn2 {
-        float: none !important;
-    }
-}
 
 
 
