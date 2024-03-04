@@ -1129,7 +1129,7 @@ img.fixedbar {
     .cbox p {
         font-family: Dbold;
         color: #2a3941;
-        font-size: 18px;
+       /* font-size: 18px;*/
         margin: 0;
         float: right
     }

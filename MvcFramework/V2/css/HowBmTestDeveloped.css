@@ -11,7 +11,7 @@
 }
 
 .cbox p {
-    float: left !important;
+   /* float: left !important;*/
 }
 
 .cbox .cboxfoot {
