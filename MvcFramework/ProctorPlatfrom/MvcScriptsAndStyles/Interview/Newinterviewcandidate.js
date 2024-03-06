@@ -41022,6 +41022,7 @@ var hmsNotifications = hmsManager.getNotifications();
 window.ToastMessage = _common.ToastMessage;
 var scopeData;
 var docElement = document.documentElement;
+var timerExamInterval = null;
 var PanelRoleButtons = {
   "load-test": false,
   "load-mcq-test": false,
@@ -42256,7 +42257,7 @@ function AfterSubmitTest(response) {
           return;
         }
         totalMcqTime = GlobalObj.SlotDuration;
-        initialTimer = true;
+        maxMcqTime = GlobalObj.SlotDuration;
         (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
         (0, _jquery.default)('#new-inject-test').html("");
         (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
@@ -42275,7 +42276,12 @@ window.BeforeSubmitTest = BeforeSubmitTest;
 function InitiatingTimer() {
   //for timer
   var timer;
-  var timerExamInterval;
+  //clear the existing timer
+  if (timerExamInterval != null) {
+    clearInterval(timerExamInterval);
+    timerExamInterval = null;
+    initialTimer = true;
+  }
   if (window.pauseAll) {
     window.pauseAll = false;
   }
@@ -42448,4 +42454,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.47f0cee6.js.map
+//# sourceMappingURL=/Newinterviewcandidate.be04f1c8.js.map
