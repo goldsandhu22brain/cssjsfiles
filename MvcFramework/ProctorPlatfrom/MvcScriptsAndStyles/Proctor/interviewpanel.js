@@ -41329,7 +41329,7 @@ function _UpdateInterviewStatus() {
             dataType: 'json',
             data: {
               InterviewId: GlobalObj.RedemptionId,
-              _InterviewStatus: 200
+              _InterviewStatus: 50
             },
             crossDomain: true,
             cache: false,
