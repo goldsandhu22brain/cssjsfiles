@@ -1546,9 +1546,9 @@ h1.sitemap {
     }
 
     .mainarea7 p {
-        color: #f1f1f1;
+       /* color: #f1f1f1;*/
         font-family: DGotham;
-        font-size: 17px;
+        font-size: 15px;
         margin-bottom: 20px;
         text-align: justify
     }
@@ -4540,4 +4540,23 @@ p.Cenroll span {
     color: #000;
     background-color: #f4b837;
     border-color: #f4b837;
+}
+
+.cbox a.enroll {
+    padding: 5px 10px !important;
+}
+
+.cbox .cboxfoot {
+    margin-left: 0px;
+    padding: 15px !important;
+}
+
+.RelatedCourseSectionViewAll .clearfix {
+    background-color: #6728e4;
+    text-align: center;
+    color: white;
+    padding: 10px 32px;
+}
+.cbox .cboxfoot {
+    margin-left: 0px !important;
 }

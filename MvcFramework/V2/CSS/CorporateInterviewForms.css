@@ -142,6 +142,40 @@ dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .BtnSearchTranscript {
+        margin-top: 0px !important;
+    }
+
+    .bootstrap-select > .dropdown-toggle {
+        width: 90% !important;
+    }
+
+    .login-btn.submit {
+        margin-left: 0 !important;
+    }
+
+    .bootstrap-select .dropdown-menu {
+        width: 90% !important;
+    }
+
+    .content.no-padd .login-input-box > .row {
+        margin-bottom: 0px !important;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    input.form-control {
+        max-width: 100%;
+    }
+
+    #TestRounds_0__QuestionCount_0_1, #TestRounds_0__QuestionCount_1_1, #TestRounds_0__QuestionCount_2_1 {
+        margin-left: 0px !important;
+    }
+}
+
+
+
 
 
 

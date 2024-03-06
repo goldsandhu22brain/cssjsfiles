@@ -11,7 +11,7 @@
 }
 
 .cbox p {
-    float: left !important;
+   /* float: left !important;*/
 }
 
 .cbox .cboxfoot {
@@ -30,7 +30,7 @@
 
 .rat {
     cursor: pointer;
-    margin: 15px;
+    margin: 0px;
     color: orange !important;
 }
 .test-modal-wrap .modal-dialog          { max-width: unset !important; }

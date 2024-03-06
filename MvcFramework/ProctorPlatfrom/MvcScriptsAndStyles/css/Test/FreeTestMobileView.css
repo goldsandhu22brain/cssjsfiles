@@ -931,4 +931,17 @@
 }
 
 
+@media screen and (max-width: 767px) {
+
+    .step10 .testDiv .question-img-large {
+        width: 269px !important;
+        height: 120px !important;
+    }
+}
+
+
+
+
+
+
 

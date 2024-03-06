@@ -182,4 +182,58 @@
     padding: 20px !important; margin-bottom: 20px !important;
 }
 
+.box-body.table-responsive.no-padding.overlowVisible {
+    Overflow: inherit !important;
+}
+
+#TimeSlotsSection {
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.dashboardTabFooterBtn1 h2 {
+    color: #bbbbbb;
+}
+
+.nopurchasedText {
+    text-align: center;
+    color: #bbbbbb;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    video {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    select option {
+        font-size: 13px;
+    }
+}
+
+.buynowimg img {
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .viewallbtn {
+        margin-bottom: 5px;
+        width: 100%;
+        float: none !important;
+    }
+
+    .dashboardTabFooterBtn2 {
+        float: none !important;
+    }
+}
+
+img.cat_icon.size-width {
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+}
+
 
