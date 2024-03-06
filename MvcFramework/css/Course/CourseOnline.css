@@ -4560,3 +4560,6 @@ p.Cenroll span {
 .cbox .cboxfoot {
     margin-left: 0px !important;
 }
+.cbox .cboxfoot {
+    padding: 15px !important;
+}
