@@ -235,5 +235,22 @@ img.cat_icon.size-width {
     border: 1px solid #dddddd;
     border-radius: 50%;
 }
+.head-color {
+    background: #2a39419c;
+    color: white;
+}
+
+.btn-reschedule {
+    float: right;
+    margin-left: 30px;
+}
+
+.cal-MT {
+    margin-top: 10px;
+}
+
+.btn-postion {
+    display: inline-flex;
+}
 
 
