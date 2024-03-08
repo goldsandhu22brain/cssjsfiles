@@ -176,6 +176,12 @@ dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
 }
 
 
+@media screen and (Max-width: 768px) {
+    input#TestRounds_0__QuestionCount_0_1 {
+        width: 85%;
+        margin-left: 45px !important;
+    }
+}   
 
 
 
