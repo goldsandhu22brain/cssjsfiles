@@ -2423,6 +2423,7 @@ p {
 }
 #uaa-datatable_paginate {
     float:inline-end !important;
+    margin-top:-20px;
 }
 .admin-img {
     margin-left: 180px;
