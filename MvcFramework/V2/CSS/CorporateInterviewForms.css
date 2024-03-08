@@ -3,14 +3,15 @@
 }
 
 .interview-deleterow {
-    text-indent: 58px;
-    line-height: 2;
+    text-indent:48px;
+    line-height:2;
+    cursor:pointer;
 }
 
 .interview-slot {
     float: inline-end;
     width: auto;
-    margin-top: -64px;
+    margin-top: -86px;
     margin-bottom: 25px;
 }
 
