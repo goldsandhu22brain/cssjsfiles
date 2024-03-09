@@ -257,5 +257,26 @@ img.cat_icon.size-width {
         max-width: 100%;
         width: 34%;
     }
-}     
+}
 
+.d-flex {
+    display: flex !important;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #000;
+    background-color: #f4b837;
+    border-color: #f4b837;
+}
+
+.size-width {
+    width: 25%;
+}
+
+.letter-color {
+    color: #2a3941;
+    font-size: 16px;
+    font-family: system-ui;
+    margin-left: 10px
+}
