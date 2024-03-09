@@ -42237,8 +42237,9 @@ function AfterSubmitTest(response) {
       apiResponse = response;
       if (IsHTML(apiResponse)) {
         //html           
-        (0, _jquery.default)('.conference.new-interview-conference').empty();
-        (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
+          (0, _jquery.default)('.conference.new-interview-conference').empty();
+          hide(customView);
+          (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
       } else {
         //json
         UpdateGlobalVariable(apiResponse); // updating the Global Variable
