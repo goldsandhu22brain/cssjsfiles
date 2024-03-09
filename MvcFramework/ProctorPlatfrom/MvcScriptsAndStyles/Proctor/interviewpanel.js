@@ -41023,6 +41023,8 @@ window.ToastMessage = _common.ToastMessage;
 var role = "panel";
 var candidateRole = "candidate";
 var candShareMessage = "Candidate not yet Joined or not yet Sharing the screen";
+var FeedBackText = "";
+var FeedBackStatusValue = "";
 function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
@@ -41695,7 +41697,7 @@ function TriggerEnableStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(resumeTestButton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);hide(enableStartbutton);hide(enableStartMcqbutton);hide(resumeTestButton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
   }
 }
 function TriggerEnableMCQStartButton() {
@@ -41717,7 +41719,7 @@ function TriggerEnableMCQStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);hide(enableStartbutton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
   }
 }
 function TriggerEnableCodingStartButton() {
@@ -41741,7 +41743,7 @@ function TriggerEnableCodingStartButton() {
     var newLocalMetadata = _objectSpread({}, local_metadata);
     // update the old Metadata
     hmsActions.changeMetadata(newLocalMetadata);
-    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartCodingbutton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
+    UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);hide(enableStartbutton);show(pauseTestButton);show(endTestButton);show(refreshCamera);");
   }
 }
 function TriggerCustomEventsCall(MetaData) {
@@ -41882,7 +41884,19 @@ function CameraSwitch() {
 }
 function FeedBackForm() {
   (0, _jquery.default)("#Inject-UAA").html("");
-  (0, _jquery.default)("#Inject-UAA").html("<textarea id='feeback' name='feeback' rows='5' cols='100'></textarea><br><a id='feedbacksubmit' class='btn btn-primary'>submit</a>");
+  var select = "";
+  if (GlobalObj.FeedBackType != null) {
+    var options = "";
+    GlobalObj.FeedBackType.forEach(function (x) {
+      options = options + "<option value='" + x.Value + "'>" + x.Text + "</option>";
+    });
+    select = "<select id='FeedBackStatus' class='feedBackType form-select fs-15p c-select'>" + options + "</select>";
+  }
+  (0, _jquery.default)("#Inject-UAA").html(select + "<textarea id='feeback' name='feeback' rows='5' cols='100'></textarea><br><a id='feedbacksubmit' class='btn btn-primary'>submit</a>");
+  (0, _jquery.default)("#feeback").val(FeedBackText);
+  if (select != "") {
+    (0, _jquery.default)("#FeedBackStatus").val(FeedBackStatusValue);
+  }
   UpdatePopupHeader("Interview Round Feedback");
   (0, _jquery.default)('#test-myModal').show();
   (0, _jquery.default)("#feedbacksubmit").click(FeedbackSubmit);
@@ -41893,12 +41907,14 @@ function UpdatePopupHeader(updateText) {
 function FeedbackSubmit() {
   (0, _jquery.default)("#feedbacksubmit").text("loading...");
   var feedbackData = (0, _jquery.default)("#feeback").val();
+  var feedbackStatus = (0, _jquery.default)("#FeedBackStatus").val();
   _jquery.default.ajax({
     url: '/Interview/FeedBackByPanel',
     type: 'POST',
     dataType: 'json',
     data: {
-      feedBackData: feedbackData
+      feedBackData: feedbackData,
+      status: feedbackStatus
     },
     cache: false,
     async: false,
@@ -41913,6 +41929,8 @@ function FeedbackSubmit() {
       return true;
     },
     complete: function complete() {
+      FeedBackText = feedbackData;
+      FeedBackStatusValue = feedbackStatus;
       (0, _jquery.default)("#feedbacksubmit").text("submit");
     }
   });
@@ -42060,4 +42078,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.47c178fe.js.map
+//# sourceMappingURL=/interviewpanel.f2413768.js.map

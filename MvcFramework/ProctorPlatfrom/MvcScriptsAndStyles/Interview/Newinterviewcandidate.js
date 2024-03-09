@@ -42237,9 +42237,9 @@ function AfterSubmitTest(response) {
       apiResponse = response;
       if (IsHTML(apiResponse)) {
         //html           
-          (0, _jquery.default)('.conference.new-interview-conference').empty();
-          hide(customView);
-          (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
+        (0, _jquery.default)('.conference.new-interview-conference').empty();
+        hide(customView);
+        (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
       } else {
         //json
         UpdateGlobalVariable(apiResponse); // updating the Global Variable
@@ -42455,4 +42455,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.be04f1c8.js.map
+//# sourceMappingURL=/Newinterviewcandidate.03f2637b.js.map
