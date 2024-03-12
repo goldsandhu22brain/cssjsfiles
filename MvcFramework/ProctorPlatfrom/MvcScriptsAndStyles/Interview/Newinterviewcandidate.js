@@ -42031,9 +42031,9 @@ function _handleScreenShare() {
           return hmsActions.setScreenShareEnabled(screenShareOn);
         case 4:
           if (scopeData.IsProctorLive) {
-            hide(startMcqTestButton);
-            hide(startCodingTestButton);
-            hide(startTestButton);
+            // hide(startMcqTestButton);
+            // hide(startCodingTestButton);
+            // hide(startTestButton);
           } else {
             if (!scopeData.IsProctorLive && GlobalObj.IsMCQ) {
               startMcqTestButton.style.display = screenShareOn ? "" : "none";
@@ -42076,9 +42076,9 @@ function _showScreenShareVideo() {
           }
           fullScreenEnable();
           if (scopeData.IsProctorLive) {
-            hide(startMcqTestButton);
-            hide(startCodingTestButton);
-            hide(startTestButton);
+            // hide(startMcqTestButton);
+            // hide(startCodingTestButton);
+            // hide(startTestButton);
             peers = hmsStore.getState(_hmsVideoStore.selectPeers);
             panelMembers = peers.filter(function (x) {
               return x.roleName == "panel";
