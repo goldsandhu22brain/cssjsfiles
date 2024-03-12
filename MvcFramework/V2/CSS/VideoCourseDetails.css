@@ -70,3 +70,6 @@
 .test-bg {
     background: url(test-bg.png) no-repeat top 50% left 7%,linear-gradient( 45deg,#34176b,#6728e4);
 }
+.cbox .cboxfoot {
+    margin-left: -14px !important;
+}
