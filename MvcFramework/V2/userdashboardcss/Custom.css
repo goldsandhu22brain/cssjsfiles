@@ -280,3 +280,10 @@ img.cat_icon.size-width {
     font-family: system-ui;
     margin-left: 10px
 }
+
+@media screen and (max-width: 768px) {
+    .btn.ProctorLoadSlots {
+        margin-top: 10px !important;
+    }
+}    
+
