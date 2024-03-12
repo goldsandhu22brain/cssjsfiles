@@ -934,11 +934,22 @@
 @media screen and (max-width: 767px) {
 
     .step10 .testDiv .question-img-large {
-        width: 269px !important;
-        height: 120px !important;
+        width: 398px !important;
+        height: 150px !important;
     }
 }
 
+/**Tablet view**/
+@media screen and (min-width: 768px) and (max-width: 912px) {
+    .step10 {
+        top: 0% !important;
+        transform: translate(-50%,-00%) !important;
+    }
+
+    .modal-content {
+        top: 250px;
+    }
+}
 
 
 
