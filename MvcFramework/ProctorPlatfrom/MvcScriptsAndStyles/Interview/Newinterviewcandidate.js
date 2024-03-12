@@ -41114,7 +41114,12 @@ function NotificationCallBack(Notify) {
           PanelRoleButtons["pause-test"] = false;
           PanelRoleButtons["resume-test"] = true;
           PanelRoleButtons["force-end-test"] = true;
-          pauseTest();
+          var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
+          if (peers.filter(function (x) {
+            return x.roleName == "panel";
+          }).length == 0) {
+            pauseTest();
+          }
           (0, _common.ToastMessage)("Panel Leaved the Room!! Please wait for Panel Memeber to rejoin and enable the test", true);
         } else if (localLatestMetadata["PanelLeaveRoom"] == false) {
           canUpdatePanel = true;
@@ -42031,9 +42036,9 @@ function _handleScreenShare() {
           return hmsActions.setScreenShareEnabled(screenShareOn);
         case 4:
           if (scopeData.IsProctorLive) {
-            // hide(startMcqTestButton);
-            // hide(startCodingTestButton);
-            // hide(startTestButton);
+            //hide(startMcqTestButton);
+            //hide(startCodingTestButton);   
+            //hide(startTestButton);   
           } else {
             if (!scopeData.IsProctorLive && GlobalObj.IsMCQ) {
               startMcqTestButton.style.display = screenShareOn ? "" : "none";
@@ -42076,9 +42081,9 @@ function _showScreenShareVideo() {
           }
           fullScreenEnable();
           if (scopeData.IsProctorLive) {
-            // hide(startMcqTestButton);
-            // hide(startCodingTestButton);
-            // hide(startTestButton);
+            //hide(startMcqTestButton);
+            //hide(startCodingTestButton);
+            //hide(startTestButton);   
             peers = hmsStore.getState(_hmsVideoStore.selectPeers);
             panelMembers = peers.filter(function (x) {
               return x.roleName == "panel";
@@ -42455,4 +42460,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.03f2637b.js.map
+//# sourceMappingURL=/Newinterviewcandidate.be31de66.js.map
