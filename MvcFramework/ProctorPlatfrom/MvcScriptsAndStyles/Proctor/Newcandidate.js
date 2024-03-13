@@ -41580,8 +41580,7 @@ function _AuthenticationSubmit() {
               MobileNumber: (0, _jquery.default)("#txtMobile").val(),
               PinNumber: (0, _jquery.default)("#txtPin").val()
             },
-            crossDomain: true,
-            cache: false,
+            crossDomain: true,           
             async: true,
             beforeSend: function beforeSend() {
               (0, _jquery.default)('.proctor-loader').css("visibility", "visible");
