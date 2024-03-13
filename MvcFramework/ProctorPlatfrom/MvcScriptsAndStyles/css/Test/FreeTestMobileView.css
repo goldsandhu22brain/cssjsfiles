@@ -947,8 +947,19 @@
     }
 
     .modal-content {
-        top: 250px;
+        top:0px;
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){ 
+    .status-wrapper > .container > .row > .col-12 {
+    display: block;
+    text-align: center;
+}
+
+.test-lbl {
+    text-align: center !important;
+}
 }
 
 
