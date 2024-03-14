@@ -41473,7 +41473,7 @@ function renderPeer(peer) {
       videoElement.style.display = "none";
       nonVideoElement.style.display = "";
     }
-  }, (0, _hmsVideoStore.selectVideoTrackByID)(peer.videoTrack));
+  }, (0, _hmsVideoStore.selectVideoTrackByPeerID)(peer.id));
   peerTileDiv.append(videoElement);
   peerTileDiv.append(nonVideoElement);
   peerTileDiv.append(peerTileName);
@@ -41483,10 +41483,12 @@ function renderPeer(peer) {
 }
 
 // display a tile for each peer in the peer list
-function renderPeers() {
-  var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
+function renderPeers(peerList) {
+  var peers = peerList.filter(function (x) {
+    return x.roleName == candidateRole;
+  });
   peers.forEach(function (peer) {
-    if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && !(peer !== null && peer !== void 0 && peer.isLocal)) {
+    if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack) {
       document.getElementById("openvideo").onclick();
       (0, _jquery.default)(peersContainer).empty();
       peersContainer.append(renderPeer(peer));
@@ -42078,4 +42080,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.f2413768.js.map
+//# sourceMappingURL=/interviewpanel.991852c1.js.map
