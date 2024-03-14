@@ -41918,7 +41918,7 @@ reqProof.onclick = TriggerNewProofButton;
 viewNewProof.onclick = ViewNewProof;
 sendToPanel.onclick = SendMessageToPanel;
 refreshCamera.onclick = function () {
-  hmsStore.unsubscribe(renderPeers, _hmsVideoStore.selectPeers);
+  renderedPeerIDs = new Set();
   hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
 };
 //muteVideoBtn.onclick = handlePresenterVideo;
@@ -41944,4 +41944,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.7a6a98a1.js.map
+//# sourceMappingURL=/newadmin.f358a27e.js.map
