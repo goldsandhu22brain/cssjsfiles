@@ -41034,6 +41034,7 @@ var PanelRoleButtons = {
   "leave-btn": true,
   "end-room-button": true
 };
+var candidateRole = "candidate";
 function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
@@ -41349,7 +41350,7 @@ function _GetRoomCode() {
             data: {
               interviewId: _interviewId,
               roundId: _roundId,
-              role: "candidate"
+              role: candidateRole
             },
             crossDomain: true,
             cache: false,
@@ -41775,7 +41776,7 @@ function _JoinRoom() {
                       userName: userName,
                       authToken: authToken,
                       metaData: {
-                        userType: "candidate"
+                        userType: candidateRole
                       },
                       settings: {
                         isAudioMuted: false,
@@ -41887,7 +41888,7 @@ function renderPeer(peer) {
         (0, _common.CaptureUserPhoto)("undefined", def);
       };
     }
-  }, (0, _hmsVideoStore.selectVideoTrackByID)(peer.videoTrack));
+  }, (0, _hmsVideoStore.selectVideoTrackByPeerID)(peer.id));
   peerTileDiv.append(videoElement);
   peerTileDiv.append(nonVideoElement);
   peerTileDiv.append(peerTileName);
@@ -41900,10 +41901,12 @@ function renderPeer(peer) {
 }
 
 // display a tile for each peer in the peer list
-function renderPeers() {
-  var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
+function renderPeers(peerList) {
+  var peers = peerList.filter(function (x) {
+    return x.roleName == candidateRole;
+  });
   peers.forEach(function (peer) {
-    if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && peer !== null && peer !== void 0 && peer.isLocal) {
+    if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack) {
       var render = renderPeer(peer);
       (0, _jquery.default)(peersContainer).empty();
       peersContainer.append(render.elem);
@@ -42460,4 +42463,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.be31de66.js.map
+//# sourceMappingURL=/Newinterviewcandidate.12b09d84.js.map
