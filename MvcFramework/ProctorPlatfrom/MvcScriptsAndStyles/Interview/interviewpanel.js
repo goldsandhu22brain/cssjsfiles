@@ -40555,7 +40555,7 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTING:
-        ToastMessage('[Reconnecting]', notification.data);
+        ToastMessage('[Reconnecting]', notification.data.message);
         CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTED:
@@ -40571,11 +40571,11 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_DEGRADED:
-        ToastMessage("track - ".concat(notification.data, " degraded due to poor network"));
+        ToastMessage("track - ".concat(notification.data.message, " degraded due to poor network"));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_RESTORED:
-        ToastMessage("track - ".concat(notification.data, " recovered"));
+        ToastMessage("track - ".concat(notification.data.message, " recovered"));
         CallBack(notification);
         break;
       case HMSNotificationTypes.ROOM_ENDED:
@@ -40587,19 +40587,19 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         CallBack(notification);
         break;
       case HMSNotificationTypes.DEVICE_CHANGE_UPDATE:
-        ToastMessage("device changed - ".concat(notification.data));
+        ToastMessage("device changed - ".concat(notification.data.message));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_ADDED:
-        ToastMessage("Track added - ".concat(notification.data));
+        ToastMessage("Track added - ".concat(notification.data.message));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_REMOVED:
-        ToastMessage("Track removed - ".concat(notification.data));
+        ToastMessage("Track removed - ".concat(notification.data.message));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_MUTED:
-        ToastMessage("Track removed - ".concat(notification.data));
+        ToastMessage("Track removed - ".concat(notification.data.message));
         CallBack(notification);
         break;
       default:
@@ -41012,6 +41012,7 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 // Initialize HMS Store
 var hmsManager = new _hmsVideoStore.HMSReactiveStore();
 hmsManager.triggerOnSubscribe();
@@ -41028,6 +41029,16 @@ var FeedBackStatusValue = "";
 function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
+    case _hmsVideoStore.HMSNotificationTypes.PEER_JOINED:
+      if (notification.data.roleName == candidateRole) {
+        document.getElementById("openvideo").onclick();
+      }
+      break;
+    case _hmsVideoStore.HMSNotificationTypes.PEER_LEFT:
+      if (notification.data.roleName == candidateRole) {
+        document.getElementById("closevideo").onclick();
+      }
+      break;
     case _hmsVideoStore.HMSNotificationTypes.METADATA_UPDATED:
       var peer = dataProp;
       var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer.id));
@@ -42050,8 +42061,8 @@ leaveBtn.onclick = handleLeave;
 sendToCandidate.onclick = sendMessageToBroadCast;
 sendToPanel.onclick = SendMessageToPanel;
 refreshCamera.onclick = function () {
-  hmsStore.unsubscribe(renderPeers, _hmsVideoStore.selectPeers);
-  hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
+  new Set(), _readOnlyError("renderedPeerIDs");
+  renderPeers(hmsStore.getState(_hmsVideoStore.selectPeers));
 };
 //muteVideoBtn.onclick = handlePresenterVideo;
 muteAudioBtn.onclick = handlePresenterAudio;
@@ -42080,4 +42091,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.991852c1.js.map
+//# sourceMappingURL=/interviewpanel.a523b74d.js.map

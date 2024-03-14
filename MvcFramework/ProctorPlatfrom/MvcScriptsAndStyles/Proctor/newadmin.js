@@ -40555,7 +40555,7 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTING:
-        ToastMessage('[Reconnecting]', notification.data);
+        ToastMessage('[Reconnecting]', notification.data.message);
         CallBack(notification);
         break;
       case HMSNotificationTypes.RECONNECTED:
@@ -40571,11 +40571,11 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_DEGRADED:
-        ToastMessage("track - ".concat(notification.data, " degraded due to poor network"));
+        ToastMessage("track - ".concat(notification.data.message, " degraded due to poor network"));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_RESTORED:
-        ToastMessage("track - ".concat(notification.data, " recovered"));
+        ToastMessage("track - ".concat(notification.data.message, " recovered"));
         CallBack(notification);
         break;
       case HMSNotificationTypes.ROOM_ENDED:
@@ -40587,19 +40587,19 @@ function NotificationCall(hmsNotifications, HMSNotificationTypes, CallBack) {
         CallBack(notification);
         break;
       case HMSNotificationTypes.DEVICE_CHANGE_UPDATE:
-        ToastMessage("device changed - ".concat(notification.data));
+        ToastMessage("device changed - ".concat(notification.data.message));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_ADDED:
-        ToastMessage("Track added - ".concat(notification.data));
+        ToastMessage("Track added - ".concat(notification.data.message));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_REMOVED:
-        ToastMessage("Track removed - ".concat(notification.data));
+        ToastMessage("Track removed - ".concat(notification.data.message));
         CallBack(notification);
         break;
       case HMSNotificationTypes.TRACK_MUTED:
-        ToastMessage("Track removed - ".concat(notification.data));
+        ToastMessage("Track removed - ".concat(notification.data.message));
         CallBack(notification);
         break;
       default:
@@ -41944,4 +41944,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.bd1cac2e.js.map
+//# sourceMappingURL=/newadmin.7a6a98a1.js.map
