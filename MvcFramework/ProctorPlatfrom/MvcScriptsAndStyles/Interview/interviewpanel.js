@@ -41029,12 +41029,12 @@ function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
     case _hmsVideoStore.HMSNotificationTypes.PEER_JOINED:
-      if (notification.data.roleName == candidateRole) {
+      if (dataProp.roleName == candidateRole) {
         document.getElementById("openvideo").onclick();
       }
       break;
     case _hmsVideoStore.HMSNotificationTypes.PEER_LEFT:
-      if (notification.data.roleName == candidateRole) {
+      if (dataProp.roleName == candidateRole) {
         document.getElementById("closevideo").onclick();
       }
       break;
