@@ -41012,7 +41012,6 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 // Initialize HMS Store
 var hmsManager = new _hmsVideoStore.HMSReactiveStore();
 hmsManager.triggerOnSubscribe();
@@ -42061,7 +42060,7 @@ leaveBtn.onclick = handleLeave;
 sendToCandidate.onclick = sendMessageToBroadCast;
 sendToPanel.onclick = SendMessageToPanel;
 refreshCamera.onclick = function () {
-  new Set(), _readOnlyError("renderedPeerIDs");
+  renderedPeerIDs = new Set();
   renderPeers(hmsStore.getState(_hmsVideoStore.selectPeers));
 };
 //muteVideoBtn.onclick = handlePresenterVideo;
@@ -42091,4 +42090,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.a523b74d.js.map
+//# sourceMappingURL=/interviewpanel.9bb88876.js.map
