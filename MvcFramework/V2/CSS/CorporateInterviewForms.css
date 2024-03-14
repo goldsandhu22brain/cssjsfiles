@@ -181,8 +181,26 @@ dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
         width: 85%;
         margin-left: 45px !important;
     }
-}   
+}
 
+.test {
+    margin-top: 10px !important;
+}
+
+.button-box-wrapper {
+    float: left;
+}
+
+.login-btn.btn.submit {
+    margin-left: 10px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .modal-dialog.modal-dialog {
+        max-width: 100%;
+        width: 95%;
+    }
+}
 
 
 
