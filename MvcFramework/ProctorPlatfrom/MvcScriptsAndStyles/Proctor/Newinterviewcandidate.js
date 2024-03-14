@@ -41887,7 +41887,7 @@ function renderPeer(peer) {
         (0, _common.CaptureUserPhoto)("undefined", def);
       };
     }
-  }, (0, _hmsVideoStore.selectVideoTrackByPeerID)(peer.id));
+  }, (0, _hmsVideoStore.selectVideoTrackByID)(peer.videoTrack));
   peerTileDiv.append(videoElement);
   peerTileDiv.append(nonVideoElement);
   peerTileDiv.append(peerTileName);
@@ -42409,7 +42409,7 @@ refreshvideo.onclick = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator
     while (1) switch (_context.prev = _context.next) {
       case 0:
         renderedPeerIDs = new Set();
-        renderPeers(hmsStore.getState(_hmsVideoStore.selectPeers));
+        hmsStore.subscribe(renderPeers, _hmsVideoStore.selectPeers);
       case 2:
       case "end":
         return _context.stop();
@@ -42462,4 +42462,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.09d0c928.js.map
+//# sourceMappingURL=/Newinterviewcandidate.82dc66e4.js.map
