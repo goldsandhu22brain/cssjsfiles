@@ -191,9 +191,7 @@ dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
     float: left;
 }
 
-.login-btn.btn.submit {
-    margin-left: 10px !important;
-}
+
 
 @media screen and (max-width: 768px) {
     .modal-dialog.modal-dialog {
