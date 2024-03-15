@@ -41022,6 +41022,7 @@ window.ToastMessage = _common.ToastMessage;
 var scopeData;
 var docElement = document.documentElement;
 var timerExamInterval = null;
+var triggerTimeOut = null;
 var PanelRoleButtons = {
   "load-test": false,
   "load-mcq-test": false,
@@ -41912,7 +41913,21 @@ function renderPeers(peerList) {
       render.deferred && render.deferred(_common.CameraCaptureCallBack); //trigger callback
 
       var photoMilliSeconds = PhotoCaptureTimer * 1000;
-      var triggerTimeOut = setInterval(function () {
+      if (triggerTimeOut != null) {
+        clearInterval(triggerTimeOut);
+        triggerTimeOut = null;
+        window.stopRecordingForce = {
+          camera: false,
+          screen: false,
+          photo: false
+        };
+        window.CompletedRecording = isProctorLive == true || isProctor == true ? {
+          camera: false,
+          screen: false,
+          photo: false
+        } : null;
+      }
+      triggerTimeOut = setInterval(function () {
         var stopRecordingForce = window.stopRecordingForce;
         if (stopRecordingForce != null && stopRecordingForce.photo == false) {
           render.deferred && render.deferred();
@@ -42462,4 +42477,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.82dc66e4.js.map
+//# sourceMappingURL=/Newinterviewcandidate.77652eee.js.map
