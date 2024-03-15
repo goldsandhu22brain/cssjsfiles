@@ -42286,6 +42286,7 @@ function AfterSubmitTest(response) {
         (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
         show(presenterController);
         NextScreenShare(false);
+        refreshvideo.click();
       }
     } catch (e) {}
   };
@@ -42477,4 +42478,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.77652eee.js.map
+//# sourceMappingURL=/Newinterviewcandidate.c0a7d65d.js.map
