@@ -41888,7 +41888,7 @@ function renderPeer(peer) {
         (0, _common.CaptureUserPhoto)("undefined", def);
       };
     }
-  }, (0, _hmsVideoStore.selectVideoTrackByID)(peer.videoTrack));
+  }, (0, _hmsVideoStore.selectVideoTrackByPeerID)(peer.id));
   peerTileDiv.append(videoElement);
   peerTileDiv.append(nonVideoElement);
   peerTileDiv.append(peerTileName);
@@ -42484,4 +42484,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.2ac4b805.js.map
+//# sourceMappingURL=/Newinterviewcandidate.b0bff20f.js.map
