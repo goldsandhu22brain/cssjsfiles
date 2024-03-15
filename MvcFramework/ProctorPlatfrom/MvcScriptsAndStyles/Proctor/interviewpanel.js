@@ -41195,7 +41195,7 @@ function _JoinRoom() {
                               } else if (InterviewTestType == "200") {
                                 UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);show(enableStartCodingbutton);hide(enableStartbutton);");
                               } else {
-                                UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);hide(enableStartbutton);");
+                                UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);show(enableStartbutton);");
                               }
                               IsPanelReJoining();
                               panelIntervalCall = null;
@@ -42090,4 +42090,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.9bb88876.js.map
+//# sourceMappingURL=/interviewpanel.5145959a.js.map

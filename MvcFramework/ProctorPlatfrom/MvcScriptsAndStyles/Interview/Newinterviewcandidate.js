@@ -42245,6 +42245,12 @@ function IsPresentInRoom(Obj) {
       hide(startMcqTestButton);
       show(startCodingTestButton);
       return true;
+    } else {
+      //HR & Panel Only
+      (0, _jquery.default)('#startbtn-admin-wait').removeClass('hide');
+      hide(startTestButton);
+      hide(startMcqTestButton);
+      hide(startCodingTestButton);
     }
   }
   return false;
@@ -42478,4 +42484,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.c0a7d65d.js.map
+//# sourceMappingURL=/Newinterviewcandidate.2ac4b805.js.map
