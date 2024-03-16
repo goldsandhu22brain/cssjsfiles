@@ -2585,4 +2585,9 @@ p {
     visibility: visible;
 }
 
+/**Interview step8 panel content**/
+.admin-content-position {
+    margin-top: 165px;
+    margin-left: 173px;
+}
 /*# sourceMappingURL=/common.5fea758b.css.map */
