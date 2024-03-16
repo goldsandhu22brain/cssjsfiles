@@ -42317,10 +42317,9 @@ function AfterSubmitTest(response) {
         (0, _jquery.default)('#new-inject-test').html("");
         (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
         show(presenterController);
+        NextScreenShare(false);
         refreshvideo.click();
         LoadDefaultButtoninPanel(!(GlobalObj.IsMCQ || GlobalObj.IsCoding), GlobalObj.IsMCQ, GlobalObj.IsCoding);
-        NextScreenShare(false);
-       
       }
     } catch (e) {}
   };
