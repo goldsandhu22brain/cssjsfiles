@@ -41060,6 +41060,10 @@ function NotificationCallBack(Notify) {
           (0, _jquery.default)(".interview-alert-btn").addClass("glow");
           peerLatestMetadata["UserAlertActivity"] = false;
         }
+        if (peerLatestMetadata["DefaultButton"] == true) {
+          DisplayUpdatePanelRoleButton();
+          peerLatestMetadata["DefaultButton"] = false;
+        }
         peerLatestMetadata = TriggerCustomEventsCall(peerLatestMetadata);
       }
       break;
@@ -42090,4 +42094,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.5145959a.js.map
+//# sourceMappingURL=/interviewpanel.adfed773.js.map
