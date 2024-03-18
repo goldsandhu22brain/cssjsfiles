@@ -41054,9 +41054,9 @@ function NotificationCallBack(Notify) {
       break;
     case _hmsVideoStore.HMSNotificationTypes.METADATA_UPDATED:
       var peer = dataProp;
-      var _PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer.id));
+      var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(peer.id));
       var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
-      var localLatestMetadata = _PeerMetdataData[localPeerId];
+      var localLatestMetadata = PeerMetdataData[localPeerId];
       var canUpdatePanel = false;
       if (localLatestMetadata) {
         localLatestMetadata["PanelRoleButtons"] = null;
@@ -41758,6 +41758,7 @@ function LoadDefaultButtoninPanel() {
   var mcq = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   var coding = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
+  var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
   var localLatestMetadata = PeerMetdataData[localPeerId];
   var _PanelRoleButtons = {
     "load-test": test,
@@ -42511,4 +42512,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.1c717eb4.js.map
+//# sourceMappingURL=/Newinterviewcandidate.2d44e16f.js.map
