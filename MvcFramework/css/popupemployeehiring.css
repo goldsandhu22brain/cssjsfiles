@@ -18,9 +18,8 @@
 	display: block !important;
 }
 
-.s-tabmain p {
-	font-size: 16px !important;
-	color:white;
+.h1, h1 {
+	line-height: inherit;
 }
 
 .s-tabmain h3,
@@ -28,18 +27,33 @@
 	font-size: 24px;
 }
 
-.s-tabmain h1,
-.s-tabmain .h1,
-.s-tabmain h2,
-.s-tabmain .h2,
+.s-tabmain p {
+	color: #fff !important;
+	font-size: 16px !important;
+}
+
+.s-tabmain h1, .s-tabmain .h1, .s-tabmain h2, .s-tabmain .h2,
 .s-tabmain h3,
 .s-tabmain .h3 {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
+.nav {
+	padding-bottom: 5px;
+}
+
+.s-tabmain .nav-tabs > li.active > a,
+.s-tabmain .nav-tabs > li.active > a:hover,
+.s-tabmain .nav-tabs > li.active > a:focus {
+	border-radius: 10px 10px 0 0;
+}
+
 @media (min-width: 992px) {
 	.col-md-offset-1 {
 		margin-left: 8.33333333%;
 	}
+}
+.nav nav-tabs tab{
+	gap:15px;
 }
