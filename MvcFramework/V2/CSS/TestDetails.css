@@ -6,4 +6,7 @@
 .cbox .cboxfoot {
     margin-left: -14px !important;
 }
+body#pgBody {
+    padding-right: 0px !important;
+}
 
