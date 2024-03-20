@@ -1,0 +1,44 @@
+﻿.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-menu-right:before {
+	content: ">";
+}
+
+.tab-content {
+	display: block !important;
+}
+
+.s-tabmain p {
+	font-size: 16px !important;
+}
+
+.s-tabmain h3,
+.s-tabmain .h3 {
+	font-size: 24px;
+}
+
+.s-tabmain h1,
+.s-tabmain .h1,
+.s-tabmain h2,
+.s-tabmain .h2,
+.s-tabmain h3,
+.s-tabmain .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+	.col-md-offset-1 {
+		margin-left: 8.33333333%;
+	}
+}
