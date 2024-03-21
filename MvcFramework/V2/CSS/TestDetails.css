@@ -1,9 +1,12 @@
 .position-courses {
-    margin-right: 4px !important;
+    margin-right: -10px !important;
     float: right !important;
     margin-top: -20px !important;
 }
 .cbox .cboxfoot {
     margin-left: -14px !important;
+}
+body#pgBody {
+    padding-right: 0px !important;
 }
 

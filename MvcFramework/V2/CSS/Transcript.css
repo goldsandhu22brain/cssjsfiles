@@ -20741,3 +20741,6 @@ p > b {
 .no-slider-item .item p {
 	font-size: 16px;
 }
+#st-2 .st-btn[data-network='googlebookmarks'] {
+	display: none !important;
+}
