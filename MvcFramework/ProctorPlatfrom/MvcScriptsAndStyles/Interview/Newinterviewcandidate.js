@@ -41759,7 +41759,6 @@ function LoadDefaultButtoninPanel() {
   var coding = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
   var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
-  var localLatestMetadata = PeerMetdataData[localPeerId];
   var _PanelRoleButtons = {
     "load-test": test,
     "load-mcq-test": mcq,
@@ -41771,11 +41770,16 @@ function LoadDefaultButtoninPanel() {
     "leave-btn": true,
     "end-room-button": true
   };
-  if (localLatestMetadata) {
-    localLatestMetadata["DefaultButton"] = true;
-    localLatestMetadata["PanelRoleButtons"] = _PanelRoleButtons;
-    hmsActions.changeMetadata(localLatestMetadata);
-  }
+  var newLocalMetadata = _objectSpread(_objectSpread({}, PeerMetdataData), {}, {
+    DefaultButton: true,
+    PanelRoleButtons: _PanelRoleButtons
+  });
+  var obj = {};
+  obj[localPeerId] = newLocalMetadata;
+  hmsActions.changeMetadata(obj);
+  var oldLocalMetadata = _objectSpread({}, PeerMetdataData);
+  // update the old Metadata
+  hmsActions.changeMetadata(oldLocalMetadata);
 }
 
 // Joining the room
@@ -42512,4 +42516,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.2d44e16f.js.map
+//# sourceMappingURL=/Newinterviewcandidate.7ed3ba34.js.map
