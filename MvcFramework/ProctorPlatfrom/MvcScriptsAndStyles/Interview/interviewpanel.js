@@ -41061,7 +41061,7 @@ function NotificationCallBack(Notify) {
           peerLatestMetadata["UserAlertActivity"] = false;
         }
         if (peerLatestMetadata["DefaultButton"] == true) {
-          DisplayUpdatePanelRoleButton();
+          DisplayUpdatePanelRoleButton(true);
           peerLatestMetadata["DefaultButton"] = false;
         }
         peerLatestMetadata = TriggerCustomEventsCall(peerLatestMetadata);
@@ -41810,6 +41810,7 @@ function IsPanelReJoining() {
   }
 }
 function DisplayUpdatePanelRoleButton() {
+  var withPeerId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
   var presenter = GetCandidatePeerDetails();
   if (!presenter) {
     (0, _common.ToastMessage)(candShareMessage, true);
@@ -41818,8 +41819,14 @@ function DisplayUpdatePanelRoleButton() {
   var presenterId = presenter === null || presenter === void 0 ? void 0 : presenter.id;
   if (presenterId) {
     var presenter_metadata = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(presenterId));
+    var panelButtons = null;
     var newPresenterMetadata = _objectSpread({}, presenter_metadata);
-    var panelButtons = newPresenterMetadata["PanelRoleButtons"];
+    if (withPeerId == false) {
+      panelButtons = newPresenterMetadata["PanelRoleButtons"];
+    } else {
+      newPresenterMetadata = newPresenterMetadata[presenterId];
+      panelButtons = newPresenterMetadata["PanelRoleButtons"];
+    }
     if (panelButtons != null) {
       var panelBtnKeys = Object.keys(panelButtons);
       for (var index = 0; index < panelBtnKeys.length; index++) {
@@ -42094,4 +42101,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.adfed773.js.map
+//# sourceMappingURL=/interviewpanel.b7c7514b.js.map
