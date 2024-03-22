@@ -91,3 +91,19 @@ body.stretched.side-push-panel.device-lg {
         margin: 10px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .RelatedCourseSectionViewAll {
+        font-size: 16px;
+    }
+
+    .test-section-page .TakeTestSectionQuestionNumbers {
+        justify-content: flex-start;
+        overflow: scroll;
+    }
+
+        .test-section-page .TakeTestSectionQuestionNumbers span {
+            min-width: 36px;
+        }
+}
+
