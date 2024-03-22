@@ -4564,3 +4564,18 @@ p.Cenroll span {
 .cbox .cboxfoot {
     margin-left: 0px !important;
 }
+@media screen and (max-width: 767px) {
+    .RelatedCourseSectionViewAll {
+        font-size: 18px;
+        padding: 20px 0;
+    }
+
+    .RelatedCourseSection {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .price-box-home {
+        margin: 10px;
+    }
+}
