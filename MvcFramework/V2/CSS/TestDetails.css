@@ -25,3 +25,7 @@ body#pgBody {
         margin: 10px;
     }
 }
+.Cenroll ~ .col-md-12 {
+    padding-left: 0px !important;
+}
+
