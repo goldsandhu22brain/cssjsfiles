@@ -105,5 +105,9 @@ body.stretched.side-push-panel.device-lg {
         .test-section-page .TakeTestSectionQuestionNumbers span {
             min-width: 36px;
         }
+
+    .test-section-page .TakeTestSectionQuestionBody .TakeTestSectionQuestionRadioButtonOption {
+        word-wrap: break-word;
+    }
 }
 
