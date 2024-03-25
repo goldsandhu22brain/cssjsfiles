@@ -42021,6 +42021,7 @@ function _InitialLoad() {
       while (1) switch (_context10.prev = _context10.next) {
         case 0:
           url = getInterviewUrl() + "/InitialLoad";
+          (0, _jquery.default)('#proof-check').text((0, _jquery.default)('#proof-check').data("loading-text"));
           _jquery.default.ajax({
             url: url,
             type: 'GET',
