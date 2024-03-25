@@ -299,3 +299,11 @@ header .navbar-toggler:focus{
 	    content: url(https://mediacdn.brainmeasures.com/images/Pages/Global/icons/dropdown-toggle-active.png);
 }
 /*--------------------------------------*/
+header .navbar-brand .logo {
+	height: auto;
+	max-width: 194px;
+}
+
+nav {
+	padding: 20px 0;
+}
