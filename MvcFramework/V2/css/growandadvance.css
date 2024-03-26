@@ -1,0 +1,94 @@
+.white75 {
+	background: #ffeb3b;
+	padding: 50px 0px 75px 0px;
+}
+
+h2.rotateTitle {
+	font-family: AileronSemiBold, 'Open-Sans';
+	color: #000000;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+	h2.rotateTitle span {
+		font-family: AileronThin, 'Open-Sans';
+		color: #000000;
+	}
+
+.tabmain {
+	padding: 5% 0;
+}
+
+.nav-tabs > li.active > a {
+	padding: 15px 25px !important;
+	color: #fff !important;
+	background-color: #2d2d2d !important;
+	border: 0px !important;
+	border-radius: 10px 10px 0px 0px !important;
+	font-size: 16px;
+}
+
+.nav-tabs > li > a {
+	padding: 14px 20px !important;
+	color: #000000 !important;
+	background-color: #ffeb3b !important;
+	border: none !important;
+	border-radius: 0 !important;
+	font-size: 16px;
+}
+
+.tabwrap {
+	margin: 1%;
+	padding: 2%;
+}
+
+	.tabwrap h3 {
+		margin-top: 10px;
+		text-align: left;
+		font-family: AileronSemiBold, Arial;
+		color: #000000;
+	}
+
+	.tabwrap p {
+		margin-top: 20px;
+		text-align: left;
+		font-size: 16px;
+		text-align: justify;
+		font-family: AileronRegular;
+	}
+
+	.tabwrap img {
+		width: 100%;
+		border-radius: 15px 0 15px 0;
+		border: 2px solid #DCDCDC;
+	}
+
+.how2, .how3 p {
+	padding-top: 5px;
+	font-family: AileronThin;
+	font-size: 24px;
+	color: #000000;
+	text-align: left;
+	letter-spacing: 1px;
+}
+
+
+.how3 h2 {
+	margin-top: 0px;
+	text-align: left;
+}
+
+.how3 ul {
+	margin-top: 0px;
+	font-family: AileronThin;
+	font-size: 24px;
+	color: #000000;
+	text-align: left;
+	letter-spacing: 1px;
+}
+
+.container {
+	width: 1280px !important;
+}
+
+/* tabs End */
