@@ -4579,3 +4579,6 @@ p.Cenroll span {
         margin: 10px;
     }
 }
+body {
+    padding-right: 0px !important;
+}
