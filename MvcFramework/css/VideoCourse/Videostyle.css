@@ -304,3 +304,18 @@ div.ftl-vertical-tab div.ftl-vertical-tab-content:not(.active){
 }
 	
 }
+
+
+/*******/
+.VideoTilePopUp {
+	display: ruby !important;
+}
+
+.VideoTilePopUpAddToCart {
+	margin-bottom: 20px !important;
+}
+
+.VideoTilePopUpDetails {
+	margin-bottom: 20px !important;
+}
+/*****/
