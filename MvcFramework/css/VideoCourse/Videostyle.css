@@ -318,4 +318,8 @@ div.ftl-vertical-tab div.ftl-vertical-tab-content:not(.active){
 .VideoTilePopUpDetails {
 	margin-bottom: 20px !important;
 }
+.listing-page-content .pagination .pagination-button {
+	height:60px !important;
+	width:60px !important;
+}
 /*****/
