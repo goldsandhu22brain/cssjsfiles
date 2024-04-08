@@ -4562,7 +4562,7 @@ p.Cenroll span {
     padding: 15px !important;
 }
 .cbox .cboxfoot {
-    margin-left: 0px !important;
+    margin-left: -14px !important;
 }
 @media screen and (max-width: 767px) {
     .RelatedCourseSectionViewAll {
