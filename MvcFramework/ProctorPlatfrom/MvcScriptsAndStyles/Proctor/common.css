@@ -2590,4 +2590,9 @@ p {
     margin-top: 165px;
     margin-left: 173px;
 }
+
+/** setting icon **/
+.device-selector {
+    margin-top: 65px !important;
+}
 /*# sourceMappingURL=/common.5fea758b.css.map */
