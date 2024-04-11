@@ -2598,4 +2598,13 @@ p {
 .facog-fs {
     font-size: 50px;
 }
+
+/**settingpopup admin and panel **/
+.settingpop-admin {
+    margin-left: 22rem !important;
+}
+
+.setting-center {
+    color: black;
+}
 /*# sourceMappingURL=/common.5fea758b.css.map */
