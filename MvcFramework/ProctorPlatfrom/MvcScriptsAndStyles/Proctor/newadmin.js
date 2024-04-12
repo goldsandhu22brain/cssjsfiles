@@ -41205,7 +41205,7 @@ function _JoinRoom() {
                               rooms = _context4.sent;
                               (0, _common.ToastMessage)(userName + " Joined");
                               IsAdminReJoining();
-                              document.getElementById("opensetting").onclick();
+                              document.getElementById("opensetting").click();
                             case 6:
                             case "end":
                               return _context4.stop();
@@ -41467,7 +41467,7 @@ function renderPeers() {
   var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
   peers.forEach(function (peer) {
     if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack && !(peer !== null && peer !== void 0 && peer.isLocal)) {
-      document.getElementById("openvideo").onclick();
+      document.getElementById("openvideo").click();
       (0, _jquery.default)(peersContainer).empty();
       peersContainer.append(renderPeer(peer));
     } else {
@@ -42056,4 +42056,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.b0ec7cd6.js.map
+//# sourceMappingURL=/newadmin.c25e867b.js.map

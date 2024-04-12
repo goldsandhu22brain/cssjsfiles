@@ -41049,12 +41049,12 @@ function NotificationCallBack(Notify) {
   switch (Notify.type) {
     case _hmsVideoStore.HMSNotificationTypes.PEER_JOINED:
       if (dataProp.roleName == candidateRole) {
-        document.getElementById("openvideo").onclick();
+        document.getElementById("openvideo").click();
       }
       break;
     case _hmsVideoStore.HMSNotificationTypes.PEER_LEFT:
       if (dataProp.roleName == candidateRole) {
-        document.getElementById("closevideo").onclick();
+        document.getElementById("closevideo").click();
       }
       break;
     case _hmsVideoStore.HMSNotificationTypes.METADATA_UPDATED:
@@ -41353,7 +41353,7 @@ function _JoinRoom() {
 
                               panelIntervalCall();
                               show(customView);
-                              document.getElementById("opensetting").onclick();
+                              document.getElementById("opensetting").click();
                             case 16:
                             case "end":
                               return _context4.stop();
@@ -41614,7 +41614,7 @@ function renderPeers(peerList) {
   });
   peers.forEach(function (peer) {
     if (!renderedPeerIDs.has(peer.id) && peer !== null && peer !== void 0 && peer.videoTrack) {
-      document.getElementById("openvideo").onclick();
+      document.getElementById("openvideo").click();
       (0, _jquery.default)(peersContainer).empty();
       peersContainer.append(renderPeer(peer));
     } else {
@@ -42213,4 +42213,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.f50e5f9a.js.map
+//# sourceMappingURL=/interviewpanel.2b740bce.js.map

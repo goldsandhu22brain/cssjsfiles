@@ -41766,7 +41766,7 @@ function _JoinRoom() {
                                 change_tab("authentication");
                               }
                               show(customView);
-                              document.getElementById("opensetting").onclick();
+                              document.getElementById("opensetting").click();
                             case 6:
                             case "end":
                               return _context13.stop();
@@ -42451,4 +42451,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.cd3c6155.js.map
+//# sourceMappingURL=/Newcandidate.784f8e4b.js.map
