@@ -41037,13 +41037,6 @@ hmsManager.triggerOnSubscribe();
 var hmsStore = hmsManager.getStore();
 var hmsActions = hmsManager.getActions();
 var hmsNotifications = hmsManager.getNotifications();
-
-// {audioInput, audioOutput, videoInput}
-var devices = hmsStore.getState(_hmsVideoStore.selectDevices);
-console.log(devices);
-// {audioInputDeviceId, audioOutputDeviceId, videoInputDeviceId}
-var selected = hmsStore.getState(_hmsVideoStore.selectLocalMediaSettings);
-console.log(selected);
 window.ToastMessage = _common.ToastMessage;
 var scopeData;
 var ProofAdminPeerId = "";
@@ -41061,17 +41054,6 @@ var PanelRoleButtons = {
   "leave-btn": true,
   "end-room-button": true
 };
-
-// show user a settings component to manually choose device
-// The following selected devices can be obtained when changed from your UI.
-
-// Update AudioInput device by calling
-//hmsActions.setAudioSettings({ deviceId: selectedAudioDeviceID });
-//// Update VideoInput device by calling
-//hmsActions.setVideoSettings({ deviceId: selecedVideoDeviceID });
-//// Update AudioOutput device by calling
-//hmsActions.setAudioOutputDevice(selectedAudioOutputDeviceID);
-
 function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
@@ -41784,7 +41766,8 @@ function _JoinRoom() {
                                 change_tab("authentication");
                               }
                               show(customView);
-                            case 5:
+                              document.getElementById("opensetting").onclick();
+                            case 6:
                             case "end":
                               return _context13.stop();
                           }
@@ -42468,4 +42451,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.48f5d5b4.js.map
+//# sourceMappingURL=/Newcandidate.cd3c6155.js.map

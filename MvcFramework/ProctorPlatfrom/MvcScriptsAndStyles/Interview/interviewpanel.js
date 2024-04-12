@@ -41353,7 +41353,8 @@ function _JoinRoom() {
 
                               panelIntervalCall();
                               show(customView);
-                            case 15:
+                              document.getElementById("opensetting").onclick();
+                            case 16:
                             case "end":
                               return _context4.stop();
                           }
@@ -42212,4 +42213,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.6ed922bf.js.map
+//# sourceMappingURL=/interviewpanel.f50e5f9a.js.map

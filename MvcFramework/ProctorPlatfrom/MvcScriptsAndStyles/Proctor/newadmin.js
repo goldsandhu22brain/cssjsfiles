@@ -41205,7 +41205,8 @@ function _JoinRoom() {
                               rooms = _context4.sent;
                               (0, _common.ToastMessage)(userName + " Joined");
                               IsAdminReJoining();
-                            case 5:
+                              document.getElementById("opensetting").onclick();
+                            case 6:
                             case "end":
                               return _context4.stop();
                           }
@@ -42055,4 +42056,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.bea13c07.js.map
+//# sourceMappingURL=/newadmin.b0ec7cd6.js.map
