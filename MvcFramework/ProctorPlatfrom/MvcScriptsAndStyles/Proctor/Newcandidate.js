@@ -42244,12 +42244,7 @@ function UploadProof() {
 }
 function DeviceSelectorComponent() {
   var devices = hmsStore.getState(_hmsVideoStore.selectDevices);
-  // Update AudioInput device by calling
-  //hmsActions.setAudioSettings({ deviceId: selectedAudioDeviceID });
-  //// Update VideoInput device by calling
-  //hmsActions.setVideoSettings({ deviceId: selecedVideoDeviceID });
-  //// Update AudioOutput device by calling
-  //hmsActions.setAudioOutputDevice(selectedAudioOutputDeviceID);
+  var selected = hmsStore.getState(_hmsVideoStore.selectLocalMediaSettings);
   var cameraCallBack = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
       var val;
@@ -42311,13 +42306,13 @@ function DeviceSelectorComponent() {
       return _ref3.apply(this, arguments);
     };
   }();
-  BuildDeviceSelector("device-camera", "Camera", devices.videoInput, cameraCallBack);
-  BuildDeviceSelector("device-microphone", "Microphone", devices.audioInput, micCallBack);
-  BuildDeviceSelector("device-speaker", "Speaker", devices.audioOutput, speakerCallBack);
+  BuildDeviceSelector("device-camera", "Camera", devices.videoInput, selected.videoInputDeviceId, cameraCallBack);
+  BuildDeviceSelector("device-microphone", "Audio", devices.audioInput, selected.audioInputDeviceId, micCallBack);
+  BuildDeviceSelector("device-speaker", "Speaker", devices.audioOutput, selected.audioOutputDeviceId, speakerCallBack);
 }
 window.DeviceSelector = DeviceSelectorComponent;
-function BuildDeviceSelector(parentDiv, title, optionsList) {
-  var ChangeEvent = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+function BuildDeviceSelector(parentDiv, title, optionsList, value) {
+  var ChangeEvent = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
   ChangeEvent = ChangeEvent == null ? function (e) {
     console.log(parentDiv);
   } : ChangeEvent;
@@ -42330,6 +42325,9 @@ function BuildDeviceSelector(parentDiv, title, optionsList) {
     });
     var select = "<select id='device_selector_" + title + "' class='documentTypeClass form-select fs-15p c-select'>" + options + "</select>";
     (0, _jquery.default)("#" + parentDiv).html(span + select);
+    if (value != null && value != '') {
+      (0, _jquery.default)("#device_selector_" + title).val(value);
+    }
     (0, _jquery.default)("#device_selector_" + title).change(ChangeEvent);
   }
 }
@@ -42451,4 +42449,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.784f8e4b.js.map
+//# sourceMappingURL=/Newcandidate.dea0e6de.js.map
