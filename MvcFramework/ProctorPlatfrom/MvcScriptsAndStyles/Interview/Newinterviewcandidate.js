@@ -41790,7 +41790,8 @@ function _startRecording() {
             type: 'GET',
             dataType: 'json',
             data: {
-              redemptionId: scopeData.RedemptionId
+              redemptionId: scopeData.RedemptionId,
+              roundId: scopeData.TestRoundId
             },
             crossDomain: true,
             cache: false,
@@ -42625,4 +42626,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.a11f05c0.js.map
+//# sourceMappingURL=/Newinterviewcandidate.b998d16a.js.map
