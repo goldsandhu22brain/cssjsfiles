@@ -111,3 +111,10 @@ body.stretched.side-push-panel.device-lg {
     }
 }
 
+.glyphicon-star.half:before {
+    content: "\e006";
+    display: inline-block;
+    width: 8.5px; 
+    overflow: hidden;
+}
+
