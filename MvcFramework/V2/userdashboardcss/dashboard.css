@@ -59,6 +59,12 @@ footerchanges footer-brand-a  {
         content: none;
     }
 }
-   
-   
+
+.badge {
+    margin-top: 8px !important;
+}
+
+.box-widget {
+    margin-top: 30px !important;
+}
 
