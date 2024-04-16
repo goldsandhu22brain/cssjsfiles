@@ -117,4 +117,6 @@ body.stretched.side-push-panel.device-lg {
     width: 8.5px; 
     overflow: hidden;
 }
-
+.glyphicon {
+    margin-right: 5px;
+}
