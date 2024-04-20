@@ -41918,10 +41918,14 @@ function _renderPeers() {
   return _renderPeers.apply(this, arguments);
 }
 function hide(el) {
-  el.style.display = "none";
+  if (el != null) {
+    el.style.display = "none";
+  }
 }
 function show(el) {
-  el.style.display = "";
+  if (el != null) {
+    el.style.display = "";
+  }
 }
 function handleLeave() {
   var callBack = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
@@ -42449,4 +42453,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.dea0e6de.js.map
+//# sourceMappingURL=/Newcandidate.fafdb876.js.map

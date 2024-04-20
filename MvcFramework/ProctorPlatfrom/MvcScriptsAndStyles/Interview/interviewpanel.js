@@ -41621,10 +41621,14 @@ function renderPeers(peerList) {
   });
 }
 function hide(el) {
-  el.style.display = "none";
+  if (el != null) {
+    el.style.display = "none";
+  }
 }
 function show(el) {
-  el.style.display = "";
+  if (el != null) {
+    el.style.display = "";
+  }
 }
 function handleLeave() {
   CandidateTest("PanelLeaveRoom", false, "PanelLeaveRoom", true);
@@ -42211,4 +42215,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.687e05c5.js.map
+//# sourceMappingURL=/interviewpanel.c1a809f1.js.map

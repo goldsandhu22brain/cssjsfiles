@@ -41474,10 +41474,14 @@ function renderPeers() {
   });
 }
 function hide(el) {
-  el.style.display = "none";
+  if (el != null) {
+    el.style.display = "none";
+  }
 }
 function show(el) {
-  el.style.display = "";
+  if (el != null) {
+    el.style.display = "";
+  }
 }
 function handleLeave() {
   CandidateTest("AdminLeaveRoom", false, "AdminLeaveRoom", true);
@@ -42054,4 +42058,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.e356fc19.js.map
+//# sourceMappingURL=/newadmin.e3a0a16b.js.map
