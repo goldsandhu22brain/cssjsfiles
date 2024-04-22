@@ -40498,6 +40498,7 @@ function Events() {
     }
     DeviceSelector(window.DeviceSelector);
     document.getElementById("device-selector").classList.add("show");
+    (0, _jquery.default)(".modal-backdrop").hide();
   }
   function fn_closesetting() {
     document.getElementById("device-selector").classList.remove("show");
@@ -42630,4 +42631,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.f2440da9.js.map
+//# sourceMappingURL=/Newinterviewcandidate.25b784a9.js.map

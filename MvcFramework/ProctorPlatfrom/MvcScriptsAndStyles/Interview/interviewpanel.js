@@ -40498,6 +40498,7 @@ function Events() {
     }
     DeviceSelector(window.DeviceSelector);
     document.getElementById("device-selector").classList.add("show");
+    (0, _jquery.default)(".modal-backdrop").hide();
   }
   function fn_closesetting() {
     document.getElementById("device-selector").classList.remove("show");
@@ -42215,4 +42216,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.c1a809f1.js.map
+//# sourceMappingURL=/interviewpanel.533a2382.js.map
