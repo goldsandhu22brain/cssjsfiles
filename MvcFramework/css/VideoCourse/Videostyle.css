@@ -323,3 +323,13 @@ div.ftl-vertical-tab div.ftl-vertical-tab-content:not(.active){
 	width:60px !important;
 }
 /*****/
+
+@media screen and (max-width: 479px) {
+	header .navbar-nav .btn.btn-default {
+		width: 100% !important;
+	}
+
+	header .navbar .navbar-nav .nav-item {
+		margin-left: 0px;
+	}
+}

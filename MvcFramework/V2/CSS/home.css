@@ -172,4 +172,18 @@ input#txtTranscriptNoNew {
 	}
 }
 
+/*******/
+@media screen and (min-width: 767px) and (max-width: 912px) {
+	.nav-signup-link {
+		width: 25%;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.nav-signup-link {
+		width: 36%;
+		text-align: center;
+	}
+}
 
