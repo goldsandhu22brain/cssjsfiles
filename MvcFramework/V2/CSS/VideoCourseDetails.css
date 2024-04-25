@@ -120,3 +120,15 @@ body.stretched.side-push-panel.device-lg {
 .glyphicon {
     margin-right: 5px;
 }
+
+
+
+@media screen and (max-width: 479px) {
+    #content h4 {
+        width: 95% !important;
+    }
+
+    .postcontent {
+        width: 100%;
+    }
+}
