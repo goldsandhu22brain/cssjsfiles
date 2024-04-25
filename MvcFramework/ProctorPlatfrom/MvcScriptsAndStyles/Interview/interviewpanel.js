@@ -40478,7 +40478,6 @@ function Events() {
   var opensetting = document.getElementById("opensetting");
   var closechat = document.getElementById("closechat");
   var closevideo = document.getElementById("closevideo");
-  var closesetting = document.getElementById("closesetting");
   function fn_openvideo() {
     document.getElementById("video").classList.add("show");
   }
@@ -40500,15 +40499,11 @@ function Events() {
     document.getElementById("device-selector").classList.add("show");
     (0, _jquery.default)(".modal-backdrop").hide();
   }
-  function fn_closesetting() {
-    document.getElementById("device-selector").classList.remove("show");
-  }
   openvideo.onclick = fn_openvideo;
   openchat.onclick = fn_openchat;
   closechat.onclick = fn_closechat;
   closevideo.onclick = fn_closevideo;
   opensetting.onclick = fn_opensetting;
-  closesetting.onclick = fn_closesetting;
 }
 var canDisplayAlert = false;
 function DeviceSelector() {
@@ -40978,7 +40973,7 @@ function ClearConsoleLogs() {
       diff;
     for (check = 0; check < 1000; check++) {
       //	console.log(check);
-      //console.clear();
+      console.clear();
     }
     diff = performance.now() - startTime;
     if (diff > 200 || debuggerCheck) {
@@ -42216,4 +42211,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.533a2382.js.map
+//# sourceMappingURL=/interviewpanel.20940844.js.map
