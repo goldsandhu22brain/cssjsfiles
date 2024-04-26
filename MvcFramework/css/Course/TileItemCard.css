@@ -178,3 +178,6 @@
 .img-heightTileCard {
 	height:148px;
 }
+.cbox .cboxfoot {
+	margin-left: 0px !important;
+}
