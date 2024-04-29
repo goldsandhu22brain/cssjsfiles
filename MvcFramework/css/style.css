@@ -3810,7 +3810,7 @@ i.glyphicon.glyphicon-star.half {
     }
 
     .footer-links li a {
-        color: #fff;
+        color: #ffffffc4;
         opacity: 0.8;
         font-size: 13px;
         padding: 8px 2px;
@@ -3840,11 +3840,10 @@ i.glyphicon.glyphicon-star.half {
     color: #fff;
     opacity: 0.8;
     margin-right: 15px;
+    text-decoration:none;
 }
-
     .footer-brand-a:hover {
-        opacity: 1;
-        color: #fff;
+        color: #ffca00;
     }
 
 .image-max-full {
