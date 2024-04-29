@@ -3877,3 +3877,11 @@ i.glyphicon.glyphicon-star.half {
     opacity: 1;
     color: #ffca00;
 }
+.rounded {
+    border-radius: .25rem !important;
+}
+
+.col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
