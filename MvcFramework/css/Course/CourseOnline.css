@@ -4587,3 +4587,30 @@ body {
     border-radius: 50%;
     min-width: 25px;
 }
+
+@media screen and (max-width: 479px) {
+    .listing-page-content .pagination {
+        width: 100%;
+        overflow-y: hidden;
+        justify-content: normal;
+        scrollbar-width: none;
+    }
+
+        .listing-page-content .pagination .pagination-button.page-num {
+            border-radius: 50%;
+            padding: 25px;
+        }
+
+        .listing-page-content .pagination .pagination-button {
+            height: 60px !important;
+            width: 60px !important;
+        }
+
+            .listing-page-content .pagination .pagination-button:last-child i {
+                line-height: 60px;
+                align-items: center;
+                justify-content: center;
+                vertical-align: middle;
+            }
+}
+
