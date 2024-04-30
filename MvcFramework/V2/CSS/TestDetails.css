@@ -29,3 +29,16 @@ body#pgBody {
     padding-left: 0px !important;
 }
 
+@media screen and (max-width: 479px) {
+    .navbar-toggle {
+        margin-top: 20px;
+    }
+
+    .navbar-brand {
+        height: auto;
+    }
+}
+.scoreboard-forbes {
+    display: flex;
+    gap: 9px;
+}

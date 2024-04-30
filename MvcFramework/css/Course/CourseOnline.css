@@ -4582,3 +4582,8 @@ p.Cenroll span {
 body {
     padding-right: 0px !important;
 }
+
+.pagination .pagination-button.page-num {
+    border-radius: 50%;
+    min-width: 25px;
+}

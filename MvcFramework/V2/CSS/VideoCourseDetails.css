@@ -132,3 +132,50 @@ body.stretched.side-push-panel.device-lg {
         width: 100%;
     }
 }
+
+
+
+@media screen and (min-width: 767px)and (max-width: 990px) {
+    ul.topright.navbar-nav li.nav-item {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .price-box-home {
+        overflow: visible;
+    }
+
+    .cbox .cboxfoot {
+        position: relative;
+        margin-left: 0px !important;
+    }
+
+    ul.dropdownmenu li ul.submenu {
+        left: -100px;
+    }
+
+    #header .container {
+        width: 100% !important;
+    }
+}
+
+
+
+@media screen and (min-width: 767px) and (max-width: 990px) {
+    .action-section-header a {
+        margin: 8px;
+    }
+
+    ul.topright.navbar-nav li.nav-item {
+        display: block;
+    }
+
+    .footerchanges .footer-brand h1 {
+        font-size: 24px !important;
+    }
+
+    .footerchanges .footer-links h3 {
+        word-wrap: break-word;
+    }
+}
