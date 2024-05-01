@@ -41862,6 +41862,7 @@ function LoadDefaultButtoninPanel() {
   var test = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
   var mcq = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   var coding = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var latestRoundId = arguments.length > 3 ? arguments[3] : undefined;
   var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID);
   var PeerMetdataData = hmsStore.getState((0, _hmsVideoStore.selectPeerMetadata)(localPeerId));
   var _PanelRoleButtons = {
@@ -41875,9 +41876,12 @@ function LoadDefaultButtoninPanel() {
     "leave-btn": true,
     "end-room-button": true
   };
+  var roundCheck = latestRoundId != '' && latestRoundId != null ? true : false;
   var newLocalMetadata = _objectSpread(_objectSpread({}, PeerMetdataData), {}, {
     DefaultButton: true,
-    PanelRoleButtons: _PanelRoleButtons
+    PanelRoleButtons: _PanelRoleButtons,
+    UpdateRoundId: roundCheck,
+    NewRoundId: latestRoundId
   });
   var obj = {};
   obj[localPeerId] = newLocalMetadata;
@@ -42432,7 +42436,7 @@ function AfterSubmitTest(response) {
         (0, _jquery.default)('#new-inject-test').html("");
         (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
         show(presenterController);
-        LoadDefaultButtoninPanel(!(GlobalObj.IsMCQ || GlobalObj.IsCoding), GlobalObj.IsMCQ, GlobalObj.IsCoding);
+        LoadDefaultButtoninPanel(!(GlobalObj.IsMCQ || GlobalObj.IsCoding), GlobalObj.IsMCQ, GlobalObj.IsCoding, GlobalObj.TestRoundId);
         refreshvideo.click();
         NextScreenShare(false);
       }
@@ -42626,4 +42630,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.c528a804.js.map
+//# sourceMappingURL=/Newinterviewcandidate.32d667d8.js.map

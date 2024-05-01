@@ -41079,6 +41079,11 @@ function NotificationCallBack(Notify) {
           DisplayUpdatePanelRoleButton(true);
           peerLatestMetadata["DefaultButton"] = false;
         }
+        if (peerLatestMetadata["UpdateRoundId"] == true) {
+          UpdateRoundIdFromCandidate(peerLatestMetadata["NewRoundId"]);
+          peerLatestMetadata["NewRoundId"] = null;
+          peerLatestMetadata["UpdateRoundId"] = false;
+        }
         peerLatestMetadata = TriggerCustomEventsCall(peerLatestMetadata);
       }
       break;
@@ -41918,6 +41923,35 @@ function IsPanelReJoining() {
     setTimeout(DisplayUpdatePanelRoleButton, 2000);
   }
 }
+function UpdateRoundIdFromCandidate(NewRoundId) {
+  if (NewRoundId != null && NewRoundId != '') {
+    var url = getInterviewUrl() + "/UpdateRoundIdFromCandidate";
+    _jquery.default.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'html',
+      data: {
+        RoundId: NewRoundId
+      },
+      crossDomain: true,
+      cache: false,
+      async: true,
+      beforeSend: function beforeSend() {},
+      success: function success(response) {
+        var result = response;
+        if (result) {
+          GlobalObj.TestRoundId = NewRoundId;
+        }
+      },
+      complete: function complete() {
+        (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+      },
+      error: function error(response) {
+        (0, _common.ToastMessage)(response.responseText, false);
+      }
+    });
+  }
+}
 function DisplayUpdatePanelRoleButton() {
   var withPeerId = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
   var presenter = GetCandidatePeerDetails();
@@ -42211,4 +42245,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.20940844.js.map
+//# sourceMappingURL=/interviewpanel.f8fd8d91.js.map
