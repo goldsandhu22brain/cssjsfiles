@@ -3037,7 +3037,7 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #333;
+ /* color: #333;*/
   background-color: #fff;
   border-color: #ccc;
 }
@@ -3055,7 +3055,7 @@ fieldset[disabled] a.btn {
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  /*color: #333;*/
+  color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
@@ -4334,7 +4334,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-nav {
     float: left;
-    margin: 0;
+   
   }
   .navbar-nav > li {
     float: left;
