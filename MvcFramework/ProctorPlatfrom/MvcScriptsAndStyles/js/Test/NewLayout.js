@@ -260,4 +260,5 @@ function DisableMouseRightClick() {
 
 $(window).on('load', function () {
 	$('.proctor-loader').css("visibility", "hidden");
+	$('#load-test').removeClass("hide");
 })
