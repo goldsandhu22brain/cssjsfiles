@@ -675,7 +675,7 @@ header .navbar .navbar-nav .nav-item {
 		margin: 15px 0;
 	}
 
-		.footer-main ul li a {
+		/*.footer-main ul li a {
 			color: #fff;
 			text-decoration: none;
 			border-style: solid;
@@ -683,7 +683,7 @@ header .navbar .navbar-nav .nav-item {
 			border-color: #2C316E;
 			border-radius: 0px 0px 0px 0px;
 			padding: 10px 0;
-		}
+		}*/
 
 	.footer-main ul {
 		list-style: none;
