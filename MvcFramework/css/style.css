@@ -3774,7 +3774,7 @@ i.glyphicon.glyphicon-star.half {
     opacity: 0.7;
     font-weight: 400;
     font-size: 15px;
-    margin-bottom: 26px;
+   /* margin-bottom: 26px;*/
 }
 
 .footer-brand p {
