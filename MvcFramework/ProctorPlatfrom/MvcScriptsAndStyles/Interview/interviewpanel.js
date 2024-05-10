@@ -41340,10 +41340,9 @@ function _JoinRoom() {
                               };
                               panelIntervalCall = function panelIntervalCall() {
                                 panelInterval = setInterval(function () {
-                                  setTimeout(function () {
-                                      CanWaitOrLeave(panelInterval);
+                                  setTimeout(function () {                                    
                                     if (IsCandidateJoined()) {
-                                    
+                                        CanWaitOrLeave(panelInterval);
                                     } else {
                                       clearInterval(panelInterval);
                                     }
