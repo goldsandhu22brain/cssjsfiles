@@ -42102,9 +42102,6 @@ function handleLeave() {
     change_tab('error-message');
     peersContainer.innerHTML = "";
     callBack && callBack();
-    var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-    (0, _jquery.default)(".error-message").html(url);
-    (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
   };
   if (callBack == null) {
     if (GlobalObj.CanRecord) {
@@ -42503,7 +42500,12 @@ function TestSubmitAutomatically() {
     function callRedirect() {
       window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
     }
-    handleLeave();
+    function leaveMessage() {
+      var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
+      (0, _jquery.default)(".error-message").html(url);
+      (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+    }
+    handleLeave(leaveMessage);
     window.setTimeout(callRedirect, 3000);
   }
 }
@@ -42630,4 +42632,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.32d667d8.js.map
+//# sourceMappingURL=/Newinterviewcandidate.afab664d.js.map
