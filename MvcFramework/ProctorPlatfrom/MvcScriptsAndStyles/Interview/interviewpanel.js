@@ -41343,9 +41343,10 @@ function _JoinRoom() {
                                   setTimeout(function () {                                    
                                     if (IsCandidateJoined()) {
                                         CanWaitOrLeave(panelInterval);
-                                    } else {
-                                      clearInterval(panelInterval);
                                     }
+									// else {
+                                      // clearInterval(panelInterval);
+                                    // }
                                   }, 0);
                                 }, 120000); // 2mins  
                               };
