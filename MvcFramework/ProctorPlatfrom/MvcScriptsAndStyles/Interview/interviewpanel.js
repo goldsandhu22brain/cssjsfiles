@@ -42057,9 +42057,9 @@ function FeedBackForm() {
     GlobalObj.FeedBackType.forEach(function (x) {
       options = options + "<option value='" + x.Value + "'>" + x.Text + "</option>";
     });
-    select = "<select id='FeedBackStatus' class='feedBackType form-select fs-15p c-select'>" + options + "</select>";
+      select = "<select id='FeedBackStatus' class='feedBackType mb-15 form-select fs-15p c-select'>" + options + "</select>";
   }
-  (0, _jquery.default)("#Inject-UAA").html(select + "<textarea id='feeback' name='feeback' rows='5' cols='100'></textarea><br><a id='feedbacksubmit' class='btn btn-primary'>submit</a>");
+    (0, _jquery.default)("#Inject-UAA").html(select + "<textarea id='feeback' name='feeback' class='form-control' rows='5' cols='100'></textarea><br><a id='feedbacksubmit' class='btn btn-primary'>submit</a>");
   (0, _jquery.default)("#feeback").val(FeedBackText);
   if (select != "") {
     (0, _jquery.default)("#FeedBackStatus").val(FeedBackStatusValue);
@@ -42069,7 +42069,7 @@ function FeedBackForm() {
   (0, _jquery.default)("#feedbacksubmit").click(FeedbackSubmit);
 }
 function UpdatePopupHeader(updateText) {
-  (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
+    (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;margin-left:277px"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
 }
 function FeedbackSubmit() {
   (0, _jquery.default)("#feedbacksubmit").text("loading...");
