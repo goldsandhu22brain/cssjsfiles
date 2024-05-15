@@ -41130,13 +41130,16 @@ function NotificationCallBack(Notify) {
           PanelRoleButtons["pause-test"] = false;
           PanelRoleButtons["resume-test"] = true;
           PanelRoleButtons["force-end-test"] = true;
-          var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
-          if (peers.filter(function (x) {
-            return x.roleName == "panel";
-          }).length == 0) {
-            pauseTest();
-          }
-          (0, _common.ToastMessage)("Panel Leaved the Room!! Please wait for Panel Memeber to rejoin and enable the test", true);
+          setTimeout(function () {
+            // once panel leaved from panel side and then verify
+            var peers = hmsStore.getState(_hmsVideoStore.selectPeers);
+            if (peers.filter(function (x) {
+              return x.roleName == "panel";
+            }).length == 0) {
+              pauseTest();
+            }
+            (0, _common.ToastMessage)("Panel Leaved the Room!! Please wait for Panel Memeber to rejoin and enable the test", true);
+          }, 3000);
         } else if (localLatestMetadata["PanelLeaveRoom"] == false) {
           canUpdatePanel = true;
           PanelRoleButtons["load-test"] = false;
@@ -42632,4 +42635,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.afab664d.js.map
+//# sourceMappingURL=/Newinterviewcandidate.333d08f8.js.map
