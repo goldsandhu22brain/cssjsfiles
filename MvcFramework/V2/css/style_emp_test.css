@@ -1462,3 +1462,32 @@ p.fix-bottom {
         display: none;
     }
 }
+
+
+.navbar-nav {
+    float: none !important;
+}
+
+.navbar-brand {
+    margin-top: -14px !important;
+}
+
+.container {
+    width: 1280px !important;
+}
+
+.fixed-top {
+    position: fixed !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.footer-links ul {
+    line-height: 2 !important;
+}
+
+.how2 {
+    padding: 100px 0px !important;
+}
