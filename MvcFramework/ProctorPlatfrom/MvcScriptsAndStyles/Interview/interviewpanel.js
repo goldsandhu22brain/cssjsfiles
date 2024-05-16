@@ -42069,7 +42069,7 @@ function FeedBackForm() {
   (0, _jquery.default)("#feedbacksubmit").click(FeedbackSubmit);
 }
 function UpdatePopupHeader(updateText) {
-    (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;margin-left:277px"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
+    (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
 }
 function FeedbackSubmit() {
   (0, _jquery.default)("#feedbacksubmit").text("loading...");
