@@ -11967,7 +11967,7 @@ body:not(.device-touch) .rounded-skill {
         .skills li .progress-percent {
             position: absolute;
             top: -28px;
-            right: 0;
+            right: -11px;
             background-color: #333;
             color: #F9F9F9;
             text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
