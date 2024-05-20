@@ -4556,6 +4556,8 @@ p.Cenroll span {
     text-align: center;
     color: white;
     padding: 10px 32px;
+    font-size: 20px;
+    width: 100%;
 }
 
 .cbox .cboxfoot {
