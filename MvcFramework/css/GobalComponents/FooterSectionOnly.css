@@ -146,7 +146,8 @@
 	}
 
 .footerchanges .image-max-full {
-	max-width: 95% !important;
+	width:108px !important;
+	border-radius:13px;
 }
 
 .footerchanges.rounded {
