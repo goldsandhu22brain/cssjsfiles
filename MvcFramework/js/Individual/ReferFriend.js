@@ -4,10 +4,10 @@
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let namePattern = /^[A-Za-z]+$/;
 
-        for (let i = 1; i <= 10; i++) {
-            let firstName = $(`#fname_${i}`).val();
-            let lastName = $(`#lname_${i}`).val();
-            let email = $(`#email_${i}`).val();
+        for (let i = 0; i <= 10; i++) {
+            let firstName = $(`#ReferrerList_${i}__Name`).val();
+            let lastName = $(`#ReferrerList_${i}__LastName`).val();
+            let email = $(`#ReferrerList_${i}__Email`).val();
 
             if (firstName && !namePattern.test(firstName)) {
                 alert(`First Name ${i} is invalid. Only alphabetic characters are allowed.`);
@@ -43,17 +43,18 @@
             return $(this).val() != "";
         }).length;
         if (count == 0) {
-            alert("Please enter at least one Friend");
-            e.preventDefault();
+            alert("Please enter altleast one Friend");
+
             return false;
         }
 
-        if (!$('input[name="checkBoxName"]').is(':checked')) {
+        if ($('input[name="checkBoxName"]').is(':checked')) {
+            return true
+        } else {
             alert("You have to accept terms and conditions to participate.");
-            e.preventDefault();
+
             return false;
         }
 
-        return true;
     });
 });
