@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    $('input[type="text"], input[type="email"], textarea').val('');
     $("#btnReferFriend").click(function (e) {
         let isValid = true;
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
