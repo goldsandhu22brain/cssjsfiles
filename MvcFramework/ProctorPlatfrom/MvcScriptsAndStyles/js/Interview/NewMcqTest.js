@@ -524,6 +524,7 @@ function SubmitTestAutomatically(callBack = null) {
 		dataType: 'html',
 		cache: false,
 		async: true,
+		data: { testStatus: 450, IsContinue:true },
 		beforeSend: function () {
 			if (window.BeforeSubmitTest != null) {
 				window.BeforeSubmitTest();
