@@ -516,7 +516,8 @@ function SubmitTestAutomatically(callBack = null) {
 		photo: true
 	};
 	window.stopRecordingForce = stopRecordingForce;
-	var url = getInterviewBaseUrl() + "/SubmitTest";
+	var dataJson = GetCurrentSubmitButton();
+	var url = getInterviewBaseUrl() + "/SubmitAnswer";
 	PushTracking(270);
 	$.ajax({
 		url: url,
@@ -524,7 +525,7 @@ function SubmitTestAutomatically(callBack = null) {
 		dataType: 'html',
 		cache: false,
 		async: true,
-		data: { testStatus: 450, IsContinue:true },
+		data: dataJson,
 		beforeSend: function () {
 			if (window.BeforeSubmitTest != null) {
 				window.BeforeSubmitTest();
@@ -678,6 +679,19 @@ function CurrentAnswered(answer) {
 		return false;
 	}
 	return true;
+}
+function GetCurrentSubmitButton() {
+	var input = $(".auto-submit");
+	var currentQuestionId = $(input).attr('data-current-question');
+	var currentQuestionType = $(input).attr('data-current-questionType');
+	var subQuestionType = $(input).attr('data-sub-questionType');
+	var isReview = $(input).attr('data-isreview');
+	var answer = GetAnswer(currentQuestionType, subQuestionType);
+	var QuestionHTML = GetQuestionHTML(currentQuestionType, subQuestionType);
+	var testType = GlobalObj.InterviewTestType;
+	var dataJson = { _testStatus: 450, IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	$.extend(dataJson, QuestionHTML);
+	return dataJson;
 }
 
 function GetAnswerCount(input, isReview, callBack = null) {
