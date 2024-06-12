@@ -41038,6 +41038,7 @@ var scopeData;
 var docElement = document.documentElement;
 var timerExamInterval = null;
 var triggerTimeOut = null;
+var IsAutoSubmit = false;
 var PanelRoleButtons = {
   "load-test": false,
   "load-mcq-test": false,
@@ -42408,38 +42409,39 @@ function AfterSubmitTest(response) {
     var apiResponse;
     try {
       apiResponse = response;
-      if (IsHTML(apiResponse)) {
-        //html           
-        (0, _jquery.default)('.conference.new-interview-conference').empty();
-        hide(customView);
-        (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
-      } else {
-        //json
-        UpdateGlobalVariable(apiResponse); // updating the Global Variable
-        scopeData = GlobalObj;
-        (0, _jquery.default)('#load-test').val("Start MCQ Quiz");
-        (0, _jquery.default)('#load-coding-test').val("Start Coding Quiz");
-        hide(startTestButton);
-        hide(startMcqTestButton);
-        hide(startCodingTestButton);
-        if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-          var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-          (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
-          (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-          change_tab('error-message');
-          RoomLeave();
-          return;
+        if (IsHTML(apiResponse)) {
+            //html           
+            (0, _jquery.default)('.conference.new-interview-conference').empty();
+            hide(customView);
+            (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
+        } else {
+            //json
+            UpdateGlobalVariable(apiResponse); // updating the Global Variable
+            scopeData = GlobalObj;
+            (0, _jquery.default)('#load-test').val("Start MCQ Quiz");
+            (0, _jquery.default)('#load-coding-test').val("Start Coding Quiz");
+            hide(startTestButton);
+            hide(startMcqTestButton);
+            hide(startCodingTestButton);
+            if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
+                var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
+                (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
+                (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+                change_tab('error-message');
+                RoomLeave();
+                return;
+            }
+            totalMcqTime = GlobalObj.SlotDuration;
+            maxMcqTime = GlobalObj.SlotDuration;
+            (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+            (0, _jquery.default)('#new-inject-test').html("");
+            (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
+            show(presenterController);
+            LoadDefaultButtoninPanel(!(GlobalObj.IsMCQ || GlobalObj.IsCoding), GlobalObj.IsMCQ, GlobalObj.IsCoding, GlobalObj.TestRoundId);
+            refreshvideo.click();
+            NextScreenShare(false);
+            IsAutoSubmit = false;
         }
-        totalMcqTime = GlobalObj.SlotDuration;
-        maxMcqTime = GlobalObj.SlotDuration;
-        (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-        (0, _jquery.default)('#new-inject-test').html("");
-        (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
-        show(presenterController);
-        LoadDefaultButtoninPanel(!(GlobalObj.IsMCQ || GlobalObj.IsCoding), GlobalObj.IsMCQ, GlobalObj.IsCoding, GlobalObj.TestRoundId);
-        refreshvideo.click();
-        NextScreenShare(false);
-      }
     } catch (e) {}
   };
   handleLeave(callBack);
@@ -42494,22 +42496,25 @@ function InitiatingTimer() {
   }
 }
 function TestSubmitAutomatically() {
-  if (window.SubmitTestAutomatically != null) {
-    window.BeforeSubmitTest = function () {
-      pauseTest();
-    };
-    window.SubmitTestAutomatically(AfterSubmitTest);
-  } else {
-    function callRedirect() {
-      window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
+  if (!IsAutoSubmit) {
+    IsAutoSubmit = true;
+    if (window.SubmitTestAutomatically != null) {
+      window.BeforeSubmitTest = function () {
+        pauseTest();
+      };
+      window.SubmitTestAutomatically(AfterSubmitTest);
+    } else {
+      function callRedirect() {
+        window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
+      }
+      function leaveMessage() {
+        var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
+        (0, _jquery.default)(".error-message").html(url);
+        (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+      }
+      handleLeave(leaveMessage);
+      window.setTimeout(callRedirect, 3000);
     }
-    function leaveMessage() {
-      var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-      (0, _jquery.default)(".error-message").html(url);
-      (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-    }
-    handleLeave(leaveMessage);
-    window.setTimeout(callRedirect, 3000);
   }
 }
 var RecordingIconDisplay = function RecordingIconDisplay(isRecording) {
@@ -42635,4 +42640,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.333d08f8.js.map
+//# sourceMappingURL=/Newinterviewcandidate.264bed1c.js.map
