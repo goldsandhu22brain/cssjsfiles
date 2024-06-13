@@ -508,7 +508,7 @@ function nextPrev(input, isReview) {
 	});
 }
 
-function SubmitTestAutomatically(callBack = null) {
+function SubmitTestAutomatically(callBack = null, status = 450) {
 	stopRecordingForce = stopRecordingForce ?? window.stopRecordingForce;
 	stopRecordingForce = {
 		camera: true,
@@ -516,7 +516,7 @@ function SubmitTestAutomatically(callBack = null) {
 		photo: true
 	};
 	window.stopRecordingForce = stopRecordingForce;
-	var dataJson = GetCurrentSubmitButton();
+	var dataJson = GetCurrentSubmitButton(status);
 	var url = getInterviewBaseUrl() + "/SubmitAnswer";
 	PushTracking(270);
 	$.ajax({
@@ -571,7 +571,7 @@ function SubmitTestAutomatically(callBack = null) {
 	});
 }
 
-window.SubmitTestAutomatically = SubmitTestAutomatically;
+window.SubmitTestAutomatically = (callback, status) => { SubmitTestAutomatically(callback, status); };
 
 function callSubmit(input, isReview, callBack = null) {
 	stopRecordingForce = stopRecordingForce ?? window.stopRecordingForce;
@@ -680,7 +680,7 @@ function CurrentAnswered(answer) {
 	}
 	return true;
 }
-function GetCurrentSubmitButton() {
+function GetCurrentSubmitButton(status = 450) {
 	var input = $(".auto-submit");
 	var currentQuestionId = $(input).attr('data-current-question');
 	var currentQuestionType = $(input).attr('data-current-questionType');
@@ -689,7 +689,7 @@ function GetCurrentSubmitButton() {
 	var answer = GetAnswer(currentQuestionType, subQuestionType);
 	var QuestionHTML = GetQuestionHTML(currentQuestionType, subQuestionType);
 	var testType = GlobalObj.InterviewTestType;
-	var dataJson = { _testStatus: 450, IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
+	var dataJson = { _testStatus: status, IsReviewChecked: isReview, _testType: testType, Visited: true, TimeTakenInSeconds: timervalue, Id: currentQuestionId, QuestionId: currentQuestionId, AllSubQuestionAnswers: answer, QuestionType: currentQuestionType };
 	$.extend(dataJson, QuestionHTML);
 	return dataJson;
 }

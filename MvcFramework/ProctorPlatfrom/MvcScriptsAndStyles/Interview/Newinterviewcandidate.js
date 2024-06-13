@@ -41039,6 +41039,7 @@ var docElement = document.documentElement;
 var timerExamInterval = null;
 var triggerTimeOut = null;
 var IsAutoSubmit = false;
+var TestStatus = 400; //completed
 var PanelRoleButtons = {
   "load-test": false,
   "load-mcq-test": false,
@@ -41123,7 +41124,8 @@ function NotificationCallBack(Notify) {
         }
         if (localLatestMetadata["CandidateEndTest"] == true) {
           pauseTest();
-          window.SubmitTestAutomatically(AfterSubmitTest);
+          TestStatus = 460;
+          window.SubmitTestAutomatically(AfterSubmitTest, TestStatus);
         }
         if (localLatestMetadata["PanelLeaveRoom"] == true) {
           canUpdatePanel = true;
@@ -41158,6 +41160,13 @@ function NotificationCallBack(Notify) {
     case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
       (0, _common.ToastMessage)("Room Ended, Reason - ".concat(dataProp.reason), true);
       callRedirect();
+      break;
+    case 'DEVICE_CHANGE_UPDATE':
+      if (!dataProp.devices.videoInput.length) {
+        (0, _common.ToastMessage)("camera not detected/removed from the candidate system", true);
+        TestStatus = 460;
+        leaveBtn.onclick();
+      }
       break;
   }
 }
@@ -42409,39 +42418,39 @@ function AfterSubmitTest(response) {
     var apiResponse;
     try {
       apiResponse = response;
-        if (IsHTML(apiResponse)) {
-            //html           
-            (0, _jquery.default)('.conference.new-interview-conference').empty();
-            hide(customView);
-            (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
-        } else {
-            //json
-            UpdateGlobalVariable(apiResponse); // updating the Global Variable
-            scopeData = GlobalObj;
-            (0, _jquery.default)('#load-test').val("Start MCQ Quiz");
-            (0, _jquery.default)('#load-coding-test').val("Start Coding Quiz");
-            hide(startTestButton);
-            hide(startMcqTestButton);
-            hide(startCodingTestButton);
-            if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-                var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-                (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
-                (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-                change_tab('error-message');
-                RoomLeave();
-                return;
-            }
-            totalMcqTime = GlobalObj.SlotDuration;
-            maxMcqTime = GlobalObj.SlotDuration;
-            (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-            (0, _jquery.default)('#new-inject-test').html("");
-            (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
-            show(presenterController);
-            LoadDefaultButtoninPanel(!(GlobalObj.IsMCQ || GlobalObj.IsCoding), GlobalObj.IsMCQ, GlobalObj.IsCoding, GlobalObj.TestRoundId);
-            refreshvideo.click();
-            NextScreenShare(false);
-            IsAutoSubmit = false;
+      if (IsHTML(apiResponse)) {
+        //html           
+        (0, _jquery.default)('.conference.new-interview-conference').empty();
+        hide(customView);
+        (0, _jquery.default)('.conference.new-interview-conference').html(apiResponse);
+      } else {
+        //json
+        UpdateGlobalVariable(apiResponse); // updating the Global Variable
+        scopeData = GlobalObj;
+        (0, _jquery.default)('#load-test').val("Start MCQ Quiz");
+        (0, _jquery.default)('#load-coding-test').val("Start Coding Quiz");
+        hide(startTestButton);
+        hide(startMcqTestButton);
+        hide(startCodingTestButton);
+        if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
+          var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
+          (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
+          (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+          change_tab('error-message');
+          RoomLeave();
+          return;
         }
+        totalMcqTime = GlobalObj.SlotDuration;
+        maxMcqTime = GlobalObj.SlotDuration;
+        (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+        (0, _jquery.default)('#new-inject-test').html("");
+        (0, _jquery.default)(".screen-share-status").html('<div class="col-sm-4"><h4>Brainmeasures Test Platform</h4></div><div class="col-sm-5 text-right"><h5 class="screen-share-status-text"></h5></div>');
+        show(presenterController);
+        LoadDefaultButtoninPanel(!(GlobalObj.IsMCQ || GlobalObj.IsCoding), GlobalObj.IsMCQ, GlobalObj.IsCoding, GlobalObj.TestRoundId);
+        refreshvideo.click();
+        NextScreenShare(false);
+        IsAutoSubmit = false;
+      }
     } catch (e) {}
   };
   handleLeave(callBack);
@@ -42489,6 +42498,7 @@ function InitiatingTimer() {
           //timer = duration;
           clearInterval(timerExamInterval);
           //$(".time-wrapper").hide();
+          TestStatus = 450; //examtimeover
           TestSubmitAutomatically();
         }
       }
@@ -42502,7 +42512,7 @@ function TestSubmitAutomatically() {
       window.BeforeSubmitTest = function () {
         pauseTest();
       };
-      window.SubmitTestAutomatically(AfterSubmitTest);
+      window.SubmitTestAutomatically(AfterSubmitTest, TestStatus);
     } else {
       function callRedirect() {
         window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
@@ -42616,7 +42626,10 @@ startCodingTestButton.onclick = function () {
 fullScreen.onclick = fullScreenEnable;
 
 // Cleanup if user refreshes the tab or navigates away
-window.onunload = window.onbeforeunload = TestSubmitAutomatically;
+window.onunload = window.onbeforeunload = function () {
+  TestStatus = 460;
+  TestSubmitAutomatically();
+};
 msgInputElement.onkeypress = function (e) {
   if (e.keyCode === 13) {
     sendMessage();
@@ -42640,4 +42653,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.264bed1c.js.map
+//# sourceMappingURL=/Newinterviewcandidate.80d61fd3.js.map

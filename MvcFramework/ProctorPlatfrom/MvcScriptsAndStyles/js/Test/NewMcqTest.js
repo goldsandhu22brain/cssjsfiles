@@ -457,7 +457,10 @@ function nextPrev(input, isReview) {
 	});
 }
 
-function SubmitTestAutomatically(callBack = null) {
+function SubmitTestAutomatically(callBack = null, status = 450) {
+	if (!status) {
+		status = 450;
+	}
 	stopRecordingForce = stopRecordingForce ?? window.stopRecordingForce;
 	stopRecordingForce = {
 		camera: true,
@@ -473,6 +476,7 @@ function SubmitTestAutomatically(callBack = null) {
 		dataType: 'html',
 		cache: false,
 		async: true,
+		data: { "testStatus": status },
 		beforeSend: function () {
 			if (window.BeforeSubmitTest != null) {
 				window.BeforeSubmitTest();
@@ -518,7 +522,7 @@ function SubmitTestAutomatically(callBack = null) {
 	});
 }
 
-window.SubmitTestAutomatically = SubmitTestAutomatically;
+window.SubmitTestAutomatically = (callback, status) => { SubmitTestAutomatically(callback, status); };
 
 function callSubmit(input, isReview, callBack = null) {
 	stopRecordingForce = stopRecordingForce ?? window.stopRecordingForce;

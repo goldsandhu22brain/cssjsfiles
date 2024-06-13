@@ -41195,6 +41195,7 @@ function NotificationCallBack(Notify) {
     case 'DEVICE_CHANGE_UPDATE':
       if (!dataProp.devices.videoInput.length) {
         (0, _common.ToastMessage)("camera not detected/removed from the candidate system", true);
+        TestStatus = 460;
         leaveBtn.onclick();
       }
       break;
@@ -41261,6 +41262,7 @@ window.CompletedRecording = isProctorLive == true || isProctor == true ? {
 } : null;
 var PhotoCaptureTimer = 5; //5 sec once
 var IsSystemCheck = true;
+var TestStatus = 400; //completed
 //Functions -Start
 function GetToolTipConnection(value) {
   return connectionTooltip[value];
@@ -42148,6 +42150,7 @@ function InitiatingTimer() {
         if (--timer < 0) {
           clearInterval(timerExamInterval);
           (0, _jquery.default)(".time-wrapper").hide();
+          TestStatus = 450;
           TestSubmitAutomatically();
         }
       }
@@ -42156,7 +42159,7 @@ function InitiatingTimer() {
 }
 function TestSubmitAutomatically() {
   if (window.SubmitTestAutomatically != null) {
-    window.SubmitTestAutomatically(AfterSubmitTest);
+    window.SubmitTestAutomatically(AfterSubmitTest, TestStatus);
   } else {
     handleLeave();
     window.setTimeout(callRedirect, 3000);
@@ -42425,7 +42428,10 @@ newProofUpload.onclick = NewProofUpload;
 fullScreen.onclick = fullScreenEnable;
 
 // Cleanup if user refreshes the tab or navigates away
-window.onunload = window.onbeforeunload = TestSubmitAutomatically;
+window.onunload = window.onbeforeunload = function () {
+  TestStatus = 460;
+  TestSubmitAutomatically();
+};
 msgInputElement.onkeypress = function (e) {
   if (e.keyCode === 13) {
     sendMessage();
@@ -42449,4 +42455,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.5aaa7994.js.map
+//# sourceMappingURL=/Newcandidate.55b32a6d.js.map
