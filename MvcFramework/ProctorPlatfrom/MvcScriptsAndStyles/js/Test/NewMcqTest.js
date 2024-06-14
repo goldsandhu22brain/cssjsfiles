@@ -522,7 +522,7 @@ function SubmitTestAutomatically(callBack = null, status = 450) {
 	});
 }
 
-window.SubmitTestAutomatically = (callback, status) => { SubmitTestAutomatically(callback, status); };
+window.SubmitTestAutomatically = (callback = null, status = 450) => { SubmitTestAutomatically(callback, status); };
 
 function callSubmit(input, isReview, callBack = null) {
 	stopRecordingForce = stopRecordingForce ?? window.stopRecordingForce;
