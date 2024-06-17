@@ -2615,5 +2615,8 @@ margin-bottom:15px;
 }
 
 
-
+/**** system check font color ***/
+.sc-color {
+    color: black !important;
+}
 /*# sourceMappingURL=/common.5fea758b.css.map */
