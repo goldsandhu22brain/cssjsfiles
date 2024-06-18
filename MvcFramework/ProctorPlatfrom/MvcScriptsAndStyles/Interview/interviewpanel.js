@@ -40522,9 +40522,9 @@ function PushTracking(activityId) {
       Details: questionNo
     },
     success: function success(response) {
-      if (GlobalObj.IsProctorLive) {
-        //UserAlertTrigger();	
-        //GlobalObj.ActivityCallBack();
+      if (GlobalObj.IsProctorLive && response != null && response.IdAsNo != null && response.IdAsNo == 1) {
+        //UserAlertTrigger();
+        GlobalObj.ActivityCallBack();
       }
     },
     error: function error() {}
@@ -42246,4 +42246,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.e76b90d8.js.map
+//# sourceMappingURL=/interviewpanel.80637397.js.map
