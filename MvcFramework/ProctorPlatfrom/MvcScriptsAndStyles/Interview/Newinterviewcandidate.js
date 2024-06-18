@@ -41164,6 +41164,7 @@ function NotificationCallBack(Notify) {
     case 'DEVICE_CHANGE_UPDATE':
       if (!dataProp.devices.videoInput.length) {
         (0, _common.ToastMessage)("camera not detected/removed from the candidate system", true);
+        (0, _jquery.default)('.proctor-loader').css("visibility", "visible");
         TestStatus = 460;
         leaveBtn.onclick();
       }
@@ -42653,4 +42654,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.eefdbf1c.js.map
+//# sourceMappingURL=/Newinterviewcandidate.c425133a.js.map
