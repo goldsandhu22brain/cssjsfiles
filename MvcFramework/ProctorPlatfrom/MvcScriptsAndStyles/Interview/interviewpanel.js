@@ -41329,7 +41329,7 @@ function _JoinRoom() {
                                   });
                                   (0, _jquery.default)("#Leave").click(function () {
                                     handleLeave();
-                                    (0, _jquery.default)("#test-myModal .modal-header").hide();
+                                    (0, _jquery.default)("#test-myModal .modal-header").show();
                                   });
                                   (0, _jquery.default)("#test-myModal .modal-header").hide();
                                   (0, _jquery.default)('#test-myModal').show();
