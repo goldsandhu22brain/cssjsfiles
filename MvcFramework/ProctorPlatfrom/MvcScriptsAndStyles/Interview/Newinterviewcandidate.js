@@ -42441,7 +42441,7 @@ function AfterSubmitTest(response) {
           RoomLeave();
           return;
         }
-        totalMcqTime = GlobalObj.SlotDuration;
+        totalMcqTime = GlobalObj.RemainingSlotTestDuration;//need to update as the timtake duration;
         maxMcqTime = GlobalObj.SlotDuration;
         (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
         (0, _jquery.default)('#new-inject-test').html("");
