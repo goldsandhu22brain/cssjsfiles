@@ -41329,8 +41329,8 @@ function _JoinRoom() {
                                   });
                                   (0, _jquery.default)("#Leave").click(function () {
                                     handleLeave();
-                                    (0, _jquery.default)("#test-myModal").hide(); //leave pop hide
-                                  });
+                                    (0, _jquery.default)("#test-myModal").hide();
+                                  }); //Leave pop hide
                                   (0, _jquery.default)("#test-myModal .modal-header").hide();
                                   (0, _jquery.default)('#test-myModal').show();
                                   clearInterval(callback);
@@ -41510,6 +41510,43 @@ function _UpdateRooms() {
     }, _callee9);
   }));
   return _UpdateRooms.apply(this, arguments);
+}
+function UpdatePanelRoomStatus() {
+  return _UpdatePanelRoomStatus.apply(this, arguments);
+}
+function _UpdatePanelRoomStatus() {
+  _UpdatePanelRoomStatus = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
+    var url;
+    return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+      while (1) switch (_context10.prev = _context10.next) {
+        case 0:
+          url = getInterviewUrl() + "/UpdatePanelRoomStatus";
+          _jquery.default.ajax({
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+              "TestRoundId": GlobalObj.TestRoundId
+            },
+            crossDomain: true,
+            cache: false,
+            async: true,
+            beforeSend: function beforeSend() {
+              // $('.proctor-loader').css("visibility", "visible");
+            },
+            success: function success(response) {},
+            complete: function complete() {},
+            error: function error(e) {
+              (0, _common.ToastMessage)("Room Status Updates Failed for Panel", true);
+            }
+          });
+        case 2:
+        case "end":
+          return _context10.stop();
+      }
+    }, _callee10);
+  }));
+  return _UpdatePanelRoomStatus.apply(this, arguments);
 }
 function renderMessageList(messages) {
   if (messages.length === 0) {
@@ -41714,33 +41751,33 @@ function showScreenShareVideo() {
   return _showScreenShareVideo.apply(this, arguments);
 }
 function _showScreenShareVideo() {
-  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
+  _showScreenShareVideo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11() {
     var screenShareOn, amIScreenSharing, presenter, screenShareVideoTrack;
-    return _regeneratorRuntime().wrap(function _callee10$(_context10) {
-      while (1) switch (_context10.prev = _context10.next) {
+    return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+      while (1) switch (_context11.prev = _context11.next) {
         case 0:
           screenShareOn = hmsStore.getState(_hmsVideoStore.selectIsSomeoneScreenSharing);
           if (!screenShareOn) {
-            _context10.next = 15;
+            _context11.next = 15;
             break;
           }
           amIScreenSharing = hmsStore.getState(_hmsVideoStore.selectIsLocalScreenShared);
           presenter = hmsStore.getState(_hmsVideoStore.selectPeerScreenSharing);
           screenShareVideoTrack = hmsStore.getState((0, _hmsVideoStore.selectScreenShareByPeerID)(presenter === null || presenter === void 0 ? void 0 : presenter.id));
           if (!amIScreenSharing) {
-            _context10.next = 9;
+            _context11.next = 9;
             break;
           }
           screenShareStatus.textContent = "Screen share started!!!";
-          _context10.next = 13;
+          _context11.next = 13;
           break;
         case 9:
           hide(screenShareStatus);
           show(screenShareVideo);
-          _context10.next = 13;
+          _context11.next = 13;
           return hmsActions.attachVideo(screenShareVideoTrack === null || screenShareVideoTrack === void 0 ? void 0 : screenShareVideoTrack.id, screenShareVideo);
         case 13:
-          _context10.next = 18;
+          _context11.next = 18;
           break;
         case 15:
           screenShareStatus.textContent = "Welcome! Sit back and relax till streaming start.";
@@ -41748,9 +41785,9 @@ function _showScreenShareVideo() {
           show(screenShareStatus);
         case 18:
         case "end":
-          return _context10.stop();
+          return _context11.stop();
       }
-    }, _callee10);
+    }, _callee11);
   }));
   return _showScreenShareVideo.apply(this, arguments);
 }
@@ -41771,10 +41808,10 @@ function renderEndRoomButton(_x6) {
   return _renderEndRoomButton.apply(this, arguments);
 }
 function _renderEndRoomButton() {
-  _renderEndRoomButton = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(permissions) {
+  _renderEndRoomButton = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(permissions) {
     var endRoomButton;
-    return _regeneratorRuntime().wrap(function _callee11$(_context11) {
-      while (1) switch (_context11.prev = _context11.next) {
+    return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+      while (1) switch (_context12.prev = _context12.next) {
         case 0:
           endRoomButton = document.getElementById('end-room-button');
           if (permissions != null && permissions.endRoom) {
@@ -41785,9 +41822,9 @@ function _renderEndRoomButton() {
           }
         case 2:
         case "end":
-          return _context11.stop();
+          return _context12.stop();
       }
-    }, _callee11);
+    }, _callee12);
   }));
   return _renderEndRoomButton.apply(this, arguments);
 }
@@ -41942,6 +41979,7 @@ function UpdateRoundIdFromCandidate(NewRoundId) {
         var result = response;
         if (result) {
           GlobalObj.TestRoundId = NewRoundId;
+          UpdatePanelRoomStatus();
         }
       },
       complete: function complete() {
@@ -42106,14 +42144,14 @@ function GetRoomCode(_x7, _x8) {
   return _GetRoomCode.apply(this, arguments);
 }
 function _GetRoomCode() {
-  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12(_interviewId, _roundId) {
+  _GetRoomCode = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13(_interviewId, _roundId) {
     var fullName,
       url,
-      _args12 = arguments;
-    return _regeneratorRuntime().wrap(function _callee12$(_context12) {
-      while (1) switch (_context12.prev = _context12.next) {
+      _args13 = arguments;
+    return _regeneratorRuntime().wrap(function _callee13$(_context13) {
+      while (1) switch (_context13.prev = _context13.next) {
         case 0:
-          fullName = _args12.length > 2 && _args12[2] !== undefined ? _args12[2] : null;
+          fullName = _args13.length > 2 && _args13[2] !== undefined ? _args13[2] : null;
           url = getInterviewUrl() + "/GetRoomCodeByInterviewId";
           _jquery.default.ajax({
             url: url,
@@ -42142,9 +42180,9 @@ function _GetRoomCode() {
           });
         case 3:
         case "end":
-          return _context12.stop();
+          return _context13.stop();
       }
-    }, _callee12);
+    }, _callee13);
   }));
   return _GetRoomCode.apply(this, arguments);
 }
@@ -42159,10 +42197,10 @@ function InitialLoad() {
 } //Functions - End
 //Bind Events - Start
 function _InitialLoad() {
-  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee13() {
+  _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14() {
     var url;
-    return _regeneratorRuntime().wrap(function _callee13$(_context13) {
-      while (1) switch (_context13.prev = _context13.next) {
+    return _regeneratorRuntime().wrap(function _callee14$(_context14) {
+      while (1) switch (_context14.prev = _context14.next) {
         case 0:
           url = getInterviewUrl() + "/InitialLoad";
           (0, _jquery.default)('#proof-check').text((0, _jquery.default)('#proof-check').data("loading-text"));
@@ -42197,9 +42235,9 @@ function _InitialLoad() {
           });
         case 3:
         case "end":
-          return _context13.stop();
+          return _context14.stop();
       }
-    }, _callee13);
+    }, _callee14);
   }));
   return _InitialLoad.apply(this, arguments);
 }
@@ -42246,4 +42284,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.80637397.js.map
+//# sourceMappingURL=/interviewpanel.af7bedb3.js.map
