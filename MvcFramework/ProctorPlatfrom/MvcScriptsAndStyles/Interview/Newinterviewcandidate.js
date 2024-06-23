@@ -41040,6 +41040,7 @@ var timerExamInterval = null;
 var triggerTimeOut = null;
 var IsAutoSubmit = false;
 var TestStatus = 400; //completed
+var NotRedirect = true;
 var PanelRoleButtons = {
   "load-test": false,
   "load-mcq-test": false,
@@ -41591,8 +41592,7 @@ function _InitialLoad() {
               UpdateGlobalVariable(result); // updating the Global Variable
               (0, _jquery.default)(".error-message").html("");
               if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-                var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-                (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
+                UpdateDisplayMessage(GlobalObj.ErrorMessage);
                 change_tab('error-message');
                 return;
               }
@@ -42434,14 +42434,13 @@ function AfterSubmitTest(response) {
         hide(startMcqTestButton);
         hide(startCodingTestButton);
         if (GlobalObj.ErrorMessage != null && GlobalObj.ErrorMessage != "") {
-          var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-          (0, _jquery.default)(".error-message").html(GlobalObj.ErrorMessage + url);
+          UpdateDisplayMessage(GlobalObj.ErrorMessage);
           (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
           change_tab('error-message');
           RoomLeave();
           return;
         }
-        totalMcqTime = GlobalObj.RemainingSlotTestDuration;//need to update as the timtake duration;
+        totalMcqTime = GlobalObj.RemainingSlotTestDuration;
         maxMcqTime = GlobalObj.SlotDuration;
         (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
         (0, _jquery.default)('#new-inject-test').html("");
@@ -42455,6 +42454,10 @@ function AfterSubmitTest(response) {
     } catch (e) {}
   };
   handleLeave(callBack);
+}
+function UpdateDisplayMessage(msg) {
+  var url = '<br><a onclick="javascript:callRedirect()">Click Here for Dashboard</a>';
+  (0, _jquery.default)(".error-message").html(msg + url);
 }
 function BeforeSubmitTest() {
   pauseTest();
@@ -42515,12 +42518,8 @@ function TestSubmitAutomatically() {
       };
       window.SubmitTestAutomatically(AfterSubmitTest, TestStatus);
     } else {
-      function callRedirect() {
-        window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
-      }
       function leaveMessage() {
-        var url = '<br><a href="' + GlobalObj.PublicWebsite + '/User/Dashboard">Click Here for Dashboard</a>';
-        (0, _jquery.default)(".error-message").html(url);
+        UpdateDisplayMessage();
         (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
       }
       handleLeave(leaveMessage);
@@ -42583,6 +42582,7 @@ function UserAlertTrigger() {
   }
 }
 function callRedirect() {
+  NotRedirect = false;
   window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
 }
 //Functions - End
@@ -42628,8 +42628,10 @@ fullScreen.onclick = fullScreenEnable;
 
 // Cleanup if user refreshes the tab or navigates away
 window.onunload = window.onbeforeunload = function () {
-  TestStatus = 460;
-  TestSubmitAutomatically();
+  if (NotRedirect) {
+    TestStatus = 460;
+    TestSubmitAutomatically();
+  }
 };
 msgInputElement.onkeypress = function (e) {
   if (e.keyCode === 13) {
@@ -42654,4 +42656,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.c425133a.js.map
+//# sourceMappingURL=/Newinterviewcandidate.713b6d8e.js.map
