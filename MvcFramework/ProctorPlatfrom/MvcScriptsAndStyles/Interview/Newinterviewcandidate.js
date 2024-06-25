@@ -42456,8 +42456,9 @@ function AfterSubmitTest(response) {
   handleLeave(callBack);
 }
 function UpdateDisplayMessage(msg) {
-  var url = '<br><a onclick="javascript:callRedirect()">Click Here for Dashboard</a>';
+  var url = '<br><a id="gotodash" href="" >Click Here for Dashboard</a>';
   (0, _jquery.default)(".error-message").html(msg + url);
+  (0, _jquery.default)("#gotodash").click(callRedirect);
 }
 function BeforeSubmitTest() {
   pauseTest();
@@ -42656,4 +42657,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.713b6d8e.js.map
+//# sourceMappingURL=/Newinterviewcandidate.57defbaa.js.map
