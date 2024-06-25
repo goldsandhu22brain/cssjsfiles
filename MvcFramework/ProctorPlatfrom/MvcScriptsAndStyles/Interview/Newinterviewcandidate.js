@@ -41160,7 +41160,8 @@ function NotificationCallBack(Notify) {
       break;
     case _hmsVideoStore.HMSNotificationTypes.ROOM_ENDED:
       (0, _common.ToastMessage)("Room Ended, Reason - ".concat(dataProp.reason), true);
-      callRedirect();
+      TestStatus = 480;
+      callRedirect(true);
       break;
     case 'DEVICE_CHANGE_UPDATE':
       if (!dataProp.devices.videoInput.length) {
@@ -42583,7 +42584,8 @@ function UserAlertTrigger() {
   }
 }
 function callRedirect() {
-  NotRedirect = false;
+  var defaultValue = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  NotRedirect = defaultValue;
   window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
 }
 //Functions - End
@@ -42630,7 +42632,12 @@ fullScreen.onclick = fullScreenEnable;
 // Cleanup if user refreshes the tab or navigates away
 window.onunload = window.onbeforeunload = function () {
   if (NotRedirect) {
-    TestStatus = 460;
+    if (TestStatus != 480) {
+      TestStatus = 460;
+    } else {
+      NotRedirect = false; //restrict the redirect
+    }
+
     TestSubmitAutomatically();
   }
 };
@@ -42657,4 +42664,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.57defbaa.js.map
+//# sourceMappingURL=/Newinterviewcandidate.a0a101ac.js.map
