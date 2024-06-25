@@ -42456,7 +42456,7 @@ function AfterSubmitTest(response) {
   handleLeave(callBack);
 }
 function UpdateDisplayMessage(msg) {
-  var url = '<br><a id="gotodash" href="" >Click Here for Dashboard</a>';
+  var url = '<br><a id="gotodash" href="#" >Click Here for Dashboard</a>';
   (0, _jquery.default)(".error-message").html(msg + url);
   (0, _jquery.default)("#gotodash").click(callRedirect);
 }
