@@ -2425,7 +2425,8 @@ p {
     float:inline-end !important;
 }
 .admin-img {
-    margin-left: 180px;
+    margin-left: 170px;
+    text-align:center;
 }
 /*new adminscreen -end*/
 /*custom-new class -start*/
