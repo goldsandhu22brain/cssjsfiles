@@ -40892,9 +40892,9 @@ function UserIdleTrack() {
 function Disable_Keys() {
   document.addEventListener("keydown", function (event) {
     UserIdleTrack();
-    if (event.key == "Meta") {
+    if (event.key == "Meta" || event.metaKey) {
       //window Key
-      PushTracking(48);
+      PushTracking(59);
       return false;
     }
     if (event.key == "ContextMenu") {
@@ -42284,4 +42284,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.af7bedb3.js.map
+//# sourceMappingURL=/interviewpanel.9cf997be.js.map

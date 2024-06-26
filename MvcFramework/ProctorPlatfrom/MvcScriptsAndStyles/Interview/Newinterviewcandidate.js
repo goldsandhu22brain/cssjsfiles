@@ -40892,9 +40892,9 @@ function UserIdleTrack() {
 function Disable_Keys() {
   document.addEventListener("keydown", function (event) {
     UserIdleTrack();
-    if (event.key == "Meta") {
+    if (event.key == "Meta" || event.metaKey) {
       //window Key
-      PushTracking(48);
+      PushTracking(59);
       return false;
     }
     if (event.key == "ContextMenu") {
@@ -42664,4 +42664,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.a0a101ac.js.map
+//# sourceMappingURL=/Newinterviewcandidate.c0f6e434.js.map
