@@ -41804,6 +41804,7 @@ function ViewNewProof() {
     async: false,
     success: function success(response) {
       (0, _jquery.default)("#Inject-UAA").html("");
+      UpdatePopupHeader("User Uploaded Proof");
       (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark text-center'>Uploaded Document:" + NewProofDocumentName + "</h3><img class='w-50 admin-img' src='" + response + "'/>   <div id='controls' class='text-center'><button id = 'approveProof' class= 'btn-control btn-Approve btn-left-rounded'> Approve</button><button id = 'rejectProof' class= 'btn-control btn-left-rounded'> Reject</button> ");
       (0, _jquery.default)("#approveProof").click(function () {
         hide(viewNewProof);
@@ -41825,6 +41826,7 @@ function ViewNewProof() {
     },
     error: function error(response) {
       (0, _jquery.default)("#Inject-UAA").html("");
+      UpdatePopupHeader("User Uploaded Proof");
       (0, _jquery.default)("#Inject-UAA").html("<h3 class='text-dark'>Uploaded Document:" + NewProofDocumentName + "</h3><img class='w-100' src='" + response.responseText + "'/>   <div id='controls' class='text-center'><button id = 'approveProof' class= 'btn-control btn-left-rounded'> Approve</button><button id = 'rejectProof' class= 'btn-control btn-left-rounded'> Reject</button> ");
       (0, _jquery.default)("#approveProof").click(function () {
         hide(viewNewProof);
@@ -41891,13 +41893,15 @@ function UserAlertTest() {
     async: false,
     success: function success(response) {
       (0, _jquery.default)("#Inject-UAA").html("");
-      (0, _jquery.default)("#Inject-UAA").html(response);
+        (0, _jquery.default)("#Inject-UAA").html(response);
+        UpdatePopupHeader("User Activity Alert");
       (0, _jquery.default)('#test-myModal').show();
       return true;
     },
     error: function error(response) {
       (0, _jquery.default)("#Inject-UAA").html("");
       (0, _jquery.default)("#Inject-UAA").html(response.responseText);
+      UpdatePopupHeader("User Activity Alert");
       (0, _jquery.default)('#test-myModal').show();
       return true;
     }
