@@ -41040,6 +41040,7 @@ var candidateRole = "candidate";
 var candShareMessage = "Candidate not yet Joined or not yet Sharing the screen";
 var FeedBackText = "";
 var FeedBackStatusValue = "";
+var CurrentUserIsInPanel = false;
 function NotificationCallBack(Notify) {
   var dataProp = Notify != null && Notify.data;
   switch (Notify.type) {
@@ -41534,7 +41535,9 @@ function _UpdatePanelRoomStatus() {
             beforeSend: function beforeSend() {
               // $('.proctor-loader').css("visibility", "visible");
             },
-            success: function success(response) {},
+            success: function success(response) {
+              if (response > 0) {}
+            },
             complete: function complete() {},
             error: function error(e) {
               (0, _common.ToastMessage)("Room Status Updates Failed for Panel", true);
@@ -41967,7 +41970,7 @@ function UpdateRoundIdFromCandidate(NewRoundId) {
     _jquery.default.ajax({
       url: url,
       type: 'GET',
-      dataType: 'html',
+      dataType: 'json',
       data: {
         RoundId: NewRoundId
       },
@@ -41977,9 +41980,11 @@ function UpdateRoundIdFromCandidate(NewRoundId) {
       beforeSend: function beforeSend() {},
       success: function success(response) {
         var result = response;
-        if (result) {
+        if (result != null && result.Count > 0) {
+          GlobalObj.PanelMembers = result.PanelMembersList;
           GlobalObj.TestRoundId = NewRoundId;
           UpdatePanelRoomStatus();
+          UpdatePanelPresent();
         }
       },
       complete: function complete() {
@@ -42109,6 +42114,13 @@ function FeedBackForm() {
 function UpdatePopupHeader(updateText) {
   (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
 }
+function CanProvideFeedbackByPanel(canShow) {
+  if (canShow) {
+    show(feedBackButton);
+  } else {
+    hide(feedBackButton);
+  }
+}
 function FeedbackSubmit() {
   (0, _jquery.default)("#feedbacksubmit").text("loading...");
   var feedbackData = (0, _jquery.default)("#feeback").val();
@@ -42194,8 +42206,7 @@ function getInterviewUrl() {
 }
 function InitialLoad() {
   return _InitialLoad.apply(this, arguments);
-} //Functions - End
-//Bind Events - Start
+}
 function _InitialLoad() {
   _InitialLoad = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14() {
     var url;
@@ -42227,6 +42238,7 @@ function _InitialLoad() {
                 UpdatePanelMetadata("CustomEventsCall", "hide(enableStartMcqbutton);hide(enableStartCodingbutton);show(enableStartbutton);");
               }
               GetRoomCode(GlobalObj.RedemptionId, GlobalObj.TestRoundId, GlobalObj.FullName);
+              UpdatePanelPresent();
             },
             complete: function complete() {
               (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
@@ -42241,6 +42253,17 @@ function _InitialLoad() {
   }));
   return _InitialLoad.apply(this, arguments);
 }
+function UpdatePanelPresent() {
+  var _GlobalObj$PanelMembe, _GlobalObj$PanelMembe2;
+  CurrentUserIsInPanel = ((_GlobalObj$PanelMembe = GlobalObj.PanelMembers) === null || _GlobalObj$PanelMembe === void 0 ? void 0 : (_GlobalObj$PanelMembe2 = _GlobalObj$PanelMembe.filter(function (x) {
+    return x.AspNetUsersId == GlobalObj.UserId;
+  })) === null || _GlobalObj$PanelMembe2 === void 0 ? void 0 : _GlobalObj$PanelMembe2.length) > 0;
+  CanProvideFeedbackByPanel(CurrentUserIsInPanel);
+}
+
+//Functions - End
+
+//Bind Events - Start
 hide(pauseTestButton);
 hide(resumeTestButton);
 hide(endTestButton);
@@ -42284,4 +42307,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.9cf997be.js.map
+//# sourceMappingURL=/interviewpanel.3c888f0d.js.map
