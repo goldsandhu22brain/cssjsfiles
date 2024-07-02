@@ -42130,7 +42130,7 @@ function FeedbackSubmit() {
         return;
     }
     if (feedbackStatus === "0" || feedbackStatus.trim() === "") {
-        ToastMessage('select a valid feedback status.');
+        ToastMessage('Select a Valid Feedback Status.');
         return;
     }
   _jquery.default.ajax({
