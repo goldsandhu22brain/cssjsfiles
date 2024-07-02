@@ -42122,9 +42122,17 @@ function CanProvideFeedbackByPanel(canShow) {
   }
 }
 function FeedbackSubmit() {
-  (0, _jquery.default)("#feedbacksubmit").text("loading...");
+//  (0, _jquery.default)("#feedbacksubmit").text("loading...");
   var feedbackData = (0, _jquery.default)("#feeback").val();
   var feedbackStatus = (0, _jquery.default)("#FeedBackStatus").val();
+    if (!feedbackData) {
+        ToastMessage('Your Feedback Details are Required.');
+        return;
+    }
+    if (feedbackStatus === "0" || feedbackStatus.trim() === "") {
+        ToastMessage('select a valid feedback status.');
+        return;
+    }
   _jquery.default.ajax({
     url: '/Interview/FeedBackByPanel',
     type: 'POST',
