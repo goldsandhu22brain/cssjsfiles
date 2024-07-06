@@ -3,9 +3,10 @@
 }
 
 .interview-deleterow {
-    text-indent:48px;
+    text-indent:5px;
     line-height:2;
     cursor:pointer;
+    color:red;
 }
 
 .interview-slot {
@@ -29,7 +30,7 @@
     width: auto;
 }
 .mt-testtype {
-    margin-left: -14px;
+    margin-left: -47px;
 }
 .mt-allow {
     margin-top:6px;
