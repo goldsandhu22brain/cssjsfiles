@@ -3,7 +3,7 @@
 }
 
 .interview-deleterow {
-    text-indent:5px;
+    text-indent:-2px;
     line-height:2;
     cursor:pointer;
     color:red;
