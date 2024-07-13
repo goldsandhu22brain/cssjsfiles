@@ -41181,6 +41181,7 @@ function NotificationCallBack(Notify) {
 var conference = document.querySelector(".conference");
 var peersContainer = document.querySelector(".peers-container");
 var leaveBtn = document.getElementById("leave-btn");
+var leaveBtn1 = document.getElementById("leave-btn-1");
 var screenShareVideo = document.querySelector(".screen-share-video");
 var screenShareBtn = document.querySelector(".btn-share-screen");
 var screenShareStatus = document.querySelector(".screen-share-status-text");
@@ -42520,14 +42521,17 @@ function TestSubmitAutomatically() {
       };
       window.SubmitTestAutomatically(AfterSubmitTest, TestStatus);
     } else {
-      function leaveMessage() {
-        UpdateDisplayMessage();
-        (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
-      }
-      handleLeave(leaveMessage);
-      window.setTimeout(callRedirect, 3000);
+      PanelHRSlotLeaveMessage();
     }
   }
+}
+function PanelHRSlotLeaveMessage() {
+  function leaveMessage() {
+    UpdateDisplayMessage();
+    (0, _jquery.default)('.proctor-loader').css("visibility", "hidden");
+  }
+  handleLeave(leaveMessage);
+  window.setTimeout(callRedirect, 3000);
 }
 var RecordingIconDisplay = function RecordingIconDisplay(isRecording) {
   var localPeerId = hmsStore.getState(_hmsVideoStore.selectLocalPeerID); //candidate peer
@@ -42611,6 +42615,7 @@ refreshvideo.onclick = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator
 hide(startMcqTestButton);
 hide(startCodingTestButton);
 leaveBtn.onclick = TestSubmitAutomatically;
+leaveBtn1.onclick = PanelHRSlotLeaveMessage;
 startMcqTestButton.onclick = function () {
   SystemCheck();
   (0, _jquery.default)('#load-test').val((0, _jquery.default)('#load-test').data("loading-text"));
@@ -42664,4 +42669,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.c0f6e434.js.map
+//# sourceMappingURL=/Newinterviewcandidate.9c07232f.js.map
