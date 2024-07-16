@@ -402,13 +402,13 @@ function onClikQuestionNo(input, isReview) {
 	});
 }
 function WarningSection(_fullScreen, _mouseActivity, _debugger) {
-	if (!_fullScreen) {
+	if (_fullScreen) {
 		DisplayAlert("fullScreen");
 	}
-	if (!_mouseActivity) {
+	if (_mouseActivity) {
 		DisplayAlert("mouseActivity");
 	}
-	if (!_debugger) {
+	if (_debugger) {
 		DisplayAlert("debuggerCheck");
 	}
 }
