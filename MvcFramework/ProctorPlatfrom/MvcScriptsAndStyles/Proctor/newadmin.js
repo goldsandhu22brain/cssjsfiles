@@ -40977,11 +40977,15 @@ function ClearConsoleLogs() {
     }
     diff = performance.now() - startTime;
     if (diff > 200 || debuggerCheck) {
-      //DisplayAlert("debuggerCheck");
+      DisplayAlert("debuggerCheck");
       debuggerCheck = true;
       PushTracking(120);
     }
   }, 500);
+  (0, _jquery.default)(window).blur(function () {
+    DisplayAlert("mouseActivity");
+    PushTracking(110);
+  });
 }
 function EmptyStream(blob, Type) {
   var IsEmpty = blob == null || blob.size == 0;
@@ -41761,7 +41765,7 @@ function TriggerNewProofButton() {
   }
 }
 function UpdatePopupHeader(updateText) {
-    (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;margin-left:290px;"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
+  (0, _jquery.default)(".popup-header").replaceWith('<h4 class="popup-header" style="color:green;margin-left:290px;"><span class="glyphicon glyphicon-lock"></span>' + updateText + '</h4>');
 }
 function ViewProof() {
   _jquery.default.ajax({
@@ -41896,8 +41900,8 @@ function UserAlertTest() {
     async: false,
     success: function success(response) {
       (0, _jquery.default)("#Inject-UAA").html("");
-        (0, _jquery.default)("#Inject-UAA").html(response);
-        UpdatePopupHeader("User Activity Alert");
+      (0, _jquery.default)("#Inject-UAA").html(response);
+      UpdatePopupHeader("User Activity Alert");
       (0, _jquery.default)('#test-myModal').show();
       return true;
     },
@@ -42061,4 +42065,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //trigger Join
 InitialLoad();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["dNOZ"], null)
-//# sourceMappingURL=/newadmin.35e4e8ce.js.map
+//# sourceMappingURL=/newadmin.90e4961e.js.map

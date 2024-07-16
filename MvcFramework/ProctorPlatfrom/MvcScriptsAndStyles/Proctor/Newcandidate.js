@@ -40977,11 +40977,15 @@ function ClearConsoleLogs() {
     }
     diff = performance.now() - startTime;
     if (diff > 200 || debuggerCheck) {
-      //DisplayAlert("debuggerCheck");
+      DisplayAlert("debuggerCheck");
       debuggerCheck = true;
       PushTracking(120);
     }
   }, 500);
+  (0, _jquery.default)(window).blur(function () {
+    DisplayAlert("mouseActivity");
+    PushTracking(110);
+  });
 }
 function EmptyStream(blob, Type) {
   var IsEmpty = blob == null || blob.size == 0;
@@ -42456,4 +42460,4 @@ fullScreen.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["QEF8"], null)
-//# sourceMappingURL=/Newcandidate.cb324816.js.map
+//# sourceMappingURL=/Newcandidate.51ae5e2e.js.map

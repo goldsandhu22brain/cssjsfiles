@@ -40977,11 +40977,15 @@ function ClearConsoleLogs() {
     }
     diff = performance.now() - startTime;
     if (diff > 200 || debuggerCheck) {
-      //DisplayAlert("debuggerCheck");
+      DisplayAlert("debuggerCheck");
       debuggerCheck = true;
       PushTracking(120);
     }
   }, 500);
+  (0, _jquery.default)(window).blur(function () {
+    DisplayAlert("mouseActivity");
+    PushTracking(110);
+  });
 }
 function EmptyStream(blob, Type) {
   var IsEmpty = blob == null || blob.size == 0;
@@ -42122,17 +42126,17 @@ function CanProvideFeedbackByPanel(canShow) {
   }
 }
 function FeedbackSubmit() {
-//  (0, _jquery.default)("#feedbacksubmit").text("loading...");
+  //  $("#feedbacksubmit").text("loading...");
   var feedbackData = (0, _jquery.default)("#feeback").val();
   var feedbackStatus = (0, _jquery.default)("#FeedBackStatus").val();
-    if (!feedbackData) {
-        ToastMessage('Your Feedback Details are Required.');
-        return;
-    }
-    if (feedbackStatus === "0" || feedbackStatus.trim() === "") {
-        ToastMessage('Select a Valid Feedback Status.');
-        return;
-    }
+  if (!feedbackData) {
+    (0, _common.ToastMessage)('Your Feedback Details are Required.');
+    return;
+  }
+  if (feedbackStatus === "0" || feedbackStatus.trim() === "") {
+    (0, _common.ToastMessage)('Select a Valid Feedback Status.');
+    return;
+  }
   _jquery.default.ajax({
     url: '/Interview/FeedBackByPanel',
     type: 'POST',
@@ -42315,4 +42319,4 @@ hmsStore.subscribe(renderEndRoomButton, _hmsVideoStore.selectPermissions);
 //Bind Events - End
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","../node_modules/jquery":"HlZQ","./common":"LDbG"}]},{},["nU9S"], null)
-//# sourceMappingURL=/interviewpanel.3c888f0d.js.map
+//# sourceMappingURL=/interviewpanel.eaea0052.js.map
