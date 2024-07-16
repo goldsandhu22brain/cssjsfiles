@@ -41214,7 +41214,7 @@ var connectionTooltip = {
   5: "Excellent Connection"
 };
 connectionTooltip[-1] = "Network Unknown";
-var fullScreen = document.querySelector(".btn-full-screen");
+var fullScreenBtn = document.querySelector(".btn-full-screen");
 var initialTimer = true;
 var isProctorLive = true;
 var isProctor = true;
@@ -42171,8 +42171,16 @@ function exitHandler() {
   if (!docElement.webkitIsFullScreen && !docElement.mozFullScreen && !docElement.msFullscreenElement) {
     (0, _common.ToastMessage)("Cant able to Cancel the FullScreen", true);
     setTimeout(function () {
-      fullScreen.onclick();
+      fullScreenBtn.onclick();
     }, 1000);
+  }
+}
+function TriggerFSEvents() {
+  if (document.addEventListener) {
+    document.addEventListener('fullscreenchange', exitHandler, false);
+    document.addEventListener('mozfullscreenchange', exitHandler, false);
+    document.addEventListener('MSFullscreenChange', exitHandler, false);
+    document.addEventListener('webkitfullscreenchange', exitHandler, false);
   }
 }
 // *************************
@@ -42632,7 +42640,7 @@ startCodingTestButton.onclick = function () {
   (0, _jquery.default)('#load-coding-test').val((0, _jquery.default)('#load-coding-test').data("loading-text"));
   LoadQuestion("0", true);
 };
-fullScreen.onclick = fullScreenEnable;
+fullScreenBtn.onclick = fullScreenEnable;
 
 // Cleanup if user refreshes the tab or navigates away
 window.onunload = window.onbeforeunload = function () {
@@ -42665,8 +42673,8 @@ hmsStore.subscribe(UpdateUnreadMessageCount, _hmsVideoStore.selectUnreadHMSMessa
 hmsStore.subscribe(renderMessageList, _hmsVideoStore.selectHMSMessages);
 hide(screenShareStatus);
 //Bind Events - End
-fullScreen.onclick();
+fullScreenBtn.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.9c07232f.js.map
+//# sourceMappingURL=/Newinterviewcandidate.9ce93d2c.js.map
