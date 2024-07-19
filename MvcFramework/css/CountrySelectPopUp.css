@@ -57,6 +57,7 @@
    background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
    width: 1em;
    height: 1em;
+  float: right;
 }
 .runModal h3{
 	font-size: 28px;
