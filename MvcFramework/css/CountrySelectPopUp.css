@@ -3,6 +3,9 @@
         max-width: 836px;
     }
 }
+.runModal.fade{
+	opacity: 1;
+}
 .runModal .modal-content{
 	background-image: url('../images/popup-bg.png');
 	background-repeat: no-repeat;
