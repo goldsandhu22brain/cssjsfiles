@@ -21,6 +21,8 @@
     padding: 10px;
 }
 .runModal h3{
+	font-size: 28px;
+	line-height: 34px;
 	font-family: "Inter", sans-serif;
 }
 .runModal .modal-body .row{
