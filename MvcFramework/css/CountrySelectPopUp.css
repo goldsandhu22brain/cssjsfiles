@@ -1,3 +1,22 @@
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+}
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+.ms-3 {
+    margin-left: 1rem !important;
+}
 @media (min-width: 576px) {
     .runModal .modal-dialog {
         max-width: 836px;
