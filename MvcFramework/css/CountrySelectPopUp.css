@@ -69,6 +69,7 @@
 .runModal .modal-body .row{
 	padding: 30px 80px 60px;
 }
+
 .runModal .wrap{
 	background: #FFFFFF;
 	border: 8px solid #FFBB00;
@@ -106,6 +107,9 @@
 @media (max-width: 767.98px) {
 	.runModal .modal-body .row{
 		padding: 30px 24px;
+	}
+	.runModal#Homeopenpopup .modal-body .row .col-sm-6{
+		margin-bottom: 15px;
 	}
 	.runModal .wrap h6 {
 		font-size: 13.5px;
