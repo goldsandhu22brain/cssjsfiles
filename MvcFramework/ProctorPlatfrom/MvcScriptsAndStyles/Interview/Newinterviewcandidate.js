@@ -41404,7 +41404,7 @@ function LoadCodingQuestion() {
 }
 function LoadQuestion(panelStatus) {
   var _panelStatus;
-  var StartTimer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var StartTimer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
   panelStatus = (_panelStatus = panelStatus) !== null && _panelStatus !== void 0 ? _panelStatus : "0";
   var isExists = document.getElementById('InjectTest');
   var testingId = GlobalObj.OfferingId;
@@ -42681,4 +42681,4 @@ fullScreenBtn.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.841f3897.js.map
+//# sourceMappingURL=/Newinterviewcandidate.bdcb8563.js.map
