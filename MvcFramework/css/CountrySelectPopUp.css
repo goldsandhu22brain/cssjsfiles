@@ -64,6 +64,7 @@
 	font-size: 28px;
 	line-height: 34px;
 	font-weight: 700;
+	color: #000000;
 	font-family: "Inter", sans-serif;
 }
 .runModal .modal-body .row{
@@ -83,6 +84,7 @@
 	font-size: 18px;
 	line-height: 22px;
 	font-weight: 700;
+	color: #000000;
 	margin: 16px 0;
 	font-family: "Inter", sans-serif;
 }
