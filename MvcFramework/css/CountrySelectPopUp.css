@@ -1,8 +1,42 @@
 
+.g-5, .gy-5 {
+    --bs-gutter-y: 3rem;
+	--bs-gutter-x: 3rem;
+}
+.row{
+	margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+.border-0 {
+    border: 0 !important;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+}
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+.ms-3 {
+    margin-left: 1rem !important;
+}
 @media (min-width: 576px) {
     .runModal .modal-dialog {
         max-width: 836px;
+	width: auto;
     }
+}
+.runModal.fade{
+	opacity: 1;
 }
 .runModal .modal-content{
 	background-image: url('../images/popup-bg.png');
@@ -10,22 +44,33 @@
 	background-position: center;
 	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.35);
 	border-radius: 30px;
+	padding: 0;
 }
 .runModal .modal-header{
 	padding: 20px 20px 0;
 }
-.runModal .btn-close{
+.runModal.modal .modal-header .btn-close{
 	border: 1px solid #DEDEDE;
     font-weight: 300;
     font-size: 12px;
     padding: 10px;
+   --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+   background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
+   width: 1em;
+   height: 1em;
+  float: right;
 }
 .runModal h3{
+	font-size: 28px;
+	line-height: 34px;
+	font-weight: 700;
+	color: #000000;
 	font-family: "Inter", sans-serif;
 }
 .runModal .modal-body .row{
 	padding: 30px 80px 60px;
 }
+
 .runModal .wrap{
 	background: #FFFFFF;
 	border: 8px solid #FFBB00;
@@ -39,8 +84,12 @@
 	font-size: 18px;
 	line-height: 22px;
 	font-weight: 700;
+	color: #000000;
 	margin: 16px 0;
 	font-family: "Inter", sans-serif;
+}
+.runModal .wrap .img-wrap{
+	max-width: 100%;
 }
 .runModal .wrap .btn.btn-danger{
 	font-size: 16px;
@@ -49,7 +98,7 @@
 	font-family: "Inter", sans-serif;
 	background-color: #F33558;
 	border-radius: 5px;
-	padding: 12px 40px;
+	padding: 12px 33px;
 }
 .runModal .wrap .btn.btn-danger:hover{
 	text-decoration: none;
@@ -60,6 +109,9 @@
 @media (max-width: 767.98px) {
 	.runModal .modal-body .row{
 		padding: 30px 24px;
+	}
+	.runModal#Homeopenpopup .modal-body .row .col-sm-6{
+		margin-bottom: 15px;
 	}
 	.runModal .wrap h6 {
 		font-size: 13.5px;
