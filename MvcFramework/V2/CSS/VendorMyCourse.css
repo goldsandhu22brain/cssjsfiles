@@ -1,3 +1,6 @@
 .VideoMyCourseDetailsPage .content-wrap .caret{
   width: auto!important;
 }
+.VideoMyCourseDetailsPage .content-wrap{
+  padding: 20px 0;
+}
