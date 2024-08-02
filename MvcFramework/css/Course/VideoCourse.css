@@ -4697,7 +4697,7 @@ label.checkbox, label.radio {
             font-weight: 400;
             font-family: Dbold
         }
-@media screen and (max-width:480px) {
+@media (max-width: 480px) {
     .new-header-section h3{
         font-size: 28px;
     }
