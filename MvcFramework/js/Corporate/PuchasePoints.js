@@ -37,7 +37,10 @@ $(document).ready(function () {
 		OnTextChange();
 		return false;
 	});
-
+$(document).on('keyup', '#Points', function () {
+		OnTextChange();
+		return false;
+	});
 	$(document).on('click', '#btnProceedToPayment', function () {
 		if ($("#Points").val() == '') {
 			Warning('<ul><li>You must enter purchase point to proceed.</li></ul>');
