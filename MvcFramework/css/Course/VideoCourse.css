@@ -4697,7 +4697,11 @@ label.checkbox, label.radio {
             font-weight: 400;
             font-family: Dbold
         }
-
+@media screen and (max-width:480px) {
+    .new-header-section h3{
+        font-size: 26px;
+    }
+}
     .new-header-section h4 {
         font-family: Dbold
     }
