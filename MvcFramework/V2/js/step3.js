@@ -44,7 +44,7 @@ function MeasureConnectionSpeed() {
             }
         }
         else {
-            $('#imgband').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png);
+            $('#imgband').attr('src', 'https://cdn.brainmeasures.com/Proctor/images/Icon/unchecked.png');
             $('#imgband').addClass('stepred');
         }
     }
