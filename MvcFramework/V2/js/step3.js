@@ -1,7 +1,7 @@
 
 var browserFeaturesTable = document.querySelector('#tblProd');
 
-var imageAddr = "https://www.brainmeasures.com/images/022.jpg";
+var imageAddr = "https://mediacdn.brainmeasures.com/images/BackGroundBanners/5kTest.jpg";
 var downloadSize = 1995374; //bytes
 var tr = document.createElement('tr');
 var tbdy = document.createElement('tbody');
