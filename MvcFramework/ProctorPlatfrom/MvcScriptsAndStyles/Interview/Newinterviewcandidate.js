@@ -42470,7 +42470,7 @@ function AfterSubmitTest(response) {
   handleLeave(callBack);
 }
 function UpdateDisplayMessage(msg) {
-  var url = '<br><a id="gotodash" href="#" >Click Here for Dashboard</a>';
+  var url = '<br><a id="gotodash" href="#" >Click here For Details Page</a>';
   (0, _jquery.default)(".error-message").html(msg + url);
   (0, _jquery.default)("#gotodash").click(callRedirect);
 }
@@ -42602,7 +42602,7 @@ function UserAlertTrigger() {
 function callRedirect() {
   var defaultValue = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
   NotRedirect = defaultValue;
-  window.location.href = GlobalObj.PublicWebsite + "/User/Dashboard";
+  window.location.href = GlobalObj.PublicWebsite + "/User/Interview/ViewDetails?Id=" + GlobalObj.RedemptionId;
 }
 //Functions - End
 
@@ -42649,7 +42649,7 @@ fullScreenBtn.onclick = fullScreenEnable;
 // Cleanup if user refreshes the tab or navigates away
 window.onunload = window.onbeforeunload = function () {
   if (NotRedirect) {
-    if (TestStatus != 480) {
+    if (TestStatus != 480 && TestStatus != 400) {
       TestStatus = 460;
     } else {
       NotRedirect = false; //restrict the redirect
@@ -42681,4 +42681,4 @@ fullScreenBtn.onclick();
 (0, _common.DisableActivities)();
 SystemCheckAPI();
 },{"../node_modules/@100mslive/hms-video-store":"j5Na","./common":"LDbG","../node_modules/jquery":"HlZQ"}]},{},["InI2"], null)
-//# sourceMappingURL=/Newinterviewcandidate.bdcb8563.js.map
+//# sourceMappingURL=/Newinterviewcandidate.ca210b29.js.map
